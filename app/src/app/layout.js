@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { Fraunces, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { getCurrentUser } from '@/lib/current-user';
 import { logoutAction } from './actions';
 
-const serif = Fraunces({ subsets: ['latin', 'vietnamese'], variable: '--font-serif', display: 'swap' });
 const sans = Inter({ subsets: ['latin', 'vietnamese'], variable: '--font-sans', display: 'swap' });
 
 export const metadata = {
@@ -15,12 +14,11 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const user = await getCurrentUser();
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={sans.variable}>
       <body>
         <header className="topbar">
           <Link href="/" className="brand">
-            <span className="brand-mark" aria-hidden="true">P</span>
-            <span>Page Turners<small>Booksellers since 2026</small></span>
+            PAGE TURNERS
           </Link>
           <nav>
             {user ? (

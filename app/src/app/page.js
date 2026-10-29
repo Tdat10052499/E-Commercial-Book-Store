@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Shelf from '@/components/Shelf';
+import CoverWall from '@/components/CoverWall';
 import { getCurrentUser } from '@/lib/current-user';
 
 const ROADMAP = [
@@ -15,7 +15,7 @@ export default async function HomePage() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Ms. Le’s bookshops, now online</p>
-          <h1>Stories worth turning the page for.</h1>
+          <h1>Stories worth<br />turning the page for.</h1>
           <p className="lead">
             {user
               ? `Welcome back, ${user.name}. You are signed in as ${user.role === 'admin' ? 'an Administrator' : 'a Customer'}.`
@@ -26,7 +26,12 @@ export default async function HomePage() {
             {!user && <><Link href="/register" className="btn">Create an account</Link><Link href="/login" className="btn-ghost">Log in</Link></>}
           </div>
         </div>
-        <Shelf className="hero-shelf" />
+        
+      </section>
+
+      <section className="arrivals">
+        <div className="section-head"><h2>New arrivals</h2><span className="muted">Catalogue opens in Sprint 2</span></div>
+        <CoverWall />
       </section>
 
       <section className="roadmap">
