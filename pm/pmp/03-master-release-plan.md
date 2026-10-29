@@ -9,6 +9,8 @@
 |---|---|---|---|
 | 0.1 (TA) | 15/10/2026 | Team 6 | Team Assignment release planning: velocity assumed 22 SP per 2-week Sprint; Must + Should = 79 SP over ~4 Sprints [04 §4] |
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Rebaselined to the Final Project brief: 3 one-week Sprints, scope F1–F5 only, cart/payment/social login out of scope [03 §2.2, §5]; capacity-based velocity; BAC formula at 200,000 VND/h; CR-06 recorded as pending CCB |
+| 1.1-draft | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Roles confirmed; capacity 20 h per member per Sprint adopted as plan value (40 h/Sprint, 120 h, BAC 24.0 M VND); CR-06 Option B recommended; Excel version added |
+| 1.2-draft | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | SP filled from the PO estimates (`planning-poker-log.md` v1.1, no voting rounds): PSP = 55 SP, expected velocity 18.3 SP/Sprint; baseline row v1.0 completed |
 
 > **Status of figures.** Every number marked **(plan)** is a planning value. Values marked **TBD** need human input (capacity, Planning Poker votes, Jira actuals) and are tracked in `plan/INPUTS.md`. No actual figure appears in this document.
 
@@ -36,40 +38,41 @@ Sprints run Friday → Thursday, one week each, N = 3 [03 §5]. Rotation for a 2
 
 | Sprint | Dates | Leader | Sprint Goal (plan) | Increment | PM focus (rubric S4) |
 |---|---|---|---|---|---|
-| S1 – Plan baseline & F1 | 23/10 – 29/10 | Hồ Du Tuấn Đạt *(to confirm)* | "Users can register, log in and log out; an administrator can create and lock accounts; non-admins are blocked from admin functions on the server." | F1 | PMP v1.0 |
-| S2 – Execution, monitoring & change | 30/10 – 05/11 | Nguyễn Minh Chính (PO) *(to confirm)* | "Admins manage books, categories and authors (soft delete), and customers browse 12 books per page, newest first, on any device." (+ CR-06 if approved) | F2, F3 (+CR-06) | CR + risk/issue |
-| S3 – Complete & acceptance | 06/11 – 12/11 | Hồ Du Tuấn Đạt *(to confirm)* | "Customers open book details and search/filter by title, author, category and price range together with pagination; Release v1.0 passes UAT." | F4, F5 | UAT + Release |
+| S1 – Plan baseline & F1 | 23/10 – 29/10 | Hồ Du Tuấn Đạt | "Users can register, log in and log out; an administrator can create and lock accounts; non-admins are blocked from admin functions on the server." | F1 | PMP v1.0 |
+| S2 – Execution, monitoring & change | 30/10 – 05/11 | Nguyễn Minh Chính (PO) | "Admins manage books, categories and authors (soft delete), and customers browse 12 books per page, newest first, on any device." (+ CR-06 if approved) | F2, F3 (+CR-06) | CR + risk/issue |
+| S3 – Complete & acceptance | 06/11 – 12/11 | Hồ Du Tuấn Đạt | "Customers open book details and search/filter by title, author, category and price range together with pagination; Release v1.0 passes UAT." | F4, F5 | UAT + Release |
 | Closure | 13/11 – 17/11 | Both | Final Report, EVM, Lessons Learned, slides, video | Release 1.0 online | – |
 
 Feature allocation follows the brief's reference Sprints [03 §2.2]. Any change is decided at Sprint Planning and recorded in §3.8.
 
 ## 3.4 Allocation of backlog items to Sprints (plan)
-SP come from the Planning Poker log (`pm/backlog/planning-poker-log.md`). Until votes are recorded, SP are **TBD**.
+SP come from the estimation log (`pm/backlog/planning-poker-log.md` v1.1). On 30/10/2026 they were set by the PO from AI-suggested values, without voting rounds; a later real session replaces them.
 
 | Sprint | Items | SP (plan) |
 |---|---|---|
-| S1 | US-01 Register · US-02 Log in/out · US-03 Admin creates & locks accounts · US-04 Server-side role guard · NFR-01 Password hashing & validation · NFR-03 Hosting/deploy skeleton | TBD |
-| S2 | US-05 Add book · US-06 Edit book · US-07 Hide (soft delete) book · US-08 Manage categories · US-09 Manage authors · NFR-02 Seed ≥30 books · US-10 Book grid 12/page newest first · NFR-04 Responsive UI | TBD |
-| S2 (if CR-06 approved, option per CCB) | US-24 Store Staff role & permissions · US-25 "Last updated by" audit | TBD |
-| S3 | US-11 Book detail page (+friendly not-found, Back keeps page) · US-12 Search by title/author · US-13 Filter by category & price range with pagination · NFR-05 List page < 2 s | TBD |
-| Release 1.0 total | | **PSP = TBD** |
+| S1 | US-01 Register · US-02 Log in/out · US-03 Admin creates & locks accounts · US-04 Server-side role guard · NFR-01 Password hashing & validation · NFR-03 Hosting/deploy skeleton | 18 |
+| S2 | US-05 Add book · US-06 Edit book · US-07 Hide (soft delete) book · US-08 Manage categories · US-09 Manage authors · NFR-02 Seed ≥30 books · US-10 Book grid 12/page newest first · NFR-04 Responsive UI | 24 |
+| S2 (if CR-06 approved, option per CCB) | US-24 Store Staff role & permissions · US-25 "Last updated by" audit | 7 (Option B: US-24 = 5 in S2, US-25 = 2 in S3) |
+| S3 | US-11 Book detail page (+friendly not-found, Back keeps page) · US-12 Search by title/author · US-13 Filter by category & price range with pagination · NFR-05 List page < 2 s | 13 |
+| Release 1.0 total | | **PSP = 55** (62 if CR-06 is approved) |
 
 ## 3.5 Capacity and expected velocity
 Formula (per Sprint): **Capacity (h) = Σ members (available days × focus hours/day)**. Expected velocity is derived from capacity, not copied from the TA (22 SP / 2 weeks is not applicable to 1-week Sprints [05 #10]).
 
 | Sprint | Đạt (h) | Chính (h) | Capacity (h) | Source |
 |---|---|---|---|---|
-| S1 | TBD | TBD | TBD | `plan/INPUTS.md` §2 |
-| S2 | TBD | TBD | TBD | |
-| S3 | TBD | TBD | TBD | |
+| S1 | 20 | 20 | 40 | `plan/INPUTS.md` §2 (plan value, PO 30/10/2026) |
+| S2 | 20 | 20 | 40 | |
+| S3 | 20 | 20 | 40 | |
+| **Release** | **60** | **60** | **120** | |
 
-**Planning scenario (not a commitment).** The TA working agreement used 4 focus hours per member per day [TA Process §a.3]. With 5 working days per Sprint (Fri, Mon–Thu) this gives 4 × 5 × 2 = **40 h per Sprint (plan)**, 120 h for the release. The team must confirm or replace this figure.
+**Planning scenario – adopted by the PO on 30/10/2026 as the plan value (Đạt to confirm).** The TA working agreement used 4 focus hours per member per day [TA Process §a.3]. With 5 working days per Sprint (Fri, Mon–Thu) this gives 4 × 5 × 2 = **40 h per Sprint (plan)**, 120 h for the release. The team must confirm or replace this figure.
 
-Expected velocity (SP per Sprint) = PSP ÷ 3 when the planned work is spread evenly, checked against the hours that the Sprint's tasks require (Σ task estimates ≤ capacity). It is recalculated from **actual** velocity at Planning 2 and 3 [03 §6.2].
+Expected velocity (SP per Sprint) = PSP ÷ 3 when the planned work is spread evenly, checked against the hours that the Sprint's tasks require (Σ task estimates ≤ capacity). With PSP = 55: **expected velocity = 55 ÷ 3 ≈ 18.3 SP per Sprint (plan)**. The allocation by feature gives S1 18, S2 24, S3 13 SP, so S2 is above the average and S3 below it; the hours check (Σ task estimates ≤ 40 h) is the binding limit. It is recalculated from **actual** velocity at Planning 2 and 3 [03 §6.2].
 
 ## 3.6 Budget (BAC) and EVM baseline
 - **BAC = total planned person-hours of the release × 200,000 VND** [03 §6.4].
-- Scenario above: 120 h × 200,000 = **24,000,000 VND (plan, pending confirmation)**.
+- Plan: 120 h × 200,000 = **24,000,000 VND (plan; capacity confirmed by the PO 30/10/2026)**. The Excel version of this plan is `pm/plan/HK261_SPM_FP_Team6_MasterPlan.xlsx` (same figures).
 - Baseline per Sprint: **PV(n) = BAC × n / 3** → 8.0 M (S1), 16.0 M (S2), 24.0 M (S3) under the scenario.
 - EV = BAC × (cumulative SP meeting DoD ÷ PSP); AC = actual cumulative hours from Jira Completed Work × 200,000. SV, CV, SPI, CPI, EAC, ETC follow [03 §6.4]. Actuals are collected per Sprint into `plan/INPUTS.md` §4.
 - If CR-06 is approved, PSP and BAC are rebaselined; both baseline and rebaseline are kept (§3.8).
@@ -124,8 +127,8 @@ Internal windows are the team's proposal and may be adjusted at Sprint Planning.
 ## 3.8 Baseline and change history of this plan
 | Baseline | Date | Trigger | PSP | BAC | Tag |
 |---|---|---|---|---|---|
-| Baseline v1.0 | 30/10/2026 | Sprint 1 submission | TBD | TBD | `baseline-v1.0` |
-| Rebaseline v1.1 | TBD | CCB decision on CR-06 (if Approve) | TBD | TBD | `baseline-v1.1` |
+| Baseline v1.0 | 30/10/2026 | Sprint 1 submission | 55 SP | 24,000,000 VND | `baseline-v1.0` |
+| Rebaseline v1.1 | TBD | CCB decision on CR-06 (if Approve) | 62 SP (proposed) | per CCB decision | `baseline-v1.1` |
 
 ### Schedule variance observed (as of 30/10/2026 00:45)
 - Sprint 1 artefacts were not yet in the repository at the 29/10 23:59 deadline. If the eLearning upload is also late, the penalty is −10 % of the Sprint score per 5 hours [03 §4.2]. Submission time: TBD (Leader to record). Logged as issue I-01 and as an input for Retro 1.
