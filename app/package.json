@@ -1,0 +1,24 @@
+{
+  "name": "page-turners-bookstore",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:migrate": "node db/migrate.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "e2e": "node e2e/f1.e2e.js",
+    "vercel-build": "node db/migrate.js && next build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "next": "15.5.28",
+    "pg": "8.13.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  }
+}
