@@ -4,6 +4,7 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | First analysis for CCB 30/10. Hour estimates are **planning proposals**; SP require Planning Poker (session 2 in the log) |
+| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | PO confirmed Option B as the team recommendation for the CCB |
 
 ## 1. Request
 Source: [CR-06 §1–§4]. Add *Store Staff* role (add/edit books, manage categories/authors; no book delete; no account management; admin assigns roles) and a "Last updated by <name> at <time>" audit on each book. Customer priority High; wanted in Release 1.0. F1 was due in S1, so the change touches work that is meant to be Done → rework and regression must be counted [CR-06 §4].
@@ -58,7 +59,7 @@ Security-sensitive: every permission is checked on the server (not only by hidin
 | Quality/risk | Regression once; highest overload risk | Two smaller regressions; moderate risk | Customer need unmet; no rework |
 | Customer value | Full CR in R1.0 | Full CR in R1.0 by 12/11 | Not in R1.0 |
 
-**Team recommendation (draft, PO to confirm):** Option B – it delivers the whole CR in Release 1.0 as the customer asked, while keeping S2 capacity for F2 and F3; permissions are built together with F2 so no F2 screen is rebuilt later.
+**Team recommendation (confirmed by the PO, Nguyễn Minh Chính, 30/10/2026):** Option B – it delivers the whole CR in Release 1.0 as the customer asked, while keeping S2 capacity for F2 and F3; permissions are built together with F2 so no F2 screen is rebuilt later.
 
 ## 4. CCB record (fill in at the meeting – do not pre-fill)
 | Field | Value |

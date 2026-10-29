@@ -1,6 +1,6 @@
 # Product Backlog v1.0 – Release 1.0 (Book Catalogue)
 
-**Owner:** Product Owner (Nguyễn Minh Chính, *to confirm*) · **Estimation:** Fibonacci SP (1, 2, 3, 5, 8, 13) by Planning Poker · **Priority:** MoSCoW · **AC format:** Given–When–Then, numbered `US-xx/AC-0n`, covering main (M), exception (E) and boundary (B) flows.
+**Owner:** Product Owner (Nguyễn Minh Chính) · **Estimation:** Fibonacci SP (1, 2, 3, 5, 8, 13) by Planning Poker · **Priority:** MoSCoW · **AC format:** Given–When–Then, numbered `US-xx/AC-0n`, covering main (M), exception (E) and boundary (B) flows.
 
 ## Version history
 | Version | Date | Author | Change |

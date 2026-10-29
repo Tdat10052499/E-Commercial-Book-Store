@@ -9,6 +9,7 @@
 |---|---|---|---|
 | 0.1 (TA) | 15/10/2026 | Team 6 | Team Assignment release planning: velocity assumed 22 SP per 2-week Sprint; Must + Should = 79 SP over ~4 Sprints [04 §4] |
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Rebaselined to the Final Project brief: 3 one-week Sprints, scope F1–F5 only, cart/payment/social login out of scope [03 §2.2, §5]; capacity-based velocity; BAC formula at 200,000 VND/h; CR-06 recorded as pending CCB |
+| 1.1-draft | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Roles confirmed; capacity 20 h per member per Sprint adopted as plan value (40 h/Sprint, 120 h, BAC 24.0 M VND); CR-06 Option B recommended; Excel version added |
 
 > **Status of figures.** Every number marked **(plan)** is a planning value. Values marked **TBD** need human input (capacity, Planning Poker votes, Jira actuals) and are tracked in `plan/INPUTS.md`. No actual figure appears in this document.
 
@@ -36,9 +37,9 @@ Sprints run Friday → Thursday, one week each, N = 3 [03 §5]. Rotation for a 2
 
 | Sprint | Dates | Leader | Sprint Goal (plan) | Increment | PM focus (rubric S4) |
 |---|---|---|---|---|---|
-| S1 – Plan baseline & F1 | 23/10 – 29/10 | Hồ Du Tuấn Đạt *(to confirm)* | "Users can register, log in and log out; an administrator can create and lock accounts; non-admins are blocked from admin functions on the server." | F1 | PMP v1.0 |
-| S2 – Execution, monitoring & change | 30/10 – 05/11 | Nguyễn Minh Chính (PO) *(to confirm)* | "Admins manage books, categories and authors (soft delete), and customers browse 12 books per page, newest first, on any device." (+ CR-06 if approved) | F2, F3 (+CR-06) | CR + risk/issue |
-| S3 – Complete & acceptance | 06/11 – 12/11 | Hồ Du Tuấn Đạt *(to confirm)* | "Customers open book details and search/filter by title, author, category and price range together with pagination; Release v1.0 passes UAT." | F4, F5 | UAT + Release |
+| S1 – Plan baseline & F1 | 23/10 – 29/10 | Hồ Du Tuấn Đạt | "Users can register, log in and log out; an administrator can create and lock accounts; non-admins are blocked from admin functions on the server." | F1 | PMP v1.0 |
+| S2 – Execution, monitoring & change | 30/10 – 05/11 | Nguyễn Minh Chính (PO) | "Admins manage books, categories and authors (soft delete), and customers browse 12 books per page, newest first, on any device." (+ CR-06 if approved) | F2, F3 (+CR-06) | CR + risk/issue |
+| S3 – Complete & acceptance | 06/11 – 12/11 | Hồ Du Tuấn Đạt | "Customers open book details and search/filter by title, author, category and price range together with pagination; Release v1.0 passes UAT." | F4, F5 | UAT + Release |
 | Closure | 13/11 – 17/11 | Both | Final Report, EVM, Lessons Learned, slides, video | Release 1.0 online | – |
 
 Feature allocation follows the brief's reference Sprints [03 §2.2]. Any change is decided at Sprint Planning and recorded in §3.8.
@@ -59,17 +60,18 @@ Formula (per Sprint): **Capacity (h) = Σ members (available days × focus hours
 
 | Sprint | Đạt (h) | Chính (h) | Capacity (h) | Source |
 |---|---|---|---|---|
-| S1 | TBD | TBD | TBD | `plan/INPUTS.md` §2 |
-| S2 | TBD | TBD | TBD | |
-| S3 | TBD | TBD | TBD | |
+| S1 | 20 | 20 | 40 | `plan/INPUTS.md` §2 (plan value, PO 30/10/2026) |
+| S2 | 20 | 20 | 40 | |
+| S3 | 20 | 20 | 40 | |
+| **Release** | **60** | **60** | **120** | |
 
-**Planning scenario (not a commitment).** The TA working agreement used 4 focus hours per member per day [TA Process §a.3]. With 5 working days per Sprint (Fri, Mon–Thu) this gives 4 × 5 × 2 = **40 h per Sprint (plan)**, 120 h for the release. The team must confirm or replace this figure.
+**Planning scenario – adopted by the PO on 30/10/2026 as the plan value (Đạt to confirm).** The TA working agreement used 4 focus hours per member per day [TA Process §a.3]. With 5 working days per Sprint (Fri, Mon–Thu) this gives 4 × 5 × 2 = **40 h per Sprint (plan)**, 120 h for the release. The team must confirm or replace this figure.
 
 Expected velocity (SP per Sprint) = PSP ÷ 3 when the planned work is spread evenly, checked against the hours that the Sprint's tasks require (Σ task estimates ≤ capacity). It is recalculated from **actual** velocity at Planning 2 and 3 [03 §6.2].
 
 ## 3.6 Budget (BAC) and EVM baseline
 - **BAC = total planned person-hours of the release × 200,000 VND** [03 §6.4].
-- Scenario above: 120 h × 200,000 = **24,000,000 VND (plan, pending confirmation)**.
+- Plan: 120 h × 200,000 = **24,000,000 VND (plan; capacity confirmed by the PO 30/10/2026)**. The Excel version of this plan is `pm/plan/HK261_SPM_FP_Team6_MasterPlan.xlsx` (same figures).
 - Baseline per Sprint: **PV(n) = BAC × n / 3** → 8.0 M (S1), 16.0 M (S2), 24.0 M (S3) under the scenario.
 - EV = BAC × (cumulative SP meeting DoD ÷ PSP); AC = actual cumulative hours from Jira Completed Work × 200,000. SV, CV, SPI, CPI, EAC, ETC follow [03 §6.4]. Actuals are collected per Sprint into `plan/INPUTS.md` §4.
 - If CR-06 is approved, PSP and BAC are rebaselined; both baseline and rebaseline are kept (§3.8).
