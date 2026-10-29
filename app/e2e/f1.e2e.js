@@ -66,7 +66,7 @@ async function logout(page) {
   });
   await check('US-04/AC-01 anonymous /admin redirects to login', async () => {
     await page.goto(`${BASE}/admin/accounts`);
-    expect(page.url().includes('/login?next='), `url ${page.url()}`);
+    expect(page.url().includes('/login?next=%2Fadmin%2Faccounts'), `url ${page.url()}`);
   });
   await check('US-01/AC-02 duplicate email (different case) refused', async () => {
     await fillRegister(page, { ...customer, email: customer.email.toUpperCase() });

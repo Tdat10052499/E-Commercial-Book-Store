@@ -3,7 +3,8 @@ import { redirect } from 'next/navigation';
 import { authenticate } from '@lib/users';
 import { startSession } from '@/lib/start-session';
 
-const safeNext = (next) => (typeof next === 'string' && next.startsWith('/') && !next.startsWith('//') ? next : '/');
+// Same-site paths only: browsers treat "//x" and "/\x" as another host.
+const safeNext = (next) => (typeof next === 'string' && next.startsWith('/') && !next.startsWith('//') && !next.includes('\\') ? next : '/');
 
 // US-02/AC-01..03, AC-05
 export async function loginAction(_prev, formData) {
