@@ -18,7 +18,7 @@
 ## Status summary (Green / Amber / Red)
 | Area | Status | Evidence |
 |---|---|---|
-| Scope | Amber | F1 implemented and passing local automated tests (21/24 ACs); NFR-03 hosting not yet deployed |
+| Scope | Amber | F1 implemented and passing local automated tests (21/24 ACs); NFR-02 hosting not yet deployed |
 | Schedule | Red | Sprint 1 artefacts not complete at 29/10 23:59 (issue I-01) |
 | Cost | TBD | Actual hours not yet exported from Jira |
 | Quality | Green | 16/16 unit/integration tests, 18/18 e2e checks pass locally; 0 open defects |

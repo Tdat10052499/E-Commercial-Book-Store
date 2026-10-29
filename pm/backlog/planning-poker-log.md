@@ -8,34 +8,36 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Log table prepared. **Votes must be entered by the team; none are filled in by AI.** |
+| 1.0-draft2 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Item list aligned to Master Plan v0.4 sheet 8 (lecturer template BM01, v0 IDs); PO questions added |
 
-## Session 1 – Release 1.0 baseline (date: TBD, place/tool: TBD, facilitator: PO)
-| Item | Round | Đạt | Chính | Highest/lowest reasoning | Result SP |
-|---|---|---|---|---|---|
-| US-01 Register | 1 | TBD | TBD | | TBD |
-| US-02 Log in/out | 1 | TBD | TBD | | TBD |
-| US-03 Admin creates & locks accounts | 1 | TBD | TBD | | TBD |
-| US-04 Server-side access control | 1 | TBD | TBD | | TBD |
-| NFR-01 Hashing & validation | 1 | TBD | TBD | | TBD |
-| NFR-03 Hosting | 1 | TBD | TBD | | TBD |
-| US-05 Add book | 1 | TBD | TBD | | TBD |
-| US-06 Edit book | 1 | TBD | TBD | | TBD |
-| US-07 Hide book | 1 | TBD | TBD | | TBD |
-| US-08 Manage categories | 1 | TBD | TBD | | TBD |
-| US-09 Manage authors | 1 | TBD | TBD | | TBD |
-| NFR-02 Seed ≥ 30 books | 1 | TBD | TBD | | TBD |
-| US-10 Book grid | 1 | TBD | TBD | | TBD |
-| NFR-04 Responsive UI | 1 | TBD | TBD | | TBD |
-| US-11 Book detail | 1 | TBD | TBD | | TBD |
-| US-12 Search | 1 | TBD | TBD | | TBD |
-| US-13 Filter + pagination | 1 | TBD | TBD | | TBD |
-| NFR-05 Performance < 2 s | 1 | TBD | TBD | | TBD |
+## Session 1 – Release 1.0 baseline (date/time: TBD · channel/place: TBD · facilitator: Nguyễn Minh Chính, PO reads each story and its AC)
+| Item | Round 1 (Đạt, Chính) | Round 2 | Round 3 | Final SP | Reasoning that led to agreement | Evidence photo |
+|---|---|---|---|---|---|---|
+| US-01 Register; hashed password; client + server validation | TBD | TBD | TBD | TBD | | TBD |
+| US-02 Log in / log out | TBD | TBD | TBD | TBD | | TBD |
+| US-03 Admin creates & locks accounts; roles; server-side guard | TBD | TBD | TBD | TBD | | TBD |
+| NFR-02 Hosting on a free server until 17/11 | TBD | TBD | TBD | TBD | | TBD |
+| US-08 Add book | TBD | TBD | TBD | TBD | | TBD |
+| US-09 Edit book | TBD | TBD | TBD | TBD | | TBD |
+| US-10 Delete (hide) book | TBD | TBD | TBD | TBD | | TBD |
+| US-24 Manage categories | TBD | TBD | TBD | TBD | | TBD |
+| US-25 Manage authors | TBD | TBD | TBD | TBD | | TBD |
+| US-05 Book grid 12/page, newest first | TBD | TBD | TBD | TBD | | TBD |
+| NFR-01 ≥ 30 sample books; list < 2 s | TBD | TBD | TBD | TBD | | TBD |
+| US-21 Responsive, cross-browser | TBD | TBD | TBD | TBD | | TBD |
+| US-07 Book detail; friendly not-found; Back to same page | TBD | TBD | TBD | TBD | | TBD |
+| US-06 Search title/author; filter category + price; pagination | TBD | TBD | TBD | TBD | | TBD |
 
 ## Session 2 – CR-06 impact estimate (before CCB 30/10)
-| Item | Round | Đạt | Chính | Reasoning | Result SP |
-|---|---|---|---|---|---|
-| US-24 Store Staff role | 1 | TBD | TBD | | TBD |
-| US-25 Last-updated audit | 1 | TBD | TBD | | TBD |
-| Rework/regression of F1 (US-03, US-04) | 1 | TBD | TBD | | TBD |
+| Item | Round 1 (Đạt, Chính) | Round 2 | Round 3 | Final SP | Reasoning | Evidence photo |
+|---|---|---|---|---|---|---|
+| US-26 Store Staff role & permissions | TBD | TBD | TBD | TBD | | TBD |
+| US-27 Last-updated audit | TBD | TBD | TBD | TBD | | TBD |
 
-Add rows for round 2/3 whenever votes differ.
+## Questions the team asked the PO (keep only those really asked; write the PO's answer)
+| # | Question | PO answer |
+|---|---|---|
+| 1 | US-02: are password reset and account lockout part of Release 1.0, or only log in / log out? | TBD |
+| 2 | US-08: is ISBN required for a book in Release 1.0? | TBD |
+| 3 | NFR-01: is < 2 s measured on a warm server, or also after a free-hosting cold start? | TBD |
+| 4 | US-03: can an Administrator lock another Administrator, and what does a locked user see when logging in? | TBD |

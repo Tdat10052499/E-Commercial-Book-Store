@@ -23,7 +23,7 @@ test('US-01/AC-01 register creates a Customer', async () => {
   assert.strictEqual(user.email, 'one@example.com');
 });
 
-test('NFR-01/AC-01 only a bcrypt hash is stored', async () => {
+test('US-01/AC-05 only a bcrypt hash is stored', async () => {
   const { rows } = await pool.query("SELECT password_hash FROM users WHERE email = 'one@example.com'");
   assert.notStrictEqual(rows[0].password_hash, input.password);
   assert.match(rows[0].password_hash, /^\$2[aby]\$10\$/);
@@ -34,7 +34,7 @@ test('US-01/AC-02 duplicate email (any case) refused', async () => {
   assert.strictEqual(errors.email, 'Email is already registered');
 });
 
-test('NFR-01/AC-02 server rejects invalid input even without client checks', async () => {
+test('US-01/AC-06 server rejects invalid input even without client checks', async () => {
   const { errors } = await users.registerUser({ name: '', email: 'x', password: '1' });
   assert.ok(errors.name && errors.email && errors.password);
   const { rows } = await pool.query('SELECT count(*)::int AS n FROM users');

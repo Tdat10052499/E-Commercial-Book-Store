@@ -1,4 +1,4 @@
-// Shared by client components and server actions so both sides apply the same rules (NFR-01).
+// Shared by client components and server actions so both sides apply the same rules (US-01).
 const LIMITS = { name: 100, email: 254, passwordMin: 8, passwordMax: 64 };
 const ROLES = ['admin', 'customer'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

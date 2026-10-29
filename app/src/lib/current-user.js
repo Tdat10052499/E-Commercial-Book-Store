@@ -10,7 +10,7 @@ export async function getCurrentUser() {
   return findSessionUser(token);
 }
 
-// Server-side guard for every admin page and action (US-04).
+// Server-side guard for every admin page and action (US-03).
 // Without an explicit path it returns to the requested URL, set by src/middleware.js.
 export async function requireAdmin(nextPath) {
   const user = await getCurrentUser();

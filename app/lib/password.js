@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 
-const COST = 10; // NFR-01/AC-01: bcrypt cost >= 10
+const COST = 10; // US-01/AC-05: bcrypt cost >= 10
 
 const hashPassword = (plain) => bcrypt.hash(plain, COST);
 const verifyPassword = (plain, hash) => bcrypt.compare(plain, hash);

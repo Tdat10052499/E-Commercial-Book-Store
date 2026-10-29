@@ -1,11 +1,11 @@
 # Subtest: US-01/AC-01 register creates a Customer
 ok 1 - US-01/AC-01 register creates a Customer
-# Subtest: NFR-01/AC-01 only a bcrypt hash is stored
-ok 2 - NFR-01/AC-01 only a bcrypt hash is stored
+# Subtest: US-01/AC-05 only a bcrypt hash is stored
+ok 2 - US-01/AC-05 only a bcrypt hash is stored
 # Subtest: US-01/AC-02 duplicate email (any case) refused
 ok 3 - US-01/AC-02 duplicate email (any case) refused
-# Subtest: NFR-01/AC-02 server rejects invalid input even without client checks
-ok 4 - NFR-01/AC-02 server rejects invalid input even without client checks
+# Subtest: US-01/AC-06 server rejects invalid input even without client checks
+ok 4 - US-01/AC-06 server rejects invalid input even without client checks
 # Subtest: US-02/AC-01, AC-05 login with correct password, trimmed mixed-case email
 ok 5 - US-02/AC-01, AC-05 login with correct password, trimmed mixed-case email
 # Subtest: US-02/AC-02 wrong password and unknown email give the same generic error
@@ -22,8 +22,8 @@ ok 10 - US-03/AC-03 admin cannot lock own account
 ok 11 - US-01/AC-04 password boundary: 7 rejected, 8 accepted
 # Subtest: US-01/AC-04 password needs letter and digit
 ok 12 - US-01/AC-04 password needs letter and digit
-# Subtest: NFR-01/AC-03 max lengths +1 rejected
-ok 13 - NFR-01/AC-03 max lengths +1 rejected
+# Subtest: US-01/AC-07 max lengths +1 rejected
+ok 13 - US-01/AC-07 max lengths +1 rejected
 # Subtest: US-01/AC-03 invalid email and empty fields rejected
 ok 14 - US-01/AC-03 invalid email and empty fields rejected
 # Subtest: US-02/AC-05 email normalised (trim + lower-case)
@@ -37,25 +37,25 @@ ok 16 - US-03/AC-01 role must be admin or customer when required
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 966.165339
+# duration_ms 930.251296
 --- e2e ---
 PASS  US-01/AC-04 7-char password rejected (client)
 PASS  US-01/AC-03 invalid email rejected (client)
 PASS  US-01/AC-01 register valid customer, signed in
-PASS  US-04/AC-04 customer sees no Admin menu
-PASS  US-04/AC-02 customer opening /admin gets HTTP 403
+PASS  US-03/AC-09 customer sees no Admin menu
+PASS  US-03/AC-07 customer opening /admin gets HTTP 403
 PASS  US-02/AC-04 logout ends session
-PASS  US-04/AC-01 anonymous /admin redirects to login
+PASS  US-03/AC-06 anonymous /admin redirects to login
 PASS  US-01/AC-02 duplicate email (different case) refused
 PASS  US-02/AC-02 wrong password gives generic error
 PASS  US-02/AC-01 + AC-05 login with mixed-case email
-PASS  US-04/AC-03 admin opens dashboard
+PASS  US-03/AC-08 admin opens dashboard
 PASS  US-03/AC-01 admin creates account with role
 PASS  US-03/AC-04 admin create with existing email refused
 PASS  US-03/AC-02 lock customer; US-03/AC-05 open session ends
 PASS  US-02/AC-03 locked account cannot log in
 PASS  US-03/AC-02 unlock restores login
 PASS  US-03/AC-03 admin cannot lock own account
-PASS  NFR-04 no horizontal scroll at 360 px (accounts page)
+PASS  US-21 no horizontal scroll at 360 px (accounts page)
 
 18/18 passed

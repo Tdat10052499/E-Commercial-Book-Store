@@ -50,10 +50,10 @@ async function logout(page) {
     await page.waitForURL(`${BASE}/`);
     expect(await page.isVisible(`text=Hi, ${customer.name}`), 'not signed in after register');
   });
-  await check('US-04/AC-04 customer sees no Admin menu', async () => {
+  await check('US-03/AC-09 customer sees no Admin menu', async () => {
     expect(!(await page.isVisible('header >> text=Admin')), 'Admin link visible to customer');
   });
-  await check('US-04/AC-02 customer opening /admin gets HTTP 403', async () => {
+  await check('US-03/AC-07 customer opening /admin gets HTTP 403', async () => {
     const res = await page.goto(`${BASE}/admin/accounts`);
     expect(res.status() === 403, `status ${res.status()}`);
     expect(await page.isVisible('text=Access denied'), 'no Access denied text');
@@ -64,7 +64,7 @@ async function logout(page) {
     await page.goto(`${BASE}/admin`);
     expect(page.url().includes('/login'), 'protected page reachable after logout');
   });
-  await check('US-04/AC-01 anonymous /admin redirects to login', async () => {
+  await check('US-03/AC-06 anonymous /admin redirects to login', async () => {
     await page.goto(`${BASE}/admin/accounts`);
     expect(page.url().includes('/login?next=%2Fadmin%2Faccounts'), `url ${page.url()}`);
   });
@@ -84,7 +84,7 @@ async function logout(page) {
 
   // Admin flows in a second context so the customer session stays open (US-03/AC-05).
   const adminPage = await (await browser.newContext()).newPage();
-  await check('US-04/AC-03 admin opens dashboard', async () => {
+  await check('US-03/AC-08 admin opens dashboard', async () => {
     await login(adminPage, ADMIN.email, ADMIN.password);
     await adminPage.waitForURL(`${BASE}/`);
     await adminPage.goto(`${BASE}/admin`);
@@ -129,7 +129,7 @@ async function logout(page) {
     await row.locator('button:has-text("Lock")').click();
     await adminPage.waitForSelector('text=You cannot lock your own account');
   });
-  await check('NFR-04 no horizontal scroll at 360 px (accounts page)', async () => {
+  await check('US-21 no horizontal scroll at 360 px (accounts page)', async () => {
     await adminPage.setViewportSize({ width: 360, height: 740 });
     await adminPage.goto(`${BASE}/admin/accounts`);
     const overflow = await adminPage.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);

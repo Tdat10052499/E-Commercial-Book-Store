@@ -14,7 +14,7 @@ test('US-01/AC-04 password needs letter and digit', () => {
   assert.ok(validatePassword('12345678'));
 });
 
-test('NFR-01/AC-03 max lengths +1 rejected', () => {
+test('US-01/AC-07 max lengths +1 rejected', () => {
   assert.ok(validateAccount({ ...valid, name: 'x'.repeat(101) }).name);
   assert.strictEqual(validateAccount({ ...valid, name: 'x'.repeat(100) }).name, undefined);
   assert.ok(validatePassword('a1'.repeat(32) + 'x'));

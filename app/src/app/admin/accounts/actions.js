@@ -3,7 +3,7 @@ import { revalidatePath } from 'next/cache';
 import { requireAdmin } from '@/lib/current-user';
 import { createAccount, setUserStatus } from '@lib/users';
 
-// Every action re-checks the role on the server (US-04/AC-02).
+// Every action re-checks the role on the server (US-03/AC-07).
 export async function createAccountAction(_prev, formData) {
   await requireAdmin('/admin/accounts');
   const values = Object.fromEntries(['name', 'email', 'password', 'role'].map((k) => [k, formData.get(k)]));

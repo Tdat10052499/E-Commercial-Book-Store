@@ -27,16 +27,16 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 | TC-F1-12 | US-03/AC-03 | Signed in as admin | Click Lock on own row | "You cannot lock your own account" | E2E + INT | Pass (30/10) | TBD |
 | TC-F1-13 | US-03/AC-04 | Admin; email exists | Create account with that email | Field error; no account | E2E + INT | Pass (30/10) | TBD |
 | TC-F1-14 | US-03/AC-05 | User signed in in another browser | Admin locks that user; user reloads | User is signed out | E2E + INT | Pass (30/10) | TBD |
-| TC-F1-15 | US-04/AC-01 | Not signed in | Open /admin/accounts | Redirect to /login?next=%2Fadmin%2Faccounts; after login back on that page | E2E | Pass (30/10) | TBD |
-| TC-F1-16 | US-04/AC-02 | Signed in as Customer | Open /admin/accounts directly | HTTP 403 "Access denied" | E2E | Pass (30/10) | TBD |
-| TC-F1-17 | US-04/AC-03 | Signed in as admin | Open /admin | Admin dashboard shown | E2E | Pass (30/10) | TBD |
-| TC-F1-18 | US-04/AC-04 | Signed in as Customer | Look at header on any page | No Admin menu | E2E | Pass (30/10) | TBD |
-| TC-F1-19 | NFR-01/AC-01 | New account saved | Inspect `users.password_hash` in DB | bcrypt hash `$2…$10$…`, not plain text | INT | Pass (30/10) | TBD |
-| TC-F1-20 | NFR-01/AC-02 | Any form | Send invalid data bypassing client | Server rejects, nothing stored | INT | Pass (30/10) | TBD |
-| TC-F1-21 | NFR-01/AC-03 | Register form | Name 101 chars; password 65 chars | Rejected (100 / 64 accepted) | UNIT | Pass (30/10) | TBD |
-| TC-F1-22 | NFR-03/AC-01 | `develop` deployed | Open public URL | Home page over HTTPS | — | Not run (needs hosting) | TBD |
-| TC-F1-23 | NFR-03/AC-02 | Site idle ≥ 15 min | Open URL | Responds; URL recorded | — | Not run (needs hosting) | TBD |
-| TC-F1-24 | NFR-03/AC-03 | 17/11/2026 | Open URL | Online | — | Not run (needs hosting) | TBD |
+| TC-F1-15 | US-03/AC-06 | Not signed in | Open /admin/accounts | Redirect to /login?next=%2Fadmin%2Faccounts; after login back on that page | E2E | Pass (30/10) | TBD |
+| TC-F1-16 | US-03/AC-07 | Signed in as Customer | Open /admin/accounts directly | HTTP 403 "Access denied" | E2E | Pass (30/10) | TBD |
+| TC-F1-17 | US-03/AC-08 | Signed in as admin | Open /admin | Admin dashboard shown | E2E | Pass (30/10) | TBD |
+| TC-F1-18 | US-03/AC-09 | Signed in as Customer | Look at header on any page | No Admin menu | E2E | Pass (30/10) | TBD |
+| TC-F1-19 | US-01/AC-05 | New account saved | Inspect `users.password_hash` in DB | bcrypt hash `$2…$10$…`, not plain text | INT | Pass (30/10) | TBD |
+| TC-F1-20 | US-01/AC-06 | Any form | Send invalid data bypassing client | Server rejects, nothing stored | INT | Pass (30/10) | TBD |
+| TC-F1-21 | US-01/AC-07 | Register form | Name 101 chars; password 65 chars | Rejected (100 / 64 accepted) | UNIT | Pass (30/10) | TBD |
+| TC-F1-22 | NFR-02/AC-01 | `develop` deployed | Open public URL | Home page over HTTPS | — | Not run (needs hosting) | TBD |
+| TC-F1-23 | NFR-02/AC-02 | Site idle ≥ 15 min | Open URL | Responds; URL recorded | — | Not run (needs hosting) | TBD |
+| TC-F1-24 | NFR-02/AC-03 | 17/11/2026 | Open URL | Online | — | Not run (needs hosting) | TBD |
 
 ## Defects found
 | ID | TC | Found | Description | Fix | Status |
@@ -46,4 +46,4 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 ## Summary (local automated)
 | ACs | Test cases | Executed | Pass | Fail | Not run |
 |---|---|---|---|---|---|
-| 24 | 24 | 21 | 21 | 0 | 3 (NFR-03 hosting) |
+| 24 | 24 | 21 | 21 | 0 | 3 (NFR-02 hosting) |

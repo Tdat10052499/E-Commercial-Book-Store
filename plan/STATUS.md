@@ -9,8 +9,8 @@ Cập nhật lần cuối: 30/10/2026 – Claude (theo yêu cầu của Đạt, 
 | P00 | Thiết lập repo, branch, quyền truy cập | 27/10 | in_progress | Đạt |  |  | Cấu trúc repo đã tạo (Claude). Còn: tạo main/develop, mời GV + Chính, cân nhắc private, Jira time tracking |
 | P01 | Kick-off, vai trò, working agreement, capacity | 28/10 | in_progress | Đạt |  |  | Working agreement nằm trong PMP-2/PMP-7. Còn: chốt PO/Leader, capacity thật |
 | P02 | Product Backlog v1.0 | 28/10 | in_progress | Đạt |  |  | Bản nháp 30 item, GWT, DoR (Claude). Còn: PO duyệt |
-| P03 | Planning Poker + Release Plan + BAC | 28/10 | blocked | Đạt |  |  | Chờ phiếu Planning Poker thật và capacity; Release Plan + công thức BAC đã có |
-| P04 | Chọn stack, scaffold app, deploy khung | 28/10 | in_progress | Đạt |  |  | Stack: Next.js + Vercel + Supabase (Đạt chốt 30/10). Còn: tạo Supabase + Vercel, deploy |
+| P03 | Planning Poker + Release Plan + BAC | 28/10 | blocked | Đạt, Chính |  |  | Release Plan theo Master Plan v0.4: WBS 152,5 h, BAC 30,5 tr (đề xuất). Chờ phiếu Planning Poker → PSP |
+| P04 | Chọn stack, scaffold app, deploy khung | 28/10 | done | Đạt | 30/10 |  | Next.js + Vercel + Supabase; URL https://pagetunnel.vercel.app/ |
 | P05 | Sprint Planning 1 → Jira | 28/10 | in_progress | Đạt |  |  | `S1_Backlog` nháp 14 task / 48 h kế hoạch. Còn: capacity, nhập Jira |
 | P06 | Xây F1 | 29/10 | in_progress | Đạt |  |  | Code F1 xong trên local; còn deploy + Chính review PR |
 | P07 | Test case F1 | 29/10 | in_progress | Đạt |  |  | 24 TC; local automated 21/21 pass; còn chạy tay trên URL host |
@@ -49,3 +49,4 @@ Cập nhật lần cuối: 30/10/2026 – Claude (theo yêu cầu của Đạt, 
 |---|---|---|
 | 27/10/2026 | Claude (theo yêu cầu của Đạt) | Dựng cấu trúc repo, roadmap, skill `next`/`status`; P00 → in_progress |
 | 30/10/2026 | Claude (theo yêu cầu của Đạt) | Catch-up S1: Master Plan, PMP v1.0, Backlog v1.0, CR-06 analysis, S1 backlog, F1 code + tests, xuất c1/c2/c3 nháp; P01–P09, P11 → in_progress/blocked |
+| 30/10/2026 | Claude (theo yêu cầu của Đạt) | Thống nhất repo theo Master Plan v0.4 (Chính): ID backlog v0, S1_Backlog 61,5 h, BAC 30,5 tr, CR-06 +22 h; P04 → done (URL Vercel) |

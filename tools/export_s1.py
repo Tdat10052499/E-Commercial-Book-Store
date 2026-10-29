@@ -83,11 +83,11 @@ def workbook(target):
     burn = wb.create_sheet("Burndown")
     burn.append(["Day", "Date", "Ideal remaining (h, plan)", "Actual remaining (h, Jira)"])
     days = ["Fri 23/10", "Mon 26/10", "Tue 27/10", "Wed 28/10", "Thu 29/10"]
-    total = 48
+    total = 61.5
     for i, d in enumerate(days):
         burn.append([i + 1, d, round(total * (1 - (i + 1) / len(days)), 1), "TBD"])
     burn.append([])
-    burn.append(["Ideal line uses the proposed 48 h; actual values must come from Jira Completed Work."])
+    burn.append(["Ideal line uses the WBS plan of 61.5 h (Master Plan v0.4); actual values must come from Jira Completed Work."])
     add_sheet(wb, "RiskRegister", "pm/pmp/05-risk-plan.md", pick=[1])
     add_sheet(wb, "IssueLog", "pm/pmp/05-risk-plan.md", pick=[2])
     add_sheet(wb, "ChangeLog", "pm/change/change-log.md")

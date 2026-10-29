@@ -11,8 +11,8 @@ Script (on the hosted URL or local run if hosting is not ready):
 1. Register a new customer (US-01/AC-01) → try the same email again (AC-02) → try a 7-char password (AC-04).
 2. Log out, log in with wrong password (US-02/AC-02), then correct one (AC-01).
 3. Log in as admin → create an account (US-03/AC-01) → lock it (AC-02) → try logging in as that user (US-02/AC-03) → try to lock own account (US-03/AC-03).
-4. As a customer, open `/admin` directly → 403 (US-04/AC-02); logged out → redirect to login (AC-01).
-5. Show password hash in the database (NFR-01/AC-01).
+4. As a customer, open `/admin` directly → 403 (US-03/AC-07); logged out → redirect to login (AC-06).
+5. Show password hash in the database (US-01/AC-05).
 
 ## 3. Burndown
 TBD – export from Jira; explain flat or rising segments.
@@ -20,9 +20,9 @@ TBD – export from Jira; explain flat or rising segments.
 ## 4. Planned vs actual hours
 | | Plan (h) | Actual (h, Jira Completed Work) |
 |---|---|---|
-| Đạt | 24 (proposal) | TBD |
-| Chính | 24 (proposal) | TBD |
-| Total | 48 | TBD |
+| Đạt | 30.75 (plan, WBS) | TBD |
+| Chính | 30.75 (plan, WBS) | TBD |
+| Total | 61.5 | TBD |
 
 ## 5. Risks and issues
 Top risks R01, R03, R05 (PMP-5); issue I-01 (late S1 artefacts).
