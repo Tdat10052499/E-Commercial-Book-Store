@@ -16,16 +16,16 @@ export default async function AccountsPage() {
       <div className="grid-2">
         <CreateAccountForm />
         <div className="card table-wrap">
-          <table>
+          <table className="table-stack">
             <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Action</th></tr></thead>
             <tbody>
               {users.map((u) => (
                 <tr key={u.id}>
-                  <td>{u.name}</td>
-                  <td>{u.email}</td>
-                  <td>{ROLE_LABEL[u.role] || u.role}</td>
-                  <td><span className={`badge ${u.status}`}>{u.status === 'active' ? 'Active' : 'Locked'}</span></td>
-                  <td>
+                  <td data-label="Name">{u.name}</td>
+                  <td data-label="Email">{u.email}</td>
+                  <td data-label="Role">{ROLE_LABEL[u.role] || u.role}</td>
+                  <td data-label="Status"><span className={`badge ${u.status}`}>{u.status === 'active' ? 'Active' : 'Locked'}</span></td>
+                  <td data-label="Action">
                     {u.status === 'active'
                       ? <StatusButton id={u.id} status="locked" label="Lock" />
                       : <StatusButton id={u.id} status="active" label="Unlock" />}

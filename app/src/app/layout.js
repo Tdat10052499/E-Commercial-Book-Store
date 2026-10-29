@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { getCurrentUser } from '@/lib/current-user';
 import { logoutAction } from './actions';
+import SiteFooter from '@/components/SiteFooter';
 
 const sans = Inter({ subsets: ['latin', 'vietnamese'], variable: '--font-sans', display: 'swap' });
 
@@ -10,6 +11,8 @@ export const metadata = {
   title: 'Page Turners Book Store',
   description: 'E-Commercial Book Store – Release 1.0 by Team 6',
 };
+
+export const viewport = { width: 'device-width', initialScale: 1 };
 
 export default async function RootLayout({ children }) {
   const user = await getCurrentUser();
@@ -36,10 +39,7 @@ export default async function RootLayout({ children }) {
           </nav>
         </header>
         <main className="container">{children}</main>
-        <footer className="footer">
-          <span className="brand-foot">Page Turners</span>
-          <span>Team 6 · E-Commercial Book Store · Release 1.0</span>
-        </footer>
+        <SiteFooter user={user} />
       </body>
     </html>
   );
