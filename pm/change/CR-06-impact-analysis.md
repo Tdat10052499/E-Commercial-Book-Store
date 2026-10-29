@@ -39,7 +39,7 @@ Permission matrix after the change:
 | C7 | Rebaseline backlog, Release Plan, risk register; c4 form | PM | 1.0 |
 | | **Total** | | **12.0 h ≈ 2,400,000 VND** |
 
-SP: **TBD** (Planning Poker session 2). PSP and BAC are rebaselined after approval; the original baseline is kept.
+SP (PO estimate 30/10/2026, no voting rounds – `planning-poker-log.md` session 2): **US-24 = 5, US-25 = 2 → +7 SP**; PSP 55 → 62 if approved. The F1 rework (3 SP) is effort only, already counted in C2, C3 and C6. PSP and BAC are rebaselined after approval; the original baseline is kept.
 
 ### 2.3 Quality
 Security-sensitive: every permission is checked on the server (not only by hiding buttons). Regression of F1 is mandatory; new test cases ≥ 1 per AC.

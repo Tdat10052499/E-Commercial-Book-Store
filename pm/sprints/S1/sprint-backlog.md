@@ -19,7 +19,7 @@ By 29/10/2026, on the hosted URL: a visitor can register and log in/out; an admi
 | **Total** | | | **40 (plan)** – `plan/INPUTS.md` §2, PO 30/10/2026 |
 
 ## Selected items
-US-01, US-02, US-03, US-04, NFR-01, NFR-03 (SP TBD → velocity S1 plan = Σ SP).
+US-01 (3), US-02 (3), US-03 (5), US-04 (3), NFR-01 (2), NFR-03 (2) = **18 SP → planned velocity S1 = 18 SP** (PO estimates, `planning-poker-log.md` v1.1). Actual velocity = SP of these items that meet the DoD at Review 1.
 
 ## Tasks (each ≤ 1 person-day = 8 h)
 | Task | Item | Description | Owner | Est. h (plan) | Actual h (Jira) | Status |

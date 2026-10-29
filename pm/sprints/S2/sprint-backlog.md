@@ -19,7 +19,7 @@ By 05/11/2026, on the hosted URL: an administrator can add, edit and hide books 
 | Capacity S2 | 40 h (Đạt 20 + Chính 20, plan) | `plan/INPUTS.md` §2 |
 
 ## Selected items (proposal)
-US-05 Add book · US-06 Edit book · US-07 Hide book · US-08 Manage categories · US-09 Manage authors · NFR-02 Seed ≥ 30 books · US-10 Book grid 12/page newest first · NFR-04 Responsive UI · **if CR-06 approved (Option B):** US-24 Store Staff role & permissions. SP: TBD (Planning Poker).
+US-05 Add book · US-06 Edit book · US-07 Hide book · US-08 Manage categories · US-09 Manage authors · NFR-02 Seed ≥ 30 books · US-10 Book grid 12/page newest first · NFR-04 Responsive UI · **if CR-06 approved (Option B):** US-24 Store Staff role & permissions. SP: 24 for the eight items (5+3+2+3+3+2+3+3), +5 for US-24 → 29 SP (PO estimates, `planning-poker-log.md` v1.1).
 
 ## Tasks (each ≤ 1 person-day = 8 h; hours are proposals)
 | Task | Item | Description | Owner | Est. h (plan) | Actual h (Jira) | Status |
