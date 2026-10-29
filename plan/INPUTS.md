@@ -26,6 +26,7 @@
 | Repo | https://github.com/Tdat10052499/E-Commercial-Book-Store |
 | Jira board | TBD |
 | GV đã được mời vào repo / Jira | TBD / TBD |
+| Stack (P04) | Next.js + Vercel + Supabase – Đạt chốt 30/10/2026 |
 | URL hosting | TBD |
 | Tài khoản demo (admin / customer / staff) | TBD – **không ghi mật khẩu thật vào repo public** |
 | Link video demo | TBD |

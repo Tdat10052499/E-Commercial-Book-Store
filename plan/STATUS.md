@@ -2,22 +2,22 @@
 
 *Cập nhật file này ở cuối mỗi phase (trong cùng PR với sản phẩm của phase). Trạng thái: `todo` · `in_progress` · `blocked` (ghi lý do) · `done`. Ngày theo GMT+7. Định nghĩa phase ở `plan/ROADMAP.md`.*
 
-Cập nhật lần cuối: 27/10/2026 – Claude (dựng repo, P00)
+Cập nhật lần cuối: 30/10/2026 – Claude (theo yêu cầu của Đạt, catch-up Sprint 1)
 
 | ID | Phase | Hạn | Trạng thái | Người làm | Ngày xong | PR | Ghi chú |
 |---|---|---|---|---|---|---|---|
 | P00 | Thiết lập repo, branch, quyền truy cập | 27/10 | in_progress | Đạt |  |  | Cấu trúc repo đã tạo (Claude). Còn: tạo main/develop, mời GV + Chính, cân nhắc private, Jira time tracking |
-| P01 | Kick-off, vai trò, working agreement, capacity | 28/10 | todo |  |  |  |  |
-| P02 | Product Backlog v1.0 | 28/10 | todo |  |  |  |  |
-| P03 | Planning Poker + Release Plan + BAC | 28/10 | todo |  |  |  |  |
-| P04 | Chọn stack, scaffold app, deploy khung | 28/10 | todo |  |  |  |  |
-| P05 | Sprint Planning 1 → Jira | 28/10 | todo |  |  |  |  |
-| P06 | Xây F1 | 29/10 | todo |  |  |  |  |
-| P07 | Test case F1 | 29/10 | todo |  |  |  |  |
-| P08 | PMP v1.0 (7 phần) | 29/10 | todo |  |  |  |  |
-| P09 | CR-06: Change Log + impact analysis + phương án CCB | 29/10 | todo |  |  |  | Change Log phải có CR-06 trước 23:59 29/10 |
+| P01 | Kick-off, vai trò, working agreement, capacity | 28/10 | in_progress | Đạt |  |  | Working agreement nằm trong PMP-2/PMP-7. Còn: chốt PO/Leader, capacity thật |
+| P02 | Product Backlog v1.0 | 28/10 | in_progress | Đạt |  |  | Bản nháp 30 item, GWT, DoR (Claude). Còn: PO duyệt |
+| P03 | Planning Poker + Release Plan + BAC | 28/10 | blocked | Đạt |  |  | Chờ phiếu Planning Poker thật và capacity; Release Plan + công thức BAC đã có |
+| P04 | Chọn stack, scaffold app, deploy khung | 28/10 | in_progress | Đạt |  |  | Stack: Next.js + Vercel + Supabase (Đạt chốt 30/10). Còn: tạo Supabase + Vercel, deploy |
+| P05 | Sprint Planning 1 → Jira | 28/10 | in_progress | Đạt |  |  | `S1_Backlog` nháp 14 task / 48 h kế hoạch. Còn: capacity, nhập Jira |
+| P06 | Xây F1 | 29/10 | in_progress | Đạt |  |  | Code F1 xong trên local; còn deploy + Chính review PR |
+| P07 | Test case F1 | 29/10 | in_progress | Đạt |  |  | 24 TC; local automated 21/21 pass; còn chạy tay trên URL host |
+| P08 | PMP v1.0 (7 phần) | 29/10 | in_progress | Đạt |  |  | Bản nháp đủ 7 phần; còn xác nhận SMART/stakeholder, capacity, BAC |
+| P09 | CR-06: Change Log + impact analysis + phương án CCB | 29/10 | in_progress | Đạt |  |  | Change Log + 3 phương án A/B/C; còn Planning Poker SP cho CR |
 | P10 | Theo dõi S1 (liên tục) | 29/10 | todo |  |  |  |  |
-| P11 | Đóng gói và nộp S1 | 29/10 23:59 | todo |  |  |  |  |
+| P11 | Đóng gói và nộp S1 | 29/10 23:59 | in_progress | Đạt |  |  | Bản nháp c1, c2, c3 trong deliverables/S1 (tools/export_s1.py). Còn: c0_Eval, upload |
 | P12 | Review/Retro 1 + CCB | 30/10 | todo |  |  |  |  |
 | P13 | Sprint Planning 2 | 30/10 | todo |  |  |  |  |
 | P14 | Cập nhật baseline theo CCB | 31/10 | todo |  |  |  |  |
@@ -48,3 +48,4 @@ Cập nhật lần cuối: 27/10/2026 – Claude (dựng repo, P00)
 | Ngày | Người | Thay đổi |
 |---|---|---|
 | 27/10/2026 | Claude (theo yêu cầu của Đạt) | Dựng cấu trúc repo, roadmap, skill `next`/`status`; P00 → in_progress |
+| 30/10/2026 | Claude (theo yêu cầu của Đạt) | Catch-up S1: Master Plan, PMP v1.0, Backlog v1.0, CR-06 analysis, S1 backlog, F1 code + tests, xuất c1/c2/c3 nháp; P01–P09, P11 → in_progress/blocked |
