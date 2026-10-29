@@ -6,6 +6,7 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Test cases from F1 ACs; automated results from a real local run |
+| 1.1 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Manual run found defect DEF-F1-01 (TC-F1-15); expected result made precise; E2E assertion tightened |
 
 **Evidence of automated run** (local build, PostgreSQL 16, 30/10/2026): `npm test` → 16/16 pass (UNIT = `tests/validation.test.js`, INT = `tests/users.test.js`); `npm run e2e` → 18/18 pass (E2E = `app/e2e/f1.e2e.js`, Chromium). Log: `pm/sprints/S1/evidence/test-run-2026-10-30.txt`.
 **Manual run on the hosted URL** must be done by a team member before the Review and written in the last column (Pass/Fail, date, tester).
@@ -26,7 +27,7 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 | TC-F1-12 | US-03/AC-03 | Signed in as admin | Click Lock on own row | "You cannot lock your own account" | E2E + INT | Pass (30/10) | TBD |
 | TC-F1-13 | US-03/AC-04 | Admin; email exists | Create account with that email | Field error; no account | E2E + INT | Pass (30/10) | TBD |
 | TC-F1-14 | US-03/AC-05 | User signed in in another browser | Admin locks that user; user reloads | User is signed out | E2E + INT | Pass (30/10) | TBD |
-| TC-F1-15 | US-04/AC-01 | Not signed in | Open /admin/accounts | Redirect to /login?next=… | E2E | Pass (30/10) | TBD |
+| TC-F1-15 | US-04/AC-01 | Not signed in | Open /admin/accounts | Redirect to /login?next=%2Fadmin%2Faccounts; after login back on that page | E2E | Pass (30/10) | TBD |
 | TC-F1-16 | US-04/AC-02 | Signed in as Customer | Open /admin/accounts directly | HTTP 403 "Access denied" | E2E | Pass (30/10) | TBD |
 | TC-F1-17 | US-04/AC-03 | Signed in as admin | Open /admin | Admin dashboard shown | E2E | Pass (30/10) | TBD |
 | TC-F1-18 | US-04/AC-04 | Signed in as Customer | Look at header on any page | No Admin menu | E2E | Pass (30/10) | TBD |
@@ -36,6 +37,11 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 | TC-F1-22 | NFR-03/AC-01 | `develop` deployed | Open public URL | Home page over HTTPS | — | Not run (needs hosting) | TBD |
 | TC-F1-23 | NFR-03/AC-02 | Site idle ≥ 15 min | Open URL | Responds; URL recorded | — | Not run (needs hosting) | TBD |
 | TC-F1-24 | NFR-03/AC-03 | 17/11/2026 | Open URL | Online | — | Not run (needs hosting) | TBD |
+
+## Defects found
+| ID | TC | Found | Description | Fix | Status |
+|---|---|---|---|---|---|
+| DEF-F1-01 | TC-F1-15 | 30/10/2026, manual run (Đạt) | Any admin URL redirected to `/login?next=%2Fadmin`: the admin layout guard used a fixed default path, so after login the user landed on the dashboard instead of the page requested. The automated check only tested for `next=` and missed it | `src/middleware.js` passes the requested path; `requireAdmin` uses it; E2E now asserts the exact `next` | Fixed, re-verified locally (curl); manual re-test TBD |
 
 ## Summary (local automated)
 | ACs | Test cases | Executed | Pass | Fail | Not run |
