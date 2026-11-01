@@ -134,13 +134,13 @@ def _field(paragraph, instr):
     return run
 
 
-def _page(doc, header_text):
+def _page(doc, header_text, cover=None):
     for s in doc.sections:
         s.orientation = WD_ORIENT.PORTRAIT
         s.page_width, s.page_height = Cm(21), Cm(29.7)
         s.top_margin = s.bottom_margin = Cm(2)
         s.left_margin, s.right_margin = Cm(3), Cm(2)
-        s.different_first_page_header_footer = True
+        s.different_first_page_header_footer = bool(cover)
         hp = s.header.paragraphs[0]
         hp.text = header_text
         hp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
@@ -193,14 +193,39 @@ def _cover(doc, cover):
         first.addprevious(p._p)
 
 
+def _toc_only(doc):
+    """Keep pandoc's title, put a TOC right under it (no cover page)."""
+    body = doc.element.body
+    anchor = None
+    for el in body:
+        if el.tag == qn("w:p") and el.xpath("./w:pPr/w:pStyle[@w:val='Title']"):
+            anchor = el
+    paras = []
+    head = doc.add_paragraph()
+    _font(head.add_run("Table of contents"), size=13, bold=True, color=ACCENT)
+    toc = doc.add_paragraph()
+    _field(toc, 'TOC \\o "1-2" \\h \\z \\u')
+    note = doc.add_paragraph()
+    _font(note.add_run("(Right-click → Update Field if the table of contents is empty.)"), size=9,
+          color=RGBColor(0x88, 0x88, 0x88))
+    paras = [head, toc, note]
+    for p in reversed(paras):
+        if anchor is not None:
+            anchor.addnext(p._p)
+        else:
+            body[0].addprevious(p._p)
+
+
 def style_docx(path, header_text, cover=None):
     doc = Document(path)
     _styles(doc)
     if cover:
         _cover(doc, cover)
+    else:
+        _toc_only(doc)
     _tables(doc)
     _runs(doc)
-    _page(doc, header_text)
+    _page(doc, header_text, cover)
     settings = doc.settings.element
     upd = OxmlElement("w:updateFields")
     upd.set(qn("w:val"), "true")

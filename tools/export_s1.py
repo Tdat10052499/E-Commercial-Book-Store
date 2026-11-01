@@ -117,8 +117,8 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     pmp = sorted(str(p.relative_to(ROOT)) for p in (ROOT / "pm" / "pmp").glob("0*.md"))
     c1 = OUT / f"{PREFIX}c1_ProjectPlan.docx"
-    pandoc(pmp, c1, "Project Management Plan v1.0 – Team 6 Page Turners", toc=False)
-    style_docx(c1, "HK261 SPM – Team 6 Page Turners – Project Management Plan v1.0", cover=C1_COVER)
+    pandoc(pmp, c1, "Project Management Plan v1.0", toc=False)
+    style_docx(c1, "HK261 SPM – Team 6 Page Turners – Project Management Plan v1.0")
     report = ["pm/sprints/S1/sprint-report.md", "pm/sprints/S1/sprint-backlog.md", "pm/sprints/S1/daily-log.md",
               "pm/sprints/S1/test-cases-F1.md", "pm/sprints/S1/review-retro.md"]
     pandoc(report, OUT / f"{PREFIX}c3_SprintReport_S1.docx", "Sprint 1 Report – Team 6 Page Turners")
