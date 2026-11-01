@@ -10,6 +10,7 @@ Outputs: deliverables/S1/HK261_SPM_FP_Team6_c0_Eval_S1.xlsx
 Only planned or recorded data is filled in. Every cell that needs a human
 judgement or a meeting record is left as "TBD" [CLAUDE.md §3.2].
 """
+import copy
 from pathlib import Path
 
 import docx
@@ -90,12 +91,18 @@ def review_retro_s1():
     set_cell(t[1].rows[2].cells[1], TBD)
     rows = t[2].rows
     while len(rows) - 1 < len(ITEMS):
-        t[2].add_row()
+        rows[-1]._tr.addnext(copy.deepcopy(rows[-1]._tr))  # clone keeps template borders
         rows = t[2].rows
     for row, (iid, title, sp, acs, tc) in zip(rows[1:], ITEMS):
         for cell, val in zip(row.cells, (iid, title, sp, f"{TBD}/{acs}", tc, TBD, TBD, TBD)):
             set_cell(cell, val)
-    set_cell(t[3].rows[0].cells[0], "[Burndown chart – export from Jira; TBD]")
+    png = ROOT / "pm" / "sprints" / "S1" / "evidence" / "burndown-S1.png"
+    cell = t[3].rows[0].cells[0]
+    set_cell(cell, "")
+    if png.exists():
+        cell.paragraphs[0].add_run().add_picture(str(png), width=Cm(15.5))
+    note = cell.add_paragraph()
+    note.add_run(BURNDOWN_NOTE).italic = True
     for row in t[6].rows[1:2]:
         set_cell(row.cells[0], "Not applicable (Sprint 1)")
     out = ROOT / "pm" / "sprints" / "S1" / f"{PREFIX}SprintReview_Retro_S1.docx"
@@ -119,13 +126,29 @@ C3_PARTS = [
     ("Sprint Planning 1 – S1_Backlog", "pm/sprints/S1/sprint-backlog.md"),
     ("Daily Scrum log", "pm/sprints/S1/daily-log.md"),
     ("Test cases F1 (from Acceptance Criteria)", "pm/sprints/S1/test-cases-F1.md"),
+    ("Jira board snapshot (01/11/2026)", "pm/sprints/S1/jira-snapshot-2026-11-01.md"),
 ]
+
+BURNDOWN_NOTE = (
+    "Explanation (AI-assisted draft, team to confirm): the remaining line stays flat at 48 h for the whole Sprint "
+    "because no task was moved on the Jira board between 23/10 and 29/10; the work itself was done mostly on "
+    "29/10 evening and 30/10 early morning (see Git commit times). Statuses were updated on 01/11, so the drop "
+    "to 10 h appears after the Sprint end. Impact: the board could not be used to see progress or risk (R01) "
+    "during the Sprint, and the artefacts were late (issue I-01). Remaining 10 h = T02, T12, T13, T14. "
+    "Actual hours are not logged yet (EVM AC = TBD)."
+)
 
 UNDONE = [
     ("TC-F1 hosted run", "18 of 24 test cases not yet run by a team member on https://pagetunnel.vercel.app/ "
      "(5 Pass, 1 Partial so far)", "Cases need typed passwords or a customer session; AI may not enter them",
      "Team runs them before Review 2 – TBD owner"),
-    ("Jira actuals", "Completed Work hours and burndown not exported", TBD, TBD),
+    ("S1-T02", "Planning Poker voting round not held (SP are PO estimates)", "Time pressure; estimates set by PO alone",
+     "Hold a real vote at Sprint Planning 2 and log it (AI-assisted proposal)"),
+    ("S1-T13", "Workbook c2 and Report c3 not submitted by 29/10 23:59", "Work started late; issue I-01",
+     "Submit S1 files as soon as possible; carry lesson to S2"),
+    ("S1-T14", "Review/Retro 1 preparation – status not confirmed", TBD, TBD),
+    ("Jira actuals", "Time spent not logged on any S1 task", "Board not used during the Sprint",
+     "Each member logs real hours with the real date (AI-assisted proposal)"),
 ]
 
 ACTIONS_PROPOSED = [

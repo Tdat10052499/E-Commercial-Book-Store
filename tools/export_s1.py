@@ -98,13 +98,22 @@ def workbook(target):
     add_sheet(wb, "ReleasePlan", "pm/pmp/03-master-release-plan.md", note=plan_note)
     add_sheet(wb, "S1_Backlog", "pm/sprints/S1/sprint-backlog.md", note=plan_note)
     burn = wb.create_sheet("Burndown")
-    burn.append(["Day", "Date", "Ideal remaining (h, plan)", "Actual remaining (h, Jira)"])
+    burn.append(["Day", "Date", "Ideal remaining (h, plan)", "Remaining by Jira status (h)", "Note"])
     days = ["Fri 23/10", "Mon 26/10", "Tue 27/10", "Wed 28/10", "Thu 29/10"]
     total = 48
     for i, d in enumerate(days):
-        burn.append([i + 1, d, round(total * (1 - (i + 1) / len(days)), 1), "TBD"])
+        burn.append([i + 1, d, round(total * (1 - i / (len(days) - 1)), 1), 48,
+                     "No task moved in Jira during the Sprint"])
+    burn.append(["after", "Sun 01/11", None, 10, "Statuses updated 01/11 23:21 (T02, T12, T13, T14 not Done)"])
     burn.append([])
-    burn.append(["Ideal line uses the proposed 48 h; actual values must come from Jira Completed Work."])
+    burn.append(["Source: Jira ECBS sprint id 5, snapshot pm/sprints/S1/jira-snapshot-2026-11-01.md (AI-assisted)."])
+    burn.append(["Time spent is not logged in Jira yet: actual hours (EVM AC) = TBD until members log work."])
+    png = ROOT / "pm" / "sprints" / "S1" / "evidence" / "burndown-S1.png"
+    if png.exists():
+        from openpyxl.drawing.image import Image as XLImage
+        img = XLImage(str(png))
+        img.width, img.height = 750, 380
+        burn.add_image(img, "G2")
     add_sheet(wb, "RiskRegister", "pm/pmp/05-risk-plan.md", pick=[1])
     add_sheet(wb, "IssueLog", "pm/pmp/05-risk-plan.md", pick=[2])
     add_sheet(wb, "ChangeLog", "pm/change/change-log.md")
