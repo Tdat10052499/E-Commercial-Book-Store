@@ -10,13 +10,30 @@ from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 
+from docx_style import style_docx
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "deliverables" / "S1"
 PREFIX = "HK261_SPM_FP_Team6_"
+C1_COVER = {
+    "school": "VAN LANG UNIVERSITY",
+    "faculty": "FACULTY OF INFORMATION TECHNOLOGY",
+    "course": "Software Project Management (72ITSE41503) – Final Project, Semester 261",
+    "project": "E-COMMERCIAL BOOK STORE – RELEASE 1.0",
+    "title": "PROJECT MANAGEMENT PLAN",
+    "version": "Version 1.0 (Sprint 1 baseline)",
+    "lines": [
+        "Team 6 – Page Turners",
+        "Hồ Du Tuấn Đạt (2374802010097) – Developer, Sprint Leader S1 & S3",
+        "Nguyễn Minh Chính (2275106050051) – Product Owner, Developer, Sprint Leader S2",
+        "Sponsor / Customer: Dr. Bùi Minh Phụng",
+    ],
+    "date": "Ho Chi Minh City, October 2026",
+}
 
 
-def pandoc(sources, target, title):
-    cmd = ["pandoc", "--from", "gfm", "--toc", "--metadata", f"title={title}", "-o", str(target)]
+def pandoc(sources, target, title, toc=True):
+    cmd = ["pandoc", "--from", "gfm", "--metadata", f"title={title}", "-o", str(target)] + (["--toc"] if toc else [])
     subprocess.run(cmd + [str(ROOT / s) for s in sources], check=True)
 
 
@@ -99,7 +116,9 @@ def workbook(target):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     pmp = sorted(str(p.relative_to(ROOT)) for p in (ROOT / "pm" / "pmp").glob("0*.md"))
-    pandoc(pmp, OUT / f"{PREFIX}c1_ProjectPlan.docx", "Project Management Plan v1.0 – Team 6 Page Turners")
+    c1 = OUT / f"{PREFIX}c1_ProjectPlan.docx"
+    pandoc(pmp, c1, "Project Management Plan v1.0 – Team 6 Page Turners", toc=False)
+    style_docx(c1, "HK261 SPM – Team 6 Page Turners – Project Management Plan v1.0", cover=C1_COVER)
     report = ["pm/sprints/S1/sprint-report.md", "pm/sprints/S1/sprint-backlog.md", "pm/sprints/S1/daily-log.md",
               "pm/sprints/S1/test-cases-F1.md", "pm/sprints/S1/review-retro.md"]
     pandoc(report, OUT / f"{PREFIX}c3_SprintReport_S1.docx", "Sprint 1 Report – Team 6 Page Turners")
