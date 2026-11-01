@@ -6,6 +6,8 @@
 - Tables: full grid borders, shaded bold header row repeated on each page, 10.5 pt text
 - Header with document name, footer with page number
 """
+import re
+
 from docx import Document
 from docx.enum.section import WD_ORIENT
 from docx.enum.table import WD_TABLE_ALIGNMENT
@@ -142,7 +144,7 @@ def _page(doc, header_text, cover=None):
         s.left_margin, s.right_margin = Cm(3), Cm(2)
         s.different_first_page_header_footer = bool(cover)
         hp = s.header.paragraphs[0]
-        hp.text = header_text
+        hp.text = plain_text(header_text)
         hp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
         for r in hp.runs:
             _font(r, size=9, color=RGBColor(0x66, 0x66, 0x66))
@@ -216,13 +218,47 @@ def _toc_only(doc):
             body[0].addprevious(p._p)
 
 
-def style_docx(path, header_text, cover=None):
+SOURCES = {"03": "FP Brief", "04": "TA Baseline", "05": "Gap Analysis", "06": "Status", "07": "CR-06"}
+SYMBOLS = [("→", "->"), ("–", "-"), ("−", "-"), ("·", ","), ("×", "x"), ("÷", "/"), ("≥", ">="),
+           ("≤", "<="), ("…", "..."), ("≈", "~"), ("§", "Sec. ")]
+
+
+def _cite(m):
+    inner = m.group(1)
+    inner = re.sub(r"^(0[3-7])\b", lambda k: SOURCES[k.group(1)], inner)
+    inner = re.sub(r"#(\d)", r"item \1", inner)
+    return "[" + inner + "]"
+
+
+def plain_text(text):
+    """Readable ASCII-style text: no section signs or math/arrow symbols."""
+    text = re.sub(r"\[([^\]]*(?:§|#)[^\]]*)\]", _cite, text)
+    for a, b in SYMBOLS:
+        text = text.replace(a, b)
+    return re.sub(r"Sec\. +", "Sec. ", text)
+
+
+def _plain(doc):
+    parts = list(doc.paragraphs)
+    for t in doc.tables:
+        for row in t.rows:
+            for cell in row.cells:
+                parts += cell.paragraphs
+    for p in parts:
+        for r in p.runs:
+            if r.text:
+                r.text = plain_text(r.text)
+
+
+def style_docx(path, header_text, cover=None, plain=True):
     doc = Document(path)
     _styles(doc)
     if cover:
         _cover(doc, cover)
     else:
         _toc_only(doc)
+    if plain:
+        _plain(doc)
     _tables(doc)
     _runs(doc)
     _page(doc, header_text, cover)
