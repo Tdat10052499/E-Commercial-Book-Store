@@ -4,8 +4,8 @@
 |---|---|
 | Team | Team 6 "Page Turners" |
 | Sprint | S1, 23/10 – 29/10/2026 |
-| Sprint Leader | Hồ Du Tuấn Đạt *(to confirm)* |
-| Product Owner | Nguyễn Minh Chính *(to confirm)* |
+| Sprint Leader | Hồ Du Tuấn Đạt |
+| Product Owner | Nguyễn Minh Chính |
 | Repository | https://github.com/Tdat10052499/E-Commercial-Book-Store |
 | Jira board | TBD |
 | Hosted URL | TBD |

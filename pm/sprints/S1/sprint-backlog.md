@@ -1,6 +1,6 @@
 # Sprint 1 Backlog (`S1_Backlog`)
 
-**Sprint:** S1 – Plan baseline & F1 · 23/10 – 29/10/2026 · **Leader:** Hồ Du Tuấn Đạt *(to confirm)* · **PO:** Nguyễn Minh Chính *(to confirm)*
+**Sprint:** S1 – Plan baseline & F1 · 23/10 – 29/10/2026 · **Leader:** Hồ Du Tuấn Đạt · **PO:** Nguyễn Minh Chính
 
 ## Version history
 | Version | Date | Author | Change |
@@ -14,12 +14,12 @@ By 29/10/2026, on the hosted URL: a visitor can register and log in/out; an admi
 ## Capacity
 | Member | Available days | Focus h/day | Capacity (h) |
 |---|---|---|---|
-| Hồ Du Tuấn Đạt | TBD | TBD | TBD |
-| Nguyễn Minh Chính | TBD | TBD | TBD |
-| **Total** | | | **TBD** (scenario 40 h, PMP-3 §3.5) |
+| Hồ Du Tuấn Đạt | 5 | 4 | 20 (plan) |
+| Nguyễn Minh Chính | 5 | 4 | 20 (plan) |
+| **Total** | | | **40 (plan)** – `plan/INPUTS.md` §2, PO 30/10/2026 |
 
 ## Selected items
-US-01, US-02, US-03, US-04, NFR-01, NFR-03 (SP TBD → velocity S1 plan = Σ SP).
+US-01 (3), US-02 (3), US-03 (5), US-04 (3), NFR-01 (2), NFR-03 (2) = **18 SP → planned velocity S1 = 18 SP** (PO estimates, `planning-poker-log.md` v1.1). Actual velocity = SP of these items that meet the DoD at Review 1.
 
 ## Tasks (each ≤ 1 person-day = 8 h)
 | Task | Item | Description | Owner | Est. h (plan) | Actual h (Jira) | Status |
@@ -40,4 +40,4 @@ US-01, US-02, US-03, US-04, NFR-01, NFR-03 (SP TBD → velocity S1 plan = Σ SP)
 | S1-T14 | PM | Review/Retro 1 preparation | Đạt | 2 | TBD | TBD |
 | | | **Total (plan)** | Đạt 24 · Chính 24 | **48** | **TBD** | |
 
-> **Check against capacity:** 48 h (plan) exceeds the 40 h scenario. If confirmed capacity is lower than 48 h, the PO must move tasks or accept the overload explicitly (rubric S1: selected work must match velocity/capacity).
+> **Check against capacity:** 48 h (plan) exceeds the 40 h capacity by 8 h (20 %). **PO note (30/10/2026):** Sprint 1 had already ended when capacity was confirmed, so the overload is recorded, not hidden: it is one cause of issue I-01 (late Sprint 1 artefacts). Lesson for Sprint Planning 2: select work only up to 40 h.
