@@ -73,12 +73,19 @@ def _borders(tbl):
         e.set(qn("w:sz"), "4")
         e.set(qn("w:color"), "808080")
         b.append(e)
-    for old in tblPr.findall(qn("w:tblBorders")):
-        tblPr.remove(old)
-    tblPr.append(b)
+    for tag in ("w:tblBorders", "w:tblLayout"):
+        for old in tblPr.findall(qn(tag)):
+            tblPr.remove(old)
     lay = OxmlElement("w:tblLayout")
     lay.set(qn("w:type"), "autofit")
-    tblPr.append(lay)
+    later = [tblPr.find(qn(t)) for t in ("w:shd", "w:tblCellMar", "w:tblLook", "w:tblCaption", "w:tblDescription")]
+    later = [e for e in later if e is not None]
+    if later:
+        later[0].addprevious(b)
+        b.addnext(lay)
+    else:
+        tblPr.append(b)
+        tblPr.append(lay)
     w = tblPr.find(qn("w:tblW"))
     if w is None:
         w = OxmlElement("w:tblW")
@@ -96,15 +103,24 @@ def _shade(cell, fill):
     tcPr.append(shd)
 
 
+def format_table(tbl):
+    _format_table(tbl)
+
+
 def _tables(doc):
     for tbl in doc.tables:
+        _format_table(tbl)
+
+
+def _format_table(tbl):
+    if True:
         tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
         _borders(tbl)
         for i, row in enumerate(tbl.rows):
             if i == 0:
                 trPr = row._tr.get_or_add_trPr()
-                h = OxmlElement("w:tblHeader")
-                trPr.append(h)
+                if trPr.find(qn("w:tblHeader")) is None:
+                    trPr.append(OxmlElement("w:tblHeader"))
             for cell in row.cells:
                 if i == 0:
                     _shade(cell, HEADER_FILL)
@@ -143,6 +159,8 @@ def _page(doc, header_text, cover=None):
         s.top_margin = s.bottom_margin = Cm(2)
         s.left_margin, s.right_margin = Cm(3), Cm(2)
         s.different_first_page_header_footer = bool(cover)
+        if not header_text:
+            continue
         hp = s.header.paragraphs[0]
         hp.text = plain_text(header_text)
         hp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
@@ -250,12 +268,12 @@ def _plain(doc):
                 r.text = plain_text(r.text)
 
 
-def style_docx(path, header_text, cover=None, plain=True):
+def style_docx(path, header_text, cover=None, plain=True, toc=True):
     doc = Document(path)
     _styles(doc)
     if cover:
         _cover(doc, cover)
-    else:
+    elif toc:
         _toc_only(doc)
     if plain:
         _plain(doc)

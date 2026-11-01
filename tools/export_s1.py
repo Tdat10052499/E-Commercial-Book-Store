@@ -119,9 +119,7 @@ def main():
     c1 = OUT / f"{PREFIX}c1_ProjectPlan.docx"
     pandoc(pmp, c1, "Project Management Plan v1.0", toc=False)
     style_docx(c1, "HK261 SPM – Team 6 Page Turners – Project Management Plan v1.0")
-    report = ["pm/sprints/S1/sprint-report.md", "pm/sprints/S1/sprint-backlog.md", "pm/sprints/S1/daily-log.md",
-              "pm/sprints/S1/test-cases-F1.md", "pm/sprints/S1/review-retro.md"]
-    pandoc(report, OUT / f"{PREFIX}c3_SprintReport_S1.docx", "Sprint 1 Report – Team 6 Page Turners")
+    # c3 is built on the lecturer template by tools/export_s1_templates.py
     pandoc(["pm/pmp/03-master-release-plan.md"], OUT / f"{PREFIX}MasterPlan_Timeline.docx",
            "Master Plan and Timeline – Team 6 Page Turners")
     workbook(OUT / f"{PREFIX}c2_SprintBacklog_S1.xlsx")

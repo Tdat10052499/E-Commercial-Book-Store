@@ -103,6 +103,167 @@ def review_retro_s1():
     return out
 
 
+
+# ---------------------------------------------------------------- c3 report
+import re
+
+from docx.shared import Cm, Pt
+
+from docx.enum.text import WD_BREAK
+from docx.oxml.ns import qn
+
+import docx_style
+
+C3_PARTS = [
+    ("Sprint status (Green / Amber / Red)", "pm/sprints/S1/sprint-report.md"),
+    ("Sprint Planning 1 – S1_Backlog", "pm/sprints/S1/sprint-backlog.md"),
+    ("Daily Scrum log", "pm/sprints/S1/daily-log.md"),
+    ("Test cases F1 (from Acceptance Criteria)", "pm/sprints/S1/test-cases-F1.md"),
+]
+
+UNDONE = [
+    ("TC-F1 hosted run", "18 of 24 test cases not yet run by a team member on https://pagetunnel.vercel.app/ "
+     "(5 Pass, 1 Partial so far)", "Cases need typed passwords or a customer session; AI may not enter them",
+     "Team runs them before Review 2 – TBD owner"),
+    ("Jira actuals", "Completed Work hours and burndown not exported", TBD, TBD),
+]
+
+ACTIONS_PROPOSED = [
+    ("Log Daily Scrum every working day before 22:00 in the team channel (proposed)", "Leader S2", "Each day of S2",
+     "5/5 entries per member in daily-log"),
+    ("Draft Sprint files by Wednesday 20:00, submit Thursday before 21:00 (proposed)", "Leader S2", "04/11",
+     "E-learning timestamp before 23:59 05/11"),
+    ("Log Completed Work in Jira the same day a task moves (proposed)", "Both", "Daily",
+     "100 % of Done tasks have hours"),
+]
+
+
+def _body_md(path):
+    """Markdown body without its H1 title (the template supplies the heading)."""
+    lines = (ROOT / path).read_text(encoding="utf-8").splitlines()
+    if lines and lines[0].startswith("# "):
+        lines = lines[1:]
+    if "## Contents" in lines:  # file map of the old Markdown report, not needed inside the template
+        k = lines.index("## Contents")
+        j = next((n for n in range(k + 1, len(lines)) if lines[n].startswith("## ")), len(lines))
+        lines = lines[:k] + lines[j:]
+    return "\n".join(lines) + "\n"
+
+
+def _fill_rows(table, rows, start=1):
+    while len(table.rows) - start < len(rows):
+        table.add_row()
+    for row, vals in zip(table.rows[start:], rows):
+        for cell, v in zip(row.cells, vals):
+            set_cell(cell, v)
+
+
+def _md_inline(paragraph, text, size=None):
+    """Add text with **bold** spans; strip `code` ticks and link syntax."""
+    text = docx_style.plain_text(re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r"\1 (\2)", text).replace("`", ""))
+    for k, part in enumerate(re.split(r"\*\*", text)):
+        if part:
+            run = paragraph.add_run(part.replace("*", ""))
+            run.bold = k % 2 == 1
+            if size:
+                run.font.size = Pt(size)
+
+
+def _md_into(d, md):
+    lines = md.splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i].rstrip()
+        if not line.strip():
+            i += 1
+            continue
+        if line.startswith("|"):
+            rows = []
+            while i < len(lines) and lines[i].startswith("|"):
+                cells = [c.strip() for c in lines[i].strip().strip("|").split("|")]
+                if not all(re.fullmatch(r":?-{3,}:?", c) for c in cells if c):
+                    rows.append(cells)
+                i += 1
+            ncol = max(len(r) for r in rows)
+            t = d.add_table(rows=len(rows), cols=ncol)
+            t.style = "Table Grid" if "Table Grid" in [s.name for s in d.styles] else None
+            for r_i, row in enumerate(rows):
+                for c_i in range(ncol):
+                    cell = t.cell(r_i, c_i)
+                    cell.text = ""
+                    _md_inline(cell.paragraphs[0], row[c_i] if c_i < len(row) else "", 10)
+                    if r_i == 0:
+                        for run in cell.paragraphs[0].runs:
+                            run.bold = True
+            docx_style.format_table(t)
+            d.add_paragraph()
+            continue
+        m = re.match(r"^(#{2,4})\s+(.*)", line)
+        if m:
+            d.add_paragraph(docx_style.plain_text(m.group(2).replace("`", "")), style="Heading 3")
+        elif re.match(r"^\s*([-*]|\d+\.)\s+", line):
+            p = d.add_paragraph()
+            p.paragraph_format.left_indent = Cm(0.6)
+            _md_inline(p, "• " + re.sub(r"^\s*([-*]|\d+\.)\s+", "", line))
+        elif line.startswith(">"):
+            p = d.add_paragraph()
+            _md_inline(p, line.lstrip("> "))
+            for run in p.runs:
+                run.italic = True
+        else:
+            p = d.add_paragraph()
+            _md_inline(p, line)
+        i += 1
+
+
+def c3_report():
+    out = ROOT / "deliverables" / "S1" / f"{PREFIX}c3_SprintReport_S1.docx"
+    review_retro_s1()  # refresh the record
+    d = docx.Document(ROOT / "pm" / "sprints" / "S1" / f"{PREFIX}SprintReview_Retro_S1.docx")
+    t = d.tables
+    _fill_rows(t[4], [("1", TBD, TBD, TBD, TBD)])  # replaces the template's example row
+    _fill_rows(t[7], [(TBD, TBD, TBD)])
+    _fill_rows(t[5], UNDONE)
+    for s_ in d.sections:  # template header placeholder "Team#"
+        for hp in s_.header.paragraphs + s_.first_page_header.paragraphs:
+            for r in hp.runs:
+                if "Team#" in r.text:
+                    r.text = r.text.replace("Team#", "Team6")
+    _fill_rows(t[9], [(str(i), *a) for i, a in enumerate(ACTIONS_PROPOSED, 1)])
+    for p in d.paragraphs:  # title: this file is the Sprint Report
+        if "SPRINT REVIEW & SPRINT RETROSPECTIVE RECORD" in p.text:
+            for r in p.runs:
+                r.text = r.text.replace("SPRINT REVIEW & SPRINT RETROSPECTIVE RECORD",
+                                        "SPRINT REPORT – SPRINT REVIEW & RETROSPECTIVE")
+
+    # drop the template's guidance appendix ("PHỤ LỤC 1 …") – it is instructions, not a report section
+    body = d.element.body
+    cut = None
+    for el in body:
+        if el.tag == qn("w:p") and "".join(el.itertext()).strip().startswith("PHỤ LỤC 1"):
+            cut = el
+            break
+    if cut is not None:
+        el = cut
+        while el is not None and el.tag != qn("w:sectPr"):
+            nxt = el.getnext()
+            body.remove(el)
+            el = nxt
+
+    # PART IV: Sprint data required by [03 §7] (Planning, Daily log, test cases, Status),
+    # written with python-docx into the template so it keeps the template's styles.
+    sect = body.find(qn("w:sectPr"))
+    h = d.add_paragraph("PART IV – SPRINT 1 DATA", style="Heading 1")
+    h.paragraph_format.page_break_before = True
+    for i, (title, path) in enumerate(C3_PARTS, 1):
+        d.add_paragraph(docx_style.plain_text(f"IV.{i}. {title}"), style="Heading 2")
+        _md_into(d, _body_md(path))
+    body.remove(sect)
+    body.append(sect)
+    d.save(out)
+    return out
+
+
 if __name__ == "__main__":
-    for f in (eval_s1(), review_retro_s1()):
+    for f in (eval_s1(), c3_report()):
         print("wrote", f.relative_to(ROOT))
