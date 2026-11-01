@@ -24,7 +24,7 @@
 | Mục | Giá trị |
 |---|---|
 | Repo | https://github.com/Tdat10052499/E-Commercial-Book-Store |
-| Jira board | TBD |
+| Jira board | https://tdat100524.atlassian.net – project ECBS, board 2 (Đạt, 01/11/2026) |
 | GV đã được mời vào repo / Jira | TBD / TBD |
 | Stack (P04) | Next.js + Vercel + Supabase – Đạt chốt 30/10/2026 |
 | URL hosting | https://pagetunnel.vercel.app/ (Vercel; deployed by Đạt, URL provided by Chính 30/10/2026) |
