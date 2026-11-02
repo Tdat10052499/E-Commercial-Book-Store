@@ -26,8 +26,9 @@ TEAM = "Team 6 – Page Turners"
 LEADER = ("2374802010097", "Hồ Du Tuấn Đạt", "Sprint Leader S1 + Developer")
 PO = ("2275106050051", "Nguyễn Minh Chính", "Product Owner + Developer")
 
-# Planned task hours per owner from pm/sprints/S1/sprint-backlog.md (PO version, 30/10/2026)
-PLAN_HOURS = {LEADER[1]: 24, PO[1]: 24}
+# Planned task hours per owner from pm/sprints/S1/sprint-backlog.md v1.2 (T04, T09, T11 reassigned to Đạt 02/11)
+PLAN_HOURS = {LEADER[1]: 36, PO[1]: 12}
+ACTUAL_HOURS = {LEADER[1]: 13.5, PO[1]: 6}  # Jira Time spent, re-read 02/11/2026
 
 # Committed items: ID, title, SP (PO estimate), number of ACs, automated TC pass, hosted TC pass
 ITEMS = [
@@ -55,8 +56,8 @@ def eval_s1():
         ws.cell(row, 4, PLAN_HOURS[member[1]] / total)
         for col in (5, 6, 7):  # on-time, contribution, meetings: Leader's judgement
             ws.cell(row, col).value = None
-        ws.cell(row, 12, f"Workload = planned task hours {PLAN_HOURS[member[1]]}/{total} h (S1 Sprint Backlog). "
-                         "Columns E–G: TBD – Leader to enter.")
+        ws.cell(row, 12, f"Workload = planned task hours {PLAN_HOURS[member[1]]}/{total} h (S1 Sprint Backlog v1.2); "
+                         f"actual {ACTUAL_HOURS[member[1]]} h in Jira. Columns E–G: Leader S1 to enter.")
     for col in range(4, 8):  # remove template example values on row 12
         ws.cell(12, col).value = None
     ws["A24"] = ("Note: workload uses PLANNED hours from the task assignment, as the scoring guide says. "
@@ -122,20 +123,20 @@ from docx.oxml.ns import qn
 import docx_style
 
 C3_PARTS = [
-    ("Sprint status (Green / Amber / Red)", "pm/sprints/S1/sprint-report.md"),
+    ("Sprint status (Green / Amber / Red) and EVM", "pm/sprints/S1/sprint-report.md"),
     ("Sprint Planning 1 – S1_Backlog", "pm/sprints/S1/sprint-backlog.md"),
     ("Daily Scrum log", "pm/sprints/S1/daily-log.md"),
     ("Test cases F1 (from Acceptance Criteria)", "pm/sprints/S1/test-cases-F1.md"),
-    ("Jira board snapshot (01/11/2026)", "pm/sprints/S1/jira-snapshot-2026-11-01.md"),
+    ("Jira board snapshot (02/11/2026)", "pm/sprints/S1/jira-snapshot-2026-11-02.md"),
 ]
 
 BURNDOWN_NOTE = (
-    "Explanation (AI-assisted draft, team to confirm): the remaining line stays flat at 48 h for the whole Sprint "
-    "because no task was moved on the Jira board between 23/10 and 29/10; the work itself was done mostly on "
-    "29/10 evening and 30/10 early morning (see Git commit times). Statuses were updated on 01/11, so the drop "
-    "to 10 h appears after the Sprint end. Impact: the board could not be used to see progress or risk (R01) "
-    "during the Sprint, and the artefacts were late (issue I-01). Remaining 10 h = T02, T12, T13, T14. "
-    "Actual hours are not logged yet (EVM AC = TBD)."
+    "Explanation: the remaining line stays flat at 48 h for the whole Sprint because no task was moved on the "
+    "Jira board between 23/10 and 29/10. Git commit times show that most S1 work was done on 30/10, after the "
+    "Sprint end (29/10 23:59). Statuses were updated on 01/11, so the drop to 10 h appears after the Sprint end; "
+    "the remaining 10 h are T02, T12, T13 and T14. Actual hours (19.5 h: Đạt 13.5, Chính 6) were reconstructed by "
+    "members and logged in Jira on 02/11. Impact: the board could not show progress or risk R01 during the Sprint, "
+    "and the artefacts were late (issue I-01). Action A3: move cards and log hours the same day."
 )
 
 UNDONE = [
@@ -146,9 +147,10 @@ UNDONE = [
      "Hold a real vote at Sprint Planning 2 and log it (AI-assisted proposal)"),
     ("S1-T13", "Workbook c2 and Report c3 not submitted by 29/10 23:59", "Work started late; issue I-01",
      "Submit S1 files as soon as possible; carry lesson to S2"),
-    ("S1-T14", "Review/Retro 1 preparation – status not confirmed", TBD, TBD),
-    ("Jira actuals", "Time spent not logged on any S1 task", "Board not used during the Sprint",
-     "Each member logs real hours with the real date (AI-assisted proposal)"),
+    ("S1-T14", "Review/Retro 1 preparation – To Do in Jira, 0 h logged", "Work started late; issue I-01",
+     "Close after the Review/Retro record is completed"),
+    ("F1 stories (18 SP)", "US-01…04, NFR-01, NFR-03 In Review; not yet accepted against the Story DoD, so EV = 0",
+     "Hosted run and PO acceptance pending", "PO accepts after the hosted run; counted in S2 velocity if accepted then"),
 ]
 
 ACTIONS_PROPOSED = [
@@ -175,7 +177,7 @@ def _body_md(path):
 
 def _fill_rows(table, rows, start=1):
     while len(table.rows) - start < len(rows):
-        table.add_row()
+        table.rows[-1]._tr.addnext(copy.deepcopy(table.rows[-1]._tr))  # clone keeps template borders
     for row, vals in zip(table.rows[start:], rows):
         for cell, v in zip(row.cells, vals):
             set_cell(cell, v)

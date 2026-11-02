@@ -20,9 +20,9 @@ TBD – export from Jira; explain flat or rising segments.
 ## 4. Planned vs actual hours
 | | Plan (h) | Actual (h, Jira Completed Work) |
 |---|---|---|
-| Đạt | 24 (proposal) | TBD |
-| Chính | 24 (proposal) | TBD |
-| Total | 48 | TBD |
+| Đạt | 36 (after reassignment of T04, T09, T11) | 13.5 |
+| Chính | 12 | 6 |
+| Total | 48 | 19.5 |
 
 ## 5. Risks and issues
 Top risks R01, R03, R05 (PMP-5); issue I-01 (late S1 artefacts).
