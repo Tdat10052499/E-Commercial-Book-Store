@@ -40,7 +40,7 @@ Sprints run Friday → Thursday, one week each, N = 3 [03 §5]. Rotation for a 2
 | Sprint | Dates | Leader | Sprint Goal (plan) | Increment | PM focus (rubric S4) |
 |---|---|---|---|---|---|
 | S1 – Plan baseline & F1 | 23/10 – 29/10 | Hồ Du Tuấn Đạt | "Users can register, log in and log out; an administrator can create and lock accounts; non-admins are blocked from admin functions on the server." | F1 | PMP v1.0 |
-| S2 – Execution, monitoring & change | 30/10 – 05/11 | Nguyễn Minh Chính (PO) | "Admins manage books, categories and authors (soft delete), and customers browse 12 books per page, newest first, on any device." (+ CR-06 if approved) | F2, F3 (+CR-06) | CR + risk/issue |
+| S2 – Execution, monitoring & change | 30/10 – 05/11 | Nguyễn Minh Chính (PO) | "Admins manage books, categories and authors (soft delete), and customers browse 12 books per page, newest first, on any device." + US-24 Store Staff role (CR-06 approved 30/10) | F2, F3 + US-24 (CR-06) | CR + risk/issue |
 | S3 – Complete & acceptance | 06/11 – 12/11 | Hồ Du Tuấn Đạt | "Customers open book details and search/filter by title, author, category and price range together with pagination; Release v1.0 passes UAT." | F4, F5 | UAT + Release |
 | Closure | 13/11 – 17/11 | Both | Final Report, EVM, Lessons Learned, slides, video | Release 1.0 online | – |
 
@@ -102,7 +102,7 @@ Internal windows are the team's proposal and may be adjusted at Sprint Planning.
 | P14 | Update baseline per CCB, tag | 30/10 | 31/10 | PO | CCB decision |
 | P15 | Build F2 (+ seed ≥30 books) | 31/10 | 03/11 | Both | P13 |
 | P16 | Build F3 | 02/11 | 04/11 | Both | P15 |
-| P17 | Build CR-06 (if approved) | 01/11 | 04/11 | Both | P14 |
+| P17 | Build CR-06 US-24 (approved 30/10, Option B) | 01/11 | 04/11 | Both | P14 |
 | P18 | Test cases F2, F3, CR-06 + regression F1 | 03/11 | 05/11 | Both | P15–P17 |
 | P19 | Weekly Status, risk & issue log | 30/10 | 05/11 | Leader | continuous |
 | P20 | c4 Change Request form | 31/10 | 05/11 | PO | P14 |
