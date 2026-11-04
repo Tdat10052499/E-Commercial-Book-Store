@@ -329,6 +329,10 @@ def c0_eval():
                          + ("10.5 h. " if name == CHINH else "TBD. ") + "Columns E–G: Leader S2 to enter.")
     for col in range(4, 8):
         ws.cell(12, col).value = None
+    from openpyxl.styles import Protection
+    for row in range(10, 14):  # the template protects the sheet; only the score cells are opened for the Leader
+        for col in (5, 6, 7):
+            ws.cell(row, col).protection = Protection(locked=False)
     ws["A24"] = ("Note: workload uses PLANNED hours from the task assignment, as the scoring guide says. "
                  "Leader S2 must enter E (0–1), F (0–10), G (0–1) before submission.")
     ws["A24"].font = Font(italic=True, color="B42318")
