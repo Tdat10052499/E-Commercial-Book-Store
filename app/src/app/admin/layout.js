@@ -12,8 +12,8 @@ export default async function AdminLayout({ children }) {
         <Link href="/admin">Dashboard</Link>
         <Link href="/admin/accounts">Accounts</Link>
         <span className="soon">Books · Sprint 2</span>
-        <span className="soon">Categories · Sprint 2</span>
-        <span className="soon">Authors · Sprint 2</span>
+        <Link href="/admin/categories">Categories</Link>
+        <Link href="/admin/authors">Authors</Link>
       </nav>
       <div className="admin-main">{children}</div>
     </div>
