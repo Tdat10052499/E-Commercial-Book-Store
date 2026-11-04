@@ -309,6 +309,9 @@ def c3_report():
 
 # ---------------------------------------------------------------- c0 eval
 def c0_eval():
+    out = OUT / f"{PREFIX}c0_Eval_S2.xlsx"
+    if out.exists() and load_workbook(out)["Eval"]["E10"].value is not None:
+        return out  # the Leader has entered the scores – never overwrite them
     wb = load_workbook(TPL / "FP_Template_Eval.xlsx")
     for name in wb.sheetnames:
         if name != "Eval":
