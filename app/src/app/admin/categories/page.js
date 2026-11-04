@@ -7,7 +7,8 @@ export const metadata = { title: 'Categories – Admin' };
 
 // US-08: add, rename and remove categories.
 export default async function CategoriesPage() {
-  await requireCatalogEditor('/admin/categories');
+  const user = await requireCatalogEditor('/admin/categories');
+  const canRemove = user.role === 'admin';
   const categories = await listCategories();
   return (
     <section>
@@ -19,7 +20,7 @@ export default async function CategoriesPage() {
           {categories.length === 0 ? <p className="muted">No categories yet.</p> : (
             <table className="table-stack">
               <thead><tr><th>Name</th><th>Visible books</th><th>Action</th></tr></thead>
-              <tbody>{categories.map((c) => <CategoryRow key={c.id} category={c} />)}</tbody>
+              <tbody>{categories.map((c) => <CategoryRow key={c.id} category={c} canRemove={canRemove} />)}</tbody>
             </table>
           )}
         </div>

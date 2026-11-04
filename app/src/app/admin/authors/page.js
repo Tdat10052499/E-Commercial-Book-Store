@@ -7,7 +7,8 @@ export const metadata = { title: 'Authors – Admin' };
 
 // US-09: add, edit and remove authors.
 export default async function AuthorsPage() {
-  await requireCatalogEditor('/admin/authors');
+  const user = await requireCatalogEditor('/admin/authors');
+  const canRemove = user.role === 'admin';
   const authors = await listAuthors();
   return (
     <section>
@@ -19,7 +20,7 @@ export default async function AuthorsPage() {
           {authors.length === 0 ? <p className="muted">No authors yet.</p> : (
             <table className="table-stack">
               <thead><tr><th>Author</th><th>Visible books</th><th>Action</th></tr></thead>
-              <tbody>{authors.map((a) => <AuthorRow key={a.id} author={a} />)}</tbody>
+              <tbody>{authors.map((a) => <AuthorRow key={a.id} author={a} canRemove={canRemove} />)}</tbody>
             </table>
           )}
         </div>

@@ -1,6 +1,6 @@
 'use server';
 import { revalidatePath } from 'next/cache';
-import { requireCatalogEditor } from '@/lib/current-user';
+import { requireAdmin, requireCatalogEditor } from '@/lib/current-user';
 import { createCategory, renameCategory, removeCategory } from '@lib/catalog';
 
 const PATH = '/admin/categories';
@@ -25,8 +25,9 @@ export async function renameCategoryAction(_prev, formData) {
   return { message: `Renamed to “${category.name}”` };
 }
 
+// Remove stays Admin-only: CR-06 team assumption until the Sponsor answers (Staff may add/edit only).
 export async function removeCategoryAction(formData) {
-  await requireCatalogEditor(PATH);
+  await requireAdmin(PATH);
   const result = await removeCategory(formData.get('id'));
   if (result.ok) revalidatePath(PATH);
   return result;

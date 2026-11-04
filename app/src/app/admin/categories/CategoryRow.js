@@ -3,7 +3,7 @@ import { useActionState, useState, useTransition } from 'react';
 import { CATALOG_LIMITS, validateCategory } from '@lib/catalog-validation';
 import { renameCategoryAction, removeCategoryAction } from './actions';
 
-export default function CategoryRow({ category }) {
+export default function CategoryRow({ category, canRemove = true }) {
   const [state, formAction, saving] = useActionState(renameCategoryAction, {});
   const [clientErrors, setClientErrors] = useState({});
   const [removeError, setRemoveError] = useState(null);
@@ -43,7 +43,7 @@ export default function CategoryRow({ category }) {
       </td>
       <td data-label="Books">{category.book_count}</td>
       <td data-label="Action">
-        <button type="button" className="danger" onClick={onRemove} disabled={removing}>{removing ? 'Removing…' : 'Remove'}</button>
+        {canRemove && <button type="button" className="danger" onClick={onRemove} disabled={removing}>{removing ? 'Removing…' : 'Remove'}</button>}
         {removeError && <p className="error" role="alert">{removeError}</p>}
       </td>
     </tr>

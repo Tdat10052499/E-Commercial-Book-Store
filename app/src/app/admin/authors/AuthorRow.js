@@ -3,7 +3,7 @@ import { useActionState, useState, useTransition } from 'react';
 import { CATALOG_LIMITS, validateAuthor } from '@lib/catalog-validation';
 import { updateAuthorAction, removeAuthorAction } from './actions';
 
-export default function AuthorRow({ author }) {
+export default function AuthorRow({ author, canRemove = true }) {
   const [state, formAction, saving] = useActionState(updateAuthorAction, {});
   const [clientErrors, setClientErrors] = useState({});
   const [removeError, setRemoveError] = useState(null);
@@ -48,7 +48,7 @@ export default function AuthorRow({ author }) {
       <td data-label="Action">
         <div className="row-actions">
           <button type="submit" form={formId} className="btn-ghost small" disabled={saving}>{saving ? 'Saving…' : 'Save'}</button>
-          <button type="button" className="danger" onClick={onRemove} disabled={removing}>{removing ? 'Removing…' : 'Remove'}</button>
+          {canRemove && <button type="button" className="danger" onClick={onRemove} disabled={removing}>{removing ? 'Removing…' : 'Remove'}</button>}
         </div>
         {removeError && <p className="error" role="alert">{removeError}</p>}
       </td>

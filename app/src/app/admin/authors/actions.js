@@ -1,6 +1,6 @@
 'use server';
 import { revalidatePath } from 'next/cache';
-import { requireCatalogEditor } from '@/lib/current-user';
+import { requireAdmin, requireCatalogEditor } from '@/lib/current-user';
 import { createAuthor, updateAuthor, removeAuthor } from '@lib/catalog';
 
 const PATH = '/admin/authors';
@@ -26,8 +26,9 @@ export async function updateAuthorAction(_prev, formData) {
   return { message: `Saved “${author.name}”` };
 }
 
+// Remove stays Admin-only: CR-06 team assumption until the Sponsor answers (Staff may add/edit only).
 export async function removeAuthorAction(formData) {
-  await requireCatalogEditor(PATH);
+  await requireAdmin(PATH);
   const result = await removeAuthor(formData.get('id'));
   if (result.ok) revalidatePath(PATH);
   return result;
