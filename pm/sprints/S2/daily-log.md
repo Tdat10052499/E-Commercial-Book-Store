@@ -1,6 +1,6 @@
 # Sprint 2 – Daily Scrum Log
 
-Timebox ≤ 10 min; asynchronous allowed but must be logged [03 §4.2]. Channel: Slack #daily-standup, by 22:00 (PMP-2 §2.2). **Only real entries from the team are recorded here; AI does not invent past stand-ups.** Chính's 05/11 entry was drafted from the repo and Jira evidence and is posted by Chính in #daily-standup. If no stand-up happened on a day, write "No Daily held" and explain in Retro 2. Retro 1 action A1 asks for 5/5 entries per member.
+Timebox ≤ 10 min; asynchronous allowed but must be logged [03 §4.2]. Channel: **to be confirmed by the team** (c1 v1.0 says Slack #daily-standup; PMP-2 source says TBD) – open item I-05; until then this file is the log. **Only real entries from the team are recorded here; AI does not invent past stand-ups.** Chính's 05/11 entry was drafted from the repo and Jira evidence; posting it in the team channel waits for I-05. If no stand-up happened on a day, write "No Daily held" and explain in Retro 2. Retro 1 action A1 asks for 5/5 entries per member.
 
 | Date | Member | Yesterday | Today | Blockers | Hours logged in Jira |
 |---|---|---|---|---|---|

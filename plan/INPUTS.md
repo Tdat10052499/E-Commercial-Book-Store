@@ -8,7 +8,7 @@
 | Product Owner | Nguyễn Minh Chính | Nguyễn Minh Chính | 30/10/2026 |
 | Leader S1 / S2 / S3 | Hồ Du Tuấn Đạt / Nguyễn Minh Chính / Hồ Du Tuấn Đạt (quy tắc nhóm 2 người [03 §4.1]; Đạt đề xuất trong PMP v1.0) | Nguyễn Minh Chính | 30/10/2026 |
 | GitHub username của Chính | TBD | | |
-| Kênh Daily Scrum (Teams/Zalo) và giờ họp | TBD | | |
+| Kênh Daily Scrum (Teams/Zalo) và giờ họp | TBD – nhóm để lại, chốt ở Review/Retro 2 (06/11); xem issue I-05 | Nguyễn Minh Chính | 05/11/2026 |
 
 ## 2. Capacity (P01, cập nhật mỗi Sprint Planning)
 | Sprint | Thành viên | Giờ khả dụng | Ghi chú (ngày bận) |
