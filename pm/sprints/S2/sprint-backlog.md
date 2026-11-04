@@ -14,7 +14,7 @@ By 05/11/2026, on the hosted URL: an administrator can add, edit and hide books 
 ## Inputs for Planning 2 [03 §6.2-1]
 | Input | Value | Source |
 |---|---|---|
-| Actual velocity Sprint 1 (SP meeting DoD) | **0 SP** – the 6 F1 items (18 SP) are built and deployed but still *In Review*: the hosted test run (part 2) and PO acceptance are pending (Story DoD SD-1, SD-6) | Jira ECBS-104…109, `pm/sprints/S1/sprint-report.md` |
+| Actual velocity Sprint 1 (SP meeting DoD) | **0 SP** at Planning 2 – the 6 F1 items (18 SP) were built and deployed but still *In Review* (hosted test run part 2 and PO acceptance pending). **Update 05/11:** after the hosted run part 2, the PO accepted US-01…US-04 = **14 SP Done**; NFR-01 and NFR-03 (4 SP) wait for TC-F1-19 and TC-F1-24 | Jira ECBS-104…109, `pm/sprints/S1/test-cases-F1.md` v1.3 |
 | Planned velocity Sprint 1 | 18 SP | S1 Backlog |
 | Actual hours Sprint 1 | 19.5 h (Đạt 13.5 · Chính 6) vs 48 h plan | Jira worklogs |
 | CCB decision on CR-06 | Approve – Option B (phased: US-24 in S2, US-25 in S3) | `pm/change/change-log.md` |

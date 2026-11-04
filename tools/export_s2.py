@@ -58,8 +58,8 @@ UNDONE = [
      "Đạt, S2-T16…T20; if not Done, first item of S3 with US-25"),
     ("US-08, US-09, NFR-02, US-10, NFR-04", "Built and tested locally; not merged, not tested on the host",
      "Review, merge and hosted run left to the last day", "Merge PR #8, deploy, run S2-T23, PO acceptance"),
-    ("F1 (18 SP)", "Still In Review: hosted run part 2 not done", "Needs a team member to type passwords",
-     "Run part 2 on 05/11; PO accepts → counts in velocity"),
+    ("NFR-01, NFR-03 (F1, 4 SP)", "In Review: TC-F1-19 (hash in hosted DB) and TC-F1-24 (online on 17/11) not run",
+     "Needs Supabase access; date-bound", "Đạt shows the hash; TC-24 on 17/11. US-01…04 (14 SP) accepted 05/11"),
 ]
 
 PREV_ACTIONS = [
@@ -163,7 +163,7 @@ def c2_workbook():
         ("PSP (SP, plan)", 62, "Product Backlog v1.2 (baseline v1.1)"),
         ("n (Sprints completed)", 2, None),
         ("N (Sprints planned)", 3, None),
-        ("SP meeting DoD (cumulative)", 0, "Jira 05/11: F1 (18 SP) and S2 items In Review / To Do"),
+        ("SP meeting DoD (cumulative)", 14, "Jira 05/11: US-01…US-04 accepted by the PO after the hosted run (14 SP); NFR-01, NFR-03 and S2 items not Done"),
         ("Actual hours S1 (h)", 19.5, "Jira Time spent ECBS-90…103"),
         ("Actual hours S2 (h)", None, "TBD – Jira Time spent ECBS-124…146 (enter before upload)"),
         ("Actual hours (cumulative, h)", "=B12+N(B13)", "S1 + S2"),
@@ -177,8 +177,8 @@ def c2_workbook():
         ("EAC (VND)", '=IF(OR(B21="n/a",B21=0),"not meaningful (CPI = 0)",B7/B21)', "BAC / CPI"),
         ("ETC (VND)", '=IF(ISNUMBER(B22),B22-B17,"not meaningful (CPI = 0)")', "EAC − AC"),
         (None, None, None),
-        ("Reading: no item has passed the Story DoD, so EV = 0. Scenario only: if F1 (18 SP) and the 5 items in PR #8 "
-         "(14 SP) are accepted, EV = 26,400,000 × 32/62 = 13,625,806 VND and SPI = 0.77.", None, None),
+        ("Reading: SPI 0.34 – behind schedule; F1 was accepted only on 05/11. CPI is valid only after the S2 hours (B13) "
+         "are entered. Scenario only: if the 5 items in PR #8 (14 SP) are also accepted, EV = 11,922,581 VND, SPI = 0.68.", None, None),
     ]
     for r in rows:
         evm.append(r)

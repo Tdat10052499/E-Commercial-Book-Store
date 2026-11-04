@@ -14,8 +14,8 @@ F2 foundations and F3 are built and tested locally; the book form (US-05…07) a
 |---|---|---|
 | **Scope** | Amber | Of the 9 committed items (29 SP): US-08, US-09, NFR-02, US-10, NFR-04 built (PR #8, In Review); US-05, US-06, US-07, US-24 not started at 04/11 evening. CR-06 approved and the baseline updated (v1.1) |
 | **Schedule** | Red | Day 5 of 5: 5/23 tasks Done, 9 In Review/In Progress, 9 To Do. Actual S1 velocity 0 SP (F1 still In Review). Issue I-02 (F2 started late) |
-| **Cost** | Amber | BAC v1.1 = 26,400,000 VND; PV(S2) = 17,600,000 VND; EV = 0 VND (no item has passed the Story DoD yet); AC to date = 19.5 h (S1) + S2 hours TBD from Jira × 200,000. SPI/CPI are not meaningful while EV = 0 |
-| **Quality** | Amber | Automated: 43/43 pass (27 new F2/F3 + 16 F1 regression); 0 open defects. Test cases: 28/28 ACs covered. Hosted manual run of F2/F3 and the rest of F1 not done yet |
+| **Cost** | Amber | BAC v1.1 = 26,400,000 VND; PV(S2) = 17,600,000 VND; EV = 5,961,290 VND (14 SP – US-01…04 accepted 05/11); SPI = 0.34. AC to date = 19.5 h (S1) + S2 hours TBD from Jira × 200,000; CPI after the S2 hours are logged |
+| **Quality** | Amber | Automated: 43/43 pass (27 new F2/F3 + 16 F1 regression); 0 open defects. Test cases: 28/28 ACs covered. F1 hosted run complete on 05/11: 21/24 Pass, 0 Fail (TC-19, 20, 24 not runnable yet). Hosted run of F2/F3 pending |
 
 ## 2. Done this week
 - CCB on 30/10: CR-06 **approved, Option B**; Change Log, impact analysis, Product Backlog v1.2, Release Plan v1.3 and risk register v1.1 updated; tags `baseline-v1.0` and `baseline-v1.1` (rebaseline: PSP 55 → 62 SP, BAC 24.0 → 26.4 M VND).
@@ -30,7 +30,7 @@ F2 foundations and F3 are built and tested locally; the book form (US-05…07) a
 | 1 | Review and merge PR #8 into `develop`, deploy | Đạt | 05/11 |
 | 2 | Build US-05 add book, US-06 edit, US-07 hide on top of PR #8 | Đạt | 05/11 |
 | 3 | Build US-24 Store Staff role (permission matrix, 403 on delete and accounts) | Đạt | 05/11 |
-| 4 | Hosted test run F2/F3 + F1 regression; F1 hosted run part 2 → PO acceptance of F1 | Đạt, Chính | 05/11 |
+| 4 | Hosted test run F2/F3 + F1 regression (F1 part 2 done 05/11, US-01…04 accepted) | Đạt | 05/11 |
 | 5 | Log S2 actual hours in Jira; submit c0, c2, c3, c4 before 23:59 | Both / Chính | 05/11 |
 | 6 | Review/Retro 2, Planning 3 (US-25 + F4/F5, real Planning Poker round) | Đạt (Leader S3) | 06/11 |
 

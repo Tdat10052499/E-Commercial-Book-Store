@@ -34,7 +34,7 @@
 ## 4. Dữ liệu thực tế theo Sprint (lấy từ Jira – Completed Work)
 | Sprint | SP cam kết | SP đạt DoD | Giờ kế hoạch | Giờ thực tế | Nguồn (ảnh/CSV Jira) | Ngày |
 |---|---|---|---|---|---|---|
-| S1 | 18 | 0 (6 items In Review 05/11; PO acceptance after the hosted run) | 48 | 19.5 (Đạt 13.5 · Chính 6) | Jira worklogs 02/11 | 05/11/2026 – Chính |
+| S1 | 18 | 0 at Planning 2; **14** after PO acceptance 05/11 (US-01…04; NFR-01, NFR-03 pending TC-19/TC-24) | 48 | 19.5 (Đạt 13.5 · Chính 6) | Jira worklogs 02/11 | 05/11/2026 – Chính |
 | S2 | 29 (24 + US-24) | TBD | 39.75 | TBD – members log in Jira | Jira sprint 6 | |
 | S3 | TBD | TBD | TBD | TBD | | |
 
