@@ -69,7 +69,7 @@ Security-sensitive: every permission is checked on the server (not only by hidin
 | Option chosen | **Option B – Approve, phased** |
 | Decision | **Approve** |
 | Reason given by Sponsor | Agreed with the team's recommendation: the whole CR is delivered in Release 1.0, and permissions are built together with F2 while S2 keeps capacity for F2/F3 |
-| Answers to open questions | Not answered at the CCB → kept open in `plan/INPUTS.md` §6. **Team assumption until answered:** Staff may add and rename categories/authors but not remove them (least privilege); an active session keeps its old role until the user logs in again (matches CR AC4 "logs in again"); file name `c4_ChangeRequest_CR01.docx` as written in [CR-06 §5-5] |
+| Details not fixed by the CR | Team decision (PO, 05/11/2026): Staff may add and rename categories and authors but not remove them (remove stays Admin-only); a role change applies from the user's next login, matching CR AC4; the form is named `c4_ChangeRequest_CR01.docx` as written in [CR-06 §5-5] |
 
 ## 5. Baseline update after approval (step 4) and communication (step 5)
 | Artefact | Before (v1.0) | After (v1.1, 04/11/2026) |

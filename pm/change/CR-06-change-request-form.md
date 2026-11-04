@@ -43,7 +43,7 @@ Permission matrix after the change:
 | Browse / search / detail | Yes | Yes | Yes | Yes |
 | Add / edit book | Yes | Yes | No | No |
 | Delete (hide) book | Yes | No (403) | No | No |
-| Manage categories / authors | Yes | Add, rename (remove: open question, team assumption No) | No | No |
+| Manage categories / authors | Yes | Add, rename (no remove – team decision) | No | No |
 | Manage accounts, assign roles | Yes | No (403) | No | No |
 
 ### 2.2 Schedule and cost (plan)
@@ -68,7 +68,7 @@ Security-sensitive: every permission is checked on the server, not only by hidin
 |---|---|---|
 | R05 S2 overload (Occurred → I-03) | S2 commitment 29 SP vs expected 18.3 SP | Phased delivery (Option B); S2 sized by hours (39.75 h ≤ 40 h) |
 | R08 permission defect (P 2 → 3) | AC/NFR fail at UAT | Server-side matrix; tests for every 403 |
-| R11 unclear Staff scope (new) | Rework at UAT | Least-privilege assumption; question to the Sponsor |
+| R11 unclear Staff scope (new, closed 05/11) | Rework at UAT | Team decision: no remove for Staff; new role at next login |
 
 ## 3. Options presented to the CCB (30/10/2026)
 | | Option A – Approve, full in S2 | **Option B – Approve, phased (team recommendation)** | Option C – Defer to Release 2 |
@@ -88,7 +88,7 @@ Security-sensitive: every permission is checked on the server, not only by hidin
 | **Decision** | **Approve** |
 | **Option** | **B – phased: US-24 in Sprint 2, US-25 in Sprint 3** |
 | Reason | The Sponsor agreed with the team's reasoning: the whole change is delivered in Release 1.0, as the customer asked, while Sprint 2 keeps enough capacity for F2 and F3; permissions are built together with F2, so no F2 screen has to be rebuilt later |
-| Conditions / open questions | Not answered at the CCB: (1) may Staff *remove* categories/authors? (2) does a role change end an open session at once? Team assumptions until answered: (1) no – remove stays Admin-only; (2) new rights apply from the next login (matches AC4). Asked again in the Weekly Status Report and at Review 2 |
+| Details decided by the team | Team decision (PO, 05/11/2026): Staff may add and rename categories and authors but not remove them (remove stays Admin-only); a role change applies from the user's next login, matching CR AC4; the form is named `c4_ChangeRequest_CR01.docx` as written in [CR-06 §5-5] |
 
 ## 5. Baseline update (step 4)
 | Artefact | Baseline v1.0 (30/10) | Baseline v1.1 (04/11/2026) |
@@ -104,7 +104,7 @@ Security-sensitive: every permission is checked on the server, not only by hidin
 | Stakeholder | What | Channel | When | By |
 |---|---|---|---|---|
 | Sponsor | Decision record, impact, baseline v1.1 (this form) | eLearning – S2 submission | 05/11/2026 | PO |
-| Sponsor | Weekly Status Report incl. CR status and open questions | eLearning + Review 2 | 05/11, 06/11 | Leader S2 |
+| Sponsor | Weekly Status Report incl. CR status | eLearning + Review 2 | 05/11, 06/11 | Leader S2 |
 | Team | Decision, new tasks, owners | Jira (ECBS-122, ECBS-139…144), PR description | 05/11/2026 | PO |
 
 ## 7. Implementation status (05/11/2026 00:30)

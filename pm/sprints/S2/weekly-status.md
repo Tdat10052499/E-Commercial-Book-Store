@@ -39,10 +39,8 @@ F2 foundations and F3 are built and tested locally; the book form (US-05…07) a
 |---|---|---|---|
 | R12 / I-02 | F2 book screens and CR-06 code started late | Open | Foundations delivered first; drop order NFR-04 polish → US-07 (returned to backlog, not hidden) |
 | R05 / I-03 | CR-06 adds 5 SP / 8.5 h to S2 | Occurred | Rebaseline v1.1; S2 sized by hours |
-| R11 | Staff remove rights and session handling not answered | Open | Least-privilege assumption; question below |
+| R11 | Staff remove rights and session handling not specified in the CR | Closed 05/11 | Team decision recorded in c4: no remove for Staff; new role at next login |
 | I-04 | No Planning Poker voting rounds so far | Open | Real round at Planning 3 |
 
 ## 5. Help needed from the Sponsor
-1. **CR-06 scope:** may Store Staff *remove* categories and authors, or only add and rename them? (team assumption: no remove)
-2. **CR-06 sessions:** when an administrator changes a user's role, must the user's open session end at once, or is "after the next login" enough (CR AC4)? (team assumption: next login)
-3. Confirm the file name `c4_ChangeRequest_CR01.docx` (as in [CR-06 §5-5]) rather than `CR06`.
+None this week. CR-06 details that the CR text left open were decided by the team (PO) and recorded in the c4 form §4.

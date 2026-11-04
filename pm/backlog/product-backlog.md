@@ -8,7 +8,7 @@
 | 0 (TA) | 15/10/2026 | Team 6 | 23 items, 99 SP, numbered conditions as AC, 2-week Sprints [04 §4] |
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted), PO review pending | Rebaselined to F1–F5 [03 §2.2]: rewrote US-03 to Administrator/Customer with account locking; added server-side access guard, category CRUD, author CRUD; F3 changed from 20 to **12 books/page, newest first**; F4 added friendly not-found and Back-to-same-page; F5 changed to title/author search + category & price-range filter combined with pagination; email confirmation/reset, ISBN-mandatory and Add-to-cart removed from R1.0 ACs; added NFR items (hashing, validation, seed ≥30, hosting, responsive, < 2 s); cart, checkout, orders, promotions, multi-store, reviews, wishlist, recommendations moved to *Won't (this release)* because they are out of scope [03 §2.2], [05 §1, §4]; all ACs rewritten in GWT; IDs renumbered (v0 ID kept for traceability); CR-06 items added as *pending CCB*. **SP cleared for every changed item until re-estimated by Planning Poker** [03 §6.1-3] |
 | 1.1-draft | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | SP set for all 20 R1.0/CR-06 items as PO estimates from AI-suggested values (no voting rounds – see `planning-poker-log.md` v1.1); PSP = 55 |
-| 1.2 (baseline v1.1) | 04/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | **CR-06 approved by the CCB 30/10 (Option B):** US-24 and US-25 enter the baseline – US-24 in S2, US-25 in S3; **PSP 55 → 62 SP**. US-24/AC-05 removal question kept open with a team assumption (Staff cannot remove categories/authors). Tag `baseline-v1.1` |
+| 1.2 (baseline v1.1) | 04/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | **CR-06 approved by the CCB 30/10 (Option B):** US-24 and US-25 enter the baseline – US-24 in S2, US-25 in S3; **PSP 55 → 62 SP**. US-24/AC-05 completed by a team decision: Staff cannot remove categories/authors. Tag `baseline-v1.1` |
 
 ## Summary
 | Group | Items | SP (plan) |
@@ -171,7 +171,7 @@ Customer ACs from [CR-06 §3] plus team additions (confirmed by the CCB with Opt
 - **US-24/AC-02 (E)** Given a Staff account, When it tries to delete a book (UI or direct request), Then no delete button is shown and the server answers 403. [CR AC2]
 - **US-24/AC-03 (E)** Given a Staff account, When it opens the account-management page, Then access is denied (403). [CR AC3]
 - **US-24/AC-04 (M)** Given an administrator changes an account from Customer to Staff, When that user logs in again, Then they have exactly the Staff permissions. [CR AC4]
-- **US-24/AC-05 (M)** Given a Staff account, When it adds/edits categories and authors, Then the changes are saved (whether Staff may *remove* categories/authors was not answered at the CCB; **team assumption: no** – remove stays Admin-only until the Sponsor answers, `plan/INPUTS.md` §6).
+- **US-24/AC-05 (M)** Given a Staff account, When it adds/edits categories and authors, Then the changes are saved; Staff cannot *remove* categories or authors – the Remove action is Admin-only and the server answers 403 (team decision, PO 05/11/2026).
 
 ### US-25 Last-updated audit (CR-06, approved 30/10)
 - **US-25/AC-01 (M)** Given a Staff member edits a book, When the book's admin page is opened, Then it shows "Last updated by <name> at <dd/mm/yyyy HH:mm>". [CR AC5]

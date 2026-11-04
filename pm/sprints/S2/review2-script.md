@@ -40,7 +40,7 @@ Then ask the Sponsor for feedback and write it in table I.4 (who, feedback, acti
 
 ## 4. Change control – CR-06 (1.5 min)
 > "CR-06 asked for a Store Staff role and a 'last updated by' audit. We followed the five steps: one, recorded in the Change Log; two, impact analysis – plus 7 SP, 12 hours, 2.4 million VND, rework of US-03 and US-04; three, at the CCB on 30/10 you approved Option B – Staff role in Sprint 2, audit in Sprint 3; four, we rebaselined: PSP from 55 to 62 SP, BAC from 24.0 to 26.4 million, tags `baseline-v1.0` and `baseline-v1.1`; five, we informed you through the c4 form and the Weekly Status Report."
-> "Two questions are still open, and we built the safer assumption: may Staff remove categories and authors – we assumed no; and must a role change end an open session at once – we assumed it applies at the next login. Could you confirm?" → write the answer in `plan/INPUTS.md` §6.
+> "Two details were not fixed by the CR text, so the team decided them as PO and recorded them in the c4 form: Staff may add and rename categories and authors but not remove them, and a new role takes effect at the user's next login, as acceptance criterion 4 says."
 
 ## 5. Risks and issues (0.5 min)
 - I-02 / R12: F2 book screens and CR code started late → foundations first, drop order agreed.

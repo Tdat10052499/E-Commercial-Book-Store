@@ -46,9 +46,9 @@
 ## 6. Câu trả lời / góp ý của GV
 | Ngày | Câu hỏi hoặc chủ đề | Trả lời của GV |
 |---|---|---|
-| | Tên file c4: `CR01` hay `CR06`? | TBD |
-| | Staff được xóa category/author không? | TBD – CCB 30/10 chưa trả lời; giả định của nhóm: không (hỏi lại ở Review 2) |
-| | Đổi vai trò có thu hồi phiên đang mở không? | TBD – CCB 30/10 chưa trả lời; giả định của nhóm: quyền mới áp dụng từ lần đăng nhập sau |
+| 05/11/2026 | Tên file c4: `CR01` hay `CR06`? | Nhóm tự quyết (PO): giữ `CR01` theo đề CR |
+| 05/11/2026 | Staff được xóa category/author không? | Nhóm tự quyết (PO): không – chỉ Admin được xóa |
+| 05/11/2026 | Đổi vai trò có thu hồi phiên đang mở không? | Nhóm tự quyết (PO): không – quyền mới áp dụng từ lần đăng nhập sau (đúng CR AC4) |
 | | Nộp S1 theo đề (29/10) hay theo mục eLearning (02/11)? [06 §3] | TBD |
 | | Template `FinalProject/HK261/Templates` ở đâu? | TBD |
 | | Tiêu chí C2 Demo có tính điểm không? | TBD |
