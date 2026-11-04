@@ -11,7 +11,7 @@
 | 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Estimates recorded as **PO estimates from AI-suggested values – no voting rounds held** (see note). Vote columns left empty on purpose. Release PSP = 55 SP; CR-06 = 7 SP |
 | 1.2 | 05/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Session 3 prepared for Planning 3 (06/11): real voting rounds for the S3 items and US-25 (issue I-04). Vote cells are **empty until the meeting**; AI fills nothing in |
 
-> **Method used on 30/10/2026 (deviation from the procedure above):** no Planning Poker voting rounds were held. The PO (Nguyễn Minh Chính) set each estimate from values suggested by Claude, sized against the reference stories (2 / 3 / 5 SP). There are no individual cards, no reveal and no photo evidence for this session. Đạt has not yet confirmed the estimates; if the team later runs a real session (shared page: Team 6 Planning Poker), the votes replace these values and this note is updated.
+> **Method used on 30/10/2026 (deviation from the procedure above):** no Planning Poker voting rounds were held. The PO (Nguyễn Minh Chính) set each estimate from AI-suggested values, sized against the reference stories (2 / 3 / 5 SP). There are no individual cards, no reveal and no photo evidence for this session. Đạt has not yet confirmed the estimates; if the team later runs a real session (shared page: Team 6 Planning Poker), the votes replace these values and this note is updated.
 
 ## Session 1 – Release 1.0 baseline (date: 30/10/2026, method: PO estimate from AI suggestion – no voting rounds, facilitator: PO)
 | Item | Round | Đạt | Chính | Basis of the estimate | Result SP |

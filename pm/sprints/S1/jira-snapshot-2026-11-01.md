@@ -26,5 +26,5 @@ Remaining work by estimate: 48 h on every day of the Sprint (no task was moved i
 **Also in Sprint 1 in Jira (not part of the FP Sprint Backlog):** ECBS-9 … ECBS-14 and ECBS-32 – stories from the old TA backlog v0, all To Do, no estimate. To decide: move to backlog / Won't.
 
 **Notes (AI-assisted):**
-- Statuses were moved by Claude on 01/11/2026 at Đạt's request, using repo evidence (commits, test runs); the board was not updated during the Sprint.
+- Statuses were moved by Hồ Du Tuấn Đạt (AI-assisted) on 01/11/2026, using repo evidence (commits, test runs); the board was not updated during the Sprint.
 - Time spent is empty: actual hours must be logged by each member (Log work, real date). Until then EVM AC for Sprint 1 = TBD.

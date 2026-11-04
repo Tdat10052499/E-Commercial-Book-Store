@@ -6,9 +6,9 @@ Cập nhật lần cuối: 05/11/2026 – Chính (Sprint 2)
 
 | ID | Phase | Hạn | Trạng thái | Người làm | Ngày xong | PR | Ghi chú |
 |---|---|---|---|---|---|---|---|
-| P00 | Thiết lập repo, branch, quyền truy cập | 27/10 | in_progress | Đạt |  |  | Cấu trúc repo đã tạo (Claude). Còn: tạo main/develop, mời GV + Chính, cân nhắc private, Jira time tracking |
+| P00 | Thiết lập repo, branch, quyền truy cập | 27/10 | in_progress | Đạt |  |  | Cấu trúc repo đã tạo (Đạt, AI hỗ trợ). Còn: tạo main/develop, mời GV + Chính, cân nhắc private, Jira time tracking |
 | P01 | Kick-off, vai trò, working agreement, capacity | 28/10 | in_progress | Đạt |  |  | Vai trò chốt (PO Chính; Leader Đạt/Chính/Đạt) và capacity kế hoạch 20 h/người/Sprint ghi vào INPUTS §1–2 (Chính, 30/10). Còn: Đạt xác nhận capacity, kênh Daily, username GitHub của Chính |
-| P02 | Product Backlog v1.0 | 28/10 | in_progress | Đạt |  |  | Bản nháp 30 item, GWT, DoR (Claude). Còn: PO duyệt |
+| P02 | Product Backlog v1.0 | 28/10 | in_progress | Đạt |  |  | Bản nháp 30 item, GWT, DoR (Đạt, AI hỗ trợ). Còn: PO duyệt |
 | P03 | Planning Poker + Release Plan + BAC | 28/10 | blocked | Đạt, Chính |  |  | Capacity 40 h/Sprint, BAC 24,0 M VND (kế hoạch) đã chốt; Master Plan bản Excel thêm (pm/plan). SP đã điền theo ước lượng của PO từ gợi ý AI (không có vòng bỏ phiếu, ghi rõ trong log v1.1): PSP = 55 SP, velocity kỳ vọng ≈ 18.3 SP/Sprint. Còn: Đạt xác nhận SP |
 | P04 | Chọn stack, scaffold app, deploy khung | 28/10 | in_progress | Đạt |  |  | Stack: Next.js + Vercel + Supabase (Đạt chốt 30/10). Còn: tạo Supabase + Vercel, deploy |
 | P05 | Sprint Planning 1 → Jira | 28/10 | in_progress | Đạt |  |  | `S1_Backlog` nháp 14 task / 48 h kế hoạch. Còn: capacity, nhập Jira |
@@ -47,7 +47,7 @@ Cập nhật lần cuối: 05/11/2026 – Chính (Sprint 2)
 ## Nhật ký thay đổi trạng thái
 | Ngày | Người | Thay đổi |
 |---|---|---|
-| 27/10/2026 | Claude (theo yêu cầu của Đạt) | Dựng cấu trúc repo, roadmap, skill `next`/`status`; P00 → in_progress |
-| 30/10/2026 | Claude (theo yêu cầu của Đạt) | Catch-up S1: Master Plan, PMP v1.0, Backlog v1.0, CR-06 analysis, S1 backlog, F1 code + tests, xuất c1/c2/c3 nháp; P01–P09, P11 → in_progress/blocked |
+| 27/10/2026 | Đạt (AI hỗ trợ) | Dựng cấu trúc repo, roadmap, skill `next`/`status`; P00 → in_progress |
+| 30/10/2026 | Đạt (AI hỗ trợ) | Catch-up S1: Master Plan, PMP v1.0, Backlog v1.0, CR-06 analysis, S1 backlog, F1 code + tests, xuất c1/c2/c3 nháp; P01–P09, P11 → in_progress/blocked |
 | 30/10/2026 | Chính | P01 vai trò + capacity kế hoạch chốt; P03 thêm Master Plan Excel; P09 chốt phương án B; P13 → in_progress (nháp S2_Backlog) |
-| 05/11/2026 | Chính (Claude hỗ trợ) | CCB Approve B ghi nhận; P13, P14, P20 → done; P15, P16, P18, P19, P21 → in_progress; P17 giao Đạt |
+| 05/11/2026 | Chính (AI hỗ trợ) | CCB Approve B ghi nhận; P13, P14, P20 → done; P15, P16, P18, P19, P21 → in_progress; P17 giao Đạt |
