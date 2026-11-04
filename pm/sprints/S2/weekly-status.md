@@ -14,7 +14,7 @@ F2 foundations and F3 are built and tested locally; the book form (US-05…07) a
 |---|---|---|
 | **Scope** | Amber | Of the 9 committed items (29 SP): US-08, US-09, NFR-02, US-10, NFR-04 built (PR #8, In Review); US-05, US-06, US-07, US-24 not started at 04/11 evening. CR-06 approved and the baseline updated (v1.1) |
 | **Schedule** | Red | Day 5 of 5: 5/23 tasks Done, 9 In Review/In Progress, 9 To Do. Actual S1 velocity 0 SP (F1 still In Review). Issue I-02 (F2 started late) |
-| **Cost** | Amber | BAC v1.1 = 26,400,000 VND; PV(S2) = 17,600,000 VND; EV = 5,961,290 VND (14 SP – US-01…04 accepted 05/11); SPI = 0.34. AC to date = 19.5 h (S1) + S2 hours TBD from Jira × 200,000; CPI after the S2 hours are logged |
+| **Cost** | Amber | BAC v1.1 = 26,400,000 VND; PV(S2) = 17,600,000 VND; EV = 5,961,290 VND (14 SP – US-01…04 accepted 05/11); SPI = 0.34. AC to date = (41 h S1 + 10.5 h S2 so far) × 200,000 = 10,300,000 VND; CPI 0.58 (provisional, Đạt's S2 hours not logged yet) |
 | **Quality** | Amber | Automated: 43/43 pass (27 new F2/F3 + 16 F1 regression); 0 open defects. Test cases: 28/28 ACs covered. F1 hosted run complete on 05/11: 21/24 Pass, 0 Fail (TC-19, 20, 24 not runnable yet). Hosted run of F2/F3 pending |
 
 ## 2. Done this week

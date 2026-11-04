@@ -166,8 +166,8 @@ def c2_workbook():
         ("n (Sprints completed)", 2, None),
         ("N (Sprints planned)", 3, None),
         ("SP meeting DoD (cumulative)", 14, "Jira 05/11: US-01…US-04 accepted by the PO after the hosted run (14 SP); NFR-01, NFR-03 and S2 items not Done"),
-        ("Actual hours S1 (h)", 19.5, "Jira Time spent ECBS-90…103"),
-        ("Actual hours S2 (h)", None, "TBD – Jira Time spent ECBS-124…146 (enter before upload)"),
+        ("Actual hours S1 (h)", 41, "Jira Time spent ECBS-90…103 (19.5 h logged 02/11 + 21.5 h on S1-T12 logged 05/11)"),
+        ("Actual hours S2 (h)", 10.5, "Jira Time spent ECBS-124…146: Chính 10.5 h; add Đạt's hours before upload"),
         ("Actual hours (cumulative, h)", "=B12+N(B13)", "S1 + S2"),
         ("PV (VND)", "=B7*B9/B10", "BAC × n / N"),
         ("EV (VND)", "=B7*B11/B8", "BAC × SP done / PSP"),
@@ -179,8 +179,8 @@ def c2_workbook():
         ("EAC (VND)", '=IF(OR(B21="n/a",B21=0),"not meaningful (CPI = 0)",B7/B21)', "BAC / CPI"),
         ("ETC (VND)", '=IF(ISNUMBER(B22),B22-B17,"not meaningful (CPI = 0)")', "EAC − AC"),
         (None, None, None),
-        ("Reading: SPI 0.34 – behind schedule; F1 was accepted only on 05/11. CPI is valid only after the S2 hours (B13) "
-         "are entered. Scenario only: if the 5 items in PR #8 (14 SP) are also accepted, EV = 11,922,581 VND, SPI = 0.68.", None, None),
+        ("Reading: SPI 0.34 – behind schedule; CPI 0.58 (provisional until Đạt's S2 hours are added to B13). F1 was accepted only on 05/11."
+         " Scenario only: if the 5 items in PR #8 (14 SP) are also accepted, EV = 11,922,581 VND, SPI = 0.68.", None, None),
     ]
     for r in rows:
         evm.append(r)
@@ -325,8 +325,8 @@ def c0_eval():
         for col in (5, 6, 7):
             ws.cell(row, col).value = None
         ws.cell(row, 12, f"Workload = planned task hours {PLAN_HOURS[name]}/{PLAN_TOTAL} h (S2 Sprint Backlog v1.0, "
-                         f"after S2-T07 and S2-T13 moved to Chính). Actual hours: TBD from Jira. "
-                         f"Columns E–G: Leader S2 to enter.")
+                         f"after S2-T07 and S2-T13 moved to Chính). Actual S2 hours in Jira: "
+                         + ("10.5 h. " if name == CHINH else "TBD. ") + "Columns E–G: Leader S2 to enter.")
     for col in range(4, 8):
         ws.cell(12, col).value = None
     ws["A24"] = ("Note: workload uses PLANNED hours from the task assignment, as the scoring guide says. "
