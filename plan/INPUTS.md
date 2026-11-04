@@ -34,21 +34,21 @@
 ## 4. Dữ liệu thực tế theo Sprint (lấy từ Jira – Completed Work)
 | Sprint | SP cam kết | SP đạt DoD | Giờ kế hoạch | Giờ thực tế | Nguồn (ảnh/CSV Jira) | Ngày |
 |---|---|---|---|---|---|---|
-| S1 | TBD | TBD | TBD | TBD | | |
-| S2 | TBD | TBD | TBD | TBD | | |
+| S1 | 18 | 0 (6 items In Review 05/11; PO acceptance after the hosted run) | 48 | 19.5 (Đạt 13.5 · Chính 6) | Jira worklogs 02/11 | 05/11/2026 – Chính |
+| S2 | 29 (24 + US-24) | TBD | 39.75 | TBD – members log in Jira | Jira sprint 6 | |
 | S3 | TBD | TBD | TBD | TBD | | |
 
 ## 5. Change Request và CCB
 | CR | Ngày nhận | Phương án nhóm đề xuất | Quyết định Sponsor (Approve/Reject/Defer) | Lý do | Ngày |
 |---|---|---|---|---|---|
-| CR-06 | 27/10/2026 | Phương án B (PO Chính chốt đề xuất 30/10/2026) | TBD – ghi sau họp CCB | | |
+| CR-06 | 27/10/2026 | Phương án B (PO Chính chốt đề xuất 30/10/2026) | **Approve – phương án B** | Sponsor đồng ý lập luận của nhóm: giao đủ CR trong R1.0, giữ capacity S2 cho F2/F3 | 30/10/2026 (Chính cung cấp 04/11/2026) |
 
 ## 6. Câu trả lời / góp ý của GV
 | Ngày | Câu hỏi hoặc chủ đề | Trả lời của GV |
 |---|---|---|
 | | Tên file c4: `CR01` hay `CR06`? | TBD |
-| | Staff được xóa category/author không? | TBD |
-| | Đổi vai trò có thu hồi phiên đang mở không? | TBD |
+| | Staff được xóa category/author không? | TBD – CCB 30/10 chưa trả lời; giả định của nhóm: không (hỏi lại ở Review 2) |
+| | Đổi vai trò có thu hồi phiên đang mở không? | TBD – CCB 30/10 chưa trả lời; giả định của nhóm: quyền mới áp dụng từ lần đăng nhập sau |
 | | Nộp S1 theo đề (29/10) hay theo mục eLearning (02/11)? [06 §3] | TBD |
 | | Template `FinalProject/HK261/Templates` ở đâu? | TBD |
 | | Tiêu chí C2 Demo có tính điểm không? | TBD |
