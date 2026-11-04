@@ -125,6 +125,8 @@ def c2_workbook():
     _replace_sheet(wb, "RiskRegister", "pm/pmp/05-risk-plan.md", pick=[0, 1])
     _replace_sheet(wb, "IssueLog", "pm/pmp/05-risk-plan.md", pick=[2])
     _replace_sheet(wb, "ChangeLog", "pm/change/change-log.md")
+    _replace_sheet(wb, "PlanningPoker", "pm/backlog/planning-poker-log.md",
+                   note="Votes are entered by the team only. Session 3 is prepared for Planning 3 (06/11) and still empty.")
 
     s2 = add_sheet(wb, "S2_Backlog", "pm/sprints/S2/sprint-backlog.md", note=plan_note)
     _insert_after(wb, "S1_Backlog", s2)
