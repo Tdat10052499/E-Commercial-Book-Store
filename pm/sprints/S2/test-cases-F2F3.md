@@ -6,6 +6,7 @@ Format: GWT → steps → expected → actual [03 §6.1-7, §6.2-2]. **One test 
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0 | 04/11/2026 | Nguyễn Minh Chính (AI-assisted) | Test cases for F2 (US-05…US-09, NFR-02) and F3 (US-10, NFR-04) from the ACs; automated results from a real local run of PR #8. CR-06 test cases (US-24) are S2-T20 (Đạt) and are added by Đạt |
+| 1.2 | 05/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Defects DEF-F2-01 and DEF-F2-02 found by Đạt on the hosted site (23:10) and fixed in `fix/ui-covers-confirm`; confirmation steps now use a styled popup instead of `window.confirm` (team UI decision) |
 | 1.1 | 05/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Local automated results for US-05/06/07 (branch `feat/P17-books-staff`); new section CR-06 (TC-CR-01…05, one per US-24 AC) and F1 regression table (S2-T20). Hosted results stay TBD until S2-T23 |
 
 **Automated run** (04/11/2026, PostgreSQL 16, branch `feat/P15-catalogue`, PR #8): `npm test` → **43/43 pass** – 8 UNIT (`tests/catalog-validation.test.js`), 19 INT (`tests/catalog.test.js`), plus 16 F1 regression (`tests/validation.test.js`, `tests/users.test.js`). RESP = component render of the grid and admin tables in Chromium at 360/768/1280 px (horizontal scroll width and grid columns measured).
@@ -114,3 +115,9 @@ Re-run of the Sprint 1 test cases (`pm/sprints/S1/test-cases-F1.md`) on the Spri
 | Hosted manual run | TBD (S2-T23) |
 | Defects found | 0 (one outdated F1 unit test updated for CR-06; not a product defect) |
 | F1 regression (automated) | 16 / 16 automated F1 tests pass (16 of 24 TCs covered); 5 e2e-only and 3 host-only TCs TBD |
+
+## Defects (05/11/2026)
+| ID | Found | TC / AC | Severity | Description | Cause | Fix | Status |
+|---|---|---|---|---|---|---|---|
+| DEF-F2-01 | Đạt, hosted site, 05/11 23:10 (screenshot) | TC-F3-01 / US-10/AC-01 | Medium | Vietnamese titles on seed covers render with detached accents ("Dê´ Mèn", "Tă´t đèn") | Cover SVGs are shown through `<img>` (no web font) and the title font Georgia has no Vietnamese glyphs; text itself is correct NFC | `db/make-covers.js`: Vietnamese-capable font stacks; covers regenerated; `tests/covers.test.js` | Fixed in branch – hosted re-test TBD |
+| DEF-F2-02 | Đạt, hosted site, 05/11 23:10 (screenshot) | TC-F3-01, TC-F3-05 / US-10/AC-01, NFR-04/AC-01 | Low | Long author names run out of the cover frame ("HANS CHRISTIAN ANDERSE…", "FRANCES HODGSON BURNE…") | Author line never wrapped; ≈ 200 px text in a 152 px area | Author wraps to 2 lines; any line still too long is squeezed with `textLength`; test checks all 30 covers | Fixed in branch – hosted re-test TBD |
