@@ -1,4 +1,5 @@
-// End-to-end check of F1 ACs in a real browser.
+// End-to-end check of F1 ACs plus the browser-only parts of US-07 and US-24 (CR-06) in a real browser.
+// Needs the seeded catalogue (npm run db:seed) so /admin/books has rows.
 // Usage: BASE_URL=http://localhost:3000 ADMIN_EMAIL=... ADMIN_PASSWORD=... node e2e/f1.e2e.js
 const { chromium } = require('playwright');
 
@@ -129,6 +130,63 @@ async function logout(page) {
     await row.locator('button:has-text("Lock")').click();
     await adminPage.waitForSelector('text=You cannot lock your own account');
   });
+  // ---------- US-07/AC-02: Cancel in the confirm dialog changes nothing ----------
+  await check('US-07/AC-02 Cancel in the Delete dialog keeps the book', async () => {
+    await adminPage.goto(`${BASE}/admin/books`);
+    const first = adminPage.locator('tbody tr').first();
+    const title = (await first.locator('td[data-label="Title"]').innerText()).trim();
+    adminPage.once('dialog', (d) => d.dismiss());
+    await first.locator('button:has-text("Delete")').click();
+    await adminPage.reload();
+    expect(await adminPage.locator('td[data-label="Title"]', { hasText: title }).count() > 0, `"${title}" disappeared after Cancel`);
+  });
+
+  // ---------- US-24 (CR-06) Store Staff ----------
+  await check('US-24/AC-04 admin changes Customer → Store Staff', async () => {
+    await adminPage.goto(`${BASE}/admin/accounts`);
+    const row = adminPage.locator('tr', { hasText: created.email });
+    adminPage.once('dialog', (d) => d.accept());
+    await row.locator('select').selectOption('staff');
+    await row.locator('text=Role changed').waitFor();
+  });
+  const staffPage = await (await browser.newContext()).newPage();
+  await check('US-24/AC-04 after the next login the user has the Staff back office', async () => {
+    await login(staffPage, created.email, created.password);
+    await staffPage.waitForURL(`${BASE}/`);
+    await staffPage.goto(`${BASE}/admin`);
+    await staffPage.waitForSelector('h1:has-text("Back office")');
+  });
+  await check('US-24/AC-03 Staff sees no Accounts link', async () => {
+    expect(await staffPage.locator('a[href="/admin/accounts"]').count() === 0, 'Accounts link visible to Staff');
+  });
+  await check('US-24/AC-03 Staff opening /admin/accounts gets HTTP 403', async () => {
+    const res = await staffPage.goto(`${BASE}/admin/accounts`);
+    expect(res.status() === 403, `status ${res.status()}`);
+    expect(await staffPage.isVisible('text=Access denied'), 'no Access denied text');
+  });
+  await check('US-24/AC-02 Staff sees Edit but no Delete button on the book list', async () => {
+    await staffPage.goto(`${BASE}/admin/books`);
+    await staffPage.waitForSelector('h1:has-text("Books")');
+    expect(await staffPage.locator('tbody a:has-text("Edit")').count() > 0, 'no Edit links (is the catalogue seeded?)');
+    expect(await staffPage.locator('button:has-text("Delete")').count() === 0, 'Delete button visible to Staff');
+  });
+  await check('US-24/AC-01 Staff adds a valid book; it is first in the list', async () => {
+    const title = `E2E Staff book ${stamp}`;
+    await staffPage.goto(`${BASE}/admin/books/new`);
+    await staffPage.fill('#f-title', title);
+    await staffPage.selectOption('#f-author_id', { index: 1 });
+    await staffPage.selectOption('#f-category_id', { index: 1 });
+    await staffPage.fill('#f-price', '0.01');
+    await staffPage.fill('#f-stock', '0');
+    const jpg = Buffer.alloc(1024); Buffer.from([0xff, 0xd8, 0xff, 0xe0]).copy(jpg);
+    await staffPage.setInputFiles('#f-cover', { name: 'cover.jpg', mimeType: 'image/jpeg', buffer: jpg });
+    await staffPage.click('form button[type=submit]');
+    await staffPage.waitForSelector('text=added');
+    await staffPage.goto(`${BASE}/admin/books`);
+    const firstTitle = (await staffPage.locator('tbody tr').first().locator('td[data-label="Title"]').innerText()).trim();
+    expect(firstTitle === title, `first row is "${firstTitle}"`);
+  });
+
   await check('NFR-04 no horizontal scroll at 360 px (accounts page)', async () => {
     await adminPage.setViewportSize({ width: 360, height: 740 });
     await adminPage.goto(`${BASE}/admin/accounts`);

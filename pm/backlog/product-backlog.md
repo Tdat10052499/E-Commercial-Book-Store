@@ -1,48 +1,50 @@
-# Product Backlog v1.0 – Release 1.0 (Book Catalogue)
+# Product Backlog v1.2 – Release 1.0 (Book Catalogue)
 
-**Owner:** Product Owner (Nguyễn Minh Chính, *to confirm*) · **Estimation:** Fibonacci SP (1, 2, 3, 5, 8, 13) by Planning Poker · **Priority:** MoSCoW · **AC format:** Given–When–Then, numbered `US-xx/AC-0n`, covering main (M), exception (E) and boundary (B) flows.
+**Owner:** Product Owner (Nguyễn Minh Chính) · **Estimation:** Fibonacci SP (1, 2, 3, 5, 8, 13) by Planning Poker · **Priority:** MoSCoW · **AC format:** Given–When–Then, numbered `US-xx/AC-0n`, covering main (M), exception (E) and boundary (B) flows.
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0 (TA) | 15/10/2026 | Team 6 | 23 items, 99 SP, numbered conditions as AC, 2-week Sprints [04 §4] |
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted), PO review pending | Rebaselined to F1–F5 [03 §2.2]: rewrote US-03 to Administrator/Customer with account locking; added server-side access guard, category CRUD, author CRUD; F3 changed from 20 to **12 books/page, newest first**; F4 added friendly not-found and Back-to-same-page; F5 changed to title/author search + category & price-range filter combined with pagination; email confirmation/reset, ISBN-mandatory and Add-to-cart removed from R1.0 ACs; added NFR items (hashing, validation, seed ≥30, hosting, responsive, < 2 s); cart, checkout, orders, promotions, multi-store, reviews, wishlist, recommendations moved to *Won't (this release)* because they are out of scope [03 §2.2], [05 §1, §4]; all ACs rewritten in GWT; IDs renumbered (v0 ID kept for traceability); CR-06 items added as *pending CCB*. **SP cleared for every changed item until re-estimated by Planning Poker** [03 §6.1-3] |
+| 1.1-draft | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | SP set for all 20 R1.0/CR-06 items as PO estimates from AI-suggested values (no voting rounds – see `planning-poker-log.md` v1.1); PSP = 55 |
+| 1.2 (baseline v1.1) | 04/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | **CR-06 approved by the CCB 30/10 (Option B):** US-24 and US-25 enter the baseline – US-24 in S2, US-25 in S3; **PSP 55 → 62 SP**. US-24/AC-05 completed by a team decision: Staff cannot remove categories/authors. Tag `baseline-v1.1` |
 
 ## Summary
 | Group | Items | SP (plan) |
 |---|---|---|
-| Release 1.0 – Must | 18 (US-01…US-13, NFR-01…NFR-05) | TBD after Planning Poker |
-| CR-06 – pending CCB 30/10 | 2 (US-24, US-25) | TBD |
+| Release 1.0 – Must | 18 (US-01…US-13, NFR-01…NFR-05) | 55 (S1 18 · S2 24 · S3 13) |
+| CR-06 – approved 30/10 (Option B) | 2 (US-24 S2, US-25 S3) | 7 |
 | Won't (this release) | 10 | not estimated for R1.0 (v0 SP kept for reference) |
-| **Total items** | **30** | **PSP = TBD** |
+| **Total items** | **30** | **PSP = 62** (baseline v1.1; was 55 in baseline v1.0) |
 
 ## A. Release 1.0 items
 | Rank | ID | v0 ID | F | User story | SP | MoSCoW | Sprint (plan) |
 |---|---|---|---|---|---|---|---|
-| 1 | US-01 | US-01 | F1 | As a **visitor**, I want to register with my name, email and password so that I can sign in as a customer. | TBD | Must | S1 |
-| 2 | US-02 | US-02 | F1 | As a **registered user**, I want to log in and log out so that only I can use my account. | TBD | Must | S1 |
-| 3 | US-03 | US-03 | F1 | As an **administrator**, I want to create accounts with a role and lock/unlock accounts so that I control who can use the system. | TBD | Must | S1 |
-| 4 | US-04 | new | F1 | As the **store owner**, I want admin functions to be blocked for anyone who is not an administrator so that catalogue and account data stay safe. | TBD | Must | S1 |
-| 5 | NFR-01 | new | F1 | As the **store owner**, I want passwords stored as hashes and every form validated on client and server so that customer data is protected. | TBD | Must | S1 |
-| 6 | NFR-03 | new | All | As the **customer (Ms. Le)**, I want the site hosted on a free public URL until 17/11/2026 so that I can review each increment. | TBD | Must | S1 |
-| 7 | US-05 | US-08 | F2 | As an **administrator**, I want to add a book (title, author, category, price, description, cover image, stock) so that it appears in the catalogue. | TBD | Must | S2 |
-| 8 | US-06 | US-09 | F2 | As an **administrator**, I want to edit a book's information so that the catalogue stays correct. | TBD | Must | S2 |
-| 9 | US-07 | US-10 | F2 | As an **administrator**, I want to delete (hide) a book without losing its record so that discontinued books disappear from the shop. | TBD | Must | S2 |
-| 10 | US-08 | new | F2 | As an **administrator**, I want to add, rename and remove categories so that books can be grouped. | TBD | Must | S2 |
-| 11 | US-09 | new | F2 | As an **administrator**, I want to add, edit and remove authors so that books reference consistent author data. | TBD | Must | S2 |
-| 12 | NFR-02 | (T-16) | F2/F3 | As the **customer (Ms. Le)**, I want at least 30 sample books loaded so that the catalogue can be demonstrated and performance measured. | TBD | Must | S2 |
-| 13 | US-10 | US-05 | F3 | As a **customer**, I want to browse books in a grid of 12 per page, newest first, so that I can see what is new. | TBD | Must | S2 |
-| 14 | NFR-04 | US-21 | F3 | As a **customer**, I want every page to work on phone, tablet and desktop so that I can shop from any device. | TBD | Must | S2 |
-| 15 | US-11 | US-07 | F4 | As a **customer**, I want to open a book's detail page and go back to the same list page so that I can compare books without losing my place. | TBD | Must | S3 |
-| 16 | US-12 | US-06 | F5 | As a **customer**, I want to search by title or author so that I can find a specific book quickly. | TBD | Must | S3 |
-| 17 | US-13 | US-06 | F5 | As a **customer**, I want to filter by category and price range together with search and pagination so that I only see relevant books. | TBD | Must | S3 |
-| 18 | NFR-05 | (US-06 AC) | F3/F5 | As a **customer**, I want the book list to load in under 2 seconds so that browsing feels fast. | TBD | Must | S3 |
+| 1 | US-01 | US-01 | F1 | As a **visitor**, I want to register with my name, email and password so that I can sign in as a customer. | 3 | Must | S1 |
+| 2 | US-02 | US-02 | F1 | As a **registered user**, I want to log in and log out so that only I can use my account. | 3 | Must | S1 |
+| 3 | US-03 | US-03 | F1 | As an **administrator**, I want to create accounts with a role and lock/unlock accounts so that I control who can use the system. | 5 | Must | S1 |
+| 4 | US-04 | new | F1 | As the **store owner**, I want admin functions to be blocked for anyone who is not an administrator so that catalogue and account data stay safe. | 3 | Must | S1 |
+| 5 | NFR-01 | new | F1 | As the **store owner**, I want passwords stored as hashes and every form validated on client and server so that customer data is protected. | 2 | Must | S1 |
+| 6 | NFR-03 | new | All | As the **customer (Ms. Le)**, I want the site hosted on a free public URL until 17/11/2026 so that I can review each increment. | 2 | Must | S1 |
+| 7 | US-05 | US-08 | F2 | As an **administrator**, I want to add a book (title, author, category, price, description, cover image, stock) so that it appears in the catalogue. | 5 | Must | S2 |
+| 8 | US-06 | US-09 | F2 | As an **administrator**, I want to edit a book's information so that the catalogue stays correct. | 3 | Must | S2 |
+| 9 | US-07 | US-10 | F2 | As an **administrator**, I want to delete (hide) a book without losing its record so that discontinued books disappear from the shop. | 2 | Must | S2 |
+| 10 | US-08 | new | F2 | As an **administrator**, I want to add, rename and remove categories so that books can be grouped. | 3 | Must | S2 |
+| 11 | US-09 | new | F2 | As an **administrator**, I want to add, edit and remove authors so that books reference consistent author data. | 3 | Must | S2 |
+| 12 | NFR-02 | (T-16) | F2/F3 | As the **customer (Ms. Le)**, I want at least 30 sample books loaded so that the catalogue can be demonstrated and performance measured. | 2 | Must | S2 |
+| 13 | US-10 | US-05 | F3 | As a **customer**, I want to browse books in a grid of 12 per page, newest first, so that I can see what is new. | 3 | Must | S2 |
+| 14 | NFR-04 | US-21 | F3 | As a **customer**, I want every page to work on phone, tablet and desktop so that I can shop from any device. | 3 | Must | S2 |
+| 15 | US-11 | US-07 | F4 | As a **customer**, I want to open a book's detail page and go back to the same list page so that I can compare books without losing my place. | 3 | Must | S3 |
+| 16 | US-12 | US-06 | F5 | As a **customer**, I want to search by title or author so that I can find a specific book quickly. | 3 | Must | S3 |
+| 17 | US-13 | US-06 | F5 | As a **customer**, I want to filter by category and price range together with search and pagination so that I only see relevant books. | 5 | Must | S3 |
+| 18 | NFR-05 | (US-06 AC) | F3/F5 | As a **customer**, I want the book list to load in under 2 seconds so that browsing feels fast. | 2 | Must | S3 |
 
-## B. CR-06 items (pending CCB on 30/10/2026 – not in baseline until approved)
+## B. CR-06 items (approved by the CCB on 30/10/2026, Option B – in baseline v1.1)
 | ID | F | User story | SP | MoSCoW | Sprint |
 |---|---|---|---|---|---|
-| US-24 | F1, F2 | As a **store staff member**, I want to add and edit books and manage categories and authors, without deleting books or managing accounts, so that I can update the catalogue daily without full admin rights. [CR-06 §1] | TBD | Must (if approved) | per CCB option |
-| US-25 | F2 | As an **administrator**, I want each book to show "Last updated by <name> at <time>" so that I know who changed it. [CR-06 §1] | TBD | Must (if approved) | per CCB option |
+| US-24 | F1, F2 | As a **store staff member**, I want to add and edit books and manage categories and authors, without deleting books or managing accounts, so that I can update the catalogue daily without full admin rights. [CR-06 §1] | 5 | Must | S2 |
+| US-25 | F2 | As an **administrator**, I want each book to show "Last updated by <name> at <time>" so that I know who changed it. [CR-06 §1] | 2 | Must | S3 |
 
 ## C. Won't (this release) – kept for Release 2
 | ID | v0 ID | Story (short) | v0 SP | Reason |
@@ -163,15 +165,15 @@
 - **NFR-05/AC-01 (M)** Given ≥ 30 sample books on the hosted site (warm), When the catalogue page is loaded, Then it finishes in < 2 s, measured with browser DevTools on 3 runs (median recorded).
 - **NFR-05/AC-02 (B)** Given page 3 with search and filter applied, Then it also loads in < 2 s.
 
-### US-24 Store Staff role (CR-06, pending)
-Customer ACs from [CR-06 §3] plus team additions (to be confirmed at CCB):
+### US-24 Store Staff role (CR-06, approved 30/10)
+Customer ACs from [CR-06 §3] plus team additions (confirmed by the CCB with Option B, 30/10/2026):
 - **US-24/AC-01 (M)** Given a Staff account, When it adds a valid book, Then the book is saved. [CR AC1]
 - **US-24/AC-02 (E)** Given a Staff account, When it tries to delete a book (UI or direct request), Then no delete button is shown and the server answers 403. [CR AC2]
 - **US-24/AC-03 (E)** Given a Staff account, When it opens the account-management page, Then access is denied (403). [CR AC3]
 - **US-24/AC-04 (M)** Given an administrator changes an account from Customer to Staff, When that user logs in again, Then they have exactly the Staff permissions. [CR AC4]
-- **US-24/AC-05 (M)** Given a Staff account, When it adds/edits categories and authors, Then the changes are saved (whether Staff may *remove* categories/authors: TBD – question to Sponsor).
+- **US-24/AC-05 (M)** Given a Staff account, When it adds/edits categories and authors, Then the changes are saved; Staff cannot *remove* categories or authors – the Remove action is Admin-only and the server answers 403 (team decision, PO 05/11/2026).
 
-### US-25 Last-updated audit (CR-06, pending)
+### US-25 Last-updated audit (CR-06, approved 30/10)
 - **US-25/AC-01 (M)** Given a Staff member edits a book, When the book's admin page is opened, Then it shows "Last updated by <name> at <dd/mm/yyyy HH:mm>". [CR AC5]
 - **US-25/AC-02 (B)** Given a book created by seed data and never edited, Then it shows "Last updated by System at <seed time>".
 - **US-25/AC-03 (E)** Given the updating user is later renamed or locked, Then the audit still shows the name stored at update time.

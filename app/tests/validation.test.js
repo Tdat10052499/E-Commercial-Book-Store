@@ -30,7 +30,11 @@ test('US-02/AC-05 email normalised (trim + lower-case)', () => {
   assert.strictEqual(normalizeEmail('  An@Example.COM '), 'an@example.com');
 });
 
-test('US-03/AC-01 role must be admin or customer when required', () => {
-  assert.ok(validateAccount({ ...valid, role: 'staff' }, { requireRole: true }).role);
-  assert.deepStrictEqual(validateAccount({ ...valid, role: 'admin' }, { requireRole: true }), {});
+// CR-06 / US-24 added 'staff'; before Sprint 2 this test expected 'staff' to be rejected.
+test('US-03/AC-01, US-24 role must be admin, staff or customer when required', () => {
+  for (const role of ['admin', 'staff', 'customer']) {
+    assert.deepStrictEqual(validateAccount({ ...valid, role }, { requireRole: true }), {});
+  }
+  assert.ok(validateAccount({ ...valid, role: 'manager' }, { requireRole: true }).role);
+  assert.ok(validateAccount({ ...valid, role: '' }, { requireRole: true }).role);
 });

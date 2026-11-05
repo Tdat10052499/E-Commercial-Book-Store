@@ -1,6 +1,7 @@
 // Shared by client components and server actions so both sides apply the same rules (NFR-01).
 const LIMITS = { name: 100, email: 254, passwordMin: 8, passwordMax: 64 };
-const ROLES = ['admin', 'customer'];
+const ROLES = ['admin', 'staff', 'customer']; // 'staff' added by CR-06 / US-24 (CCB 30/10/2026, Option B)
+const ROLE_LABEL = { admin: 'Administrator', staff: 'Store Staff', customer: 'Customer' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const normalizeEmail = (email) => String(email ?? '').trim().toLowerCase();
@@ -28,8 +29,8 @@ function validateAccount({ name, email, password, role }, { requireRole = false 
   const pErr = validatePassword(password);
   if (pErr) errors.password = pErr;
 
-  if (requireRole && !ROLES.includes(role)) errors.role = 'Role must be Administrator or Customer';
+  if (requireRole && !ROLES.includes(role)) errors.role = 'Role must be Administrator, Store Staff or Customer';
   return errors;
 }
 
-module.exports = { LIMITS, ROLES, normalizeEmail, validatePassword, validateAccount };
+module.exports = { LIMITS, ROLES, ROLE_LABEL, normalizeEmail, validatePassword, validateAccount };
