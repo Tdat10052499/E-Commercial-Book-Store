@@ -52,11 +52,11 @@ Purpose: replace the PO-only estimates of Session 1 with team votes for the item
 **Reading order (PO reads the story, then the ACs):**
 | Item | ACs to read | Session 1 value (for comparison after the vote) | Reference story to compare |
 |---|---|---|---|
-| US-11 Book detail | US-11/AC-01…AC-04 (detail fields, Back to the same page/filter, friendly 404, direct open) | 3 | = reference 3 (view book details) |
+| US-11 Book detail | US-11/AC-01…AC-04 (detail fields, Back to the same page/filter, friendly 404, direct open) | 3 | Same as reference 3 (view book details) |
 | US-12 Search | US-12/AC-01…AC-03 (title or author, no result, empty/100 chars/special characters) | 3 | between 2 and 5 |
-| US-13 Filter + pagination | US-13/AC-01…AC-04 (category + price range, kept across pages, min > max, inclusive bounds) | 5 | = reference 5 (search & filter) |
-| NFR-05 Performance < 2 s | NFR-05/AC-01, AC-02 (median of 3 runs, page 3 with filters) | 2 | = reference 2 |
-| US-25 Last-updated audit (CR-06) | US-25/AC-01…AC-03 (name and time shown, seed books "System", name kept after rename) | 2 | = reference 2 |
+| US-13 Filter + pagination | US-13/AC-01…AC-04 (category + price range, kept across pages, min > max, inclusive bounds) | 5 | Same as reference 5 (search & filter) |
+| NFR-05 Performance < 2 s | NFR-05/AC-01, AC-02 (median of 3 runs, page 3 with filters) | 2 | Same as reference 2 |
+| US-25 Last-updated audit (CR-06) | US-25/AC-01…AC-03 (name and time shown, seed books "System", name kept after rename) | 2 | Same as reference 2 |
 
 **Votes (fill in at the meeting):**
 | Item | Round | Đạt | Chính | Agreed? | Discussion (why highest / lowest) | Result SP | Photo file |

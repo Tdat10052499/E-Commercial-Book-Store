@@ -202,6 +202,9 @@ def c2_workbook():
     for ws in wb.worksheets:
         for row in ws.iter_rows():
             for c in row:
+                # text copied from Markdown that starts with "=" must stay text, not become an (invalid) formula
+                if c.data_type == "f" and ws.title not in ("EVM", "EVM_S2", "S1_Backlog"):
+                    c.data_type = "s"
                 if isinstance(c.value, str) and len(c.value) > 60:
                     c.alignment = Alignment(wrap_text=True, vertical="top")
     out = OUT / f"{PREFIX}c2_SprintBacklog_S2.xlsx"
