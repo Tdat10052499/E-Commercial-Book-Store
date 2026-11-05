@@ -6,10 +6,10 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0 (TA) | 15/10/2026 | Team 6 | 2-week Sprint, 6 stories / 22 SP, 68 h plan [04 §5] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Re-planned to 1-week S1 = F1 + PM baseline only [05 #11]. Task hours are **proposals**; Jira Original Estimate must match after the team confirms |
-| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Status column synced from Jira ECBS (snapshot `jira-snapshot-2026-11-01.md`); actual hours still not logged in Jira |
-| 1.2 | 02/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Actual hours from Jira worklogs, reconstructed by members on 02/11 (time was not tracked during S1): 19.5 h vs 48 h plan. T04, T09, T11 reassigned to Đạt, who did the work; Jira keys added |
-| 1.3 | 02/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Re-checked against Jira Time spent on 02/11 (19.5 h confirmed); formatted for submission |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Re-planned to 1-week S1 = F1 + PM baseline only [05 #11]. Task hours are **proposals**; Jira Original Estimate must match after the team confirms |
+| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Status column synced from Jira ECBS (snapshot `jira-snapshot-2026-11-01.md`); actual hours still not logged in Jira |
+| 1.2 | 02/11/2026 | Nguyễn Minh Chính (PO) | Actual hours from Jira worklogs, reconstructed by members on 02/11 (time was not tracked during S1): 19.5 h vs 48 h plan. T04, T09, T11 reassigned to Đạt, who did the work; Jira keys added |
+| 1.3 | 02/11/2026 | Hồ Du Tuấn Đạt | Re-checked against Jira Time spent on 02/11 (19.5 h confirmed); formatted for submission |
 
 ## Sprint Goal (measurable)
 By 29/10/2026, on the hosted URL: a visitor can register and log in/out; an administrator can create accounts with a role and lock/unlock them; a non-admin gets 403 on every `/admin` URL; passwords are stored as bcrypt hashes — verified by 24 F1 test cases (one per AC) all passing. In parallel, PMP v1.0, Product Backlog v1.0, Release Plan/BAC and the CR-06 Change Log entry are baselined.

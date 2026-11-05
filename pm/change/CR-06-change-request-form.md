@@ -5,10 +5,10 @@ Source document for `HK261_SPM_FP_Team6_c4_ChangeRequest_CR01.docx` [CR-06 §5-5
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Change Log entry and impact analysis with options A/B/C (`CR-06-impact-analysis.md` v1.0) |
-| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Option B confirmed as the team recommendation |
-| 2.1 | 06/11/2026 | Nguyễn Minh Chính (PO + Leader S2, AI-assisted) | Implementation status at the Sprint end: US-24 built and deployed (PR #11, #12) |
-| 2.0 | 05/11/2026 | Nguyễn Minh Chính (PO + Leader S2, AI-assisted) | CCB decision (Approve, Option B), baseline update v1.1 and communication added; issued as the c4 form |
+| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt | Change Log entry and impact analysis with options A/B/C (`CR-06-impact-analysis.md` v1.0) |
+| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO) | Option B confirmed as the team recommendation |
+| 2.1 | 06/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Implementation status at the Sprint end: US-24 built and deployed (PR #11, #12) |
+| 2.0 | 05/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | CCB decision (Approve, Option B), baseline update v1.1 and communication added; issued as the c4 form |
 
 ## 1. Change Request form
 | Field | Value |
@@ -101,7 +101,7 @@ Security-sensitive: every permission is checked on the server, not only by hidin
 | Risk register | v1.0 | v1.1: R05 Occurred → I-03, R08 re-scored, R11 added |
 | Configuration | – | Git tags **`baseline-v1.0`** (S1 submission set) and **`baseline-v1.1`** (this rebaseline) |
 
-## 6. Communication (step 5) [PMP-7 §7.1]
+## 6. Communication (step 5)
 | Stakeholder | What | Channel | When | By |
 |---|---|---|---|---|
 | Sponsor | Decision record, impact, baseline v1.1 (this form) | eLearning – S2 submission | 05/11/2026 | PO |

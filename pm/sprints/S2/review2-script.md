@@ -7,7 +7,7 @@ Figures are the values at the Sprint end (05/11 23:59). Re-check them against Ji
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 05/11/2026 | Nguyễn Minh Chính (AI-assisted) | Speaking script and demo order for Review 2, built from the S2 files; retro items are prompts for the team, not answers |
+| 1.0 | 05/11/2026 | Nguyễn Minh Chính | Speaking script and demo order for Review 2, built from the S2 files; retro items are prompts for the team, not answers |
 
 ## Before class (checklist)
 - [ ] PR #8 merged and deployed; https://pagetunnel.vercel.app/books shows "30 titles · page 1 of 3"

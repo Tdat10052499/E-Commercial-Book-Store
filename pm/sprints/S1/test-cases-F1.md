@@ -5,10 +5,10 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Test cases from F1 ACs; automated results from a real local run |
-| 1.1 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Manual run found defect DEF-F1-01 (TC-F1-15); expected result made precise; E2E assertion tightened |
-| 1.2 | 30/10/2026 | Nguyễn Minh Chính (AI-assisted) | Hosted run part 1 by Nguyễn Minh Chính (AI-assisted browser run, Chrome 152, admin session already signed in): 5 Pass, 1 Partial. Cases that need a password typed, a new account or a customer session were left for part 2 |
-| 1.3 | 05/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Hosted run part 2 done by Chính on 05/11 (00:45–03:25): every case run passed, as confirmed by Chính; sheet `F1_ManualTest_Hosted.xlsx` filled from his confirmation. TC-19 (Supabase access), TC-20 (optional) and TC-24 (17/11) not run |
+| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt | Test cases from F1 ACs; automated results from a real local run |
+| 1.1 | 30/10/2026 | Hồ Du Tuấn Đạt | Manual run found defect DEF-F1-01 (TC-F1-15); expected result made precise; E2E assertion tightened |
+| 1.2 | 30/10/2026 | Nguyễn Minh Chính | Hosted run part 1 by Nguyễn Minh Chính (browser run, Chrome 152, admin session already signed in): 5 Pass, 1 Partial. Cases that need a password typed, a new account or a customer session were left for part 2 |
+| 1.3 | 05/11/2026 | Nguyễn Minh Chính (PO) | Hosted run part 2 done by Chính on 05/11 (00:45–03:25): every case run passed, as confirmed by Chính; sheet `F1_ManualTest_Hosted.xlsx` filled from his confirmation. TC-19 (Supabase access), TC-20 (optional) and TC-24 (17/11) not run |
 
 **Evidence of automated run** (local build, PostgreSQL 16, 30/10/2026): `npm test` → 16/16 pass (UNIT = `tests/validation.test.js`, INT = `tests/users.test.js`); `npm run e2e` → 18/18 pass (E2E = `app/e2e/f1.e2e.js`, Chromium). Log: `pm/sprints/S1/evidence/test-run-2026-10-30.txt`.
 **Manual run on the hosted URL** must be done by a team member before the Review and written in the last column (Pass/Fail, date, tester).

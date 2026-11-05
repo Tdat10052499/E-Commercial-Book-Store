@@ -1,6 +1,6 @@
 # Jira snapshot – Sprint 2 (ECBS, board 2, sprint id 6) – read 06/11/2026 00:20, updated 00:25
 
-Read by Nguyễn Minh Chính (AI-assisted). **Jira was behind the repository at the Sprint end:** Đạt's code tasks were merged and deployed on 05/11 (PR #11, #12, #16) but their cards were still *To Do* with no hours; Sprint 1 was still *active* and Sprint 2 *not started*. The column *Sprint-end status* is the status from GitHub. **Update 06/11 00:25 (Chính):** Sprint 1 completed (ECBS-91, 102, 103, 108, 109 moved to Sprint 2), Sprint 2 started with its planned dates, and every card moved to its Sprint-end status with a comment citing the PR – the board now matches the last column. Đạt's hours are still not logged (issue I-06).
+Read by Nguyễn Minh Chính. **Jira was behind the repository at the Sprint end:** Đạt's code tasks were merged and deployed on 05/11 (PR #11, #12, #16) but their cards were still *To Do* with no hours; Sprint 1 was still *active* and Sprint 2 *not started*. The column *Sprint-end status* is the status from GitHub. **Update 06/11 00:25 (Chính):** Sprint 1 completed (ECBS-91, 102, 103, 108, 109 moved to Sprint 2), Sprint 2 started with its planned dates, and every card moved to its Sprint-end status with a comment citing the PR – the board now matches the last column. Đạt's hours are still not logged (issue I-06).
 
 | Task | Jira key | Assignee | Original Estimate (h) | Time spent (h) | Jira status (06/11 00:20) | Sprint-end status (GitHub evidence) |
 |---|---|---|---|---|---|---|

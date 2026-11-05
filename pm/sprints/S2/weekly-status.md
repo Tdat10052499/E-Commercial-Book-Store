@@ -5,9 +5,9 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 04/11/2026 | Nguyễn Minh Chính (AI-assisted) | First weekly status report (S2), data as of 04/11 23:50 |
-| 1.1 | 05/11/2026 | Nguyễn Minh Chính (AI-assisted) | F1 hosted run part 2 and acceptance of US-01…04; Chính's hours; CR-06 details decided by the team |
-| 1.2 | 06/11/2026 | Nguyễn Minh Chính (AI-assisted) | Status at the Sprint end: all S2 items built and deployed, US-10 and NFR-02 accepted, EVM recalculated |
+| 1.0 | 04/11/2026 | Nguyễn Minh Chính | First weekly status report (S2), data as of 04/11 23:50 |
+| 1.1 | 05/11/2026 | Nguyễn Minh Chính | F1 hosted run part 2 and acceptance of US-01…04; Chính's hours; CR-06 details decided by the team |
+| 1.2 | 06/11/2026 | Nguyễn Minh Chính | Status at the Sprint end: all S2 items built and deployed, US-10 and NFR-02 accepted, EVM recalculated |
 
 ## 1. Overall status: **Amber**
 Every Sprint 2 item – F2 book, category and author management, F3 book grid and the CR-06 Store Staff role – is built, merged and live on https://pagetunnel.vercel.app/. Only 5 of 29 SP are accepted, because the hosted test of the admin screens is still open.

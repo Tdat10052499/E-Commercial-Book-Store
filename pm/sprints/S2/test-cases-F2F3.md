@@ -5,13 +5,13 @@ Format: GWT → steps → expected → actual [03 §6.1-7, §6.2-2]. **One test 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 04/11/2026 | Nguyễn Minh Chính (AI-assisted) | Test cases for F2 (US-05…US-09, NFR-02) and F3 (US-10, NFR-04) from the ACs; automated results from a real local run of PR #8. CR-06 test cases (US-24) are S2-T20 (Đạt) and are added by Đạt |
-| 1.2 | 05/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Defects DEF-F2-01 and DEF-F2-02 found by Đạt on the hosted site (23:10) and fixed in `fix/ui-covers-confirm`; confirmation steps now use a styled popup instead of `window.confirm` (team UI decision) |
-| 1.3 | 05/11/2026 | Nguyễn Minh Chính (AI-assisted) | Hosted run of the public pages at 23:55 (S2-T23, part done by Chính): NFR-02, US-10 and the `/books` part of NFR-04 pass on https://pagetunnel.vercel.app/; F1 guard re-checked for the new admin URLs. Admin-side hosted cases (US-05…09, US-24) still need a login → TBD |
-| 1.1 | 05/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Local automated results for US-05/06/07 (branch `feat/P17-books-staff`); new section CR-06 (TC-CR-01…05, one per US-24 AC) and F1 regression table (S2-T20). Hosted results stay TBD until S2-T23 |
+| 1.0 | 04/11/2026 | Nguyễn Minh Chính | Test cases for F2 (US-05…US-09, NFR-02) and F3 (US-10, NFR-04) from the ACs; automated results from a real local run of PR #8. CR-06 test cases (US-24) are S2-T20 (Đạt) and are added by Đạt |
+| 1.2 | 05/11/2026 | Hồ Du Tuấn Đạt | Defects DEF-F2-01 and DEF-F2-02 found by Đạt on the hosted site (23:10) and fixed in `fix/ui-covers-confirm`; confirmation steps now use a styled popup instead of `window.confirm` (team UI decision) |
+| 1.3 | 05/11/2026 | Nguyễn Minh Chính | Hosted run of the public pages at 23:55 (S2-T23, part done by Chính): NFR-02, US-10 and the `/books` part of NFR-04 pass on https://pagetunnel.vercel.app/; F1 guard re-checked for the new admin URLs. Admin-side hosted cases (US-05…09, US-24) still need a login → TBD |
+| 1.1 | 05/11/2026 | Hồ Du Tuấn Đạt | Local automated results for US-05/06/07 (branch `feat/P17-books-staff`); new section CR-06 (TC-CR-01…05, one per US-24 AC) and F1 regression table (S2-T20). Hosted results stay TBD until S2-T23 |
 
 **Automated run** (04/11/2026, PostgreSQL 16, branch `feat/P15-catalogue`, PR #8): `npm test` → **43/43 pass** – 8 UNIT (`tests/catalog-validation.test.js`), 19 INT (`tests/catalog.test.js`), plus 16 F1 regression (`tests/validation.test.js`, `tests/users.test.js`). RESP = component render of the grid and admin tables in Chromium at 360/768/1280 px (horizontal scroll width and grid columns measured).
-**Automated run 2** (05/11/2026, PostgreSQL 16 in the Claude sandbox, branch `feat/P17-books-staff` merged with `develop` locally): `npm test` → **68/68 pass** – the 43 above, plus 16 INT `tests/books.test.js` (US-05/06/07) and 9 INT `tests/staff.test.js` (US-24). One F1 test (`validation.test.js`, US-03/AC-01) had to be updated: it still expected the role `staff` to be rejected, which CR-06 changed on purpose. E2E checks for US-07/AC-02 and US-24 were added to `e2e/f1.e2e.js` but **not run** (no browser in the sandbox) → run them on the host.
+**Automated run 2** (05/11/2026, PostgreSQL 16, local run, branch `feat/P17-books-staff` merged with `develop` locally): `npm test` → **68/68 pass** – the 43 above, plus 16 INT `tests/books.test.js` (US-05/06/07) and 9 INT `tests/staff.test.js` (US-24). One F1 test (`validation.test.js`, US-03/AC-01) had to be updated: it still expected the role `staff` to be rejected, which CR-06 changed on purpose. E2E checks for US-07/AC-02 and US-24 were added to `e2e/f1.e2e.js` but **not run** (no browser in the sandbox) → run them on the host.
 **Hosted manual run** (S2-T23, Đạt): after PR #8 is merged and deployed to https://pagetunnel.vercel.app/. Write Pass/Fail, date and tester in the last column. Items not implemented at the time of the run are marked *Blocked* and returned to the Product Backlog if still open at the Sprint end.
 
 ## F2 – Book, category and author management
@@ -38,19 +38,19 @@ Format: GWT → steps → expected → actual [03 §6.1-7, §6.2-2]. **One test 
 | TC-F2-18 | US-09/AC-02 | M | Author *To Hoai* linked to book *De Men* | Edit name to *Tô Hoài* → Save | *De Men* shows *Tô Hoài* on `/books` | INT | Pass | TBD |
 | TC-F2-19 | US-09/AC-03 | E | Author linked to 1 visible book | Remove the author | "Author is in use by 1 book"; author kept. Unused author is removed; removing it again → "Author not found" | INT | Pass | TBD |
 | TC-F2-20 | US-09/AC-04 | B | Admin on `/admin/authors` | Names of 100 and 101 characters | 100 accepted; 101 rejected (client and server) | UNIT + INT | Pass | TBD |
-| TC-F2-21 | NFR-02/AC-01 | M | Empty database | Run `npm run db:seed` (also runs on every Vercel deploy) | "Seed done: 30 of 30 sample books added"; 30 visible books in 6 categories, each with cover, price > 0, stock ≥ 0 | INT | Pass | Pass (05/11 23:55, Chính (AI-assisted), public pages) – `/books` shows "30 titles · page 1 of 3", every card has a cover, price in VND |
-| TC-F2-22 | NFR-02/AC-02 | B | Seed already run | Run the seed again | "Seed done: 0 of 30 …"; still 30 books, 6 categories | INT | Pass | Pass (05/11 23:55, Chính (AI-assisted), public pages) – still 30 titles after several deploys on 05/11 (seed runs in every `vercel-build`) |
+| TC-F2-21 | NFR-02/AC-01 | M | Empty database | Run `npm run db:seed` (also runs on every Vercel deploy) | "Seed done: 30 of 30 sample books added"; 30 visible books in 6 categories, each with cover, price > 0, stock ≥ 0 | INT | Pass | Pass (05/11 23:55, Chính, public pages) – `/books` shows "30 titles · page 1 of 3", every card has a cover, price in VND |
+| TC-F2-22 | NFR-02/AC-02 | B | Seed already run | Run the seed again | "Seed done: 0 of 30 …"; still 30 books, 6 categories | INT | Pass | Pass (05/11 23:55, Chính, public pages) – still 30 titles after several deploys on 05/11 (seed runs in every `vercel-build`) |
 
 ## F3 – Book grid
 
 | TC | AC | Type | Given | When (steps) | Then (expected) | Automated | Actual – local automated (04/11) | Actual – hosted, manual |
 |---|---|---|---|---|---|---|---|---|
-| TC-F3-01 | US-10/AC-01 | M | ≥ 13 visible books (seed: 30) | Open `/books` | 12 cards (cover, title, author, price in VND), newest first (*A Tale of Two Cities* first after the seed), pagination Previous · 1 2 3 · Next | INT + RESP | Pass – 25-book set: page 1 = Book 25…Book 14; seeded set: first = *A Tale of Two Cities*, 3 pages | Pass (05/11 23:55, Chính (AI-assisted), public pages) – 12 cards, *A Tale of Two Cities* first, "Previous 1 2 3 Next"; median load 0.24 s |
-| TC-F3-02 | US-10/AC-02 | B | (a) exactly 12 visible books; (b) 25 visible books | Open `/books`; then `/books?page=3` | (a) one page, no pagination/Next link; (b) page 3 shows 1 book | UNIT + INT | Pass | Pass – (b) variant on host (05/11 23:55, Chính (AI-assisted), public pages): 30 books → page 3 shows 6 cards and no Next link; (a) 12-book case covered by INT only |
-| TC-F3-03 | US-10/AC-03 | E | 30 visible books (3 pages) | Open `?page=0`, `?page=-2`, `?page=abc`, `?page=999` | Pages 1, 1, 1 and 3 shown; no error | UNIT + INT | Pass | Pass (05/11 23:55, Chính (AI-assisted), public pages) – `?page=0`, `-2`, `abc` → page 1; `?page=999` → page 3; no error |
+| TC-F3-01 | US-10/AC-01 | M | ≥ 13 visible books (seed: 30) | Open `/books` | 12 cards (cover, title, author, price in VND), newest first (*A Tale of Two Cities* first after the seed), pagination Previous · 1 2 3 · Next | INT + RESP | Pass – 25-book set: page 1 = Book 25…Book 14; seeded set: first = *A Tale of Two Cities*, 3 pages | Pass (05/11 23:55, Chính, public pages) – 12 cards, *A Tale of Two Cities* first, "Previous 1 2 3 Next"; median load 0.24 s |
+| TC-F3-02 | US-10/AC-02 | B | (a) exactly 12 visible books; (b) 25 visible books | Open `/books`; then `/books?page=3` | (a) one page, no pagination/Next link; (b) page 3 shows 1 book | UNIT + INT | Pass | Pass – (b) variant on host (05/11 23:55, Chính, public pages): 30 books → page 3 shows 6 cards and no Next link; (a) 12-book case covered by INT only |
+| TC-F3-03 | US-10/AC-03 | E | 30 visible books (3 pages) | Open `?page=0`, `?page=-2`, `?page=abc`, `?page=999` | Pages 1, 1, 1 and 3 shown; no error | UNIT + INT | Pass | Pass (05/11 23:55, Chính, public pages) – `?page=0`, `-2`, `abc` → page 1; `?page=999` → page 3; no error |
 | TC-F3-04 | US-10/AC-04 | E | No visible book (only hidden ones) | Open `/books` | "No books available yet"; no pagination | INT | Pass | Not run on host (would need every book hidden) – INT Pass |
-| TC-F3-05 | NFR-04/AC-01 | M | Widths 360, 768, 1280 px | Open `/books`, `/admin/categories`, `/admin/authors` (detail page: S3) | No horizontal scrolling; grid 2 / 3 / 4 columns; admin tables become cards on phones | RESP | Pass – scroll width = viewport at all 3 widths; columns 2/3/4 | Pass for `/books` (05/11 23:55, Chính (AI-assisted), public pages): 360 px → 2 columns, 768 px → 3, 1280 px → 4; scroll width ≤ viewport. Admin pages need a login → TBD |
-| TC-F3-06 | NFR-04/AC-02 | B | Touch device (phone emulation, 360 px) | Measure buttons, pagination links and nav links | Every tap target ≥ 44 × 44 px | RESP | Pass – no target under 44 px at 360 px with touch | Pass (05/11 23:55, Chính (AI-assisted), public pages) – 360 px touch emulation: no button, pagination or nav link under 44 × 44 px |
+| TC-F3-05 | NFR-04/AC-01 | M | Widths 360, 768, 1280 px | Open `/books`, `/admin/categories`, `/admin/authors` (detail page: S3) | No horizontal scrolling; grid 2 / 3 / 4 columns; admin tables become cards on phones | RESP | Pass – scroll width = viewport at all 3 widths; columns 2/3/4 | Pass for `/books` (05/11 23:55, Chính, public pages): 360 px → 2 columns, 768 px → 3, 1280 px → 4; scroll width ≤ viewport. Admin pages need a login → TBD |
+| TC-F3-06 | NFR-04/AC-02 | B | Touch device (phone emulation, 360 px) | Measure buttons, pagination links and nav links | Every tap target ≥ 44 × 44 px | RESP | Pass – no target under 44 px at 360 px with touch | Pass (05/11 23:55, Chính, public pages) – 360 px touch emulation: no button, pagination or nav link under 44 × 44 px |
 
 ## CR-06 – Store Staff role (US-24, S2-T20)
 
@@ -84,14 +84,14 @@ Re-run of the Sprint 1 test cases (`pm/sprints/S1/test-cases-F1.md`) on the Spri
 | TC-F1-12 | US-03/AC-03 | Pass (INT) | TBD |
 | TC-F1-13 | US-03/AC-04 | Pass (INT) | TBD |
 | TC-F1-14 | US-03/AC-05 | Pass (INT) | TBD |
-| TC-F1-15 | US-04/AC-01 | E2E only – not run | Pass (05/11 23:55, Chính (AI-assisted), public pages) – `/admin`, `/admin/books`, `/admin/books/new`, `/admin/categories`, `/admin/authors`, `/admin/accounts` without a session → `/login?next=…` with the exact path |
+| TC-F1-15 | US-04/AC-01 | E2E only – not run | Pass (05/11 23:55, Chính, public pages) – `/admin`, `/admin/books`, `/admin/books/new`, `/admin/categories`, `/admin/authors`, `/admin/accounts` without a session → `/login?next=…` with the exact path |
 | TC-F1-16 | US-04/AC-02 | E2E only – not run (Customer must still get 403 on every `/admin` URL now that Staff is allowed in) | TBD |
 | TC-F1-17 | US-04/AC-03 | E2E only – not run | TBD |
 | TC-F1-18 | US-04/AC-04 | E2E only – not run | TBD |
 | TC-F1-19 | NFR-01/AC-01 | Pass (INT, `$2…$10$`) | TBD – Supabase screenshot of `password_hash` |
 | TC-F1-20 | NFR-01/AC-02 | Pass (INT) | TBD |
 | TC-F1-21 | NFR-01/AC-03 | Pass (UNIT) | TBD |
-| TC-F1-22 | NFR-03/AC-01 | Host only | Pass (05/11 23:55, Chính (AI-assisted), public pages) – home page over HTTPS |
+| TC-F1-22 | NFR-03/AC-01 | Host only | Pass (05/11 23:55, Chính, public pages) – home page over HTTPS |
 | TC-F1-23 | NFR-03/AC-02 | Host only | TBD |
 | TC-F1-24 | NFR-03/AC-03 | Host only (17/11) | TBD |
 

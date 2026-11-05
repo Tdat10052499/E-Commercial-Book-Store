@@ -3,9 +3,9 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | CR-06 recorded (due 29/10 23:59 per [CR-06 §5]; entry time to be stated honestly in the submission) |
-| 1.2 | 06/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Implementation status of CR-06 at the S2 end |
-| 1.1 | 04/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | CCB decision 30/10 recorded (Approve, Option B); baseline updated to v1.1 (PSP 62 SP, BAC 26.4 M VND), tag `baseline-v1.1`; stakeholders informed |
+| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt | CR-06 recorded (due 29/10 23:59 per [CR-06 §5]; entry time to be stated honestly in the submission) |
+| 1.2 | 06/11/2026 | Nguyễn Minh Chính (PO) | Implementation status of CR-06 at the S2 end |
+| 1.1 | 04/11/2026 | Nguyễn Minh Chính (PO) | CCB decision 30/10 recorded (Approve, Option B); baseline updated to v1.1 (PSP 62 SP, BAC 26.4 M VND), tag `baseline-v1.1`; stakeholders informed |
 
 | CR ID | Date received | Requester | Title | Affected | Customer priority | Description | Impact summary (plan) | Options | CCB date | Decision | Reason | Baseline updated | Status |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|

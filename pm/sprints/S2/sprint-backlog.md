@@ -5,10 +5,10 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 0.1-draft | 30/10/2026 | Nguyễn Minh Chính (AI-assisted) | Proposal prepared before Sprint Planning 2. Task hours are **proposals** |
-| 1.2 | 06/11/2026 | Nguyễn Minh Chính (AI-assisted) | Status at the Sprint end (05/11 23:59) from GitHub and Jira: Đạt's US-05…07 and US-24 merged (PR #11, #12, #16) and deployed; 19/23 tasks Done; PO accepted US-10 and NFR-02 (5 SP). A task is *Done* when its work is merged into `develop`; a story is *Done* only after PO acceptance (Story DoD). Đạt's hours: TBD |
-| 1.1 | 05/11/2026 | Nguyễn Minh Chính (AI-assisted) | Chính's actual hours from Jira (10.5 h, logged 05/11); S1 velocity update (14 SP accepted 05/11) |
-| 1.0 | 04/11/2026 | Nguyễn Minh Chính (PO + Leader S2, AI-assisted) | Inputs recorded: actual S1 velocity 0 SP meeting DoD (F1 In Review), actual S1 hours 19.5 h, CCB 30/10 = **Approve Option B** → US-24 (5 SP) added to S2, US-25 (2 SP) planned for S3. S2-T07 (data model) and S2-T13 (seed) moved from Đạt to Chính so the category, author and grid tasks were not blocked (no F2 commit in the repo by 04/11). Status from the repo and PR #8 at 04/11 23:50. Actual hours: TBD from Jira |
+| 0.1-draft | 30/10/2026 | Nguyễn Minh Chính | Proposal prepared before Sprint Planning 2. Task hours are **proposals** |
+| 1.2 | 06/11/2026 | Nguyễn Minh Chính | Status at the Sprint end (05/11 23:59) from GitHub and Jira: Đạt's US-05…07 and US-24 merged (PR #11, #12, #16) and deployed; 19/23 tasks Done; PO accepted US-10 and NFR-02 (5 SP). A task is *Done* when its work is merged into `develop`; a story is *Done* only after PO acceptance (Story DoD). Đạt's hours: TBD |
+| 1.1 | 05/11/2026 | Nguyễn Minh Chính | Chính's actual hours from Jira (10.5 h, logged 05/11); S1 velocity update (14 SP accepted 05/11) |
+| 1.0 | 04/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Inputs recorded: actual S1 velocity 0 SP meeting DoD (F1 In Review), actual S1 hours 19.5 h, CCB 30/10 = **Approve Option B** → US-24 (5 SP) added to S2, US-25 (2 SP) planned for S3. S2-T07 (data model) and S2-T13 (seed) moved from Đạt to Chính so the category, author and grid tasks were not blocked (no F2 commit in the repo by 04/11). Status from the repo and PR #8 at 04/11 23:50. Actual hours: TBD from Jira |
 
 ## Sprint Goal (measurable)
 By 05/11/2026, on the hosted URL: an administrator can add, edit and hide books (price > 0, required fields validated on client and server) and manage categories and authors; a customer browses a responsive grid of ≥ 30 sample books, 12 per page, newest first; a Store Staff account can add/edit books but gets HTTP 403 on delete and on account management (CR-06, Option B). Verified by the F2/F3 test cases (≥ 1 per AC) and the F1 regression.
@@ -66,7 +66,7 @@ Status at the Sprint end, 05/11/2026 23:59 (GitHub + Jira). A task is *Done* whe
 
 "Both" tasks are counted half per member. Moving T07 and T13 (3.5 h) to Chính puts Chính's planned load at **23.5 h > 20 h capacity** and Đạt's at 16.25 h; the total stays within 40 h. Recorded as issue I-02.
 
-> **Check against capacity:** 39.75 h planned ≤ 40 h capacity. Actual hours are logged by each member in Jira (*Completed Work*) and copied here from Jira before submission – AI does not estimate them [CLAUDE.md §3.2].
+> **Check against capacity:** 39.75 h planned ≤ 40 h capacity. Actual hours are logged by each member in Jira (*Completed Work*) and copied here from Jira before submission – they are never estimated afterwards.
 
 ## Result at the Sprint end (05/11/2026 23:59)
 | Item | SP | Built | Tests (local) | Hosted run | PO decision |

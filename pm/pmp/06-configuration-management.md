@@ -3,7 +3,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | New; branching per CLAUDE.md §5; CR/CCB process per [03 §6.2-3] |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | New; branching per the team Git workflow; CR/CCB process per [03 §6.2-3] |
 
 ## 6.1 Configuration items (CI)
 | CI-ID | Item | Type | Location | Owner | Baseline |

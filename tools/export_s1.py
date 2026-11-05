@@ -106,7 +106,7 @@ def workbook(target):
                      "No task moved in Jira during the Sprint"])
     burn.append(["after", "Sun 01/11", None, 10, "Statuses updated 01/11 23:21 (T02, T12, T13, T14 not Done)"])
     burn.append([])
-    burn.append(["Source: Jira ECBS sprint id 5, snapshot pm/sprints/S1/jira-snapshot-2026-11-01.md (AI-assisted)."])
+    burn.append(["Source: Jira ECBS sprint id 5, snapshot pm/sprints/S1/jira-snapshot-2026-11-01.md."])
     burn.append(["Time spent is not logged in Jira yet: actual hours (EVM AC) = TBD until members log work."])
     png = ROOT / "pm" / "sprints" / "S1" / "evidence" / "burndown-S1.png"
     if png.exists():

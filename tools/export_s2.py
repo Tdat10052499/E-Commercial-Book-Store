@@ -8,10 +8,11 @@ Outputs (deliverables/S2/, prefix HK261_SPM_FP_Team6_):
   c4_ChangeRequest_CR01.docx  CR-06 form, impact analysis, CCB decision, baseline update
   c0_Eval_S2.xlsx             Leader S2 evaluation (workload filled, scores left to the Leader)
 
-Only planned or recorded data is filled in; meeting records, hours and scores stay TBD [CLAUDE.md §3.2].
+Only planned or recorded data is filled in; meeting records, hours and scores stay TBD (team rule: actual data is never invented).
 Re-run after updating the Markdown sources (e.g. hours from Jira) to refresh every file.
 """
 import copy
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -20,11 +21,12 @@ import docx
 from docx.oxml.ns import qn
 from docx.shared import Cm
 from openpyxl import load_workbook
-from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.styles import Alignment, Border, Font, PatternFill
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import burndown_s2  # noqa: E402
 import docx_style  # noqa: E402
+import workbook_style  # noqa: E402
 from export_s1 import add_sheet  # noqa: E402
 from export_s1_templates import (PO, LEADER, TBD, TEAM, TPL, _body_md, _fill_rows, _md_into,  # noqa: E402
                                  set_cell)
@@ -112,65 +114,163 @@ def _insert_after(wb, after, ws):
     wb.move_sheet(ws, offset=(wb.sheetnames.index(after) + 1) - wb.sheetnames.index(ws.title))
 
 
-def c2_workbook():
-    src = ROOT / "deliverables" / "S1" / f"{PREFIX}c2_SprintBacklog_S1.xlsx"
-    wb = load_workbook(src)
-    plan_note = "Plan figures are labelled (plan). Actual figures come from Jira. TBD = team input (plan/INPUTS.md)."
-    # baseline sheets updated to v1.1 (the S1 versions are kept in the S1 file and in Git tag baseline-v1.0)
-    ws = _replace_sheet(wb, "ProductBacklog", "pm/backlog/product-backlog.md", pick=[1, 2, 3, 4],
-                        note=plan_note + " Baseline v1.1 (CR-06 approved): PSP 62 SP.")
-    ws.insert_rows(3)
-    ws["A3"] = "Jira board: https://tdat100524.atlassian.net/jira/software/projects/ECBS/boards/2 (project ECBS)"
-    _replace_sheet(wb, "ReleasePlan", "pm/pmp/03-master-release-plan.md", note=plan_note + " Release Plan v1.3, BAC 26.4 M VND.")
-    _replace_sheet(wb, "RiskRegister", "pm/pmp/05-risk-plan.md", pick=[0, 1])
-    _replace_sheet(wb, "IssueLog", "pm/pmp/05-risk-plan.md", pick=[2])
-    _replace_sheet(wb, "ChangeLog", "pm/change/change-log.md")
-    _replace_sheet(wb, "TestCases_F1", "pm/sprints/S1/test-cases-F1.md",
-                   note="Updated 05/11/2026 with the hosted run part 2 (v1.3).")
-    _replace_sheet(wb, "PlanningPoker", "pm/backlog/planning-poker-log.md",
-                   note="Votes are entered by the team only. Session 3 is prepared for Planning 3 (06/11) and still empty.")
+SHEETS = [  # name, source, subtitle, options
+    ("ProductBacklog", "pm/backlog/product-backlog.md", "Release 1.0 items, MoSCoW, story points and acceptance criteria (Given–When–Then). Baseline v1.1: PSP 62 SP", {}),
+    ("DoR", "pm/backlog/definition-of-ready.md", "Checks an item must pass before it enters a Sprint", {}),
+    ("PlanningPoker", "pm/backlog/planning-poker-log.md", "Estimation log – Sessions 1–2 (PO estimates) and Session 3 prepared for Planning 3", {}),
+    ("ReleasePlan", "pm/pmp/03-master-release-plan.md", "Milestones, Sprint plan, capacity, BAC and baselines – Release Plan v1.3", {}),
+    ("S1_Backlog", "pm/sprints/S1/sprint-backlog.md", "Sprint 1 (23/10 – 29/10/2026), Leader Hồ Du Tuấn Đạt", {}),
+    ("S2_Backlog", "pm/sprints/S2/sprint-backlog.md", "Sprint 2 (30/10 – 05/11/2026), Leader Nguyễn Minh Chính – status at the Sprint end", {}),
+]
+SHEETS_AFTER = [
+    ("RiskRegister", "pm/pmp/05-risk-plan.md", "Risk register v1.2 – P × I, strategy, owner, trigger, status", {"sections": ["5.1", "5.2"]}),
+    ("IssueLog", "pm/pmp/05-risk-plan.md", "Risks that occurred and the actions taken", {"sections": ["5.3"]}),
+    ("ChangeLog", "pm/change/change-log.md", "All change requests and their CCB decisions", {}),
+    ("CR06_Impact", "pm/change/CR-06-change-request-form.md", "CR-06 Store Staff role – form, impact, options, CCB decision, baseline update", {}),
+    ("ConfigItems", "pm/pmp/06-configuration-management.md", "Configuration items, branching, baselines and tags", {}),
+    ("TestCases_F1", "pm/sprints/S1/test-cases-F1.md", "F1 test cases from the ACs – automated and hosted results", {}),
+    ("TestCases_F2F3", "pm/sprints/S2/test-cases-F2F3.md", "F2, F3 and CR-06 test cases from the ACs, F1 regression – results at the Sprint end", {}),
+    ("WeeklyStatus_S2", "pm/sprints/S2/weekly-status.md", "Weekly Status Report, week 2 (Green / Amber / Red)", {}),
+]
+INDEX = [
+    ("ProductBacklog", "Product Backlog v1.3 with all acceptance criteria"), ("DoR", "Definition of Ready"),
+    ("PlanningPoker", "Planning Poker / estimation log"), ("ReleasePlan", "Master and Release Plan v1.3 (PSP 62 SP, BAC 26.4 M VND)"),
+    ("S1_Backlog", "Sprint 1 Backlog"), ("S2_Backlog", "Sprint 2 Backlog – tasks, owners, plan and actual hours, result per item"),
+    ("Burndown_S1", "Sprint 1 burndown"), ("Burndown_S2", "Sprint 2 burndown"),
+    ("EVM_S1", "EVM snapshot end of Sprint 1 (baseline v1.0)"), ("EVM_S2", "EVM snapshot end of Sprint 2 (baseline v1.1)"),
+    ("RiskRegister", "Risk register"), ("IssueLog", "Issue log"), ("ChangeLog", "Change Log"),
+    ("CR06_Impact", "CR-06 change request, impact analysis, CCB decision"), ("ConfigItems", "Configuration items"),
+    ("TestCases_F1", "Test cases F1"), ("TestCases_F2F3", "Test cases F2, F3, CR-06 + F1 regression"),
+    ("WeeklyStatus_S2", "Weekly Status Report (Sprint 2)"),
+]
 
-    # S1 burndown: replace the round-tripped native chart by the same chart as an image (safer for Excel)
-    s1b = wb["Burndown"]
-    s1b._charts = []
+
+def _index_sheet(wb):
+    from openpyxl.styles import Alignment as Al
+    ws = wb.create_sheet("Index", 0)
+    navy = workbook_style.NAVY
+    ws["A1"] = "E-Commercial Book Store – Release 1.0 · Project Workbook"
+    ws["A1"].font = Font(name="Calibri", size=16, bold=True, color=navy)
+    meta = [("Team", "Team 6 – Page Turners"), ("Course", "Software Project Management (72ITSE41503), HK261 – Final Project"),
+            ("Sponsor / Customer", "Dr. Bùi Minh Phụng (Ms. Le)"),
+            ("Members", "Hồ Du Tuấn Đạt (2374802010097) – Leader S1, S3 · Nguyễn Minh Chính (2275106050051) – PO, Leader S2"),
+            ("Version", "Sprint 2 submission – cumulative (contains every Sprint 1 sheet)"), ("Data as of", "05/11/2026 23:59 (end of Sprint 2)"),
+            ("Jira board", "https://tdat100524.atlassian.net/jira/software/projects/ECBS/boards/2"),
+            ("Repository", "https://github.com/Tdat10052499/E-Commercial-Book-Store"), ("Hosted site", "https://pagetunnel.vercel.app/"),
+            ("Convention", "Figures marked (plan) are planning values; actual figures come from Jira and the repository; TBD = not available yet")]
+    r = 3
+    for k, v in meta:
+        ws.cell(r, 1, k).font = Font(name="Calibri", size=10, bold=True)
+        ws.cell(r, 2, v).font = Font(name="Calibri", size=10)
+        r += 1
+    r += 1
+    ws.cell(r, 1, "Sheets").font = Font(name="Calibri", size=12, bold=True, color=navy)
+    r += 1
+    for j, (a, b) in enumerate([("Sheet", "Content")] + INDEX):
+        c1, c2 = ws.cell(r, 1, a), ws.cell(r, 2, b)
+        for c in (c1, c2):
+            c.border = workbook_style.BORDER
+            c.alignment = Al(vertical="top", wrap_text=True)
+            c.font = Font(name="Calibri", size=10, bold=j == 0, color="FFFFFF" if j == 0 else "000000")
+            if j == 0:
+                c.fill = workbook_style.HEAD_FILL
+        if j:
+            c1.hyperlink = f"#'{a}'!A1"
+            c1.font = Font(name="Calibri", size=10, color="1F5FA8", underline="single")
+        r += 1
+    ws.column_dimensions["A"].width = 20
+    ws.column_dimensions["B"].width = 100
+    ws.sheet_view.showGridLines = False
+    ws.page_setup.orientation = "landscape"
+    ws.page_setup.fitToWidth = 1
+    ws.page_setup.fitToHeight = 0
+    ws.sheet_properties.pageSetUpPr.fitToPage = True
+    return ws
+
+
+def _copy_cells(src, dst):
+    for row in src.iter_rows():
+        for c in row:
+            if c.value is not None:
+                dst.cell(c.row, c.column, c.value)
+    for k, dim in src.column_dimensions.items():
+        dst.column_dimensions[k].width = dim.width
+
+
+def _notes(ws, first_row, last_col, chars_per_line=110):
+    """Long text rows under a table: merged across the table width, wrapped, height to fit."""
+    for r in range(first_row, ws.max_row + 1):
+        c = ws.cell(r, 1)
+        if isinstance(c.value, str) and len(c.value) > 30:
+            ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=last_col)
+            c.alignment = Alignment(wrap_text=True, vertical="top")
+            c.font = Font(name="Calibri", size=10)
+            c.border = Border()
+            ws.row_dimensions[r].height = 15 * (len(c.value) // chars_per_line + 1) + 2
+
+
+def c2_workbook():
+    from openpyxl import Workbook
     from openpyxl.drawing.image import Image as XLImage
+    s1 = load_workbook(ROOT / "deliverables" / "S1" / f"{PREFIX}c2_SprintBacklog_S1.xlsx")
+    wb = Workbook()
+    wb.remove(wb.active)
+    for name, src, sub, opt in SHEETS:
+        workbook_style.md_sheet(wb, name, ROOT / src, subtitle=sub, **opt)
+
+    # Burndown S1 – data as in the S1 submission, chart as image
+    b1 = wb.create_sheet("Burndown_S1")
+    _copy_cells(s1["Burndown"], b1)
+    b1.insert_rows(1, 2)
+    b1.insert_rows(10)
+    b1["A1"] = "Sprint 1 burndown (Jira ECBS, hours)"
+    workbook_style.style_table_sheet(b1, header_row=3, last_col=4)
+    for col, w in zip("ABCD", (6, 16, 30, 24)):
+        b1.column_dimensions[col].width = w
+    _notes(b1, 11, 4, chars_per_line=80)
     img1 = XLImage(str(ROOT / "pm" / "sprints" / "S1" / "evidence" / "burndown-S1.png"))
     img1.width, img1.height = 750, 380
-    s1b.add_image(img1, "G2")
+    b1.add_image(img1, "G3")
 
-    s2 = add_sheet(wb, "S2_Backlog", "pm/sprints/S2/sprint-backlog.md", note=plan_note)
-    _insert_after(wb, "S1_Backlog", s2)
-
-    burn = wb.create_sheet("Burndown_S2")
-    burn.append(["Day", "Date", f"Ideal remaining (h, plan: {PLAN_TOTAL} h → 0)", "Remaining by task status (h)", "Note"])
+    b2 = wb.create_sheet("Burndown_S2")
+    b2["A1"] = "Sprint 2 burndown (plan vs remaining, hours)"
+    b2.append([])
+    b2.append(["Day", "Date", f"Ideal remaining (h, plan: {PLAN_TOTAL} h → 0)", "Remaining by task status (h)", "Note"])
     for i, (d, ideal, act) in enumerate(zip(burndown_s2.DAYS, burndown_s2.IDEAL, burndown_s2.ACTUAL)):
         note = {3: "T03, T04, T05, T21, T22 Done (9 h)", 4: "PR #8, #11, #12 merged; T07–T20 Done; left: T01, T02, T06, T23"}.get(i, "No S2 task Done")
-        burn.append([i + 1, d, ideal, act if act is not None else TBD, note])
-    burn.append([])
-    burn.append(["Source: repo + PR #8 + Jira sprint 6 (pm/sprints/S2/jira-snapshot-2026-11-05.md). "
-                 "S2 tasks were entered in Jira on 05/11 00:20; days 1–4 reconstructed from completion evidence; day 5 from merged PRs."])
-    for c in burn[1]:
-        c.font = Font(bold=True, color="FFFFFF")
-        c.fill = PatternFill("solid", fgColor="8A3B12")
-    for col, w in zip("ABCDE", (6, 12, 30, 28, 42)):
-        burn.column_dimensions[col].width = w
-    png = ROOT / "pm" / "sprints" / "S2" / "evidence" / "burndown-S2.png"
-    from openpyxl.drawing.image import Image as XLImage
-    img = XLImage(str(png))
+        b2.append([i + 1, d, ideal, act if act is not None else TBD, note])
+    workbook_style.style_table_sheet(b2, header_row=3, last_col=5)
+    b2.append([])
+    b2.append(["Remaining = plan hours of S2 tasks not Done; a task is Done when its work is merged into develop. "
+               "The S2 tasks were entered in Jira on 05/11, so days 1–4 are reconstructed from completion evidence; day 5 from the merged PRs."])
+    for col, w in zip("ABCDE", (6, 12, 30, 28, 46)):
+        b2.column_dimensions[col].width = w
+    _notes(b2, 10, 5)
+    img = XLImage(str(ROOT / "pm" / "sprints" / "S2" / "evidence" / "burndown-S2.png"))
     img.width, img.height = 750, 380
-    burn.add_image(img, "G2")
-    _insert_after(wb, "Burndown", burn)
+    b2.add_image(img, "G3")
+
+    # EVM S1 – the snapshot submitted in Sprint 1, same cells and formulas
+    e1 = wb.create_sheet("EVM_S1")
+    _copy_cells(s1["EVM"], e1)
+    workbook_style.style_table_sheet(e1, header_row=4, last_col=3)
+    for r in range(5, 22):
+        e1.cell(r, 2).number_format = "#,##0.00" if r in (18, 19) else ("#,##0" if r in (6, 7, 13, 14, 15, 16, 17, 20, 21) else "General")
+    e1.column_dimensions["A"].width = 40
+    e1.column_dimensions["B"].width = 24
+    e1.column_dimensions["C"].width = 70
+    _notes(e1, 23, 3, chars_per_line=120)
 
     evm = wb.create_sheet("EVM_S2")
     rows = [
         ("EVM snapshot – Sprint 2 (n = 2, N = 3), baseline v1.1, data as of the Sprint end, 05/11/2026 23:59", None, None),
-        ("Formulas per the Final Project brief, AgileEVM. Plan values from Release Plan v1.3; actuals from Jira.", None, None),
+        ("Formulas per the Final Project brief (AgileEVM). Plan values from Release Plan v1.3; actuals from Jira.", None, None),
         (None, None, None),
         ("Input / metric", "Value", "Formula / source"),
         ("Planned hours of the release (h, plan)", 132, "Release Plan v1.3: 120 h + 12 h CR-06"),
         ("Rate (VND/h)", 200000, "Final Project brief"),
         ("BAC (VND)", "=B5*B6", "Planned hours × rate"),
-        ("PSP (SP, plan)", 62, "Product Backlog v1.2 (baseline v1.1)"),
+        ("PSP (SP, plan)", 62, "Product Backlog (baseline v1.1)"),
         ("n (Sprints completed)", 2, None),
         ("N (Sprints planned)", 3, None),
         ("SP meeting DoD (cumulative)", 19, "F1: US-01…04 (14 SP); S2: US-10, NFR-02 (5 SP) accepted by the PO 05/11 23:59"),
@@ -179,7 +279,7 @@ def c2_workbook():
         ("Actual hours (cumulative, h)", "=B12+N(B13)", "S1 + S2"),
         ("PV (VND)", "=B7*B9/B10", "BAC × n / N"),
         ("EV (VND)", "=B7*B11/B8", "BAC × SP done / PSP"),
-        ("AC (VND)", "=B14*B6", "Actual hours × rate (S2 part missing until entered)"),
+        ("AC (VND)", "=B14*B6", "Actual hours × rate"),
         ("SV (VND)", "=B16-B15", "EV − PV"),
         ("CV (VND)", "=B16-B17", "EV − AC"),
         ("SPI", '=IF(B15=0,"n/a",B16/B15)', "EV / PV"),
@@ -193,29 +293,24 @@ def c2_workbook():
     ]
     for r in rows:
         evm.append(r)
-    evm["A1"].font = Font(bold=True, size=12)
-    for c in evm[4]:
-        c.font = Font(bold=True, color="FFFFFF")
-        c.fill = PatternFill("solid", fgColor="8A3B12")
+    workbook_style.style_table_sheet(evm, header_row=4, last_col=3)
     for r in range(5, 24):
-        evm.cell(r, 2).number_format = "#,##0.00" if r in (20, 21) else "#,##0"
+        evm.cell(r, 2).number_format = "#,##0.00" if r in (20, 21) else ("#,##0" if r in (6, 7, 15, 16, 17, 18, 19, 22, 23) else "General")
     evm["B13"].fill = PatternFill("solid", fgColor="FFF2CC")
-    for col, w in zip("ABC", (40, 24, 60)):
+    evm.merge_cells("A25:C25")
+    evm["A25"].alignment = Alignment(wrap_text=True, vertical="top")
+    evm.row_dimensions[25].height = 48
+    for col, w in zip("ABC", (40, 24, 70)):
         evm.column_dimensions[col].width = w
-    _insert_after(wb, "EVM", evm)
 
-    tc = add_sheet(wb, "TestCases_F2F3", "pm/sprints/S2/test-cases-F2F3.md")
-    _insert_after(wb, "TestCases_F1", tc)
-    add_sheet(wb, "WeeklyStatus_S2", "pm/sprints/S2/weekly-status.md")
-    add_sheet(wb, "CR06_Impact", "pm/change/CR-06-change-request-form.md", pick=[1, 2, 3, 4, 5, 6, 7])
-    for ws in wb.worksheets:
+    for name, src, sub, opt in SHEETS_AFTER:
+        workbook_style.md_sheet(wb, name, ROOT / src, subtitle=sub, **opt)
+    _index_sheet(wb)
+    for ws in wb.worksheets:  # text that starts with "=" must stay text
         for row in ws.iter_rows():
             for c in row:
-                # text copied from Markdown that starts with "=" must stay text, not become an (invalid) formula
-                if c.data_type == "f" and ws.title not in ("EVM", "EVM_S2", "S1_Backlog"):
+                if c.data_type == "f" and ws.title not in ("EVM_S1", "EVM_S2"):
                     c.data_type = "s"
-                if isinstance(c.value, str) and len(c.value) > 60:
-                    c.alignment = Alignment(wrap_text=True, vertical="top")
     out = OUT / f"{PREFIX}c2_SprintBacklog_S2.xlsx"
     wb.save(out)
     return out
@@ -228,7 +323,7 @@ C4_COVER = {
     "course": "Software Project Management (72ITSE41503) – Final Project, Semester 261",
     "project": "E-COMMERCIAL BOOK STORE – RELEASE 1.0",
     "title": "CHANGE REQUEST CR-06",
-    "version": "Store Staff role · Form, impact analysis, CCB decision · Version 2.0",
+    "version": "Store Staff role: form, impact analysis and CCB decision (version 2.0)",
     "lines": [
         "Team 6 – Page Turners",
         "Nguyễn Minh Chính (2275106050051) – Product Owner, Sprint Leader S2",
@@ -244,10 +339,82 @@ def c4_form():
     subprocess.run(["pandoc", "--from", "gfm", "--metadata", "title=Change Request CR-06", "-o", str(out),
                     str(ROOT / "pm" / "change" / "CR-06-change-request-form.md")], check=True)
     docx_style.style_docx(out, "HK261 SPM – Team 6 Page Turners – Change Request CR-06 (c4)", cover=C4_COVER)
+    docx_style.prerender_toc(out)
     return out
 
 
 # ---------------------------------------------------------------- c3 report
+DOC_NAMES = {"change-log": "Change Log", "CR-06-impact-analysis": "CR-06 impact analysis (c4)",
+             "CR-06-change-request-form": "CR-06 form (c4)", "test-cases-F1": "F1 test cases",
+             "test-cases-F2F3": "F2/F3 test cases (Part IV.4)", "INPUTS": "team inputs record",
+             "sprint-backlog": "Sprint Backlog", "product-backlog": "Product Backlog",
+             "planning-poker-log": "Planning Poker log", "05-risk-plan": "risk register (c2 RiskRegister)",
+             "weekly-status": "Weekly Status Report", "daily-log": "Daily Scrum log",
+             "03-master-release-plan": "Release Plan"}
+
+
+def _report_md(path):
+    """Body for Part IV: no version history, no source citations, document names instead of repo paths."""
+    md = _body_md(path)
+    md = re.sub(r"\n#{2,4} Version history\n(?:\s*\n)*(?:\|.*\n?)+", "\n", md)
+    md = re.sub(r"\s*\[(?:0[1-7]|CR-06|PMP-\d)[^\]\n]*(?:§|#)[^\]\n]*\]", "", md)
+
+    def doc_name(m):
+        stem = m.group(1)
+        return DOC_NAMES.get(stem, stem.replace("-", " "))
+    md = re.sub(r"`(?:pm|plan|docs)/[\w./-]*?([\w-]+)\.(?:md|xlsx|docx)`", doc_name, md)
+    md = re.sub(r"`(?:pm|plan)/[\w./-]*`", "", md)
+    return md
+
+
+def _landscape(d, on):
+    from docx.enum.section import WD_ORIENT, WD_SECTION
+    d.add_section(WD_SECTION.NEW_PAGE)
+    for sp in d.element.body.iterchildren(qn("w:p")):  # section breaks inherit no title page
+        for tp in sp.xpath("./w:pPr/w:sectPr/w:titlePg"):
+            tp.getparent().remove(tp)
+    sec = d.sections[-1]
+    w, h = sorted((sec.page_width, sec.page_height))
+    sec.orientation = WD_ORIENT.LANDSCAPE if on else WD_ORIENT.PORTRAIT
+    sec.page_width, sec.page_height = (h, w) if on else (w, h)
+
+
+def _fit_columns(tbl):
+    """Column widths in proportion to the text they hold; no column narrower than its longest word."""
+    from docx.shared import Emu
+    rows = tbl.rows
+    ncol = len(tbl.columns)
+    total = sum((c.width or 0) for c in rows[0].cells) or int(Cm(15))
+    cm = int(Cm(1))
+    mins, weight = [], []
+    for c in range(ncol):
+        texts = [r.cells[c].text for r in rows]
+        word = max((len(w) for t in texts for w in t.split()), default=4)
+        mins.append(min(word, 16) * 0.2 * cm + 0.3 * cm)
+        lens = sorted(len(t) for t in texts[1:]) or [len(texts[0])]
+        weight.append(max(4, min(70, lens[int(len(lens) * 0.8) - 1 if len(lens) > 1 else 0])))
+    free = max(0, total - sum(mins))
+    for c in range(ncol):
+        w = Emu(int(mins[c] + free * weight[c] / sum(weight)))
+        tbl.columns[c].width = w
+        for r in rows:
+            r.cells[c].width = w
+
+
+def _md_sections(d, heading, md, wide=7):
+    """A part with a table of ≥ `wide` columns is printed on landscape pages."""
+    n0 = len(d.tables)
+    land = any(len(l.strip().strip("|").split("|")) >= wide for l in md.splitlines() if l.startswith("|"))
+    if land:
+        _landscape(d, True)
+    d.add_paragraph(heading, style="Heading 2")
+    _md_into(d, md)
+    for t in d.tables[n0:]:
+        _fit_columns(t)
+    if land:
+        _landscape(d, False)
+
+
 def c3_report():
     d = docx.Document(TPL / "FP_Template_SprintReview_Retro.docx")
     for p in d.paragraphs:
@@ -312,8 +479,7 @@ def c3_report():
     h = d.add_paragraph("PART IV – SPRINT 2 DATA", style="Heading 1")
     h.paragraph_format.page_break_before = True
     for i, (title, path) in enumerate(C3_PARTS, 1):
-        d.add_paragraph(docx_style.plain_text(f"IV.{i}. {title}"), style="Heading 2")
-        _md_into(d, _body_md(path))
+        _md_sections(d, docx_style.plain_text(f"IV.{i}. {title}"), _report_md(path))
     body.remove(sect)
     body.append(sect)
     out = OUT / f"{PREFIX}c3_SprintReport_S2.docx"
