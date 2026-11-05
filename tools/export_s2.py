@@ -39,36 +39,35 @@ PLAN_HOURS = {DAT: 16.25, CHINH: 23.5}
 PLAN_TOTAL = 39.75
 
 # Committed items: ID, title, SP, ACs, automated TC result, DoD, Done/Not Done (status 05/11 00:30)
-ITEMS = [
-    ("US-05", "Add book", 5, 4, "0/4 (blocked)", "No", "Not Done"),
-    ("US-06", "Edit book", 3, 4, "0/4 (blocked)", "No", "Not Done"),
-    ("US-07", "Hide (soft delete) book", 2, 3, "1/3 partial (grid hides)", "No", "Not Done"),
-    ("US-08", "Manage categories", 3, 5, "5/5 auto", "No (PR #8)", "Not Done (In Review)"),
-    ("US-09", "Manage authors", 3, 4, "4/4 auto", "No (PR #8)", "Not Done (In Review)"),
-    ("NFR-02", "Sample data ≥ 30 books", 2, 2, "2/2 auto", "No (PR #8)", "Not Done (In Review)"),
-    ("US-10", "Book grid 12/page, newest first", 3, 4, "4/4 auto", "No (PR #8)", "Not Done (In Review)"),
-    ("NFR-04", "Responsive UI", 3, 2, "2/2 render check", "No (PR #8)", "Not Done (In Review)"),
-    ("US-24", "Store Staff role (CR-06)", 5, 5, "0/5 (not built)", "No", "Not Done"),
+ITEMS = [  # ID, title, SP, AC passed, TC passed (local + hosted), DoD met?, Done/Not Done, demo by – status 05/11 23:59
+    ("US-05", "Add book", 5, "4/4", "4/4 auto · hosted TBD", "No – hosted admin run", "Not Done (In Review)", "Đạt"),
+    ("US-06", "Edit book", 3, "4/4", "4/4 auto · hosted TBD", "No – hosted admin run", "Not Done (In Review)", "Đạt"),
+    ("US-07", "Hide (soft delete) book", 2, "2/3", "2/3 auto (AC-02 e2e, AC-03 in S3)", "No", "Not Done (In Review)", "Đạt"),
+    ("US-08", "Manage categories", 3, "5/5", "5/5 auto · hosted TBD", "No – hosted admin run", "Not Done (In Review)", "Chính"),
+    ("US-09", "Manage authors", 3, "4/4", "4/4 auto · hosted TBD", "No – hosted admin run", "Not Done (In Review)", "Chính"),
+    ("NFR-02", "Sample data ≥ 30 books", 2, "2/2", "2/2 auto · 2/2 hosted", "Yes", "Done", "Chính"),
+    ("US-10", "Book grid 12/page, newest first", 3, "4/4", "4/4 auto · 3/3 hosted (AC-04 auto only)", "Yes", "Done", "Chính"),
+    ("NFR-04", "Responsive UI", 3, "2/2", "2/2 on /books · admin pages TBD", "No – admin pages", "Not Done (In Review)", "Chính"),
+    ("US-24", "Store Staff role (CR-06)", 5, "5/5", "5/5 auto (data layer, matrix) · hosted TBD", "No – hosted Staff run", "Not Done (In Review)", "Đạt"),
 ]
 
 UNDONE = [
-    ("US-05, US-06, US-07", "Book add / edit / hide screens not built at 05/11 00:30", "F2 started late (issue I-02)",
-     "Đạt builds on PR #8 on 05/11; anything not Done returns to the Product Backlog for Planning 3"),
-    ("US-24", "Store Staff role not built", "Same; CR-06 added 8.5 h to S2 (I-03)",
-     "Đạt, S2-T16…T20; if not Done, first item of S3 with US-25"),
-    ("US-08, US-09, NFR-02, US-10, NFR-04", "Built and tested locally; not merged, not tested on the host",
-     "Review, merge and hosted run left to the last day", "Merge PR #8, deploy, run S2-T23, PO acceptance"),
-    ("NFR-01, NFR-03 (F1, 4 SP)", "In Review: TC-F1-19 (hash in hosted DB) and TC-F1-24 (online on 17/11) not run",
+    ("US-05, US-06, US-07, US-24 (15 SP)", "Built and deployed 05/11 22:52; hosted admin/Staff run not done; US-07/AC-02 e2e not run",
+     "F2 book screens and CR code started late (I-02); testing left to the last hour", "Hosted run at Review 2; carried into Sprint 3 until accepted"),
+    ("US-08, US-09, NFR-04 (9 SP)", "Hosted run of the admin pages not done (needs an Admin login)",
+     "Admin run planned in S2-T23 but not reached", "Run at Review 2 / start of S3; then PO acceptance"),
+    ("US-07/AC-03", "Friendly 'not found' for a hidden book's detail URL", "Detail page is US-11 (Sprint 3)", "Tested with US-11 in S3"),
+    ("NFR-01, NFR-03 (F1, 4 SP)", "TC-F1-19 (hash in the hosted DB) and TC-F1-24 (online on 17/11) not run",
      "Needs Supabase access; date-bound", "Đạt shows the hash; TC-24 on 17/11. US-01…04 (14 SP) accepted 05/11"),
 ]
 
 PREV_ACTIONS = [
     ("A1 Daily Scrum logged every working day before 22:00 (proposed in Retro 1 record)", "Leader S2",
-     "Not Done (as of 05/11 00:30)", "pm/sprints/S2/daily-log.md – no entries yet"),
+     "Not Done – 1 entry (Chính, 05/11); channel not agreed (I-05)", "pm/sprints/S2/daily-log.md"),
     ("A2 Draft Sprint files by Wednesday 20:00, submit Thursday before 21:00", "Leader S2",
-     "Partly – files drafted on Wed 04/11 late evening", "deliverables/S2 commits 04–05/11"),
+     "Partly – files drafted Wed 04/11 late evening; final update after the Sprint end", "deliverables/S2 commits 04–06/11"),
     ("A3 Log Completed Work in Jira the same day a task moves", "Both",
-     "Not Done – S2 tasks entered in Jira 05/11 00:20, hours not logged yet", "Jira sprint 6"),
+     "Partly – Chính logged 10.5 h on 05/11; Đạt's hours not logged; cards moved late (I-06)", "Jira sprint 6"),
 ]
 
 ACTIONS_PROPOSED = [
@@ -81,11 +80,12 @@ ACTIONS_PROPOSED = [
 ]
 
 BURNDOWN_NOTE = (
-    "Explanation: remaining work = plan hours of S2 tasks that are not Done. It stays at 39.75 h from 30/10 to "
-    "03/11 because no S2 task was finished, and drops to 30.75 h on 04/11 when the CR-06 rebaseline, c4, Weekly "
-    "Status, CR documentation and F2/F3 test cases were finished. Code tasks in PR #8 count as remaining until they "
-    "are merged and accepted. The S2 tasks were entered in Jira only on 05/11 00:20, so days 1–4 are reconstructed "
-    "from the repo, not read from board moves (Retro 1 action A3 not met). Day 5 is added from Jira before upload."
+    "Explanation: remaining work = plan hours of S2 tasks that are not Done; a task is Done when its work is merged "
+    "into develop (the story is accepted separately by the PO). The line stays at 39.75 h until 03/11 because no S2 "
+    "task was finished, drops to 30.75 h on 04/11 (CR-06 rebaseline, c4, Weekly Status, CR documentation, F2/F3 test "
+    "cases) and to 6.25 h on 05/11, when PR #8 (12:55) and PR #11/#12 (22:52) were merged and the public pages were "
+    "tested on the host. The 6.25 h left are T01 (Retro 1 notes), T02 (Daily log), T06 (upload) and T23 (hosted admin "
+    "run). The S2 tasks were entered in Jira only on 05/11, so days 1–4 are reconstructed from the repo (A3 not met)."
 )
 
 C3_PARTS = [
@@ -94,7 +94,7 @@ C3_PARTS = [
     ("Daily Scrum log", "pm/sprints/S2/daily-log.md"),
     ("Test cases F2, F3 (from Acceptance Criteria)", "pm/sprints/S2/test-cases-F2F3.md"),
     ("Weekly Status Report", "pm/sprints/S2/weekly-status.md"),
-    ("Jira board snapshot (05/11/2026)", "pm/sprints/S2/jira-snapshot-2026-11-05.md"),
+    ("Jira board snapshot (Sprint end)", "pm/sprints/S2/jira-snapshot-2026-11-06.md"),
 ]
 
 
@@ -136,11 +136,11 @@ def c2_workbook():
     burn = wb.create_sheet("Burndown_S2")
     burn.append(["Day", "Date", f"Ideal remaining (h, plan: {PLAN_TOTAL} h → 0)", "Remaining by task status (h)", "Note"])
     for i, (d, ideal, act) in enumerate(zip(burndown_s2.DAYS, burndown_s2.IDEAL, burndown_s2.ACTUAL)):
-        note = {3: "T03, T04, T05, T21, T22 Done (9 h)", 4: "TBD – read from Jira before upload"}.get(i, "No S2 task Done")
+        note = {3: "T03, T04, T05, T21, T22 Done (9 h)", 4: "PR #8, #11, #12 merged; T07–T20 Done; left: T01, T02, T06, T23"}.get(i, "No S2 task Done")
         burn.append([i + 1, d, ideal, act if act is not None else TBD, note])
     burn.append([])
     burn.append(["Source: repo + PR #8 + Jira sprint 6 (pm/sprints/S2/jira-snapshot-2026-11-05.md). "
-                 "S2 tasks were entered in Jira on 05/11 00:20; days 1–4 reconstructed from completion evidence."])
+                 "S2 tasks were entered in Jira on 05/11 00:20; days 1–4 reconstructed from completion evidence; day 5 from merged PRs."])
     for c in burn[1]:
         c.font = Font(bold=True, color="FFFFFF")
         c.fill = PatternFill("solid", fgColor="8A3B12")
@@ -165,9 +165,9 @@ def c2_workbook():
         ("PSP (SP, plan)", 62, "Product Backlog v1.2 (baseline v1.1)"),
         ("n (Sprints completed)", 2, None),
         ("N (Sprints planned)", 3, None),
-        ("SP meeting DoD (cumulative)", 14, "Jira 05/11: US-01…US-04 accepted by the PO after the hosted run (14 SP); NFR-01, NFR-03 and S2 items not Done"),
+        ("SP meeting DoD (cumulative)", 19, "F1: US-01…04 (14 SP); S2: US-10, NFR-02 (5 SP) accepted by the PO 05/11 23:59"),
         ("Actual hours S1 (h)", 41, "Jira Time spent ECBS-90…103 (19.5 h logged 02/11 + 21.5 h on S1-T12 logged 05/11)"),
-        ("Actual hours S2 (h)", 10.5, "Jira Time spent ECBS-124…146: Chính 10.5 h; add Đạt's hours before upload"),
+        ("Actual hours S2 (h)", 10.5, "Jira Time spent ECBS-124…146: Chính 10.5 h; Đạt's S2 hours not logged yet (add them here)"),
         ("Actual hours (cumulative, h)", "=B12+N(B13)", "S1 + S2"),
         ("PV (VND)", "=B7*B9/B10", "BAC × n / N"),
         ("EV (VND)", "=B7*B11/B8", "BAC × SP done / PSP"),
@@ -255,13 +255,15 @@ def c3_report():
              "By 05/11/2026, on the hosted URL: an administrator adds, edits and hides books and manages categories "
              "and authors; a customer browses a responsive grid of ≥ 30 sample books, 12 per page, newest first; a "
              "Store Staff account adds/edits books but gets 403 on delete and account management (CR-06, Option B).")
-    set_cell(t[1].rows[1].cells[1], "Met ☐  Partly met ☐  Not met ☐  – PO decides at Review 2 (status 05/11 00:30: "
-                                    "5 of 9 items built, 0 Done)")
+    set_cell(t[1].rows[1].cells[1], "Met ☐  Partly met ☒  Not met ☐  – all 9 items built and deployed; "
+                                    "5 of 29 SP accepted (US-10, NFR-02)")
     set_cell(t[1].rows[2].cells[1],
-             "Categories, authors, seed data, the book grid and the responsive layout are built and pass 27 automated "
-             "tests (PR #8). Book add/edit/hide and the Staff role were not built by 05/11 00:30 (issue I-02). No item "
-             "has passed the Story DoD yet because merge, hosted test and PO acceptance are still open.")
-    _fill_rows(t[2], [(i, ti, sp, f"{TBD}/{acs}", tc, dod, done, TBD) for i, ti, sp, acs, tc, dod, done in ITEMS])
+             "Every committed item is built, merged and live on the hosted URL: categories, authors, seed data, grid and "
+             "responsive layout (PR #8, Chính) and add/edit/hide book plus the Store Staff role (PR #11, #12, #16, Đạt). "
+             "71/71 automated tests pass and the public pages pass on the host. Only US-10 and NFR-02 passed the Story "
+             "DoD: the hosted run of the admin and Staff screens was not reached before the Sprint end, because most "
+             "code was merged on the last day (issue I-02).")
+    _fill_rows(t[2], ITEMS)
     png = ROOT / "pm" / "sprints" / "S2" / "evidence" / "burndown-S2.png"
     cell = t[3].rows[0].cells[0]
     set_cell(cell, "")
@@ -271,7 +273,7 @@ def c3_report():
     _fill_rows(t[5], UNDONE)
     _fill_rows(t[6], PREV_ACTIONS)
     for p in d.paragraphs:  # template guidance meant for Sprint 1 only
-        if p.text.strip().startswith("Sprint 1: write"):
+        if p.text.strip().startswith("Sprint 1: write") or p.text.strip().startswith("Insert the burndown from the PM tool"):
             p._p.getparent().remove(p._p)
     _fill_rows(t[7], [(TBD + " (team, Retro 2)", TBD, TBD)])
     issue = ("Proposed for Retro 2: F2 book screens and CR-06 code started late and no S2 item reached the DoD by "

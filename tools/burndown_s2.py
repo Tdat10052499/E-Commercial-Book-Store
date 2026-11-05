@@ -18,7 +18,7 @@ OUT = ROOT / "pm" / "sprints" / "S2" / "evidence" / "burndown-S2.png"
 DAYS = ["Fri 30/10", "Mon 02/11", "Tue 03/11", "Wed 04/11", "Thu 05/11"]
 TOTAL = 39.75
 IDEAL = [round(TOTAL * (1 - i / 4), 2) for i in range(5)]
-ACTUAL = [39.75, 39.75, 39.75, 30.75, None]  # 04/11: T03, T04, T05, T21, T22 Done (9 h)
+ACTUAL = [39.75, 39.75, 39.75, 30.75, 6.25]  # 04/11: T03, T04, T05, T21, T22 Done; 05/11: PR #8, #11, #12 merged
 
 
 def main():
@@ -30,12 +30,12 @@ def main():
     ax.plot([k[0] for k in known], [k[1] for k in known], "-o", color="#1F3A5F", label="Remaining by task status (h)")
     for x, y in known:
         ax.annotate(f"{y:g}", (x, y), textcoords="offset points", xytext=(0, 6), ha="center", fontsize=7, color="#1F3A5F")
-    ax.annotate("F2 code + PM files\nfinished on 04/11", xy=(3, 30.75), xytext=(1.2, 14),
+    ax.annotate("PRs #8, #11, #12\nmerged on 05/11", xy=(4, 6.25), xytext=(0.3, 10),
                 arrowprops=dict(arrowstyle="->", color="#B42318"), color="#B42318", fontsize=8)
     ax.set_xticks(xs, DAYS, fontsize=8)
     ax.set_ylabel("Remaining work (h)")
     ax.set_ylim(0, 44)
-    ax.set_title("Sprint 2 burndown – plan vs remaining (as of 05/11/2026 00:30)", fontsize=10)
+    ax.set_title("Sprint 2 burndown – plan vs remaining (Sprint end, 05/11/2026 23:59)", fontsize=10)
     ax.grid(axis="y", alpha=0.3)
     ax.legend(fontsize=8, loc="lower left")
     fig.tight_layout()
