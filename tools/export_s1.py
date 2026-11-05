@@ -10,13 +10,30 @@ from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 
+from docx_style import style_docx
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "deliverables" / "S1"
 PREFIX = "HK261_SPM_FP_Team6_"
+C1_COVER = {
+    "school": "VAN LANG UNIVERSITY",
+    "faculty": "FACULTY OF INFORMATION TECHNOLOGY",
+    "course": "Software Project Management (72ITSE41503) – Final Project, Semester 261",
+    "project": "E-COMMERCIAL BOOK STORE – RELEASE 1.0",
+    "title": "PROJECT MANAGEMENT PLAN",
+    "version": "Version 1.0 (Sprint 1 baseline)",
+    "lines": [
+        "Team 6 – Page Turners",
+        "Hồ Du Tuấn Đạt (2374802010097) – Developer, Sprint Leader S1 & S3",
+        "Nguyễn Minh Chính (2275106050051) – Product Owner, Developer, Sprint Leader S2",
+        "Sponsor / Customer: Dr. Bùi Minh Phụng",
+    ],
+    "date": "Ho Chi Minh City, October 2026",
+}
 
 
-def pandoc(sources, target, title):
-    cmd = ["pandoc", "--from", "gfm", "--toc", "--metadata", f"title={title}", "-o", str(target)]
+def pandoc(sources, target, title, toc=True):
+    cmd = ["pandoc", "--from", "gfm", "--metadata", f"title={title}", "-o", str(target)] + (["--toc"] if toc else [])
     subprocess.run(cmd + [str(ROOT / s) for s in sources], check=True)
 
 
@@ -81,13 +98,22 @@ def workbook(target):
     add_sheet(wb, "ReleasePlan", "pm/pmp/03-master-release-plan.md", note=plan_note)
     add_sheet(wb, "S1_Backlog", "pm/sprints/S1/sprint-backlog.md", note=plan_note)
     burn = wb.create_sheet("Burndown")
-    burn.append(["Day", "Date", "Ideal remaining (h, plan)", "Actual remaining (h, Jira)"])
+    burn.append(["Day", "Date", "Ideal remaining (h, plan)", "Remaining by Jira status (h)", "Note"])
     days = ["Fri 23/10", "Mon 26/10", "Tue 27/10", "Wed 28/10", "Thu 29/10"]
     total = 48
     for i, d in enumerate(days):
-        burn.append([i + 1, d, round(total * (1 - (i + 1) / len(days)), 1), "TBD"])
+        burn.append([i + 1, d, round(total * (1 - i / (len(days) - 1)), 1), 48,
+                     "No task moved in Jira during the Sprint"])
+    burn.append(["after", "Sun 01/11", None, 10, "Statuses updated 01/11 23:21 (T02, T12, T13, T14 not Done)"])
     burn.append([])
-    burn.append(["Ideal line uses the proposed 48 h; actual values must come from Jira Completed Work."])
+    burn.append(["Source: Jira ECBS sprint id 5, snapshot pm/sprints/S1/jira-snapshot-2026-11-01.md (AI-assisted)."])
+    burn.append(["Time spent is not logged in Jira yet: actual hours (EVM AC) = TBD until members log work."])
+    png = ROOT / "pm" / "sprints" / "S1" / "evidence" / "burndown-S1.png"
+    if png.exists():
+        from openpyxl.drawing.image import Image as XLImage
+        img = XLImage(str(png))
+        img.width, img.height = 750, 380
+        burn.add_image(img, "G2")
     add_sheet(wb, "RiskRegister", "pm/pmp/05-risk-plan.md", pick=[1])
     add_sheet(wb, "IssueLog", "pm/pmp/05-risk-plan.md", pick=[2])
     add_sheet(wb, "ChangeLog", "pm/change/change-log.md")
@@ -99,10 +125,10 @@ def workbook(target):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     pmp = sorted(str(p.relative_to(ROOT)) for p in (ROOT / "pm" / "pmp").glob("0*.md"))
-    pandoc(pmp, OUT / f"{PREFIX}c1_ProjectPlan.docx", "Project Management Plan v1.0 – Team 6 Page Turners")
-    report = ["pm/sprints/S1/sprint-report.md", "pm/sprints/S1/sprint-backlog.md", "pm/sprints/S1/daily-log.md",
-              "pm/sprints/S1/test-cases-F1.md", "pm/sprints/S1/review-retro.md"]
-    pandoc(report, OUT / f"{PREFIX}c3_SprintReport_S1.docx", "Sprint 1 Report – Team 6 Page Turners")
+    c1 = OUT / f"{PREFIX}c1_ProjectPlan.docx"
+    pandoc(pmp, c1, "Project Management Plan v1.0", toc=False)
+    style_docx(c1, "HK261 SPM – Team 6 Page Turners – Project Management Plan v1.0")
+    # c3 is built on the lecturer template by tools/export_s1_templates.py
     pandoc(["pm/pmp/03-master-release-plan.md"], OUT / f"{PREFIX}MasterPlan_Timeline.docx",
            "Master Plan and Timeline – Team 6 Page Turners")
     workbook(OUT / f"{PREFIX}c2_SprintBacklog_S1.xlsx")
