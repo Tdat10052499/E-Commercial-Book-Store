@@ -28,6 +28,7 @@ export default async function RootLayout({ children }) {
             {user ? (
               <>
                 {user.role === 'admin' && <Link href="/admin">Admin</Link>}
+                {user.role === 'staff' && <Link href="/admin">Back office</Link>}
                 <span className="who">Hi, {user.name}</span>
                 <form action={logoutAction}><button type="submit" className="btn-ghost">Log out</button></form>
               </>

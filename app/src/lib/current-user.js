@@ -22,8 +22,10 @@ export async function requireAdmin(nextPath) {
   return user;
 }
 
-// Roles allowed to manage the catalogue (categories, authors, books). CR-06 / US-24 adds 'staff' here (S2-T17).
-export const CATALOG_EDITORS = ['admin'];
+// Roles allowed to manage the catalogue (books, categories, authors). 'staff' added by CR-06 / US-24 (S2-T17).
+// Deleting/hiding books, removing categories/authors and account management stay Admin-only (requireAdmin).
+export const CATALOG_EDITORS = ['admin', 'staff'];
+export const isCatalogEditor = (user) => !!user && CATALOG_EDITORS.includes(user.role);
 
 // Server-side guard for catalogue pages and actions (US-08, US-09; US-04/AC-02 for everyone else).
 export async function requireCatalogEditor(nextPath) {

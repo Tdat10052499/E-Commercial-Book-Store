@@ -5,11 +5,15 @@ CREATE TABLE IF NOT EXISTS users (
   email         VARCHAR(254) NOT NULL UNIQUE,           -- stored trimmed + lower-case
   password_hash VARCHAR(100) NOT NULL,                  -- bcrypt, never plain text (NFR-01)
   role          VARCHAR(20)  NOT NULL DEFAULT 'customer'
-                CHECK (role IN ('admin', 'customer')),  -- CR-06 would add 'staff' after CCB approval
+                CHECK (role IN ('admin', 'staff', 'customer')),  -- 'staff' added by CR-06 (US-24)
   status        VARCHAR(10)  NOT NULL DEFAULT 'active'
                 CHECK (status IN ('active', 'locked')),
   created_at    TIMESTAMPTZ  NOT NULL DEFAULT now()
 );
+
+-- CR-06 / US-24: databases created before Sprint 2 still have the old two-role CHECK; replace it (idempotent).
+ALTER TABLE users DROP CONSTRAINT IF EXISTS users_role_check;
+ALTER TABLE users ADD CONSTRAINT users_role_check CHECK (role IN ('admin', 'staff', 'customer'));
 
 CREATE TABLE IF NOT EXISTS sessions (
   token      CHAR(64) PRIMARY KEY,
