@@ -27,6 +27,7 @@ export default function CreateAccountForm() {
         <label htmlFor="f-role">Role</label>
         <select id="f-role" name="role" defaultValue={state.values?.role || 'customer'}>
           <option value="customer">Customer</option>
+          <option value="staff">Store Staff</option>
           <option value="admin">Administrator</option>
         </select>
         {errors.role && <p className="error" role="alert">{errors.role}</p>}

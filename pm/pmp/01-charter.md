@@ -5,6 +5,7 @@
 |---|---|---|---|
 | 0 | – | – | Lab 1 (SMART, stakeholders) and Lab 2 (Charter) were not submitted; no prior version exists [05 #21–22] |
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Charter written new for Release 1.0 from the Final Project brief [03 §2] and TA baseline [04]. Objectives and stakeholders to be confirmed by the team |
+| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | BAC and capacity filled with the plan values confirmed on 30/10 (20 h/member/Sprint, 24,000,000 VND) |
 
 ## 1.1 Project identification
 | Item | Value |
@@ -14,7 +15,7 @@
 | Performing team | Team 6 "Page Turners" – Hồ Du Tuấn Đạt, Nguyễn Minh Chính |
 | Course | Software Project Management (72ITSE41503), class 261_72ITSE41503_01, Van Lang University |
 | Duration | 23/10/2026 – 17/11/2026, 3 one-week Sprints + closure |
-| Budget (BAC) | Planned person-hours × 200,000 VND – **TBD** (scenario 24,000,000 VND, see PMP-3 §3.6) |
+| Budget (BAC) | 24,000,000 VND (plan) = 120 planned person-hours × 200,000 VND, see PMP-3 §3.6 |
 
 ## 1.2 Business case
 Ms. Le's company sells through physical stores only. She wants an online bookshop with its own style that works on desktop, phone and tablet [03 §2]. Release 1.0 delivers the catalogue foundation (accounts, book management, browsing, details, search) on which ordering features can be added later.
@@ -53,7 +54,7 @@ See PMP-3 §3.2 (M0 23/10 … M11 17/11).
 - Rate 200,000 VND per person-hour; N = 3 Sprints.
 
 ## 1.8 Assumptions
-- Each member can contribute the capacity recorded in `plan/INPUTS.md` §2 (TBD).
+- Each member can contribute 20 hours per Sprint (plan value, confirmed by both members on 30/10/2026).
 - Jira Free supports Original Estimate and Time Spent for the team-managed project (to verify [05 #18]).
 - The free host and database tiers stay available until 17/11/2026.
 - The Sponsor's CCB decision on CR-06 is given on 30/10/2026.

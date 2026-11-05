@@ -1,6 +1,6 @@
 const { pool } = require('./db');
 const { hashPassword, verifyPassword } = require('./password');
-const { normalizeEmail, validateAccount } = require('./validation');
+const { ROLES, normalizeEmail, validateAccount } = require('./validation');
 
 const PUBLIC_COLUMNS = 'id, name, email, role, status, created_at';
 
@@ -61,4 +61,18 @@ async function setUserStatus(actorId, targetId, status) {
   return { ok: true };
 }
 
-module.exports = { registerUser, createAccount, authenticate, listUsers, setUserStatus };
+// US-24/AC-04: the administrator changes another account's role. The user's sessions are ended, so the
+// new permissions apply from the next login (team decision recorded in c4, 05/11/2026). Own role cannot be changed.
+async function setUserRole(actorId, targetId, role) {
+  if (!ROLES.includes(role)) return { error: 'Invalid role' };
+  if (Number(actorId) === Number(targetId)) return { error: 'You cannot change your own role' };
+  if (!/^\d+$/.test(String(targetId ?? ''))) return { error: 'Account not found' };
+  const { rows } = await pool.query('SELECT role FROM users WHERE id = $1', [targetId]);
+  if (!rows.length) return { error: 'Account not found' };
+  if (rows[0].role === role) return { ok: true, unchanged: true };
+  await pool.query('UPDATE users SET role = $1 WHERE id = $2', [role, targetId]);
+  await pool.query('DELETE FROM sessions WHERE user_id = $1', [targetId]);
+  return { ok: true };
+}
+
+module.exports = { registerUser, createAccount, authenticate, listUsers, setUserStatus, setUserRole };

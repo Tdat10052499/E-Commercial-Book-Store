@@ -4,6 +4,8 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | First analysis for CCB 30/10. Hour estimates are **planning proposals**; SP require Planning Poker (session 2 in the log) |
+| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | PO confirmed Option B as the team recommendation for the CCB |
+| 1.2 | 04/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | CCB record filled from the PO's account of the 30/10 meeting: Approve Option B; baseline v1.1 |
 
 ## 1. Request
 Source: [CR-06 §1–§4]. Add *Store Staff* role (add/edit books, manage categories/authors; no book delete; no account management; admin assigns roles) and a "Last updated by <name> at <time>" audit on each book. Customer priority High; wanted in Release 1.0. F1 was due in S1, so the change touches work that is meant to be Done → rework and regression must be counted [CR-06 §4].
@@ -38,7 +40,7 @@ Permission matrix after the change:
 | C7 | Rebaseline backlog, Release Plan, risk register; c4 form | PM | 1.0 |
 | | **Total** | | **12.0 h ≈ 2,400,000 VND** |
 
-SP: **TBD** (Planning Poker session 2). PSP and BAC are rebaselined after approval; the original baseline is kept.
+SP (PO estimate 30/10/2026, no voting rounds – `planning-poker-log.md` session 2): **US-24 = 5, US-25 = 2 → +7 SP**; PSP 55 → 62 if approved. The F1 rework (3 SP) is effort only, already counted in C2, C3 and C6. PSP and BAC are rebaselined after approval; the original baseline is kept.
 
 ### 2.3 Quality
 Security-sensitive: every permission is checked on the server (not only by hiding buttons). Regression of F1 is mandatory; new test cases ≥ 1 per AC.
@@ -58,13 +60,25 @@ Security-sensitive: every permission is checked on the server (not only by hidin
 | Quality/risk | Regression once; highest overload risk | Two smaller regressions; moderate risk | Customer need unmet; no rework |
 | Customer value | Full CR in R1.0 | Full CR in R1.0 by 12/11 | Not in R1.0 |
 
-**Team recommendation (draft, PO to confirm):** Option B – it delivers the whole CR in Release 1.0 as the customer asked, while keeping S2 capacity for F2 and F3; permissions are built together with F2 so no F2 screen is rebuilt later.
+**Team recommendation (confirmed by the PO, Nguyễn Minh Chính, 30/10/2026):** Option B – it delivers the whole CR in Release 1.0 as the customer asked, while keeping S2 capacity for F2 and F3; permissions are built together with F2 so no F2 screen is rebuilt later.
 
-## 4. CCB record (fill in at the meeting – do not pre-fill)
+## 4. CCB record
 | Field | Value |
 |---|---|
-| Date / attendees | TBD |
-| Option chosen | TBD |
-| Decision | Approve / Reject / Defer – TBD |
-| Reason given by Sponsor | TBD |
-| Answers to open questions (delete categories/authors? revoke active sessions on role change? file name CR01 vs CR06?) | TBD |
+| Date / attendees | Fri 30/10/2026, in class – Sponsor Dr. Bùi Minh Phụng (as Ms. Le), PO Nguyễn Minh Chính, Sprint Leader S1 Hồ Du Tuấn Đạt [03 §6.2-3]. Attendance list: as reported by the PO |
+| Option chosen | **Option B – Approve, phased** |
+| Decision | **Approve** |
+| Reason given by Sponsor | Agreed with the team's recommendation: the whole CR is delivered in Release 1.0, and permissions are built together with F2 while S2 keeps capacity for F2/F3 |
+| Details not fixed by the CR | Team decision (PO, 05/11/2026): Staff may add and rename categories and authors but not remove them (remove stays Admin-only); a role change applies from the user's next login, matching CR AC4; the form is named `c4_ChangeRequest_CR01.docx` as written in [CR-06 §5-5] |
+
+## 5. Baseline update after approval (step 4) and communication (step 5)
+| Artefact | Before (v1.0) | After (v1.1, 04/11/2026) |
+|---|---|---|
+| Product Backlog | 18 R1.0 items, PSP 55 SP; US-24/25 *pending CCB* | v1.2: US-24 (5 SP, S2) and US-25 (2 SP, S3) in the baseline, ACs confirmed; **PSP 62 SP** |
+| Release Plan / BAC | 120 h, BAC 24,000,000 VND | v1.3: 120 h + 12 h CR = 132 h (plan), **BAC 26,400,000 VND**; PV(S2) = 17.6 M, PV(S3) = 26.4 M |
+| Sprint plan | S2 24 SP, S3 13 SP | S2 29 SP (C1–C4, part of C6, C7 = 8.5 h), S3 15 SP (C5, rest of C6 = 3.5 h) |
+| Risk register | R05 Open | v1.1: R05 Occurred → I-03; R11 (unclear Staff scope) added |
+| Code | role `admin`/`customer` | `CATALOG_EDITORS` guard ready; `staff` role added in S2-T16…T19 |
+| Tag | `baseline-v1.0` (created 04/11 on the S1 submission commit) | `baseline-v1.1` |
+
+Communication [PMP-7 §7.1]: Sponsor – c4 form and Weekly Status Report in the S2 submission (05/11) and at Review 2 (06/11); team – PR description and Jira (US-24 moved into Sprint 2, US-25 into Sprint 3).

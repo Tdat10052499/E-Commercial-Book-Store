@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" viewBox="0 0 200 300" role="img" aria-label="The Chemical History of a Candle">
+<rect width="200" height="300" fill="#f2c14e"/>
+<rect x="12" y="12" width="176" height="276" fill="none" stroke="#1a1a1a" stroke-opacity=".25"/>
+<text x="24" y="70" fill="#1a1a1a" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400"><tspan x="24" dy="0">The Chemical</tspan><tspan x="24" dy="30">History of a</tspan><tspan x="24" dy="30">Candle</tspan></text>
+<text x="24" y="268" fill="#1a1a1a" fill-opacity=".8" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2">MICHAEL FARADAY</text>
+</svg>

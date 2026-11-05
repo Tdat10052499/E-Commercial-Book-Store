@@ -1,15 +1,20 @@
 import Link from 'next/link';
 import CoverWall from '@/components/CoverWall';
+import BookCard from '@/components/BookCard';
 import { getCurrentUser } from '@/lib/current-user';
+import { listBooksPage } from '@lib/catalog';
+
+export const dynamic = 'force-dynamic';
 
 const ROADMAP = [
   { sprint: 'Sprint 1', title: 'Accounts & roles', text: 'Register, sign in and keep the shop safe with administrator controls.', live: true },
-  { sprint: 'Sprint 2', title: 'The catalogue', text: 'Browse at least 30 titles, twelve to a page, newest arrivals first.' },
+  { sprint: 'Sprint 2', title: 'The catalogue', text: 'Browse at least 30 titles, twelve to a page, newest arrivals first.', live: true },
   { sprint: 'Sprint 3', title: 'Find your next read', text: 'Book details, search by title or author, filter by category and price.' },
 ];
 
 export default async function HomePage() {
   const user = await getCurrentUser();
+  const { books } = await listBooksPage(1, 6);
   return (
     <>
       <section className="hero">
@@ -23,15 +28,16 @@ export default async function HomePage() {
           </p>
           <div className="actions">
             {user?.role === 'admin' && <Link href="/admin/accounts" className="btn">Manage accounts</Link>}
-            {!user && <><Link href="/register" className="btn">Create an account</Link><Link href="/login" className="btn-ghost">Log in</Link></>}
+            <Link href="/books" className={user ? 'btn-ghost' : 'btn'}>Browse books</Link>
+            {!user && <><Link href="/register" className="btn-ghost">Create an account</Link><Link href="/login" className="btn-ghost">Log in</Link></>}
           </div>
         </div>
         
       </section>
 
       <section className="arrivals">
-        <div className="section-head"><h2>New arrivals</h2><span className="muted">Catalogue opens in Sprint 2</span></div>
-        <CoverWall />
+        <div className="section-head"><h2>New arrivals</h2><Link href="/books" className="muted">See all books →</Link></div>
+        {books.length ? <div className="book-grid arrivals-grid">{books.map((b) => <BookCard key={b.id} book={b} />)}</div> : <CoverWall />}
       </section>
 
       <section className="roadmap">

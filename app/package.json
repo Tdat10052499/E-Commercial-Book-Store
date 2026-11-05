@@ -9,7 +9,8 @@
     "db:migrate": "node db/migrate.js",
     "test": "node --test --test-concurrency=1 tests/*.test.js",
     "e2e": "node e2e/f1.e2e.js",
-    "vercel-build": "node db/migrate.js && next build"
+    "vercel-build": "node db/migrate.js && node db/seed.js && next build",
+    "db:seed": "node db/seed.js"
   },
   "engines": {
     "node": ">=20"
