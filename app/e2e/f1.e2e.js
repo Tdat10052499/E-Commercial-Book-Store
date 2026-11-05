@@ -135,8 +135,8 @@ async function logout(page) {
     await adminPage.goto(`${BASE}/admin/books`);
     const first = adminPage.locator('tbody tr').first();
     const title = (await first.locator('td[data-label="Title"]').innerText()).trim();
-    adminPage.once('dialog', (d) => d.dismiss());
     await first.locator('button:has-text("Delete")').click();
+    await adminPage.locator('dialog.confirm button:has-text("Cancel")').click();
     await adminPage.reload();
     expect(await adminPage.locator('td[data-label="Title"]', { hasText: title }).count() > 0, `"${title}" disappeared after Cancel`);
   });
@@ -145,8 +145,8 @@ async function logout(page) {
   await check('US-24/AC-04 admin changes Customer → Store Staff', async () => {
     await adminPage.goto(`${BASE}/admin/accounts`);
     const row = adminPage.locator('tr', { hasText: created.email });
-    adminPage.once('dialog', (d) => d.accept());
     await row.locator('select').selectOption('staff');
+    await adminPage.locator('dialog.confirm button:has-text("Change role")').click();
     await row.locator('text=Role changed').waitFor();
   });
   const staffPage = await (await browser.newContext()).newPage();
