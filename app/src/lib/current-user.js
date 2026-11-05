@@ -2,6 +2,7 @@ import 'server-only';
 import { cookies, headers } from 'next/headers';
 import { redirect, forbidden } from 'next/navigation';
 import { findSessionUser } from '@lib/session';
+import { CATALOG_EDITORS, isCatalogEditor } from '@lib/permissions';
 
 export const SESSION_COOKIE = 'pt_session';
 
@@ -24,8 +25,8 @@ export async function requireAdmin(nextPath) {
 
 // Roles allowed to manage the catalogue (books, categories, authors). 'staff' added by CR-06 / US-24 (S2-T17).
 // Deleting/hiding books, removing categories/authors and account management stay Admin-only (requireAdmin).
-export const CATALOG_EDITORS = ['admin', 'staff'];
-export const isCatalogEditor = (user) => !!user && CATALOG_EDITORS.includes(user.role);
+// The matrix lives in lib/permissions.js so tests/staff.test.js can check it.
+export { CATALOG_EDITORS, isCatalogEditor };
 
 // Server-side guard for catalogue pages and actions (US-08, US-09; US-04/AC-02 for everyone else).
 export async function requireCatalogEditor(nextPath) {
@@ -34,6 +35,6 @@ export async function requireCatalogEditor(nextPath) {
     const back = nextPath || (await headers()).get('x-pathname') || '/admin';
     redirect(`/login?next=${encodeURIComponent(back)}`);
   }
-  if (!CATALOG_EDITORS.includes(user.role)) forbidden();
+  if (!isCatalogEditor(user)) forbidden();
   return user;
 }
