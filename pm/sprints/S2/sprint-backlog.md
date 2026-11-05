@@ -6,9 +6,9 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0.1-draft | 30/10/2026 | Nguyễn Minh Chính | Proposal prepared before Sprint Planning 2. Task hours are **proposals** |
-| 1.2 | 06/11/2026 | Nguyễn Minh Chính | Status at the Sprint end (05/11 23:59) from GitHub and Jira: Đạt's US-05…07 and US-24 merged (PR #11, #12, #16) and deployed; 19/23 tasks Done; PO accepted US-10 and NFR-02 (5 SP). A task is *Done* when its work is merged into `develop`; a story is *Done* only after PO acceptance (Story DoD). Đạt's hours: TBD |
-| 1.1 | 05/11/2026 | Nguyễn Minh Chính | Chính's actual hours from Jira (10.5 h, logged 05/11); S1 velocity update (14 SP accepted 05/11) |
 | 1.0 | 04/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Inputs recorded: actual S1 velocity 0 SP meeting DoD (F1 In Review), actual S1 hours 19.5 h, CCB 30/10 = **Approve Option B** → US-24 (5 SP) added to S2, US-25 (2 SP) planned for S3. S2-T07 (data model) and S2-T13 (seed) moved from Đạt to Chính so the category, author and grid tasks were not blocked (no F2 commit in the repo by 04/11). Status from the repo and PR #8 at 04/11 23:50. Actual hours: TBD from Jira |
+| 1.1 | 05/11/2026 | Nguyễn Minh Chính | Chính's actual hours from Jira (10.5 h, logged 05/11); S1 velocity update (14 SP accepted 05/11) |
+| 1.2 | 06/11/2026 | Nguyễn Minh Chính | Status at the Sprint end (05/11 23:59) from GitHub and Jira: Đạt's US-05…07 and US-24 merged (PR #11, #12, #16) and deployed; 19/23 tasks Done; PO accepted US-10 and NFR-02 (5 SP). A task is *Done* when its work is merged into `develop`; a story is *Done* only after PO acceptance (Story DoD). Đạt's hours: TBD |
 
 ## Sprint Goal (measurable)
 By 05/11/2026, on the hosted URL: an administrator can add, edit and hide books (price > 0, required fields validated on client and server) and manage categories and authors; a customer browses a responsive grid of ≥ 30 sample books, 12 per page, newest first; a Store Staff account can add/edit books but gets HTTP 403 on delete and on account management (CR-06, Option B). Verified by the F2/F3 test cases (≥ 1 per AC) and the F1 regression.

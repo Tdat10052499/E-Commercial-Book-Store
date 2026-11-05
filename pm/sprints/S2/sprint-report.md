@@ -13,8 +13,8 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.1 | 06/11/2026 | Nguyễn Minh Chính (Leader S2) | Final S2 status at the Sprint end: all items built and deployed, PO accepted US-10 and NFR-02, hosted run of public pages, EVM recalculated (19 SP, SPI 0.46, CPI 0.79 provisional) |
 | 1.0-draft | 05/11/2026 | Nguyễn Minh Chính (Leader S2) | First S2 report: status, EVM snapshot on baseline v1.1, plan vs actual, change control summary. Actual S2 hours, Daily log and Review/Retro 2 content: TBD (team) |
+| 1.1 | 06/11/2026 | Nguyễn Minh Chính (Leader S2) | Final S2 status at the Sprint end: all items built and deployed, PO accepted US-10 and NFR-02, hosted run of public pages, EVM recalculated (19 SP, SPI 0.46, CPI 0.79 provisional) |
 
 ## Status summary (Green / Amber / Red) – at the Sprint end, 05/11/2026 23:59
 | Area | Status | Evidence |

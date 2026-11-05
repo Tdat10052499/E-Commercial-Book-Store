@@ -1,14 +1,14 @@
 # Change Request CR-06 – Store Staff role
 
-Source document for `HK261_SPM_FP_Team6_c4_ChangeRequest_CR01.docx` [CR-06 §5-5]. The brief's template `FP_Template_ChangeRequest.docx` is not in the team's materials (`plan/INPUTS.md` §6), so this form follows the five CR steps of [03 §6.2-3] and the fields asked for in [CR-06 §5].
+This is the c4 Change Request form for CR-06. It follows the five CR steps of [03 §6.2-3] and the fields asked for in [CR-06 §5]; the brief's own form template (`FP_Template_ChangeRequest.docx`) was not provided to the team.
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt | Change Log entry and impact analysis with options A/B/C (`CR-06-impact-analysis.md` v1.0) |
+| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt | Change Log entry and impact analysis with options A/B/C (impact analysis v1.0) |
 | 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO) | Option B confirmed as the team recommendation |
-| 2.1 | 06/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Implementation status at the Sprint end: US-24 built and deployed (PR #11, #12) |
 | 2.0 | 05/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | CCB decision (Approve, Option B), baseline update v1.1 and communication added; issued as the c4 form |
+| 2.1 | 06/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Implementation status at the Sprint end: US-24 built and deployed (PR #11, #12) |
 
 ## 1. Change Request form
 | Field | Value |

@@ -4,8 +4,8 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | New; inputs from gap analysis [05 §5]. **P and I scores are proposals to be confirmed by the team** |
-| 1.2 | 06/11/2026 | Nguyễn Minh Chính (Leader S2) | Sprint 2 end: R12 occurred → I-02 closed (F2 and CR-06 delivered 05/11 22:52); I-06 added (PRs without recorded review, Đạt's hours not logged); I-05 kept open |
 | 1.1 | 04/11/2026 | Nguyễn Minh Chính (Leader S2) | S2 monitoring [03 §6.2-5]: R04 closed (Jira time tracking works, 17 worklogs); R05 occurred → I-03; R06 occurred for Planning Poker → I-04; R08 re-scored (P 2 → 3); R03, R10 status updated; R11 (unclear Staff scope) and R12 (late integration of F2) added; I-01 updated, I-02…I-04 opened |
+| 1.2 | 06/11/2026 | Nguyễn Minh Chính (Leader S2) | Sprint 2 end: R12 occurred → I-02 closed (F2 and CR-06 delivered 05/11 22:52); I-06 added (PRs without recorded review, Đạt's hours not logged); I-05 kept open |
 
 ## 5.1 Process
 1. **Identify** at Planning, Daily (blockers) and Retro; anyone may add a risk.

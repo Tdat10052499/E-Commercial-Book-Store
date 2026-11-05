@@ -101,8 +101,9 @@ def _select_sections(blocks, sections):
     return out
 
 
-def md_sheet(wb, name, path, subtitle=None, sections=None, skip_paragraphs=False, max_cols=None):
-    title, blocks = parse_md(path)
+def md_sheet(wb, name, path, subtitle=None, sections=None, skip_paragraphs=False, max_cols=None, title=None):
+    md_title, blocks = parse_md(path)
+    title = title or md_title
     if sections:
         blocks = _select_sections(blocks, sections)
     blocks = _split_version_history(blocks)
@@ -159,7 +160,11 @@ def md_sheet(wb, name, path, subtitle=None, sections=None, skip_paragraphs=False
                     j > 0 and row and not row[0].strip() and any("**" in x for x in row))
                 for c in range(1, ncols + 1):
                     raw = row[c - 1] if c - 1 < len(row) else ""
-                    cell = ws.cell(r, c, value(raw) if j else clean(raw))
+                    head = clean(rows[0][c - 1]).lower() if c - 1 < len(rows[0]) else ""
+                    v = clean(raw) if j == 0 or "version" in head else value(raw)
+                    cell = ws.cell(r, c, v)
+                    if isinstance(v, float):  # keep the decimals written in the source (1.0, 39.75)
+                        cell.number_format = "0." + "0" * len(clean(raw).split(".")[1])
                     cell.border = BORDER
                     cell.alignment = WRAP_TOP
                     if j == 0:
@@ -200,6 +205,7 @@ def style_table_sheet(ws, header_row, first_col=1, last_col=None, title_cell="A1
                 c.font = Font(name=BASE, size=10, bold=c.font.b)
     ws.sheet_view.showGridLines = False
     ws.page_setup.orientation = "landscape"
+    ws.page_setup.paperSize = ws.PAPERSIZE_A4
     ws.page_setup.fitToWidth = 1
     ws.page_setup.fitToHeight = 0
     ws.sheet_properties.pageSetUpPr.fitToPage = True

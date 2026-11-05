@@ -10,6 +10,7 @@
 | 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Status column synced from Jira ECBS (snapshot `jira-snapshot-2026-11-01.md`); actual hours still not logged in Jira |
 | 1.2 | 02/11/2026 | Nguyễn Minh Chính (PO) | Actual hours from Jira worklogs, reconstructed by members on 02/11 (time was not tracked during S1): 19.5 h vs 48 h plan. T04, T09, T11 reassigned to Đạt, who did the work; Jira keys added |
 | 1.3 | 02/11/2026 | Hồ Du Tuấn Đạt | Re-checked against Jira Time spent on 02/11 (19.5 h confirmed); formatted for submission |
+| 1.4 | 06/11/2026 | Nguyễn Minh Chính (PO) | S1-T12 Done after the hosted F1 run part 2 (05/11); 21.5 h logged on it → S1 actual 41 h (Jira 06/11), used in EVM_S2 |
 
 ## Sprint Goal (measurable)
 By 29/10/2026, on the hosted URL: a visitor can register and log in/out; an administrator can create accounts with a role and lock/unlock them; a non-admin gets 403 on every `/admin` URL; passwords are stored as bcrypt hashes — verified by 24 F1 test cases (one per AC) all passing. In parallel, PMP v1.0, Product Backlog v1.0, Release Plan/BAC and the CR-06 Change Log entry are baselined.
@@ -38,10 +39,10 @@ US-01 (3), US-02 (3), US-03 (5), US-04 (3), NFR-01 (2), NFR-03 (2) = **18 SP →
 | S1-T09 | US-03 | Admin account list, create account with role, lock/unlock | Đạt (reassigned 02/11) | 5 | 1 | Done (ECBS-98, Jira 01/11) |
 | S1-T10 | US-04 | Server-side role guard, 403 page, hide admin menu | Đạt | 2 | 1.5 | Done (ECBS-99, Jira 01/11) |
 | S1-T11 | NFR-04 (base) | Responsive base layout and styles | Đạt (reassigned 02/11) | 3 | 1.5 | Done (ECBS-100, Jira 01/11) |
-| S1-T12 | Test | F1 test cases (24) + automated tests + run | Chính | 3 | 2 | In Progress (ECBS-101, Jira 01/11) |
+| S1-T12 | Test | F1 test cases (24) + automated tests + run | Chính | 3 | 23.5 (2 by 02/11 + 21.5 logged 05/11) | Done (ECBS-101, 05/11 – hosted run part 2) |
 | S1-T13 | PM | Workbook c2, Sprint Report c3, submission | Đạt | 3 | 2 | In Progress (ECBS-102, Jira 01/11) |
 | S1-T14 | PM | Review/Retro 1 preparation | Đạt | 2 | 0 | To Do (ECBS-103, Jira 01/11) |
-| | | **Total** | Đạt 36 · Chính 12 (plan, after reassignment) | **48** | **19.5** (Đạt 13.5 · Chính 6) | 10 Done · 3 In Progress · 1 To Do |
+| | | **Total** | Đạt 36 · Chính 12 (plan, after reassignment) | **48** | **41** (19.5 by 02/11 + 21.5 on T12, 05/11) | 11 Done · 2 In Progress · 1 To Do (Jira 06/11) |
 
 > **Check against capacity:** 48 h (plan) exceeds the 40 h capacity by 8 h (20 %). **PO note (30/10/2026):** Sprint 1 had already ended when capacity was confirmed, so the overload is recorded, not hidden: it is one cause of issue I-01 (late Sprint 1 artefacts). Lesson for Sprint Planning 2: select work only up to 40 h.
 

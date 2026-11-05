@@ -65,11 +65,11 @@ UNDONE = [
 
 PREV_ACTIONS = [
     ("A1 Daily Scrum logged every working day before 22:00 (proposed in Retro 1 record)", "Leader S2",
-     "Not Done – 1 entry (Chính, 05/11); channel not agreed (I-05)", "pm/sprints/S2/daily-log.md"),
+     "Not Done – 1 entry (Chính, 05/11); channel not agreed (I-05)", "Daily Scrum log (Part IV.3)"),
     ("A2 Draft Sprint files by Wednesday 20:00, submit Thursday before 21:00", "Leader S2",
-     "Partly – files drafted Wed 04/11 late evening; final update after the Sprint end", "deliverables/S2 commits 04–06/11"),
+     "Partly – files drafted Wed 04/11 late evening; final update after the Sprint end", "Repository commits 04–06/11 (S2 files)"),
     ("A3 Log Completed Work in Jira the same day a task moves", "Both",
-     "Partly – Chính logged 10.5 h on 05/11; Đạt's hours not logged; cards moved late (I-06)", "Jira sprint 6"),
+     "Partly – Chính logged 10.5 h on 05/11; Đạt's hours not logged; cards moved late (I-06)", "Jira, Sprint 2 board"),
 ]
 
 ACTIONS_PROPOSED = [
@@ -78,7 +78,7 @@ ACTIONS_PROPOSED = [
     ("Merge a reviewed PR at least every 2 days, so items reach the DoD before Thursday (proposed)", "Both",
      "09/11 and 11/11", "≥ 2 S3 items Done before 11/11"),
     ("Hold a real Planning Poker round for US-25 and the S3 items and log the votes (I-04) (proposed)", "PO",
-     "06/11 Planning 3", "Votes in planning-poker-log.md"),
+     "06/11 Planning 3", "Votes in the Planning Poker log (c2)"),
 ]
 
 BURNDOWN_NOTE = (
@@ -123,8 +123,8 @@ SHEETS = [  # name, source, subtitle, options
     ("S2_Backlog", "pm/sprints/S2/sprint-backlog.md", "Sprint 2 (30/10 – 05/11/2026), Leader Nguyễn Minh Chính – status at the Sprint end", {}),
 ]
 SHEETS_AFTER = [
-    ("RiskRegister", "pm/pmp/05-risk-plan.md", "Risk register v1.2 – P × I, strategy, owner, trigger, status", {"sections": ["5.1", "5.2"]}),
-    ("IssueLog", "pm/pmp/05-risk-plan.md", "Risks that occurred and the actions taken", {"sections": ["5.3"]}),
+    ("RiskRegister", "pm/pmp/05-risk-plan.md", "Risk register v1.2 – P × I, strategy, owner, trigger, status", {"sections": ["5.1", "5.2"], "title": "Risk Register – PMP Part 5 v1.2"}),
+    ("IssueLog", "pm/pmp/05-risk-plan.md", "Risks that occurred and the actions taken", {"sections": ["5.3"], "title": "Issue Log – PMP Part 5 v1.2"}),
     ("ChangeLog", "pm/change/change-log.md", "All change requests and their CCB decisions", {}),
     ("CR06_Impact", "pm/change/CR-06-change-request-form.md", "CR-06 Store Staff role – form, impact, options, CCB decision, baseline update", {}),
     ("ConfigItems", "pm/pmp/06-configuration-management.md", "Configuration items, branching, baselines and tags", {}),
@@ -175,13 +175,15 @@ def _index_sheet(wb):
             if j == 0:
                 c.fill = workbook_style.HEAD_FILL
         if j:
-            c1.hyperlink = f"#'{a}'!A1"
+            from openpyxl.worksheet.hyperlink import Hyperlink
+            c1.hyperlink = Hyperlink(ref=c1.coordinate, location=f"'{a}'!A1", display=a)
             c1.font = Font(name="Calibri", size=10, color="1F5FA8", underline="single")
         r += 1
     ws.column_dimensions["A"].width = 20
     ws.column_dimensions["B"].width = 100
     ws.sheet_view.showGridLines = False
     ws.page_setup.orientation = "landscape"
+    ws.page_setup.paperSize = ws.PAPERSIZE_A4
     ws.page_setup.fitToWidth = 1
     ws.page_setup.fitToHeight = 0
     ws.sheet_properties.pageSetUpPr.fitToPage = True
@@ -364,6 +366,7 @@ def _report_md(path):
         return DOC_NAMES.get(stem, stem.replace("-", " "))
     md = re.sub(r"`(?:pm|plan|docs)/[\w./-]*?([\w-]+)\.(?:md|xlsx|docx)`", doc_name, md)
     md = re.sub(r"`(?:pm|plan)/[\w./-]*`", "", md)
+    md = re.sub(r"(?<![\w/`])([\w-]+)\.md\b", doc_name, md)
     return md
 
 
@@ -401,7 +404,7 @@ def _fit_columns(tbl):
             r.cells[c].width = w
 
 
-def _md_sections(d, heading, md, wide=7):
+def _md_sections(d, heading, md, wide=7, last=False):
     """A part with a table of ≥ `wide` columns is printed on landscape pages."""
     n0 = len(d.tables)
     land = any(len(l.strip().strip("|").split("|")) >= wide for l in md.splitlines() if l.startswith("|"))
@@ -411,7 +414,7 @@ def _md_sections(d, heading, md, wide=7):
     _md_into(d, md)
     for t in d.tables[n0:]:
         _fit_columns(t)
-    if land:
+    if land and not last:  # the last part keeps the final (landscape) section: no empty page at the end
         _landscape(d, False)
 
 
@@ -421,6 +424,9 @@ def c3_report():
         if "SPRINT #" in p.text:
             for r in p.runs:
                 r.text = r.text.replace("#", "2")
+        if p.text.strip().startswith("PHẦN III"):
+            for r in p.runs:
+                r.text = r.text.replace("PHẦN III", "PART III")
         if "SPRINT REVIEW & SPRINT RETROSPECTIVE RECORD" in p.text:
             for r in p.runs:
                 r.text = r.text.replace("SPRINT REVIEW & SPRINT RETROSPECTIVE RECORD",
@@ -450,6 +456,10 @@ def c3_report():
     cell.add_paragraph().add_run(BURNDOWN_NOTE).italic = True
     _fill_rows(t[4], [("1", TBD + " (Review 2, 06/11)", TBD, TBD, TBD)])
     _fill_rows(t[5], UNDONE)
+    hdr = t[5].rows[0].cells[-1]
+    for par in hdr.paragraphs:
+        for r in par.runs:
+            r.text = r.text.replace("Sprint sau", "next Sprint")
     _fill_rows(t[6], PREV_ACTIONS)
     for p in d.paragraphs:  # template guidance meant for Sprint 1 only
         if p.text.strip().startswith("Sprint 1: write") or p.text.strip().startswith("Insert the burndown from the PM tool"):
@@ -476,10 +486,16 @@ def c3_report():
             body.remove(el)
             el = nxt
     sect = body.find(qn("w:sectPr"))
+    prev = sect.getprevious()  # empty paragraphs and page breaks left at the end of the template
+    while prev is not None and prev.tag == qn("w:p") and not "".join(prev.itertext()).strip() \
+            and not prev.xpath(".//w:sectPr | .//w:drawing"):
+        nxt = prev.getprevious()
+        body.remove(prev)
+        prev = nxt
     h = d.add_paragraph("PART IV – SPRINT 2 DATA", style="Heading 1")
     h.paragraph_format.page_break_before = True
     for i, (title, path) in enumerate(C3_PARTS, 1):
-        _md_sections(d, docx_style.plain_text(f"IV.{i}. {title}"), _report_md(path))
+        _md_sections(d, docx_style.plain_text(f"IV.{i}. {title}"), _report_md(path), last=i == len(C3_PARTS))
     body.remove(sect)
     body.append(sect)
     out = OUT / f"{PREFIX}c3_SprintReport_S2.docx"

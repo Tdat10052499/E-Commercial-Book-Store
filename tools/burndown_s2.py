@@ -30,7 +30,7 @@ def main():
     ax.plot([k[0] for k in known], [k[1] for k in known], "-o", color="#1F3A5F", label="Remaining by task status (h)")
     for x, y in known:
         ax.annotate(f"{y:g}", (x, y), textcoords="offset points", xytext=(0, 6), ha="center", fontsize=7, color="#1F3A5F")
-    ax.annotate("PRs #8, #11, #12\nmerged on 05/11", xy=(4, 6.25), xytext=(0.3, 10),
+    ax.annotate("PRs #8, #11, #12\nmerged on 05/11", xy=(3.92, 9.5), xytext=(3.15, 35),
                 arrowprops=dict(arrowstyle="->", color="#B42318"), color="#B42318", fontsize=8)
     ax.set_xticks(xs, DAYS, fontsize=8)
     ax.set_ylabel("Remaining work (h)")

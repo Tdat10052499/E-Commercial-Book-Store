@@ -251,6 +251,7 @@ def _cite(m):
 def plain_text(text):
     """Readable ASCII-style text: no section signs or math/arrow symbols."""
     text = re.sub(r"\[([^\]]*(?:§|#)[^\]]*)\]", _cite, text)
+    text = text.replace(" · ", "; ")
     for a, b in SYMBOLS:
         text = text.replace(a, b)
     return re.sub(r"Sec\. +", "Sec. ", text)
