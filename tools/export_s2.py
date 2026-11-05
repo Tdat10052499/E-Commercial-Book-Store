@@ -130,6 +130,14 @@ def c2_workbook():
     _replace_sheet(wb, "PlanningPoker", "pm/backlog/planning-poker-log.md",
                    note="Votes are entered by the team only. Session 3 is prepared for Planning 3 (06/11) and still empty.")
 
+    # S1 burndown: replace the round-tripped native chart by the same chart as an image (safer for Excel)
+    s1b = wb["Burndown"]
+    s1b._charts = []
+    from openpyxl.drawing.image import Image as XLImage
+    img1 = XLImage(str(ROOT / "pm" / "sprints" / "S1" / "evidence" / "burndown-S1.png"))
+    img1.width, img1.height = 750, 380
+    s1b.add_image(img1, "G2")
+
     s2 = add_sheet(wb, "S2_Backlog", "pm/sprints/S2/sprint-backlog.md", note=plan_note)
     _insert_after(wb, "S1_Backlog", s2)
 
@@ -155,7 +163,7 @@ def c2_workbook():
 
     evm = wb.create_sheet("EVM_S2")
     rows = [
-        ("EVM snapshot – Sprint 2 (n = 2, N = 3), baseline v1.1, data as of 05/11/2026 00:30", None, None),
+        ("EVM snapshot – Sprint 2 (n = 2, N = 3), baseline v1.1, data as of the Sprint end, 05/11/2026 23:59", None, None),
         ("Formulas per the Final Project brief, AgileEVM. Plan values from Release Plan v1.3; actuals from Jira.", None, None),
         (None, None, None),
         ("Input / metric", "Value", "Formula / source"),
@@ -179,8 +187,9 @@ def c2_workbook():
         ("EAC (VND)", '=IF(OR(B21="n/a",B21=0),"not meaningful (CPI = 0)",B7/B21)', "BAC / CPI"),
         ("ETC (VND)", '=IF(ISNUMBER(B22),B22-B17,"not meaningful (CPI = 0)")', "EAC − AC"),
         (None, None, None),
-        ("Reading: SPI 0.34 – behind schedule; CPI 0.58 (provisional until Đạt's S2 hours are added to B13). F1 was accepted only on 05/11."
-         " Scenario only: if the 5 items in PR #8 (14 SP) are also accepted, EV = 11,922,581 VND, SPI = 0.68.", None, None),
+        ("Reading: SPI 0.46 – behind schedule; CPI 0.79 – over budget for the value earned (provisional until Đạt's S2 hours "
+         "are added to B13). Every S2 item is built and deployed but only US-10 and NFR-02 are accepted. Scenario only: if the "
+         "24 SP in review pass their hosted cases, EV = 26,400,000 × 43/62 = 18,309,677 VND and SPI = 1.04.", None, None),
     ]
     for r in rows:
         evm.append(r)
