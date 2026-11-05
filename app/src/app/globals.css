@@ -169,3 +169,19 @@ textarea[aria-invalid="true"] { border-bottom-color: var(--error); }
 }
 @media (max-width: 640px) { .table-stack td > button, .table-stack .row-actions { justify-self: start; } }
 .row-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+/* Confirmation popup (src/components/ConfirmDialog.js) – replaces window.confirm */
+dialog.confirm { padding: 0; border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+  width: min(440px, calc(100vw - 32px)); max-width: none; box-shadow: 0 24px 64px rgba(0,0,0,.18); }
+dialog.confirm::backdrop { background: rgba(17,17,17,.45); backdrop-filter: blur(2px); }
+dialog.confirm[open] { animation: confirm-in .16s ease-out; }
+@keyframes confirm-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { dialog.confirm[open] { animation: none; } }
+.confirm-body { padding: clamp(20px, 4vw, 32px); }
+.confirm-title { font-size: 1.25rem; font-weight: 400; margin: 0 0 10px; }
+.confirm-message { margin: 0; color: var(--muted); }
+.confirm-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+.confirm-actions button { min-height: 44px; }
+button.confirm-danger { background: var(--error); border-color: var(--error); color: #fff; }
+button.confirm-danger:hover { background: #fff; color: var(--error); }
+@media (max-width: 480px) { .confirm-actions button { flex: 1 1 100%; } .confirm-actions { flex-direction: column-reverse; } }
