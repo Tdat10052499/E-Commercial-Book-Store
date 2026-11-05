@@ -35,7 +35,7 @@
 | Sprint | SP cam kết | SP đạt DoD | Giờ kế hoạch | Giờ thực tế | Nguồn (ảnh/CSV Jira) | Ngày |
 |---|---|---|---|---|---|---|
 | S1 | 18 | 0 at Planning 2; **14** after PO acceptance 05/11 (US-01…04; NFR-01, NFR-03 pending TC-19/TC-24) | 48 | 41 (Đạt 13.5 · Chính 27.5) – 19.5 h logged 02/11 + 21.5 h on S1-T12 logged 05/11 (hosted run part 2) | Jira worklogs | 05/11/2026 – Chính |
-| S2 | 29 (24 + US-24) | TBD | 39.75 | Chính 10.5 · Đạt TBD | Jira sprint 6 | 05/11/2026 – Chính |
+| S2 | 29 (24 + US-24) | **5** (US-10, NFR-02 accepted by the PO 05/11 23:59); 24 SP In Review | 39.75 | Chính 10.5 · Đạt TBD | Jira sprint 6 | 06/11/2026 – Chính |
 | S3 | TBD | TBD | TBD | TBD | | |
 
 ## 5. Change Request và CCB
