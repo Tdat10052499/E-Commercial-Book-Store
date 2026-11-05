@@ -21,3 +21,17 @@ export async function requireAdmin(nextPath) {
   if (user.role !== 'admin') forbidden();
   return user;
 }
+
+// Roles allowed to manage the catalogue (categories, authors, books). CR-06 / US-24 adds 'staff' here (S2-T17).
+export const CATALOG_EDITORS = ['admin'];
+
+// Server-side guard for catalogue pages and actions (US-08, US-09; US-04/AC-02 for everyone else).
+export async function requireCatalogEditor(nextPath) {
+  const user = await getCurrentUser();
+  if (!user) {
+    const back = nextPath || (await headers()).get('x-pathname') || '/admin';
+    redirect(`/login?next=${encodeURIComponent(back)}`);
+  }
+  if (!CATALOG_EDITORS.includes(user.role)) forbidden();
+  return user;
+}

@@ -24,6 +24,7 @@ export default async function RootLayout({ children }) {
             PAGE TURNERS
           </Link>
           <nav>
+            <Link href="/books">Books</Link>
             {user ? (
               <>
                 {user.role === 'admin' && <Link href="/admin">Admin</Link>}
