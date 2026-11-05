@@ -2,13 +2,13 @@ import { requireAdmin } from '@/lib/current-user';
 import { listUsers } from '@lib/users';
 import CreateAccountForm from './CreateAccountForm';
 import StatusButton from './StatusButton';
+import RoleSelect from './RoleSelect';
+import { ROLE_LABEL } from '@lib/validation';
 
 export const metadata = { title: 'Accounts – Admin' };
 
-const ROLE_LABEL = { admin: 'Administrator', customer: 'Customer' };
-
 export default async function AccountsPage() {
-  await requireAdmin('/admin/accounts');
+  const admin = await requireAdmin('/admin/accounts');
   const users = await listUsers();
   return (
     <section>
@@ -23,7 +23,7 @@ export default async function AccountsPage() {
                 <tr key={u.id}>
                   <td data-label="Name">{u.name}</td>
                   <td data-label="Email">{u.email}</td>
-                  <td data-label="Role">{ROLE_LABEL[u.role] || u.role}</td>
+                  <td data-label="Role">{u.id === admin.id ? ROLE_LABEL[u.role] : <RoleSelect id={u.id} role={u.role} name={u.name} />}</td>
                   <td data-label="Status"><span className={`badge ${u.status}`}>{u.status === 'active' ? 'Active' : 'Locked'}</span></td>
                   <td data-label="Action">
                     {u.status === 'active'

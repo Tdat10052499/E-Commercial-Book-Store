@@ -168,3 +168,4 @@ textarea[aria-invalid="true"] { border-bottom-color: var(--error); }
   .topbar nav .btn-pill, .topbar nav .btn-ghost { min-height: 44px; min-width: 44px; }
 }
 @media (max-width: 640px) { .table-stack td > button, .table-stack .row-actions { justify-self: start; } }
+.row-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }

@@ -7,6 +7,7 @@ function linksFor(user) {
   if (!user) return [{ href: '/', label: 'Home' }, { href: '/books', label: 'Books' }, { href: '/login', label: 'Log in' }, { href: '/register', label: 'Register' }];
   const links = [{ href: '/', label: 'Home' }, { href: '/books', label: 'Books' }];
   if (user.role === 'admin') links.push({ href: '/admin', label: 'Dashboard' }, { href: '/admin/accounts', label: 'Accounts' });
+  if (user.role === 'staff') links.push({ href: '/admin/books', label: 'Manage books' });
   return links;
 }
 

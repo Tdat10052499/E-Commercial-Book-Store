@@ -1,7 +1,9 @@
 // F2/F3 catalogue data access: categories (US-08), authors (US-09) and the public book grid (US-10).
 // Every write re-validates on the server, whatever the client did (NFR-01/AC-02).
 const { pool } = require('./db');
-const { PAGE_SIZE, validateCategory, validateAuthor, inUseMessage, resolvePage } = require('./catalog-validation');
+const {
+  PAGE_SIZE, COVER, validateCategory, validateAuthor, validateBook, validateCover, inUseMessage, resolvePage,
+} = require('./catalog-validation');
 
 const UNIQUE_VIOLATION = '23505';
 const toId = (id) => (/^\d+$/.test(String(id ?? '')) ? Number(id) : null);
@@ -124,6 +126,130 @@ async function listCatalogOptions() {
   return { categories: categories.rows, authors: authors.rows };
 }
 
+// ---------- Books (US-05 add, US-06 edit, US-07 hide) ----------
+
+const FK_VIOLATION = '23503';
+
+// Real JPG/PNG signature, so a renamed file is refused even if the browser sends image/png (US-05/AC-04).
+function coverMimeFromBytes(buf) {
+  if (buf.length >= 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) return 'image/jpeg';
+  const png = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a];
+  if (buf.length >= 8 && png.every((b, i) => buf[i] === b)) return 'image/png';
+  return null;
+}
+
+// cover: { data: Buffer, type: string } or null. Returns { cover } or { error }.
+function checkCover(cover) {
+  if (!cover || !cover.data || !cover.data.length) return { cover: null };
+  const declared = validateCover({ size: cover.data.length, type: cover.type });
+  if (declared) return { error: declared };
+  const mime = coverMimeFromBytes(cover.data);
+  if (!mime || !COVER.types.includes(mime)) return { error: 'Cover must be a JPG or PNG image' };
+  return { cover: { data: cover.data, mime } };
+}
+
+function bookValues(input) {
+  return {
+    title: clean(input.title),
+    author_id: Number(input.author_id),
+    category_id: Number(input.category_id),
+    price: clean(input.price).replace(',', '.'),
+    description: clean(input.description) || null,
+    stock: Number(clean(input.stock)),
+  };
+}
+
+// Server-side checks shared by add and edit: fields, cover, and that the author/category exist.
+async function prepareBook(input, rawCover) {
+  const errors = validateBook(input);
+  const checked = checkCover(rawCover);
+  if (checked.error) errors.cover = checked.error;
+  if (Object.keys(errors).length) return { errors };
+  return { values: bookValues(input), cover: checked.cover };
+}
+
+const fkErrors = () => ({ errors: { form: 'The selected author or category no longer exists' } });
+
+// US-05/AC-01: new book is saved and is first in the newest-first list. Cover required on add.
+async function createBook(input, rawCover) {
+  const prepared = await prepareBook(input, rawCover);
+  if (prepared.errors) return prepared;
+  if (!prepared.cover) return { errors: { cover: 'Cover image is required' } };
+  const v = prepared.values;
+  try {
+    const { rows } = await pool.query(
+      `INSERT INTO books (title, author_id, category_id, price, description, stock, cover_data, cover_mime)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id, title`,
+      [v.title, v.author_id, v.category_id, v.price, v.description, v.stock, prepared.cover.data, prepared.cover.mime]
+    );
+    return { book: rows[0] };
+  } catch (err) {
+    if (err.code === FK_VIOLATION) return fkErrors();
+    throw err;
+  }
+}
+
+// Visible books only: hidden or unknown ids are "not found" (US-06/AC-03).
+async function getBook(id) {
+  const bookId = toId(id);
+  if (!bookId) return null;
+  const { rows } = await pool.query(
+    `SELECT b.id, b.title, b.author_id, b.category_id, b.price, b.description, b.stock, b.cover_url,
+            (b.cover_data IS NOT NULL) AS has_upload, b.created_at, b.updated_at,
+            a.name AS author_name, c.name AS category_name
+       FROM books b LEFT JOIN authors a ON a.id = b.author_id LEFT JOIN categories c ON c.id = b.category_id
+      WHERE b.id = $1 AND NOT b.is_deleted`,
+    [bookId]
+  );
+  return rows[0] || null;
+}
+
+const sameBook = (old, v) => old.title === v.title && old.author_id === v.author_id && old.category_id === v.category_id
+  && Number(old.price) === Number(v.price) && (old.description || null) === v.description && old.stock === v.stock;
+
+// US-06: invalid data keeps the old values (AC-02); no change → book untouched + confirmation (AC-04).
+async function updateBook(id, input, rawCover) {
+  const old = await getBook(id);
+  if (!old) return { notFound: true, errors: { form: 'Book not found' } };
+  const prepared = await prepareBook(input, rawCover);
+  if (prepared.errors) return prepared;
+  const v = prepared.values;
+  if (!prepared.cover && sameBook(old, v)) return { book: old, unchanged: true };
+  try {
+    const { rows } = await pool.query(
+      `UPDATE books SET title = $1, author_id = $2, category_id = $3, price = $4, description = $5, stock = $6,
+              cover_data = coalesce($7, cover_data), cover_mime = coalesce($8, cover_mime), updated_at = now()
+        WHERE id = $9 AND NOT is_deleted RETURNING id, title`,
+      [v.title, v.author_id, v.category_id, v.price, v.description, v.stock,
+        prepared.cover?.data ?? null, prepared.cover?.mime ?? null, old.id]
+    );
+    if (!rows.length) return { notFound: true, errors: { form: 'Book not found' } };
+    return { book: rows[0] };
+  } catch (err) {
+    if (err.code === FK_VIOLATION) return fkErrors();
+    throw err;
+  }
+}
+
+// US-07/AC-01: soft delete – the record stays with is_deleted = true.
+async function hideBook(id) {
+  const bookId = toId(id);
+  if (!bookId) return { error: 'Book not found' };
+  const { rowCount } = await pool.query('UPDATE books SET is_deleted = true, updated_at = now() WHERE id = $1 AND NOT is_deleted', [bookId]);
+  if (!rowCount) return { error: 'Book not found' };
+  return { ok: true };
+}
+
+// Back-office list: visible books, newest first (hidden books are not editable – US-06/AC-03).
+async function listAdminBooks() {
+  const { rows } = await pool.query(
+    `SELECT ${'b.id, b.title, b.price, b.stock, b.created_at, a.name AS author_name, c.name AS category_name'}
+       FROM books b LEFT JOIN authors a ON a.id = b.author_id LEFT JOIN categories c ON c.id = b.category_id
+      WHERE NOT b.is_deleted ORDER BY b.created_at DESC, b.id DESC`
+  );
+  return rows;
+}
+
 // ---------- Public book grid (US-10) ----------
 
 // Card fields only; the cover bytes are served separately by /book-covers/[id].
@@ -161,4 +287,5 @@ module.exports = {
   listCategories, createCategory, renameCategory, removeCategory,
   listAuthors, createAuthor, updateAuthor, removeAuthor,
   listCatalogOptions, countVisibleBooks, listBooksPage, getCover,
+  createBook, getBook, updateBook, hideBook, listAdminBooks, coverMimeFromBytes,
 };
