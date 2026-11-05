@@ -1,6 +1,6 @@
-# Jira snapshot – Sprint 2 (ECBS, board 2, sprint id 6) – read 06/11/2026 00:20
+# Jira snapshot – Sprint 2 (ECBS, board 2, sprint id 6) – read 06/11/2026 00:20, updated 00:25
 
-Read by Nguyễn Minh Chính (AI-assisted). **Jira was behind the repository at the Sprint end:** Đạt's code tasks were merged and deployed on 05/11 (PR #11, #12, #16) but their cards were still *To Do* with no hours; Sprint 1 was still *active* and Sprint 2 *not started*. The column *Sprint-end status* is the status from GitHub that the board must show; the PO/Leader S2 moves the cards on 06/11 (issue I-06).
+Read by Nguyễn Minh Chính (AI-assisted). **Jira was behind the repository at the Sprint end:** Đạt's code tasks were merged and deployed on 05/11 (PR #11, #12, #16) but their cards were still *To Do* with no hours; Sprint 1 was still *active* and Sprint 2 *not started*. The column *Sprint-end status* is the status from GitHub. **Update 06/11 00:25 (Chính):** Sprint 1 completed (ECBS-91, 102, 103, 108, 109 moved to Sprint 2), Sprint 2 started with its planned dates, and every card moved to its Sprint-end status with a comment citing the PR – the board now matches the last column. Đạt's hours are still not logged (issue I-06).
 
 | Task | Jira key | Assignee | Original Estimate (h) | Time spent (h) | Jira status (06/11 00:20) | Sprint-end status (GitHub evidence) |
 |---|---|---|---|---|---|---|
@@ -30,7 +30,7 @@ Read by Nguyễn Minh Chính (AI-assisted). **Jira was behind the repository at 
 | **Total** | | | **39.75** | **Chính 10.5 · Đạt 0 (not logged)** | | 19 Done · 4 In Progress |
 
 ## Stories in Sprint 2
-| Key | Item | SP | Assignee | Jira status (06/11 00:20) | PO decision 05/11 23:59 |
+| Key | Item | SP | Assignee | Jira status before (06/11 00:20) | PO decision 05/11 23:59 = Jira status after 00:25 |
 |---|---|---|---|---|---|
 | ECBS-110 | US-05 Add book | 5 | Đạt | To Do | In Review (built, hosted admin run pending) |
 | ECBS-111 | US-06 Edit book | 3 | Đạt | To Do | In Review |
@@ -43,4 +43,4 @@ Read by Nguyễn Minh Chính (AI-assisted). **Jira was behind the repository at 
 | ECBS-122 | US-24 Store Staff role (CR-06) | 5 | Đạt | To Do | In Review |
 | | **Total committed** | **29** | | | **5 SP Done · 24 SP In Review** |
 
-Sprint 1 leftovers to move into Sprint 2 when Sprint 1 is completed: ECBS-91 (S1-T02), ECBS-102 (S1-T13), ECBS-103 (S1-T14), ECBS-108 (NFR-01), ECBS-109 (NFR-03). ECBS-123 US-25 is in Sprint 3.
+Sprint 1 leftovers moved into Sprint 2 when Sprint 1 was completed (06/11 00:25): ECBS-91 (S1-T02), ECBS-102 (S1-T13), ECBS-103 (S1-T14), ECBS-108 (NFR-01), ECBS-109 (NFR-03). ECBS-123 US-25 is in Sprint 3.
