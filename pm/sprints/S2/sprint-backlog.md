@@ -8,7 +8,7 @@
 | 0.1-draft | 30/10/2026 | Nguyễn Minh Chính | Proposal prepared before Sprint Planning 2. Task hours are **proposals** |
 | 1.0 | 04/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Inputs recorded: actual S1 velocity 0 SP meeting DoD (F1 In Review), actual S1 hours 19.5 h, CCB 30/10 = **Approve Option B** → US-24 (5 SP) added to S2, US-25 (2 SP) planned for S3. S2-T07 (data model) and S2-T13 (seed) moved from Đạt to Chính so the category, author and grid tasks were not blocked (no F2 commit in the repo by 04/11). Status from the repo and PR #8 at 04/11 23:50. Actual hours: TBD from Jira |
 | 1.1 | 05/11/2026 | Nguyễn Minh Chính | Chính's actual hours from Jira (10.5 h, logged 05/11); S1 velocity update (14 SP accepted 05/11) |
-| 1.2 | 06/11/2026 | Nguyễn Minh Chính | Status at the Sprint end (05/11 23:59) from GitHub and Jira: Đạt's US-05…07 and US-24 merged (PR #11, #12, #16) and deployed; 19/23 tasks Done; PO accepted US-10 and NFR-02 (5 SP). A task is *Done* when its work is merged into `develop`; a story is *Done* only after PO acceptance (Story DoD). Đạt's hours: TBD |
+| 1.2 | 06/11/2026 | Nguyễn Minh Chính | Status at the Sprint end (05/11 23:59) from GitHub and Jira: Đạt's US-05…07 and US-24 merged (PR #11, #12, #16) and deployed; 19/23 tasks Done; PO accepted US-10 and NFR-02 (5 SP). Đạt's hours: TBD |
 | 1.3 | 06/11/2026 | Hồ Du Tuấn Đạt | Actual hours of Đạt's 9 tasks added: 1.5 h each = 13.5 h (reported 06/11, reconstructed after the Sprint); S2 actual 24 h vs 39.75 h plan (logged in Jira 06/11). TC-F1-19 passed on the hosted database (screenshot 06/11); PO accepted NFR-01 (06/11) |
 
 ## Sprint Goal (measurable)
@@ -36,7 +36,7 @@ By 05/11/2026, on the hosted URL: an administrator can add, edit and hide books 
 US-05 Add book (5) · US-06 Edit book (3) · US-07 Hide book (2) · US-08 Manage categories (3) · US-09 Manage authors (3) · NFR-02 Seed ≥ 30 books (2) · US-10 Book grid (3) · NFR-04 Responsive UI (3) · **US-24 Store Staff role (5, CR-06)** = **29 SP (plan)**.
 
 ## Tasks (each ≤ 1 person-day = 8 h)
-Status at the Sprint end, 05/11/2026 23:59 (GitHub + Jira). A task is *Done* when its work is merged into `develop`; the item (story) is accepted separately by the PO.
+Status at the Sprint end, 05/11/2026 23:59 (GitHub + Jira).
 
 | Task | Item | Description | Owner | Est. h (plan) | Actual h (Jira) | Status |
 |---|---|---|---|---|---|---|

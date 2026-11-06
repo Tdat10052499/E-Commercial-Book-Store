@@ -27,7 +27,7 @@ def main():
     xs = list(range(len(DAYS)))
     ax.plot(xs, PLAN, "--", color="#8a8a8a", label=f"Plan ({TOTAL} h → 0)")
     known = [(x, y) for x, y in zip(xs, ACTUAL) if y is not None]
-    ax.plot([k[0] for k in known], [k[1] for k in known], "-o", color="#1F3A5F", label="Actual (remaining h of tasks not Done)")
+    ax.plot([k[0] for k in known], [k[1] for k in known], "-o", color="#1F3A5F", label="Actual (remaining h)")
     for x, y in known:
         ax.annotate(f"{y:g}", (x, y), textcoords="offset points", xytext=(0, 6), ha="center", fontsize=7, color="#1F3A5F")
     ax.annotate("PRs #8, #11, #12\nmerged on 05/11", xy=(3.92, 9.5), xytext=(3.15, 35),

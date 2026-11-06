@@ -24,7 +24,7 @@ def main():
     fig, ax = plt.subplots(figsize=(7.5, 3.8), dpi=150)
     xs = range(len(DAYS))
     ax.plot(list(xs)[:5], PLAN[:5], "--", color="#8a8a8a", label="Plan (48 h → 0)")
-    ax.plot(xs, ACTUAL, "-o", color="#1F3A5F", label="Actual (remaining h by Jira status)")
+    ax.plot(xs, ACTUAL, "-o", color="#1F3A5F", label="Actual (remaining h)")
     ax.axvspan(4.5, 5.5, color="#f3d9d9", alpha=0.6)
     ax.annotate("Board updated after\nSprint end (01/11)", xy=(5, 10), xytext=(3.1, 26),
                 arrowprops=dict(arrowstyle="->", color="#B42318"), color="#B42318", fontsize=8)
