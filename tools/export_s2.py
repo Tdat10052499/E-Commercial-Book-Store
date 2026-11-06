@@ -82,7 +82,8 @@ ACTIONS_PROPOSED = [
 ]
 
 BURNDOWN_NOTE = (
-    "Explanation: remaining work = plan hours of S2 tasks that are not Done; a task is Done when its work is merged "
+    "Explanation: the Plan line spreads the 39.75 planned hours evenly over the 5 Sprint days; the Actual line is the "
+    "plan hours of S2 tasks that are not Done; a task is Done when its work is merged "
     "into develop (the story is accepted separately by the PO). The line stays at 39.75 h until 03/11 because no S2 "
     "task was finished, drops to 30.75 h on 04/11 (CR-06 rebaseline, c4, Weekly Status, CR documentation, F2/F3 test "
     "cases) and to 6.25 h on 05/11, when PR #8 (12:55) and PR #11/#12 (22:52) were merged and the public pages were "
@@ -225,7 +226,8 @@ def c2_workbook():
     _copy_cells(s1["Burndown"], b1)
     b1.insert_rows(1, 2)
     b1.insert_rows(10)
-    b1["A1"] = "Sprint 1 burndown (Jira ECBS, hours)"
+    b1["A1"] = "Sprint 1 burndown (plan vs actual, Jira ECBS, hours)"
+    b1["C3"] = "Plan remaining (h, 48 h → 0 over 5 working days)"
     workbook_style.style_table_sheet(b1, header_row=3, last_col=4)
     for col, w in zip("ABCD", (6, 16, 30, 24)):
         b1.column_dimensions[col].width = w
@@ -235,15 +237,15 @@ def c2_workbook():
     b1.add_image(img1, "G3")
 
     b2 = wb.create_sheet("Burndown_S2")
-    b2["A1"] = "Sprint 2 burndown (plan vs remaining, hours)"
+    b2["A1"] = "Sprint 2 burndown (plan vs actual, hours)"
     b2.append([])
-    b2.append(["Day", "Date", f"Ideal remaining (h, plan: {PLAN_TOTAL} h → 0)", "Remaining by task status (h)", "Note"])
-    for i, (d, ideal, act) in enumerate(zip(burndown_s2.DAYS, burndown_s2.IDEAL, burndown_s2.ACTUAL)):
+    b2.append(["Day", "Date", f"Plan remaining (h, {PLAN_TOTAL} h → 0)", "Actual remaining (h, tasks not Done)", "Note"])
+    for i, (d, plan, act) in enumerate(zip(burndown_s2.DAYS, burndown_s2.PLAN, burndown_s2.ACTUAL)):
         note = {3: "T03, T04, T05, T21, T22 Done (9 h)", 4: "PR #8, #11, #12 merged; T07–T20 Done; left: T01, T02, T06, T23"}.get(i, "No S2 task Done")
-        b2.append([i + 1, d, ideal, act if act is not None else TBD, note])
+        b2.append([i + 1, d, plan, act if act is not None else TBD, note])
     workbook_style.style_table_sheet(b2, header_row=3, last_col=5)
     b2.append([])
-    b2.append(["Remaining = plan hours of S2 tasks not Done; a task is Done when its work is merged into develop. "
+    b2.append(["Plan = the 39.75 planned hours spread evenly over the 5 Sprint days. Actual = plan hours of S2 tasks not Done; a task is Done when its work is merged into develop. "
                "The S2 tasks were entered in Jira on 05/11, so days 1–4 are reconstructed from completion evidence; day 5 from the merged PRs."])
     for col, w in zip("ABCDE", (6, 12, 30, 28, 46)):
         b2.column_dimensions[col].width = w
