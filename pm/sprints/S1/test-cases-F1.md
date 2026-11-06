@@ -59,4 +59,6 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 
 **PO acceptance (05/11/2026, Nguyễn Minh Chính):** US-01, US-02, US-03, US-04 – every AC passed on the hosted URL → **Done (14 SP)**. NFR-01 stays In Review until TC-19 (hash in the hosted database) is shown; NFR-03 stays In Review until TC-24 on 17/11.
 
+**PO acceptance (06/11/2026, Nguyễn Minh Chính):** NFR-01 – TC-F1-19 passed on the hosted database (06/11, Đạt) and TC-F1-21 on the host; AC-02 is covered by the automated INT test (TC-F1-20) → **Done (2 SP)**. F1 accepted so far: 16 of 18 SP; NFR-03 waits for TC-F1-24 (17/11).
+
 Raw observations: `evidence/hosted/run-log-2026-10-30.md`.

@@ -1,6 +1,6 @@
 # Jira snapshot – Sprint 2 (ECBS, board 2, sprint id 6) – read 06/11/2026 00:20, updated 00:25
 
-Read by Nguyễn Minh Chính. **Jira was behind the repository at the Sprint end:** Đạt's code tasks were merged and deployed on 05/11 (PR #11, #12, #16) but their cards were still *To Do* with no hours; Sprint 1 was still *active* and Sprint 2 *not started*. The column *Sprint-end status* is the status from GitHub. **Update 06/11 00:25 (Chính):** Sprint 1 completed (ECBS-91, 102, 103, 108, 109 moved to Sprint 2), Sprint 2 started with its planned dates, and every card moved to its Sprint-end status with a comment citing the PR – the board now matches the last column. Đạt's hours are still not logged (issue I-06).
+Read by Nguyễn Minh Chính. **Jira was behind the repository at the Sprint end:** Đạt's code tasks were merged and deployed on 05/11 (PR #11, #12, #16) but their cards were still *To Do* with no hours; Sprint 1 was still *active* and Sprint 2 *not started*. The column *Sprint-end status* is the status from GitHub. **Update 06/11 00:25 (Chính):** Sprint 1 completed (ECBS-91, 102, 103, 108, 109 moved to Sprint 2), Sprint 2 started with its planned dates, and every card moved to its Sprint-end status with a comment citing the PR – the board now matches the last column. Đạt's S2 hours were logged later on 06/11 (see the update below; issue I-06).
 
 | Task | Jira key | Assignee | Original Estimate (h) | Time spent (h) | Jira status (06/11 00:20) | Sprint-end status (GitHub evidence) |
 |---|---|---|---|---|---|---|
@@ -27,7 +27,7 @@ Read by Nguyễn Minh Chính. **Jira was behind the repository at the Sprint end
 | S2-T21 | ECBS-144 | Chính | 1.0 | 0.5 | Done | Done |
 | S2-T22 | ECBS-145 | Chính | 2.0 | 1 | Done | Done |
 | S2-T23 | ECBS-146 | Đạt | 2.0 | 1.5 (logged in Jira 06/11) | To Do | In Progress |
-| **Total** | | | **39.75** | **Chính 10.5 · Đạt 0 (not logged)** | | 19 Done · 4 In Progress |
+| **Total** | | | **39.75** | **24 (Chính 10.5 · Đạt 13.5, Đạt's logged 06/11)** | | 19 Done · 4 In Progress |
 
 ## Stories in Sprint 2
 | Key | Item | SP | Assignee | Jira status before (06/11 00:20) | PO decision 05/11 23:59 = Jira status after 00:25 |
@@ -45,4 +45,4 @@ Read by Nguyễn Minh Chính. **Jira was behind the repository at the Sprint end
 
 Sprint 1 leftovers moved into Sprint 2 when Sprint 1 was completed (06/11 00:25): ECBS-91 (S1-T02), ECBS-102 (S1-T13), ECBS-103 (S1-T14), ECBS-108 (NFR-01), ECBS-109 (NFR-03). ECBS-123 US-25 is in Sprint 3.
 
-**Update 06/11/2026 (Đạt):** Đạt's S2 hours: 1.5 h per task × 9 tasks = 13.5 h, reported by Đạt on 06/11/2026 (reconstructed after the Sprint); to be logged in Jira by Đạt. Time spent column for Đạt's tasks shows these reported hours until they are logged.
+**Update 06/11/2026 (Đạt):** Đạt's S2 hours: 1.5 h per task × 9 tasks = 13.5 h, reported by Đạt on 06/11/2026 (reconstructed after the Sprint) and logged in Jira on 06/11 (9 worklogs of 1h 30m, checked by Chính 06/11 09:00). ECBS-108 NFR-01 moved to Done after the PO acceptance (06/11).

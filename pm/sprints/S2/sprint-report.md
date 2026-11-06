@@ -8,7 +8,7 @@
 | Repository | https://github.com/Tdat10052499/E-Commercial-Book-Store (PR #8, #9 Chính; PR #11, #12, #16 Đạt – all merged into `develop` and `main`) |
 | Jira board | https://tdat100524.atlassian.net/jira/software/projects/ECBS/boards/2 (project ECBS, sprint id 6) |
 | Hosted URL | https://pagetunnel.vercel.app/ (Vercel + Supabase) |
-| Data as of | 05/11/2026 23:59 (Sprint end, GMT+7); Đạt's S2 hours reported 06/11 (13.5 h) |
+| Data as of | 05/11/2026 23:59 (Sprint end, GMT+7); Đạt's S2 hours (13.5 h, logged in Jira 06/11) and the PO acceptance of NFR-01 (06/11, before Review 2) included |
 
 ## Version history
 | Version | Date | Author | Change |
@@ -16,13 +16,14 @@
 | 1.0-draft | 05/11/2026 | Nguyễn Minh Chính (Leader S2) | First S2 report: status, EVM snapshot on baseline v1.1, plan vs actual, change control summary. Actual S2 hours, Daily log and Review/Retro 2 content: TBD (team) |
 | 1.1 | 06/11/2026 | Nguyễn Minh Chính (Leader S2) | Final S2 status at the Sprint end: all items built and deployed, PO accepted US-10 and NFR-02, hosted run of public pages, EVM recalculated (19 SP, SPI 0.46, CPI 0.79 provisional) |
 | 1.2 | 06/11/2026 | Hồ Du Tuấn Đạt | Đạt's S2 hours added (9 tasks × 1.5 h = 13.5 h, reported 06/11, reconstructed); AC 13.0 M, CPI 0.62, EAC 42.4 M; TC-F1-19 passed on the hosted DB |
+| 1.3 | 06/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Review of PR #19: Đạt's hours confirmed in Jira (9 worklogs, 13.5 h); PO accepted NFR-01 (2 SP) after TC-F1-19 → 21 SP cumulative; EVM recalculated: SPI 0.51, CPI 0.69, EAC 38.4 M |
 
 ## Status summary (Green / Amber / Red) – at the Sprint end, 05/11/2026 23:59
 | Area | Status | Evidence |
 |---|---|---|
 | Scope | Amber | All 9 committed items (29 SP) are **built, merged and deployed** (PR #8 Chính; PR #11, #12, #16 Đạt). PO accepted **US-10 and NFR-02 (5 SP)**; 7 items (24 SP) stay In Review until their hosted admin/Staff cases pass. CR-06 US-24 built in S2 as planned (Option B) |
 | Schedule | Red | Most work was merged on the last day (12:55 and 22:52 on 05/11); burndown 39.75 → 30.75 h on day 4 → **6.25 h** on day 5; actual velocity S2 = 5 SP vs 29 SP planned; Jira board updated only from 05/11 |
-| Cost | Red | EV 8.09 M vs AC 13.0 M VND → **CPI 0.62**; EAC 42.4 M vs BAC 26.4 M. Đạt's 13.5 h are reported by the member (reconstructed) and still to be logged in Jira |
+| Cost | Red | EV 8.94 M vs AC 13.0 M VND → **CPI 0.69**; EAC 38.4 M vs BAC 26.4 M. Đạt's 13.5 h were reconstructed after the Sprint and logged in Jira on 06/11 |
 | Quality | Green | `npm test` on `develop`: **71/71 pass**; 33/33 ACs have a test case; hosted run 7 Pass / 0 Fail; 2 UI defects (DEF-F2-01, DEF-F2-02) found on the host and fixed the same evening; F1 regression automated 16/16 |
 | Change | Green | CR-06 processed in 5 steps; US-24 built; team decisions on the open details recorded in c4 |
 
@@ -32,14 +33,14 @@ Formulas [03 §6.4]. Baseline v1.1: BAC = 132 h × 200,000 = 26,400,000 VND; PSP
 | Metric | Formula | Value |
 |---|---|---|
 | PV | BAC × n / N = 26,400,000 × 2/3 | 17,600,000 VND |
-| SP meeting DoD (cumulative) | F1: US-01…04 (14 SP) · S2: US-10, NFR-02 (5 SP) | **19 SP** |
-| EV | BAC × 19 / 62 | 8,090,323 VND |
-| AC | (41 h S1 + 24 h S2: Chính 10.5 · Đạt 13.5) × 200,000 | 13,000,000 VND |
-| SV / SPI | EV − PV / EV ÷ PV | −9,509,677 VND / **0.46** |
-| CV / CPI | EV − AC / EV ÷ AC | −4,909,677 VND / **0.62** |
-| EAC / ETC | BAC ÷ CPI / EAC − AC | 42,421,053 / 29,421,053 VND |
+| SP meeting DoD (cumulative) | F1: US-01…04 (14 SP, 05/11) + NFR-01 (2 SP, 06/11) · S2: US-10, NFR-02 (5 SP) | **21 SP** |
+| EV | BAC × 21 / 62 | 8,941,935 VND |
+| AC | (41 h S1 + 24 h S2: Chính 10.5 · Đạt 13.5, Jira) × 200,000 | 13,000,000 VND |
+| SV / SPI | EV − PV / EV ÷ PV | −8,658,065 VND / **0.51** |
+| CV / CPI | EV − AC / EV ÷ AC | −4,058,065 VND / **0.69** |
+| EAC / ETC | BAC ÷ CPI / EAC − AC | 38,380,952 / 25,380,952 VND |
 
-Interpretation: **behind schedule (SPI 0.46) and over budget for the value earned (CPI 0.62)**. The increment is much further along than EV shows: every S2 item is built and deployed, but only 5 SP passed the PO acceptance because the hosted admin run was left to the last hour. Root cause: integration and testing at the end of the Sprint (issue I-02, I-06). **Scenario, not actual:** if the 24 SP in review pass their hosted cases at Review 2, cumulative EV = 26,400,000 × 43/62 = 18,309,677 VND and SPI = 1.04. With Đạt's 13.5 h added, CPI fell from 0.79 to 0.62; EAC would fall again once the 24 SP in review are accepted (scenario: CPI = 18,309,677 / 13,000,000 = 1.41).
+Interpretation: **behind schedule (SPI 0.51) and over budget for the value earned (CPI 0.69)**. The increment is much further along than EV shows: every S2 item is built and deployed, but only 5 SP passed the PO acceptance because the hosted admin run was left to the last hour. Root cause: integration and testing at the end of the Sprint (issue I-02, I-06). **Scenario, not actual:** if the 24 SP in review pass their hosted cases at Review 2, cumulative EV = 26,400,000 × 45/62 = 19,161,290 VND, SPI = 1.09 and CPI = 19,161,290 / 13,000,000 = 1.47. With Đạt's 13.5 h added, CPI fell from 0.79 to 0.62; accepting NFR-01 raised it to 0.69.
 
 ## Plan vs actual (Sprint 2)
 | | Plan | Actual (05/11 23:59) |

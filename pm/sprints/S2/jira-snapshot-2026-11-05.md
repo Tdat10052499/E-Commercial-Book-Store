@@ -16,21 +16,21 @@ Entered by Nguyễn Minh Chính through the Jira REST API. Sprint dates in Jira:
 | S2-T07 | ECBS-130 | Chính | 2.0 | 1 | In Review |
 | S2-T08 | ECBS-131 | Chính | 2.0 | 1 | In Review |
 | S2-T09 | ECBS-132 | Chính | 2.0 | 0.5 | In Review |
-| S2-T10 | ECBS-133 | Đạt | 3.0 | 1.5 (reported 06/11, not yet in Jira) | To Do |
-| S2-T11 | ECBS-134 | Đạt | 1.5 | 1.5 (reported 06/11, not yet in Jira) | To Do |
-| S2-T12 | ECBS-135 | Đạt | 1.0 | 1.5 (reported 06/11, not yet in Jira) | To Do |
+| S2-T10 | ECBS-133 | Đạt | 3.0 | TBD | To Do |
+| S2-T11 | ECBS-134 | Đạt | 1.5 | TBD | To Do |
+| S2-T12 | ECBS-135 | Đạt | 1.0 | TBD | To Do |
 | S2-T13 | ECBS-136 | Chính | 1.5 | 0.5 | In Review |
 | S2-T14 | ECBS-137 | Chính | 3.0 | 1 | In Review |
 | S2-T15 | ECBS-138 | Chính | 1.0 | 0.5 | In Review |
-| S2-T16 | ECBS-139 | Đạt | 1.0 | 1.5 (reported 06/11, not yet in Jira) | To Do |
-| S2-T17 | ECBS-140 | Đạt | 2.0 | 1.5 (reported 06/11, not yet in Jira) | To Do |
-| S2-T18 | ECBS-141 | Đạt | 1.5 | 1.5 (reported 06/11, not yet in Jira) | To Do |
-| S2-T19 | ECBS-142 | Đạt | 2.0 | 1.5 (reported 06/11, not yet in Jira) | To Do |
-| S2-T20 | ECBS-143 | Đạt | 1.0 | 1.5 (reported 06/11, not yet in Jira) | To Do |
+| S2-T16 | ECBS-139 | Đạt | 1.0 | TBD | To Do |
+| S2-T17 | ECBS-140 | Đạt | 2.0 | TBD | To Do |
+| S2-T18 | ECBS-141 | Đạt | 1.5 | TBD | To Do |
+| S2-T19 | ECBS-142 | Đạt | 2.0 | TBD | To Do |
+| S2-T20 | ECBS-143 | Đạt | 1.0 | TBD | To Do |
 | S2-T21 | ECBS-144 | Chính | 1.0 | 0.5 | Done |
 | S2-T22 | ECBS-145 | Chính | 2.0 | 1 | Done |
-| S2-T23 | ECBS-146 | Đạt | 2.0 | 1.5 (reported 06/11, not yet in Jira) | To Do |
-| **Total** | | | **39.75** | **Chính 10.5 · Đạt 13.5 (reported 06/11)** | 5 Done · 3 In Progress · 6 In Review · 9 To Do |
+| S2-T23 | ECBS-146 | Đạt | 2.0 | TBD | To Do |
+| **Total** | | | **39.75** | **Chính 10.5 · Đạt TBD** | 5 Done · 3 In Progress · 6 In Review · 9 To Do |
 
 ## Stories in Sprint 2
 | Key | Item | SP | Assignee | Status |

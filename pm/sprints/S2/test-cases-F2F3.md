@@ -125,6 +125,7 @@ Re-run of the Sprint 1 test cases (`pm/sprints/S1/test-cases-F1.md`) on the Spri
 | Hosted run – public pages (23:55) | TC-F2-21, 22, TC-F3-01, 02, 03, 05 (`/books`), 06 → **7 Pass, 0 Fail**; TC-F1-15 and TC-F1-22 regression Pass |
 | Hosted run – admin pages (US-05…09, US-24, admin part of NFR-04) | **Not run** – needs an Admin and a Staff login; carried to Review 2 / S3 regression |
 | PO acceptance (05/11 23:59, Nguyễn Minh Chính) | **US-10 and NFR-02 Done (5 SP)**; US-05…09, NFR-04, US-24 stay In Review until their hosted admin cases pass |
+| PO acceptance (06/11, Nguyễn Minh Chính) | F1 item **NFR-01 Done (2 SP)** after TC-F1-19 passed on the hosted DB |
 | Defects | 2 found (DEF-F2-01 Medium, DEF-F2-02 Low), both fixed and deployed 05/11 |
 
 ## Defects (05/11/2026)
