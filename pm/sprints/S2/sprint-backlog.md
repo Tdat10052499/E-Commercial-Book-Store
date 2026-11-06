@@ -9,6 +9,7 @@
 | 1.0 | 04/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Inputs recorded: actual S1 velocity 0 SP meeting DoD (F1 In Review), actual S1 hours 19.5 h, CCB 30/10 = **Approve Option B** → US-24 (5 SP) added to S2, US-25 (2 SP) planned for S3. S2-T07 (data model) and S2-T13 (seed) moved from Đạt to Chính so the category, author and grid tasks were not blocked (no F2 commit in the repo by 04/11). Status from the repo and PR #8 at 04/11 23:50. Actual hours: TBD from Jira |
 | 1.1 | 05/11/2026 | Nguyễn Minh Chính | Chính's actual hours from Jira (10.5 h, logged 05/11); S1 velocity update (14 SP accepted 05/11) |
 | 1.2 | 06/11/2026 | Nguyễn Minh Chính | Status at the Sprint end (05/11 23:59) from GitHub and Jira: Đạt's US-05…07 and US-24 merged (PR #11, #12, #16) and deployed; 19/23 tasks Done; PO accepted US-10 and NFR-02 (5 SP). A task is *Done* when its work is merged into `develop`; a story is *Done* only after PO acceptance (Story DoD). Đạt's hours: TBD |
+| 1.3 | 06/11/2026 | Hồ Du Tuấn Đạt | Actual hours of Đạt's 9 tasks added: 1.5 h each = 13.5 h (reported 06/11, reconstructed after the Sprint); S2 actual 24 h vs 39.75 h plan. TC-F1-19 passed on the hosted database (screenshot 06/11) |
 
 ## Sprint Goal (measurable)
 By 05/11/2026, on the hosted URL: an administrator can add, edit and hide books (price > 0, required fields validated on client and server) and manage categories and authors; a customer browses a responsive grid of ≥ 30 sample books, 12 per page, newest first; a Store Staff account can add/edit books but gets HTTP 403 on delete and on account management (CR-06, Option B). Verified by the F2/F3 test cases (≥ 1 per AC) and the F1 regression.
@@ -48,21 +49,21 @@ Status at the Sprint end, 05/11/2026 23:59 (GitHub + Jira). A task is *Done* whe
 | S2-T07 | US-05..09 | Data model: books, categories, authors, hidden flag; migration | **Chính** (was Đạt) | 2.0 | 1 | Done – merged PR #8 (05/11 12:55), deployed |
 | S2-T08 | US-08 | Manage categories (screens + API + validation) | Chính | 2.0 | 1 | Done – merged PR #8 (05/11 12:55), deployed |
 | S2-T09 | US-09 | Manage authors (screens + API + validation) | Chính | 2.0 | 0.5 | Done – merged PR #8 (05/11 12:55), deployed |
-| S2-T10 | US-05 | Add book: form, cover image, price > 0, client + server validation | Đạt | 3.0 | TBD | Done – merged PR #11 (05/11 22:52), deployed |
-| S2-T11 | US-06 | Edit book | Đạt | 1.5 | TBD | Done – merged PR #11 (05/11 22:52), deployed |
-| S2-T12 | US-07 | Hide book (soft delete) – hidden from customers | Đạt | 1.0 | TBD | Done – merged PR #11; confirm popup PR #16 |
+| S2-T10 | US-05 | Add book: form, cover image, price > 0, client + server validation | Đạt | 3.0 | 1.5 | Done – merged PR #11 (05/11 22:52), deployed |
+| S2-T11 | US-06 | Edit book | Đạt | 1.5 | 1.5 | Done – merged PR #11 (05/11 22:52), deployed |
+| S2-T12 | US-07 | Hide book (soft delete) – hidden from customers | Đạt | 1.0 | 1.5 | Done – merged PR #11; confirm popup PR #16 |
 | S2-T13 | NFR-02 | Seed ≥ 30 sample books (cover, category, author) | **Chính** (was Đạt) | 1.5 | 0.5 | Done – merged PR #8, seed runs on every deploy (30 books on host) |
 | S2-T14 | US-10 | Book grid: cover, title, author, price; 12 per page; newest first | Chính | 3.0 | 1 | Done – merged PR #8; hosted check Pass 05/11 23:55 |
 | S2-T15 | NFR-04 | Responsive check of new pages (360 / 768 / 1280 px) | Chính | 1.0 | 0.5 | Done – hosted check of `/books` at 360/768/1280 px Pass 05/11 23:55 (admin pages: in S2-T23) |
-| S2-T16 | US-24 (CR) | C1 `staff` role + migration | Đạt | 1.0 | TBD | Done – merged PR #11 (migration replaces the role CHECK) |
-| S2-T17 | US-24 (CR) | C2 permission matrix on the server (403 on delete and account management) | Đạt | 2.0 | TBD | Done – merged PR #11 (`lib/permissions.js`) |
-| S2-T18 | US-24 (CR) | C3 Admin assigns/changes role incl. Staff | Đạt | 1.5 | TBD | Done – merged PR #11 (`RoleSelect`) |
-| S2-T19 | US-24 (CR) | C4 Staff access to book/category/author screens; hide Delete | Đạt | 2.0 | TBD | Done – merged PR #11 |
-| S2-T20 | US-24 (CR) | C6 (part) CR test cases + F1 regression | Đạt | 1.0 | TBD | Done – merged PR #12 (5 CR test cases + F1 regression table) |
+| S2-T16 | US-24 (CR) | C1 `staff` role + migration | Đạt | 1.0 | 1.5 | Done – merged PR #11 (migration replaces the role CHECK) |
+| S2-T17 | US-24 (CR) | C2 permission matrix on the server (403 on delete and account management) | Đạt | 2.0 | 1.5 | Done – merged PR #11 (`lib/permissions.js`) |
+| S2-T18 | US-24 (CR) | C3 Admin assigns/changes role incl. Staff | Đạt | 1.5 | 1.5 | Done – merged PR #11 (`RoleSelect`) |
+| S2-T19 | US-24 (CR) | C4 Staff access to book/category/author screens; hide Delete | Đạt | 2.0 | 1.5 | Done – merged PR #11 |
+| S2-T20 | US-24 (CR) | C6 (part) CR test cases + F1 regression | Đạt | 1.0 | 1.5 | Done – merged PR #12 (5 CR test cases + F1 regression table) |
 | S2-T21 | CR-06 | C7 CR documentation in the baseline | Chính | 1.0 | 0.5 | Done (04/11) |
 | S2-T22 | Test | F2/F3 test cases from AC (≥ 1 per AC) | Chính | 2.0 | 1 | Done (04/11) – `test-cases-F2F3.md` |
-| S2-T23 | Test | Run F2/F3 test cases on the hosted URL + F1 regression; record results and defects | Đạt | 2.0 | TBD | In Progress – public pages run 05/11 23:55 by Chính (7 Pass, 0 Fail); admin/Staff cases need a login (Đạt) – carried to Review 2 |
-| | | **Total (plan)** | Đạt 16.25 · Chính 23.5 | **39.75** | **Chính 10.5 · Đạt TBD** | 19 Done · 4 In Progress |
+| S2-T23 | Test | Run F2/F3 test cases on the hosted URL + F1 regression; record results and defects | Đạt | 2.0 | 1.5 | In Progress – public pages run 05/11 23:55 by Chính (7 Pass, 0 Fail); admin/Staff cases need a login (Đạt) – carried to Review 2 |
+| | | **Total (plan)** | Đạt 16.25 · Chính 23.5 | **39.75** | **24 (Chính 10.5 · Đạt 13.5)** | 19 Done · 4 In Progress |
 
 "Both" tasks are counted half per member. Moving T07 and T13 (3.5 h) to Chính puts Chính's planned load at **23.5 h > 20 h capacity** and Đạt's at 16.25 h; the total stays within 40 h. Recorded as issue I-02.
 

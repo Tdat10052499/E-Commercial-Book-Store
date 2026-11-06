@@ -60,7 +60,7 @@ UNDONE = [
      "Admin run planned in S2-T23 but not reached", "Run at Review 2 / start of S3; then PO acceptance"),
     ("US-07/AC-03", "Friendly 'not found' for a hidden book's detail URL", "Detail page is US-11 (Sprint 3)", "Tested with US-11 in S3"),
     ("NFR-01, NFR-03 (F1, 4 SP)", "TC-F1-19 (hash in the hosted DB) and TC-F1-24 (online on 17/11) not run",
-     "Needs Supabase access; date-bound", "Đạt shows the hash; TC-24 on 17/11. US-01…04 (14 SP) accepted 05/11"),
+     "Needs Supabase access; date-bound", "TC-F1-19 passed 06/11 (hash screenshot) – NFR-01 ready for PO acceptance; TC-24 on 17/11"),
 ]
 
 PREV_ACTIONS = [
@@ -69,7 +69,7 @@ PREV_ACTIONS = [
     ("A2 Draft Sprint files by Wednesday 20:00, submit Thursday before 21:00", "Leader S2",
      "Partly – files drafted Wed 04/11 late evening; final update after the Sprint end", "Repository commits 04–06/11 (S2 files)"),
     ("A3 Log Completed Work in Jira the same day a task moves", "Both",
-     "Partly – Chính logged 10.5 h on 05/11; Đạt's hours not logged; cards moved late (I-06)", "Jira, Sprint 2 board"),
+     "Partly – Chính logged 10.5 h on 05/11; Đạt reported 13.5 h on 06/11 (after the Sprint); cards moved late (I-06)", "Jira, Sprint 2 board"),
 ]
 
 ACTIONS_PROPOSED = [
@@ -277,7 +277,7 @@ def c2_workbook():
         ("N (Sprints planned)", 3, None),
         ("SP meeting DoD (cumulative)", 19, "F1: US-01…04 (14 SP); S2: US-10, NFR-02 (5 SP) accepted by the PO 05/11 23:59"),
         ("Actual hours S1 (h)", 41, "Jira Time spent ECBS-90…103 (19.5 h logged 02/11 + 21.5 h on S1-T12 logged 05/11)"),
-        ("Actual hours S2 (h)", 10.5, "Jira Time spent ECBS-124…146: Chính 10.5 h; Đạt's S2 hours not logged yet (add them here)"),
+        ("Actual hours S2 (h)", 24, "Chính 10.5 h (Jira Time spent ECBS-124…146) + Đạt 13.5 h (9 tasks × 1.5 h, reported 06/11, reconstructed)"),
         ("Actual hours (cumulative, h)", "=B12+N(B13)", "S1 + S2"),
         ("PV (VND)", "=B7*B9/B10", "BAC × n / N"),
         ("EV (VND)", "=B7*B11/B8", "BAC × SP done / PSP"),
@@ -289,8 +289,8 @@ def c2_workbook():
         ("EAC (VND)", '=IF(OR(B21="n/a",B21=0),"not meaningful (CPI = 0)",B7/B21)', "BAC / CPI"),
         ("ETC (VND)", '=IF(ISNUMBER(B22),B22-B17,"not meaningful (CPI = 0)")', "EAC − AC"),
         (None, None, None),
-        ("Reading: SPI 0.46 – behind schedule; CPI 0.79 – over budget for the value earned (provisional until Đạt's S2 hours "
-         "are added to B13). Every S2 item is built and deployed but only US-10 and NFR-02 are accepted. Scenario only: if the "
+        ("Reading: SPI 0.46 – behind schedule; CPI 0.62 – over budget for the value earned (Đạt's 13.5 h "
+         "reported 06/11 are included in B13). Every S2 item is built and deployed but only US-10 and NFR-02 are accepted. Scenario only: if the "
          "24 SP in review pass their hosted cases, EV = 26,400,000 × 43/62 = 18,309,677 VND and SPI = 1.04.", None, None),
     ]
     for r in rows:

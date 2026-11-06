@@ -88,7 +88,7 @@ Re-run of the Sprint 1 test cases (`pm/sprints/S1/test-cases-F1.md`) on the Spri
 | TC-F1-16 | US-04/AC-02 | E2E only – not run (Customer must still get 403 on every `/admin` URL now that Staff is allowed in) | TBD |
 | TC-F1-17 | US-04/AC-03 | E2E only – not run | TBD |
 | TC-F1-18 | US-04/AC-04 | E2E only – not run | TBD |
-| TC-F1-19 | NFR-01/AC-01 | Pass (INT, `$2…$10$`) | TBD – Supabase screenshot of `password_hash` |
+| TC-F1-19 | NFR-01/AC-01 | Pass (INT, `$2…$10$`) | Pass (06/11, Đạt) – Supabase `users.password_hash` holds bcrypt hashes `$2a$10$…` for every account, incl. the Staff account; evidence `pm/sprints/S1/evidence/hosted/TC-F1-19_password-hash-supabase.png` |
 | TC-F1-20 | NFR-01/AC-02 | Pass (INT) | TBD |
 | TC-F1-21 | NFR-01/AC-03 | Pass (UNIT) | TBD |
 | TC-F1-22 | NFR-03/AC-01 | Host only | Pass (05/11 23:55, Chính, public pages) – home page over HTTPS |

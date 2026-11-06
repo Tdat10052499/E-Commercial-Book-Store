@@ -16,7 +16,7 @@ Every Sprint 2 item – F2 book, category and author management, F3 book grid an
 |---|---|---|
 | **Scope** | Amber | 9/9 committed items built and deployed (PR #8, #11, #12, #16). PO accepted US-10 and NFR-02 (5 SP); US-05…09, NFR-04 and US-24 (24 SP) In Review → hosted admin run at Review 2, then Sprint 3 |
 | **Schedule** | Red | Most code merged on the last day; burndown 39.75 → 6.25 h; actual velocity S2 5 SP vs 29 SP planned; SPI 0.46 |
-| **Cost** | Amber | BAC 26.4 M VND; PV 17.6 M; EV 8.09 M (19 SP cumulative); AC 10.3 M → **CPI 0.79** (provisional – Đạt's S2 hours not logged yet) |
+| **Cost** | Red | BAC 26.4 M VND; PV 17.6 M; EV 8.09 M (19 SP cumulative); AC 13.0 M (65 h) → **CPI 0.62**, EAC 42.4 M (Đạt's 13.5 h reported 06/11) |
 | **Quality** | Green | 71/71 automated tests pass; 33/33 ACs have a test case; hosted run 7 Pass, 0 Fail; 2 UI defects found on the host and fixed the same day; 0 open defects |
 
 ## 2. Done this week
