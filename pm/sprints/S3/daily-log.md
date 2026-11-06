@@ -1,6 +1,6 @@
 # Sprint 3 – Daily Scrum Log
 
-Timebox ≤ 15 min; asynchronous allowed but logged [03 §4.2]. Channel: **TBD – fill in the channel agreed at Retro 2** (issue I-05). *Planned today* comes from `daily-plan.md`; the other columns are filled by each member at the Daily.
+Timebox ≤ 10 min; asynchronous allowed but logged [03 §4.2]. Channel: **TBD – fill in the channel agreed at Retro 2** (issue I-05). *Planned today* comes from `daily-plan.md`; the other columns are filled by each member at the Daily.
 
 ## Version history
 | Version | Date | Author | Change |

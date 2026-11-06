@@ -6,7 +6,7 @@
 
 **Both**
 - [ ] S3-T01 (1.5 h) – Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3
-- [ ] S3-D1 (0.5 h) – Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00
+- [ ] S3-D1 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D1: plan remaining 37.5 h.*
 
@@ -21,7 +21,7 @@
 - [ ] S3-T05 (1.5 h) – Data model: `books.updated_by_name` + migration safe to run twice; seed books show "System"
 
 **Both**
-- [ ] S3-D2 (0.5 h) – Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00
+- [ ] S3-D2 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D2: plan remaining 31.5 h.*
 
@@ -34,7 +34,7 @@
 - [ ] S3-T07 (2.5 h) – Add/edit book actions store the user's name and time; admin edit page shows "Last updated by <name> at dd/mm/yyyy HH:mm" (AC-01…03); tests; PR merged
 
 **Both**
-- [ ] S3-D3 (0.5 h) – Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00
+- [ ] S3-D3 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D3: plan remaining 26 h.*
 
@@ -47,7 +47,7 @@
 - [ ] S3-T09 (2.5 h) – Search in `listBooksPage`: keyword on title **or** author, case-insensitive, partial, trimmed, ≤ 100 chars, `%` `_` `'` treated as text (AC-01, AC-03); integration tests
 
 **Both**
-- [ ] S3-D4 (0.5 h) – Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00
+- [ ] S3-D4 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D4: plan remaining 21 h.*
 
@@ -61,7 +61,7 @@
 - [ ] S3-T11 (2.5 h) – Filter in `listBooksPage`: category + price range, bounds inclusive (AC-01, AC-04); min > max refused on the server (AC-03); works with search and paging; integration tests; PR merged and deployed
 
 **Both**
-- [ ] S3-D5 (0.5 h) – Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00
+- [ ] S3-D5 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D5: plan remaining 14.5 h.*
 
@@ -77,7 +77,7 @@
 - [ ] S3-T17 (1 h) – Weekly Status S3 (Green/Amber/Red), risk register and issue log
 
 **Both**
-- [ ] S3-D6 (0.5 h) – Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00
+- [ ] S3-D6 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D6: plan remaining 7.5 h.*
 
@@ -94,6 +94,6 @@
 - [ ] S3-T22 (1.5 h) – Workbook `c2_SprintBacklog_S3` (cumulative) + `c0_Eval_S3`; upload before 23:59
 
 **Both**
-- [ ] S3-D7 (0.5 h) – Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00
+- [ ] S3-D7 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D7: plan remaining 0 h.*

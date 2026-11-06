@@ -38,7 +38,7 @@ A "Both" task counts half for each member. Weekend days are light (≈ 3 h); the
 2. Code goes through a PR the same day; the other member reviews and approves it on GitHub within 12 h, then it is merged (issue I-06).
 3. When a task is finished: fill **Done on** and **Actual h** below, move the Jira card, log the hours in Jira – before 22:00.
 4. A task that slips: keep the planned day, write the new day in *Status* and say it at the next Daily.
-5. Daily Scrum every day, ≤ 15 min, logged in `daily-log.md` (channel agreed at Retro 2, issue I-05).
+5. Daily Scrum every day, ≤ 10 min, logged in `daily-log.md` (channel agreed at Retro 2, issue I-05).
 6. Burndown: `python tools/s3_tracker.py burndown`; today's tasks: `python tools/s3_tracker.py today`.
 
 ## Tasks
@@ -69,13 +69,13 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T21 | PM | EVM S3, burndown and Sprint Report `c3_SprintReport_S3` (test cases F4/F5, release notes) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
 | S3-T22 | PM | Workbook `c2_SprintBacklog_S3` (cumulative) + `c0_Eval_S3`; upload before 23:59 | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
 | S3-T23 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`) | Chính | 1 | D6 Wed 11/11 |  |  | To Do |
-| S3-D1 | Scrum | Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 |  |  | To Do |
-| S3-D2 | Scrum | Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | To Do |
-| S3-D3 | Scrum | Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | To Do |
-| S3-D4 | Scrum | Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 |  |  | To Do |
-| S3-D5 | Scrum | Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 |  |  | To Do |
-| S3-D6 | Scrum | Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D6 Wed 11/11 |  |  | To Do |
-| S3-D7 | Scrum | Daily Scrum (≤ 15 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D7 Thu 12/11 |  |  | To Do |
+| S3-D1 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 |  |  | To Do |
+| S3-D2 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | To Do |
+| S3-D3 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | To Do |
+| S3-D4 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 |  |  | To Do |
+| S3-D5 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 |  |  | To Do |
+| S3-D6 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D6 Wed 11/11 |  |  | To Do |
+| S3-D7 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D7 Thu 12/11 |  |  | To Do |
 | **Total** | | | | **39.5** | | | | |
 
 ## Planned burndown (plan line)
