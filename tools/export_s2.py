@@ -230,6 +230,10 @@ def c2_workbook():
     workbook_style.style_table_sheet(b1, header_row=3, last_col=4)
     for col, w in zip("ABCD", (6, 16, 30, 24)):
         b1.column_dimensions[col].width = w
+    for r in range(1, b1.max_row + 1):
+        v = b1.cell(r, 1).value
+        if isinstance(v, str) and v.startswith("Ideal line:"):
+            b1.cell(r, 1).value = v.replace("Ideal line:", "Plan line:")
     _notes(b1, 11, 4, chars_per_line=80)
     img1 = XLImage(str(ROOT / "pm" / "sprints" / "S1" / "evidence" / "burndown-S1.png"))
     img1.width, img1.height = 750, 380
