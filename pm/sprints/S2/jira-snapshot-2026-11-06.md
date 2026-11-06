@@ -13,20 +13,20 @@ Read by Nguyễn Minh Chính. **Jira was behind the repository at the Sprint end
 | S2-T07 | ECBS-130 | Chính | 2.0 | 1 | In Review | Done |
 | S2-T08 | ECBS-131 | Chính | 2.0 | 1 | In Review | Done |
 | S2-T09 | ECBS-132 | Chính | 2.0 | 0.5 | In Review | Done |
-| S2-T10 | ECBS-133 | Đạt | 3.0 | 1.5 (reported 06/11, not yet in Jira) | To Do | Done |
-| S2-T11 | ECBS-134 | Đạt | 1.5 | 1.5 (reported 06/11, not yet in Jira) | To Do | Done |
-| S2-T12 | ECBS-135 | Đạt | 1.0 | 1.5 (reported 06/11, not yet in Jira) | To Do | Done |
+| S2-T10 | ECBS-133 | Đạt | 3.0 | 1.5 (logged in Jira 06/11) | To Do | Done |
+| S2-T11 | ECBS-134 | Đạt | 1.5 | 1.5 (logged in Jira 06/11) | To Do | Done |
+| S2-T12 | ECBS-135 | Đạt | 1.0 | 1.5 (logged in Jira 06/11) | To Do | Done |
 | S2-T13 | ECBS-136 | Chính | 1.5 | 0.5 | In Review | Done |
 | S2-T14 | ECBS-137 | Chính | 3.0 | 1 | In Review | Done |
 | S2-T15 | ECBS-138 | Chính | 1.0 | 0.5 | In Review | Done |
-| S2-T16 | ECBS-139 | Đạt | 1.0 | 1.5 (reported 06/11, not yet in Jira) | To Do | Done |
-| S2-T17 | ECBS-140 | Đạt | 2.0 | 1.5 (reported 06/11, not yet in Jira) | To Do | Done |
-| S2-T18 | ECBS-141 | Đạt | 1.5 | 1.5 (reported 06/11, not yet in Jira) | To Do | Done |
-| S2-T19 | ECBS-142 | Đạt | 2.0 | 1.5 (reported 06/11, not yet in Jira) | To Do | Done |
-| S2-T20 | ECBS-143 | Đạt | 1.0 | 1.5 (reported 06/11, not yet in Jira) | To Do | Done |
+| S2-T16 | ECBS-139 | Đạt | 1.0 | 1.5 (logged in Jira 06/11) | To Do | Done |
+| S2-T17 | ECBS-140 | Đạt | 2.0 | 1.5 (logged in Jira 06/11) | To Do | Done |
+| S2-T18 | ECBS-141 | Đạt | 1.5 | 1.5 (logged in Jira 06/11) | To Do | Done |
+| S2-T19 | ECBS-142 | Đạt | 2.0 | 1.5 (logged in Jira 06/11) | To Do | Done |
+| S2-T20 | ECBS-143 | Đạt | 1.0 | 1.5 (logged in Jira 06/11) | To Do | Done |
 | S2-T21 | ECBS-144 | Chính | 1.0 | 0.5 | Done | Done |
 | S2-T22 | ECBS-145 | Chính | 2.0 | 1 | Done | Done |
-| S2-T23 | ECBS-146 | Đạt | 2.0 | 1.5 (reported 06/11, not yet in Jira) | To Do | In Progress |
+| S2-T23 | ECBS-146 | Đạt | 2.0 | 1.5 (logged in Jira 06/11) | To Do | In Progress |
 | **Total** | | | **39.75** | **Chính 10.5 · Đạt 0 (not logged)** | | 19 Done · 4 In Progress |
 
 ## Stories in Sprint 2
