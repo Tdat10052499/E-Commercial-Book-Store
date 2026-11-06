@@ -32,20 +32,28 @@ def today_gmt7():
 
 
 def tasks():
-    """Rows of the '## Tasks' table: id, item, description, owner, est, planned day key, done date, actual, status."""
+    """Rows of the '## Tasks' table, read by column name: id, desc, owner, est, planned day key, done date, actual."""
     text = BACKLOG.read_text(encoding="utf-8")
     section = text.split("## Tasks", 1)[1].split("\n## ", 1)[0]
+    lines = [l for l in section.splitlines() if l.startswith("|")]
+    head = [h.strip().lower() for h in lines[0].strip().strip("|").split("|")]
+
+    def col(name):
+        return next(i for i, h in enumerate(head) if h.startswith(name))
+    ix = {k: col(k) for k in ("task", "description", "owner", "est", "planned day", "done on", "actual", "status")}
+    jira = next((i for i, h in enumerate(head) if h == "jira"), None)
     out = []
-    for line in section.splitlines():
-        if not line.startswith("| S3-"):
-            continue
+    for line in lines[2:]:
         c = [x.strip() for x in line.strip().strip("|").split("|")]
+        if not c[ix["task"]].startswith("S3-"):
+            continue
         done = None
-        m = re.match(r"(\d{1,2})/(\d{1,2})", c[6])
+        m = re.match(r"(\d{1,2})/(\d{1,2})", c[ix["done on"]])
         if m:
             done = date(2026, int(m.group(2)), int(m.group(1)))
-        out.append({"id": c[0], "item": c[1], "desc": c[2], "owner": c[3], "est": float(c[4]),
-                    "day": c[5].split()[0], "done": done, "actual": c[7], "status": c[8]})
+        out.append({"id": c[ix["task"]], "jira": c[jira] if jira is not None else "", "desc": c[ix["description"]],
+                    "owner": c[ix["owner"]], "est": float(c[ix["est"]]), "day": c[ix["planned day"]].split()[0],
+                    "done": done, "actual": c[ix["actual"]], "status": c[ix["status"]]})
     return out
 
 
@@ -75,12 +83,12 @@ def cmd_today(who=None):
     print(f"Today: {label(now)}" + (f" ({key})" if key else " (outside Sprint 3)"))
     for t in ts:
         if mine(t) and not t["done"] and t["day"] == key:
-            print(f"  [ ] {t['id']} {t['owner']:5} {fmt(t['est'])} h  {t['desc'][:110]}")
+            print(f"  [ ] {t['id']} {t['jira']:9} {t['owner']:5} {fmt(t['est'])} h  {t['desc'][:100]}")
     late = [t for t in ts if mine(t) and not t["done"] and dict(DAYS)[t["day"]] < now]
     if late:
         print("Slipped (planned earlier, not done):")
         for t in late:
-            print(f"  [!] {t['id']} {t['owner']:5} planned {t['day']}  {t['desc'][:100]}")
+            print(f"  [!] {t['id']} {t['jira']:9} {t['owner']:5} planned {t['day']}  {t['desc'][:90]}")
 
 
 def cmd_status():
@@ -133,7 +141,7 @@ def cmd_plan():
             rows = [t for t in dt if t["owner"] == o]
             if rows:
                 out.append(f"**{o}**")
-                out += [f"- [{'x' if t['done'] else ' '}] {t['id']} ({fmt(t['est'])} h) – {t['desc']}" for t in rows]
+                out += [f"- [{'x' if t['done'] else ' '}] {t['id']} · {t['jira']} ({fmt(t['est'])} h) – {t['desc']}" for t in rows]
                 out.append("")
         out.append(f"*End of {key}: plan remaining {fmt(plan[i + 1])} h.*\n")
     PLAN_MD.write_text("\n".join(out), encoding="utf-8")
