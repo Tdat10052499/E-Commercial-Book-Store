@@ -525,7 +525,7 @@ def c0_eval():
             ws.cell(row, col).value = None
         ws.cell(row, 12, f"Workload = planned task hours {PLAN_HOURS[name]}/{PLAN_TOTAL} h (S2 Sprint Backlog v1.0, "
                          f"after S2-T07 and S2-T13 moved to Chính). Actual S2 hours in Jira: "
-                         + ("10.5 h. " if name == CHINH else "TBD. ") + "Columns E–G: Leader S2 to enter.")
+                         + ("10.5 h. " if name == CHINH else "13.5 h (logged 06/11). ") + "Columns E–G: Leader S2 to enter.")
     for col in range(4, 8):
         ws.cell(12, col).value = None
     from openpyxl.styles import Protection
