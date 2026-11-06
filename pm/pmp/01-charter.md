@@ -4,8 +4,8 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0 | – | – | Lab 1 (SMART, stakeholders) and Lab 2 (Charter) were not submitted; no prior version exists [05 #21–22] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Charter written new for Release 1.0 from the Final Project brief [03 §2] and TA baseline [04]. Objectives and stakeholders to be confirmed by the team |
-| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | BAC and capacity filled with the plan values confirmed on 30/10 (20 h/member/Sprint, 24,000,000 VND) |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Charter written new for Release 1.0 from the Final Project brief [03 §2] and TA baseline [04]. Objectives and stakeholders to be confirmed by the team |
+| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt | BAC and capacity filled with the plan values confirmed on 30/10 (20 h/member/Sprint, 24,000,000 VND) |
 
 ## 1.1 Project identification
 | Item | Value |
