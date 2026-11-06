@@ -2,12 +2,13 @@
 
 **Presenter:** Nguyễn Minh Chính (Leader S2, PO) · **Demo:** Hồ Du Tuấn Đạt (book screens, Staff role) · Structure follows the lecturer's Review/Retro template and [03 §4.2, §9.2 S6].
 
-Figures are the values at the Sprint end (05/11 23:59). Re-check them against Jira in the morning; if the admin/Staff hosted run is done before class, update the accepted SP.
+Figures are the values at the Sprint end (05/11 23:59), plus Đạt's S2 hours (logged in Jira 06/11) and the PO acceptance of NFR-01 (06/11 morning). If the admin/Staff hosted run is done before class, update the accepted SP.
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0 | 05/11/2026 | Nguyễn Minh Chính | Speaking script and demo order for Review 2, built from the S2 files; retro items are prompts for the team, not answers |
+| 1.1 | 06/11/2026 | Nguyễn Minh Chính | Values filled: Đạt's hours (13.5 h), NFR-01 accepted, EVM SPI 0.51 / CPI 0.69, items carried into Sprint 3 |
 
 ## Before class (checklist)
 - [ ] PR #8 merged and deployed; https://pagetunnel.vercel.app/books shows "30 titles · page 1 of 3"
@@ -34,9 +35,9 @@ Then ask the Sponsor for feedback and write it in table I.4 (who, feedback, acti
 
 ## 3. Metrics (1.5 min)
 - **Burndown:** "39.75 hours planned. The line stays flat until Tuesday and drops on Wednesday night, then to 6.25 hours on Thursday, when the pull requests were merged. It is flat because no task was finished early and the board was not updated during the week – the tasks were entered in Jira only on 05/11. That is our main process problem this Sprint."
-- **Velocity:** "Sprint 1 actual velocity was **0** SP at Planning 2 because F1 was still In Review; after our hosted run on 5 November we accepted 14 SP of F1. We therefore sized Sprint 2 by hours: 39.75 h against 40 h capacity. Sprint 2 velocity: **5 SP** against 29 planned."
-- **Hours:** "Plan 39.75 h – Đạt 16.25, Chính 23.5 after Chính took the data model and the seed. Actual from Jira: Chính 10.5 h; Đạt's hours **[update – logged?]**."
-- **EVM (baseline v1.1):** "BAC 26.4 million VND, PV 17.6 million, EV 8.09 million for 19 accepted SP, so SPI is 0.46 and CPI 0.79 – provisional until Đạt's hours are in. We are behind schedule; the lever is closing items, not writing more code."
+- **Velocity:** "Sprint 1 actual velocity was **0** SP at Planning 2 because F1 was still In Review; after our hosted run on 5 November we accepted 14 SP of F1, and NFR-01 this morning – 16 of 18 SP. We therefore sized Sprint 2 by hours: 39.75 h against 40 h capacity. Sprint 2 velocity: **5 SP** against 29 planned."
+- **Hours:** "Plan 39.75 h – Đạt 16.25, Chính 23.5 after Chính took the data model and the seed. Actual from Jira: 24 hours – Chính 10.5, Đạt 13.5. Đạt's hours were reconstructed and logged after the Sprint, which is one of our process problems."
+- **EVM (baseline v1.1):** "BAC 26.4 million VND, PV 17.6 million, EV 8.94 million for 21 accepted SP – NFR-01 was accepted this morning after the password-hash check on the hosted database – and AC 13 million for 65 hours. So SPI is 0.51 and CPI 0.69. We are behind schedule; the lever is closing items, not writing more code."
 
 ## 4. Change control – CR-06 (1.5 min)
 > "CR-06 asked for a Store Staff role and a 'last updated by' audit. We followed the five steps: one, recorded in the Change Log; two, impact analysis – plus 7 SP, 12 hours, 2.4 million VND, rework of US-03 and US-04; three, at the CCB on 30/10 you approved Option B – Staff role in Sprint 2, audit in Sprint 3; four, we rebaselined: PSP from 55 to 62 SP, BAC from 24.0 to 26.4 million, tags `baseline-v1.0` and `baseline-v1.1`; five, we informed you through the c4 form and the Weekly Status Report."
@@ -53,7 +54,7 @@ Then ask the Sponsor for feedback and write it in table I.4 (who, feedback, acti
 |---|---|
 | A1 Daily logged every day before 22:00 | Not done – one entry; channel still to agree (I-05) |
 | A2 Draft files by Wednesday 20:00 | Partly – drafted Wednesday late evening |
-| A3 Log hours in Jira the same day | Not done – hours logged at the end, Đạt's still missing (I-06) |
+| A3 Log hours in Jira the same day | Not done – hours logged at the end; Đạt's only on 06/11, after the Sprint (I-06) |
 
 **Start – Stop – Continue:** each member gives one item per column (write them in table II.3). Prompts:
 - Start: move the Jira card the moment work starts; merge small PRs every two days.
@@ -68,4 +69,4 @@ Then ask the Sponsor for feedback and write it in table I.4 (who, feedback, acti
 3. Real Planning Poker round for US-25 and the S3 items, votes logged – owner PO – today at Planning 3.
 
 ## 7. Hand-over to Sprint 3 (0.5 min)
-> "Sprint 3 is led by Đạt: F4 detail page, F5 search and filter, US-25 audit, regression of F1–F3, release v1.0 and UAT on 13/11. Items not Done in Sprint 2 go back to the Product Backlog and are re-planned now: **[list – update]**."
+> "Sprint 3 is led by Đạt: F4 detail page, F5 search and filter, US-25 audit, regression of F1–F3, release v1.0 and UAT on 13/11. Items not Done in Sprint 2 go back to the Product Backlog and are re-planned now: US-05, US-06, US-07, US-08, US-09, NFR-04 and US-24 – 24 SP built and waiting for the hosted admin and Staff run – and NFR-03, 2 SP, which needs the online check on 17/11."

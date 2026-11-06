@@ -88,7 +88,7 @@ Re-run of the Sprint 1 test cases (`pm/sprints/S1/test-cases-F1.md`) on the Spri
 | TC-F1-16 | US-04/AC-02 | E2E only – not run (Customer must still get 403 on every `/admin` URL now that Staff is allowed in) | TBD |
 | TC-F1-17 | US-04/AC-03 | E2E only – not run | TBD |
 | TC-F1-18 | US-04/AC-04 | E2E only – not run | TBD |
-| TC-F1-19 | NFR-01/AC-01 | Pass (INT, `$2…$10$`) | TBD – Supabase screenshot of `password_hash` |
+| TC-F1-19 | NFR-01/AC-01 | Pass (INT, `$2…$10$`) | Pass (06/11, Đạt) – Supabase `users.password_hash` holds bcrypt hashes `$2a$10$…` for every account, incl. the Staff account; evidence `pm/sprints/S1/evidence/hosted/TC-F1-19_password-hash-supabase.png` |
 | TC-F1-20 | NFR-01/AC-02 | Pass (INT) | TBD |
 | TC-F1-21 | NFR-01/AC-03 | Pass (UNIT) | TBD |
 | TC-F1-22 | NFR-03/AC-01 | Host only | Pass (05/11 23:55, Chính, public pages) – home page over HTTPS |
@@ -125,6 +125,7 @@ Re-run of the Sprint 1 test cases (`pm/sprints/S1/test-cases-F1.md`) on the Spri
 | Hosted run – public pages (23:55) | TC-F2-21, 22, TC-F3-01, 02, 03, 05 (`/books`), 06 → **7 Pass, 0 Fail**; TC-F1-15 and TC-F1-22 regression Pass |
 | Hosted run – admin pages (US-05…09, US-24, admin part of NFR-04) | **Not run** – needs an Admin and a Staff login; carried to Review 2 / S3 regression |
 | PO acceptance (05/11 23:59, Nguyễn Minh Chính) | **US-10 and NFR-02 Done (5 SP)**; US-05…09, NFR-04, US-24 stay In Review until their hosted admin cases pass |
+| PO acceptance (06/11, Nguyễn Minh Chính) | F1 item **NFR-01 Done (2 SP)** after TC-F1-19 passed on the hosted DB |
 | Defects | 2 found (DEF-F2-01 Medium, DEF-F2-02 Low), both fixed and deployed 05/11 |
 
 ## Defects (05/11/2026)

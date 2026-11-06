@@ -59,8 +59,8 @@ UNDONE = [
     ("US-08, US-09, NFR-04 (9 SP)", "Hosted run of the admin pages not done (needs an Admin login)",
      "Admin run planned in S2-T23 but not reached", "Run at Review 2 / start of S3; then PO acceptance"),
     ("US-07/AC-03", "Friendly 'not found' for a hidden book's detail URL", "Detail page is US-11 (Sprint 3)", "Tested with US-11 in S3"),
-    ("NFR-01, NFR-03 (F1, 4 SP)", "TC-F1-19 (hash in the hosted DB) and TC-F1-24 (online on 17/11) not run",
-     "Needs Supabase access; date-bound", "Đạt shows the hash; TC-24 on 17/11. US-01…04 (14 SP) accepted 05/11"),
+    ("NFR-03 (F1, 2 SP)", "TC-F1-24 (site online on the presentation day) cannot run before 17/11",
+     "Date-bound check", "Run TC-F1-24 on 17/11. NFR-01 accepted 06/11 after TC-F1-19 passed on the hosted DB"),
 ]
 
 PREV_ACTIONS = [
@@ -69,7 +69,7 @@ PREV_ACTIONS = [
     ("A2 Draft Sprint files by Wednesday 20:00, submit Thursday before 21:00", "Leader S2",
      "Partly – files drafted Wed 04/11 late evening; final update after the Sprint end", "Repository commits 04–06/11 (S2 files)"),
     ("A3 Log Completed Work in Jira the same day a task moves", "Both",
-     "Partly – Chính logged 10.5 h on 05/11; Đạt's hours not logged; cards moved late (I-06)", "Jira, Sprint 2 board"),
+     "Partly – Chính logged 10.5 h on 05/11; Đạt reported 13.5 h on 06/11 (after the Sprint); cards moved late (I-06)", "Jira, Sprint 2 board"),
 ]
 
 ACTIONS_PROPOSED = [
@@ -154,7 +154,7 @@ def _index_sheet(wb):
     meta = [("Team", "Team 6 – Page Turners"), ("Course", "Software Project Management (72ITSE41503), HK261 – Final Project"),
             ("Sponsor / Customer", "Dr. Bùi Minh Phụng (Ms. Le)"),
             ("Members", "Hồ Du Tuấn Đạt (2374802010097) – Leader S1, S3 · Nguyễn Minh Chính (2275106050051) – PO, Leader S2"),
-            ("Version", "Sprint 2 submission – cumulative (contains every Sprint 1 sheet)"), ("Data as of", "05/11/2026 23:59 (end of Sprint 2)"),
+            ("Version", "Sprint 2 submission – cumulative (contains every Sprint 1 sheet)"), ("Data as of", "05/11/2026 23:59 (end of Sprint 2); Đạt's S2 hours (logged 06/11) and the NFR-01 acceptance (06/11) included"),
             ("Jira board", "https://tdat100524.atlassian.net/jira/software/projects/ECBS/boards/2"),
             ("Repository", "https://github.com/Tdat10052499/E-Commercial-Book-Store"), ("Hosted site", "https://pagetunnel.vercel.app/"),
             ("Convention", "Figures marked (plan) are planning values; actual figures come from Jira and the repository; TBD = not available yet")]
@@ -265,7 +265,7 @@ def c2_workbook():
 
     evm = wb.create_sheet("EVM_S2")
     rows = [
-        ("EVM snapshot – Sprint 2 (n = 2, N = 3), baseline v1.1, data as of the Sprint end, 05/11/2026 23:59", None, None),
+        ("EVM snapshot – Sprint 2 (n = 2, N = 3), baseline v1.1, data as of 06/11/2026 (Sprint end + hours logged and NFR-01 accepted 06/11)", None, None),
         ("Formulas per the Final Project brief (AgileEVM). Plan values from Release Plan v1.3; actuals from Jira.", None, None),
         (None, None, None),
         ("Input / metric", "Value", "Formula / source"),
@@ -275,9 +275,9 @@ def c2_workbook():
         ("PSP (SP, plan)", 62, "Product Backlog (baseline v1.1)"),
         ("n (Sprints completed)", 2, None),
         ("N (Sprints planned)", 3, None),
-        ("SP meeting DoD (cumulative)", 19, "F1: US-01…04 (14 SP); S2: US-10, NFR-02 (5 SP) accepted by the PO 05/11 23:59"),
+        ("SP meeting DoD (cumulative)", 21, "F1: US-01…04 (14 SP, 05/11) + NFR-01 (2 SP, 06/11); S2: US-10, NFR-02 (5 SP, 05/11 23:59) – PO acceptance"),
         ("Actual hours S1 (h)", 41, "Jira Time spent ECBS-90…103 (19.5 h logged 02/11 + 21.5 h on S1-T12 logged 05/11)"),
-        ("Actual hours S2 (h)", 10.5, "Jira Time spent ECBS-124…146: Chính 10.5 h; Đạt's S2 hours not logged yet (add them here)"),
+        ("Actual hours S2 (h)", 24, "Jira Time spent ECBS-124…146: Chính 10.5 h + Đạt 13.5 h (9 tasks × 1.5 h, reconstructed, logged 06/11)"),
         ("Actual hours (cumulative, h)", "=B12+N(B13)", "S1 + S2"),
         ("PV (VND)", "=B7*B9/B10", "BAC × n / N"),
         ("EV (VND)", "=B7*B11/B8", "BAC × SP done / PSP"),
@@ -289,9 +289,9 @@ def c2_workbook():
         ("EAC (VND)", '=IF(OR(B21="n/a",B21=0),"not meaningful (CPI = 0)",B7/B21)', "BAC / CPI"),
         ("ETC (VND)", '=IF(ISNUMBER(B22),B22-B17,"not meaningful (CPI = 0)")', "EAC − AC"),
         (None, None, None),
-        ("Reading: SPI 0.46 – behind schedule; CPI 0.79 – over budget for the value earned (provisional until Đạt's S2 hours "
-         "are added to B13). Every S2 item is built and deployed but only US-10 and NFR-02 are accepted. Scenario only: if the "
-         "24 SP in review pass their hosted cases, EV = 26,400,000 × 43/62 = 18,309,677 VND and SPI = 1.04.", None, None),
+        ("Reading: SPI 0.51 – behind schedule; CPI 0.69 – over budget for the value earned. Every S2 item is built and deployed "
+         "but only US-10 and NFR-02 are accepted. Scenario only: if the 24 SP in review pass their hosted cases, "
+         "EV = 26,400,000 × 45/62 = 19,161,290 VND, SPI = 1.09 and CPI = 1.47.", None, None),
     ]
     for r in rows:
         evm.append(r)
@@ -525,7 +525,7 @@ def c0_eval():
             ws.cell(row, col).value = None
         ws.cell(row, 12, f"Workload = planned task hours {PLAN_HOURS[name]}/{PLAN_TOTAL} h (S2 Sprint Backlog v1.0, "
                          f"after S2-T07 and S2-T13 moved to Chính). Actual S2 hours in Jira: "
-                         + ("10.5 h. " if name == CHINH else "TBD. ") + "Columns E–G: Leader S2 to enter.")
+                         + ("10.5 h. " if name == CHINH else "13.5 h (logged 06/11). ") + "Columns E–G: Leader S2 to enter.")
     for col in range(4, 8):
         ws.cell(12, col).value = None
     from openpyxl.styles import Protection
