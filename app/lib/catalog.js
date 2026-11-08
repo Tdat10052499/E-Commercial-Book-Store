@@ -171,16 +171,20 @@ async function prepareBook(input, rawCover) {
 const fkErrors = () => ({ errors: { form: 'The selected author or category no longer exists' } });
 
 // US-05/AC-01: new book is saved and is first in the newest-first list. Cover required on add.
-async function createBook(input, rawCover) {
+// US-25/AC-01: `actor` is the signed-in user; their name is stored with the book.
+const actorName = (actor) => String(actor?.name || '').trim().slice(0, 100) || 'System';
+
+async function createBook(input, rawCover, actor) {
   const prepared = await prepareBook(input, rawCover);
   if (prepared.errors) return prepared;
   if (!prepared.cover) return { errors: { cover: 'Cover image is required' } };
   const v = prepared.values;
   try {
     const { rows } = await pool.query(
-      `INSERT INTO books (title, author_id, category_id, price, description, stock, cover_data, cover_mime)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id, title`,
-      [v.title, v.author_id, v.category_id, v.price, v.description, v.stock, prepared.cover.data, prepared.cover.mime]
+      `INSERT INTO books (title, author_id, category_id, price, description, stock, cover_data, cover_mime, updated_by_name)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id, title`,
+      [v.title, v.author_id, v.category_id, v.price, v.description, v.stock, prepared.cover.data, prepared.cover.mime,
+        actorName(actor)]
     );
     return { book: rows[0] };
   } catch (err) {
@@ -195,7 +199,7 @@ async function getBook(id) {
   if (!bookId) return null;
   const { rows } = await pool.query(
     `SELECT b.id, b.title, b.author_id, b.category_id, b.price, b.description, b.stock, b.cover_url,
-            (b.cover_data IS NOT NULL) AS has_upload, b.created_at, b.updated_at,
+            (b.cover_data IS NOT NULL) AS has_upload, b.created_at, b.updated_at, b.updated_by_name,
             a.name AS author_name, c.name AS category_name
        FROM books b LEFT JOIN authors a ON a.id = b.author_id LEFT JOIN categories c ON c.id = b.category_id
       WHERE b.id = $1 AND NOT b.is_deleted`,
@@ -208,7 +212,7 @@ const sameBook = (old, v) => old.title === v.title && old.author_id === v.author
   && Number(old.price) === Number(v.price) && (old.description || null) === v.description && old.stock === v.stock;
 
 // US-06: invalid data keeps the old values (AC-02); no change → book untouched + confirmation (AC-04).
-async function updateBook(id, input, rawCover) {
+async function updateBook(id, input, rawCover, actor) {
   const old = await getBook(id);
   if (!old) return { notFound: true, errors: { form: 'Book not found' } };
   const prepared = await prepareBook(input, rawCover);
@@ -218,10 +222,11 @@ async function updateBook(id, input, rawCover) {
   try {
     const { rows } = await pool.query(
       `UPDATE books SET title = $1, author_id = $2, category_id = $3, price = $4, description = $5, stock = $6,
-              cover_data = coalesce($7, cover_data), cover_mime = coalesce($8, cover_mime), updated_at = now()
+              cover_data = coalesce($7, cover_data), cover_mime = coalesce($8, cover_mime),
+              updated_at = now(), updated_by_name = $10
         WHERE id = $9 AND NOT is_deleted RETURNING id, title`,
       [v.title, v.author_id, v.category_id, v.price, v.description, v.stock,
-        prepared.cover?.data ?? null, prepared.cover?.mime ?? null, old.id]
+        prepared.cover?.data ?? null, prepared.cover?.mime ?? null, old.id, actorName(actor)]
     );
     if (!rows.length) return { notFound: true, errors: { form: 'Book not found' } };
     return { book: rows[0] };
@@ -283,7 +288,17 @@ async function getCover(id) {
   return rows[0] || null;
 }
 
+// US-25/AC-01: "Last updated by <name> at dd/mm/yyyy HH:mm", shown in the shop's time zone (GMT+7).
+function formatLastUpdated(name, at) {
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Ho_Chi_Minh', day: '2-digit', month: '2-digit', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+  }).formatToParts(new Date(at)).map((x) => [x.type, x.value]));
+  return `Last updated by ${name || 'System'} at ${p.day}/${p.month}/${p.year} ${p.hour}:${p.minute}`;
+}
+
 module.exports = {
+  formatLastUpdated,
   listCategories, createCategory, renameCategory, removeCategory,
   listAuthors, createAuthor, updateAuthor, removeAuthor,
   listCatalogOptions, countVisibleBooks, listBooksPage, getCover,
