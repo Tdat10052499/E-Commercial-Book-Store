@@ -6,7 +6,7 @@
 
 **Both**
 - [ ] S3-T01 · ECBS-147 (1.5 h) – Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3
-- [ ] S3-D1 · ECBS-170 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
+- [x] S3-D1 · ECBS-170 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D1: plan remaining 37.5 h.*
 
