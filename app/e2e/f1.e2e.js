@@ -180,11 +180,18 @@ async function logout(page) {
     await staffPage.fill('#f-stock', '0');
     const jpg = Buffer.alloc(1024); Buffer.from([0xff, 0xd8, 0xff, 0xe0]).copy(jpg);
     await staffPage.setInputFiles('#f-cover', { name: 'cover.jpg', mimeType: 'image/jpeg', buffer: jpg });
-    await staffPage.click('form button[type=submit]');
+    await staffPage.click('form:has(#f-title) button[type=submit]');
     await staffPage.waitForSelector('text=added');
     await staffPage.goto(`${BASE}/admin/books`);
     const firstTitle = (await staffPage.locator('tbody tr').first().locator('td[data-label="Title"]').innerText()).trim();
     expect(firstTitle === title, `first row is "${firstTitle}"`);
+  });
+  await check('US-25/AC-01 edit page of the Staff book shows "Last updated by <Staff name> at dd/mm/yyyy HH:mm"', async () => {
+    await staffPage.goto(`${BASE}/admin/books`);
+    await staffPage.locator('tbody tr').first().locator('a:has-text("Edit")').click();
+    const line = (await staffPage.locator('[data-testid="last-updated"]').innerText()).trim();
+    const re = new RegExp(`^Last updated by ${created.name} at \\d{2}/\\d{2}/\\d{4} \\d{2}:\\d{2}$`);
+    expect(re.test(line), `line is "${line}"`);
   });
 
   await check('NFR-04 no horizontal scroll at 360 px (accounts page)', async () => {
