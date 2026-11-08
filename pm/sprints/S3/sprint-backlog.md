@@ -50,9 +50,9 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T01 | ECBS-147 | Scrum | Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3 | Both | 1.5 | D1 Fri 06/11 |  |  | To Do |
 | S3-T02 | ECBS-148 | Carried | Hosted run of the admin and Staff cases left *Blocked* in S2 (TC-F2, TC-CR) with the Staff test account; results and screenshots into `test-cases-F2F3.md` | Đạt | 1.5 | D2 Sat 07/11 |  |  | To Do |
 | S3-T03 | ECBS-149 | Carried | PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses | Chính | 0.5 | D2 Sat 07/11 |  |  | To Do |
-| S3-T04 | ECBS-150 | Test | Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md` | Chính | 2 | D2 Sat 07/11 |  |  | To Do |
+| S3-T04 | ECBS-150 | Test | Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md` | Chính | 2 | D2 Sat 07/11 |  | 1 (Chính, logged 08/11) | In Review – PR #21 |
 | S3-T05 | ECBS-151 | US-25 | Data model: `books.updated_by_name` + migration safe to run twice; seed books show "System" | Đạt | 1.5 | D2 Sat 07/11 |  |  | To Do |
-| S3-T06 | ECBS-152 | US-11 | Detail page `/books/[id]`: cover, title, author, category, price, description, stock (AC-01); friendly "Sorry, this book is not available" page with HTTP 404 for a missing, hidden or non-numeric id (AC-03); book cards link to it | Chính | 2.5 | D3 Sun 08/11 |  |  | To Do |
+| S3-T06 | ECBS-152 | US-11 | Detail page `/books/[id]`: cover, title, author, category, price, description, stock (AC-01); friendly "Sorry, this book is not available" page with HTTP 404 for a missing, hidden or non-numeric id (AC-03); book cards link to it | Chính | 2.5 | D3 Sun 08/11 |  | 1 (Chính, logged 08/11) | In Review – PR #22 |
 | S3-T07 | ECBS-153 | US-25 | Add/edit book actions store the user's name and time; admin edit page shows "Last updated by <name> at dd/mm/yyyy HH:mm" (AC-01…03); tests; PR merged | Đạt | 2.5 | D3 Sun 08/11 |  |  | To Do |
 | S3-T08 | ECBS-154 | US-11 | "Back to list" returns to the same page with the same search and filter (AC-02), page 1 when opened directly (AC-04); tests; PR merged and deployed | Chính | 2 | D4 Mon 09/11 |  |  | To Do |
 | S3-T09 | ECBS-155 | US-12 | Search in `listBooksPage`: keyword on title **or** author, case-insensitive, partial, trimmed, ≤ 100 chars, `%` `_` `'` treated as text (AC-01, AC-03); integration tests | Đạt | 2.5 | D4 Mon 09/11 |  |  | To Do |
@@ -70,7 +70,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T21 | ECBS-167 | PM | EVM S3, burndown and Sprint Report `c3_SprintReport_S3` (test cases F4/F5, release notes) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
 | S3-T22 | ECBS-168 | PM | Workbook `c2_SprintBacklog_S3` (cumulative) + `c0_Eval_S3`; upload before 23:59 | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
 | S3-T23 | ECBS-169 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`) | Chính | 1 | D6 Wed 11/11 |  |  | To Do |
-| S3-D1 | ECBS-170 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 | 06/11 |  | Done – held on Discord 22:00, ~45 min |
+| S3-D1 | ECBS-170 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 | 06/11 | 0.75 Chính · Đạt TBD | Done – held on Discord 22:00, ~45 min |
 | S3-D2 | ECBS-171 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | Not held (07/11) |
 | S3-D3 | ECBS-172 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | Not held (08/11) |
 | S3-D4 | ECBS-173 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 |  |  | To Do |
