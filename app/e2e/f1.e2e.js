@@ -156,6 +156,12 @@ async function logout(page) {
     await staffPage.goto(`${BASE}/admin`);
     await staffPage.waitForSelector('h1:has-text("Back office")');
   });
+  await check('DEF-S3-01 home page names the Store Staff role', async () => {
+    await staffPage.goto(`${BASE}/`);
+    const lead = (await staffPage.locator('.lead').innerText()).trim();
+    expect(lead.endsWith('You are signed in as a Store Staff.'), `home page says "${lead}"`);
+    await staffPage.goto(`${BASE}/admin`);
+  });
   await check('US-24/AC-03 Staff sees no Accounts link', async () => {
     expect(await staffPage.locator('a[href="/admin/accounts"]').count() === 0, 'Accounts link visible to Staff');
   });
