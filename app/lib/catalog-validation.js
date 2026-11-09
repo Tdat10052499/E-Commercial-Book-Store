@@ -65,12 +65,36 @@ function resolvePage(raw, totalItems, pageSize = PAGE_SIZE) {
   return { page, lastPage, offset: (page - 1) * pageSize };
 }
 
+// US-11/AC-02, AC-04: the list state ("page + search + filter") a detail page returns to.
+// Only the known list parameters are kept, cleaned; anything else is dropped, so the link always stays on /books.
+const SEARCH_MAX = 100; // US-12/AC-03
+const first = (v) => (Array.isArray(v) ? v[0] : v);
+function listQueryString(params = {}) {
+  const out = new URLSearchParams();
+  const q = clean(first(params.q)).slice(0, SEARCH_MAX);
+  if (q) out.set('q', q);
+  for (const key of ['category', 'min', 'max']) {
+    const v = clean(first(params[key]));
+    if (/^\d{1,12}$/.test(v)) out.set(key, v);
+  }
+  const page = clean(first(params.page));
+  if (/^\d{1,6}$/.test(page) && Number(page) > 1) out.set('page', String(Number(page)));
+  return out.toString();
+}
+function backToListHref(from) {
+  const text = clean(first(from));
+  if (!text || text.length > 400) return '/books'; // AC-04: no list to return to → page 1
+  const params = {};
+  for (const [k, v] of new URLSearchParams(text.replace(/^\?/, ''))) if (!(k in params)) params[k] = v; // first value wins
+  const qs = listQueryString(params);
+  return qs ? `/books?${qs}` : '/books';
+}
+const detailHref = (id, listQuery) => (listQuery ? `/books/${id}?from=${encodeURIComponent(listQuery)}` : `/books/${id}`);
+
 // US-12, US-13: list filters, shared by the /books form and the server (S3-T09 keyword; category and price come in S3-T11).
 // US-12/AC-03: the keyword is trimmed and cut to 100 characters, so an over-long keyword still searches instead of failing.
-const SEARCH_MAX = 100;
-const firstValue = (v) => (Array.isArray(v) ? v[0] : v);
 function validateFilters(raw = {}) {
-  const q = clean(firstValue(raw.q)).slice(0, SEARCH_MAX);
+  const q = clean(first(raw.q)).slice(0, SEARCH_MAX);
   return { filters: { q }, error: null };
 }
 
@@ -79,5 +103,5 @@ const formatPrice = (price) => priceFormat.format(Number(price));
 
 module.exports = {
   CATALOG_LIMITS, COVER, PAGE_SIZE, validateCategory, validateAuthor, validateBook, validateCover,
-  inUseMessage, resolvePage, formatPrice, SEARCH_MAX, validateFilters,
+  inUseMessage, resolvePage, formatPrice, SEARCH_MAX, validateFilters, listQueryString, backToListHref, detailHref,
 };
