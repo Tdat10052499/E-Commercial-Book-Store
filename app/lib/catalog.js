@@ -2,7 +2,7 @@
 // Every write re-validates on the server, whatever the client did (NFR-01/AC-02).
 const { pool } = require('./db');
 const {
-  PAGE_SIZE, COVER, validateCategory, validateAuthor, validateBook, validateCover, inUseMessage, resolvePage,
+  PAGE_SIZE, COVER, validateCategory, validateAuthor, validateBook, validateCover, inUseMessage, resolvePage, validateFilters,
 } = require('./catalog-validation');
 
 const UNIQUE_VIOLATION = '23505';
@@ -266,19 +266,39 @@ async function countVisibleBooks() {
   return rows[0].n;
 }
 
-// Visible books only (US-07/AC-01), newest first, 12 per page (US-10/AC-01…AC-03).
-async function listBooksPage(rawPage, pageSize = PAGE_SIZE) {
-  const total = await countVisibleBooks();
+// US-12/AC-01, AC-03: the keyword matches the title OR the author name, in any case, anywhere in the text.
+// Backslash, % and _ are escaped, so they are matched as plain characters and never act as wildcards.
+const likePattern = (text) => `%${text.replace(/[\\%_]/g, (ch) => `\\${ch}`)}%`;
+
+function visibleBooksWhere(filters) {
+  const where = ['NOT b.is_deleted'];
+  const params = [];
+  if (filters.q) {
+    params.push(likePattern(filters.q));
+    const p = `$${params.length}`;
+    where.push(`(b.title ILIKE ${p} ESCAPE '\\' OR a.name ILIKE ${p} ESCAPE '\\')`);
+  }
+  return { sql: where.join(' AND '), params };
+}
+
+const BOOK_JOINS = 'FROM books b LEFT JOIN authors a ON a.id = b.author_id LEFT JOIN categories c ON c.id = b.category_id';
+
+// Visible books only (US-07/AC-01), newest first, 12 per page (US-10/AC-01…AC-03), narrowed by the search
+// keyword (US-12). `rawFilters` is the raw query ({ q, category, min, max }); validateFilters cleans it.
+// Returns the cleaned `filters` so the form can show them again, and `error` for a filter that was refused.
+async function listBooksPage(rawPage, rawFilters = {}, pageSize = PAGE_SIZE) {
+  const { filters, error } = validateFilters(rawFilters);
+  const { sql, params } = visibleBooksWhere(filters);
+  const { rows: [{ n: total }] } = await pool.query(`SELECT count(*)::int AS n ${BOOK_JOINS} WHERE ${sql}`, params);
   const { page, lastPage, offset } = resolvePage(rawPage, total, pageSize);
   const { rows } = await pool.query(
-    `SELECT ${CARD_COLUMNS}
-       FROM books b LEFT JOIN authors a ON a.id = b.author_id LEFT JOIN categories c ON c.id = b.category_id
-      WHERE NOT b.is_deleted
+    `SELECT ${CARD_COLUMNS} ${BOOK_JOINS}
+      WHERE ${sql}
       ORDER BY b.created_at DESC, b.id DESC
-      LIMIT $1 OFFSET $2`,
-    [pageSize, offset]
+      LIMIT $${params.length + 1} OFFSET $${params.length + 2}`,
+    [...params, pageSize, offset]
   );
-  return { books: rows, page, lastPage, total, pageSize };
+  return { books: rows, page, lastPage, total, pageSize, filters, error };
 }
 
 async function getCover(id) {
