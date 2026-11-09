@@ -29,7 +29,7 @@ Cập nhật lần cuối: 06/11/2026 – Chính (cuối Sprint 2)
 | P20 | Phiếu c4_ChangeRequest | 05/11 | done | Chính | 05/11 | docs PR | deliverables/S2/…c4_ChangeRequest_CR01.docx |
 | P21 | Đóng gói và nộp S2 | 05/11 23:59 | in_progress | Chính |  |  | c0 (đã chấm), c2, c3, c4 bản cuối 06/11; còn: upload |
 | P22 | Review/Retro 2 | 06/11 | todo |  |  |  |  |
-| P23 | Sprint Planning 3 | 06/11 | todo |  |  |  |  |
+| P23 | Sprint Planning 3 | 06/11 | in_progress | Đạt, Chính |  |  | Kế hoạch S3 theo từng ngày (PO đề xuất 07/11): `pm/sprints/S3/sprint-backlog.md`, `daily-plan.md`, `daily-log.md`, `tools/s3_tracker.py`; Leader S3 xác nhận |
 | P24 | Xây F4 | 09/11 | todo |  |  |  |  |
 | P25 | Xây F5 | 10/11 | todo |  |  |  |  |
 | P26 | Test F4, F5 + regression + hiệu năng | 11/11 | todo |  |  |  |  |
