@@ -49,7 +49,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 |---|---|---|---|---|---|---|---|---|---|
 | S3-T01 | ECBS-147 | Scrum | Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3 | Both | 1.5 | D1 Fri 06/11 |  |  | To Do |
 | S3-T02 | ECBS-148 | Carried | Hosted run of the admin and Staff cases left *Blocked* in S2 (TC-F2, TC-CR) with the Staff test account; results and screenshots into `test-cases-F2F3.md` | Đạt | 1.5 | D2 Sat 07/11 |  | 1.33 (Đạt, reconstructed, logged 09/11) | In Review – PR #24 merged, #27; TC-F2-11/12/19 left |
-| S3-T03 | ECBS-149 | Carried | PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses | Chính | 0.5 | D2 Sat 07/11 |  | 0.5 (Chính, logged 09/11) | In Progress – accepted 09/11: US-05, US-06, US-24, US-08, US-09 (19 SP); US-07 and NFR-04 wait (see po-acceptance.md) |
+| S3-T03 | ECBS-149 | Carried | PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses | Chính | 0.5 | D2 Sat 07/11 |  | 0.75 (Chính, logged 09/11) | In Progress – accepted 09/11: US-05, US-06, US-24, US-08, US-09 (19 SP); US-07 and NFR-04 wait (see po-acceptance.md) |
 | S3-T04 | ECBS-150 | Test | Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md` | Chính | 2 | D2 Sat 07/11 | 09/11 | 1 (Chính, logged 08/11) | Done – PR #21 merged 09/11 |
 | S3-T05 | ECBS-151 | US-25 | Data model: `books.updated_by_name` + migration safe to run twice; seed books show "System" | Đạt | 1.5 | D2 Sat 07/11 | 08/11 | 0.25 (Đạt, reconstructed, logged 09/11) | Done – PR #23 merged |
 | S3-T06 | ECBS-152 | US-11 | Detail page `/books/[id]`: cover, title, author, category, price, description, stock (AC-01); friendly "Sorry, this book is not available" page with HTTP 404 for a missing, hidden or non-numeric id (AC-03); book cards link to it | Chính | 2.5 | D3 Sun 08/11 | 09/11 | 1 (Chính, logged 08/11) | Done – PR #22 merged 09/11 |
@@ -73,7 +73,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-D1 | ECBS-170 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 | 06/11 | 0.75 Chính · Đạt TBD | Done – held on Discord 22:00, ~45 min |
 | S3-D2 | ECBS-171 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | Not held (07/11) |
 | S3-D3 | ECBS-172 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | Not held (08/11) |
-| S3-D4 | ECBS-173 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 | 09/11 | 0.25 | Done |
+| S3-D4 | ECBS-173 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 | 09/11 | 0.25 Đạt · 0.25 Chính | Done |
 | S3-D5 | ECBS-174 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 |  |  | To Do |
 | S3-D6 | ECBS-175 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D6 Wed 11/11 |  |  | To Do |
 | S3-D7 | ECBS-176 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D7 Thu 12/11 |  |  | To Do |
