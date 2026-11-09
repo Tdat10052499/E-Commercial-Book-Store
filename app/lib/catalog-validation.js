@@ -65,10 +65,19 @@ function resolvePage(raw, totalItems, pageSize = PAGE_SIZE) {
   return { page, lastPage, offset: (page - 1) * pageSize };
 }
 
+// US-12, US-13: list filters, shared by the /books form and the server (S3-T09 keyword; category and price come in S3-T11).
+// US-12/AC-03: the keyword is trimmed and cut to 100 characters, so an over-long keyword still searches instead of failing.
+const SEARCH_MAX = 100;
+const firstValue = (v) => (Array.isArray(v) ? v[0] : v);
+function validateFilters(raw = {}) {
+  const q = clean(firstValue(raw.q)).slice(0, SEARCH_MAX);
+  return { filters: { q }, error: null };
+}
+
 const priceFormat = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', minimumFractionDigits: 0, maximumFractionDigits: 2 });
 const formatPrice = (price) => priceFormat.format(Number(price));
 
 module.exports = {
   CATALOG_LIMITS, COVER, PAGE_SIZE, validateCategory, validateAuthor, validateBook, validateCover,
-  inUseMessage, resolvePage, formatPrice,
+  inUseMessage, resolvePage, formatPrice, SEARCH_MAX, validateFilters,
 };

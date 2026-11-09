@@ -18,7 +18,7 @@ const ROADMAP = [
 
 export default async function HomePage() {
   const user = await getCurrentUser();
-  const { books } = await listBooksPage(1, 6);
+  const { books } = await listBooksPage(1, {}, 6);
   return (
     <>
       <section className="hero">
