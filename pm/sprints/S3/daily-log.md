@@ -46,7 +46,7 @@ Held: **Not held** · Channel: –
 Hours logged in Jira for this work (reconstructed from timestamps, confirmed by Đạt 09/11): ECBS-148 1h20m, ECBS-151 15m, ECBS-153 20m. No hours on ECBS-171/172, since the Dailies were not held.
 
 ## D4 – Mon 09/11
-Held: **yes** (Đạt and Chính) · Time: TBD · Channel: TBD (Discord?)
+Held: **yes** (Đạt and Chính) · Duration: 15 min (start time not recorded) · Channel: TBD (Discord?)
 
 | Member | Planned today | Done since last Daily | Doing today | Blockers |
 |---|---|---|---|---|
