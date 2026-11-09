@@ -4,7 +4,7 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0 (TA) | 15/10/2026 | Team 6 | Single-level DoD, 7 items (DoD-1…DoD-7) [04 §2] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Split into 3-level DoD (Story / Sprint / Release) with evidence and checker [05 #12]; DoD-2 changed from "merged to main" to "merged to develop via reviewed PR" [05 #13]; added metrics and test approach |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Split into 3-level DoD (Story / Sprint / Release) with evidence and checker [05 #12]; DoD-2 changed from "merged to main" to "merged to develop via reviewed PR" [05 #13]; added metrics and test approach |
 
 ## 4.1 Definition of Done – 3 levels
 ### Story DoD (each backlog item)

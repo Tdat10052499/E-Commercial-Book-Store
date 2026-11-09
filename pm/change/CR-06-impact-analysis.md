@@ -3,9 +3,9 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | First analysis for CCB 30/10. Hour estimates are **planning proposals**; SP require Planning Poker (session 2 in the log) |
-| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | PO confirmed Option B as the team recommendation for the CCB |
-| 1.2 | 04/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | CCB record filled from the PO's account of the 30/10 meeting: Approve Option B; baseline v1.1 |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | First analysis for CCB 30/10. Hour estimates are **planning proposals**; SP require Planning Poker (session 2 in the log) |
+| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO) | PO confirmed Option B as the team recommendation for the CCB |
+| 1.2 | 04/11/2026 | Nguyễn Minh Chính (PO) | CCB record filled from the PO's account of the 30/10 meeting: Approve Option B; baseline v1.1 |
 
 ## 1. Request
 Source: [CR-06 §1–§4]. Add *Store Staff* role (add/edit books, manage categories/authors; no book delete; no account management; admin assigns roles) and a "Last updated by <name> at <time>" audit on each book. Customer priority High; wanted in Release 1.0. F1 was due in S1, so the change touches work that is meant to be Done → rework and regression must be counted [CR-06 §4].

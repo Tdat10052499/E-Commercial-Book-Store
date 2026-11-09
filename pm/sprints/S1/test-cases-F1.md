@@ -5,10 +5,10 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Test cases from F1 ACs; automated results from a real local run |
-| 1.1 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Manual run found defect DEF-F1-01 (TC-F1-15); expected result made precise; E2E assertion tightened |
-| 1.2 | 30/10/2026 | Nguyễn Minh Chính (AI-assisted) | Hosted run part 1 by Nguyễn Minh Chính (AI-assisted browser run, Chrome 152, admin session already signed in): 5 Pass, 1 Partial. Cases that need a password typed, a new account or a customer session were left for part 2 |
-| 1.3 | 05/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Hosted run part 2 done by Chính on 05/11 (00:45–03:25): every case run passed, as confirmed by Chính; sheet `F1_ManualTest_Hosted.xlsx` filled from his confirmation. TC-19 (Supabase access), TC-20 (optional) and TC-24 (17/11) not run |
+| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt | Test cases from F1 ACs; automated results from a real local run |
+| 1.1 | 30/10/2026 | Hồ Du Tuấn Đạt | Manual run found defect DEF-F1-01 (TC-F1-15); expected result made precise; E2E assertion tightened |
+| 1.2 | 30/10/2026 | Nguyễn Minh Chính | Hosted run part 1 by Nguyễn Minh Chính (browser run, Chrome 152, admin session already signed in): 5 Pass, 1 Partial. Cases that need a password typed, a new account or a customer session were left for part 2 |
+| 1.3 | 05/11/2026 | Nguyễn Minh Chính (PO) | Hosted run part 2 done by Chính on 05/11 (00:45–03:25): every case run passed, as confirmed by Chính; sheet `F1_ManualTest_Hosted.xlsx` filled from his confirmation. TC-19 (Supabase access), TC-20 (optional) and TC-24 (17/11) not run |
 
 **Evidence of automated run** (local build, PostgreSQL 16, 30/10/2026): `npm test` → 16/16 pass (UNIT = `tests/validation.test.js`, INT = `tests/users.test.js`); `npm run e2e` → 18/18 pass (E2E = `app/e2e/f1.e2e.js`, Chromium). Log: `pm/sprints/S1/evidence/test-run-2026-10-30.txt`.
 **Manual run on the hosted URL** must be done by a team member before the Review and written in the last column (Pass/Fail, date, tester).
@@ -33,7 +33,7 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 | TC-F1-16 | US-04/AC-02 | Signed in as Customer | Open /admin/accounts directly | HTTP 403 "Access denied" | E2E | Pass (30/10) | Pass (05/11, Chính, hosted run part 2) |
 | TC-F1-17 | US-04/AC-03 | Signed in as admin | Open /admin | Admin dashboard shown | E2E | Pass (30/10) | Pass (30/10 03:01, admin session): dashboard shown (3 accounts, 1 admin, 2 customers, 0 locked). Evidence `evidence/hosted/TC-F1-17_admin-dashboard.jpg` |
 | TC-F1-18 | US-04/AC-04 | Signed in as Customer | Look at header on any page | No Admin menu | E2E | Pass (30/10) | Pass (05/11, Chính, hosted run part 2) |
-| TC-F1-19 | NFR-01/AC-01 | New account saved | Inspect `users.password_hash` in DB | bcrypt hash `$2…$10$…`, not plain text | INT | Pass (30/10) | Not run – needs Supabase access (Đạt); bcrypt hash verified by INT test |
+| TC-F1-19 | NFR-01/AC-01 | New account saved | Inspect `users.password_hash` in DB | bcrypt hash `$2…$10$…`, not plain text | INT | Pass (30/10) | Pass (06/11, Đạt): Supabase `users.password_hash` = `$2a$10$…` for all accounts. Evidence `evidence/hosted/TC-F1-19_password-hash-supabase.png` |
 | TC-F1-20 | NFR-01/AC-02 | Any form | Send invalid data bypassing client | Server rejects, nothing stored | INT | Pass (30/10) | Not run – optional, covered by INT test |
 | TC-F1-21 | NFR-01/AC-03 | Register form | Name 101 chars; password 65 chars | Rejected (100 / 64 accepted) | UNIT | Pass (30/10) | Pass (30/10 03:03): 101-char name typed → field keeps 100; password field `maxlength=64` (attribute checked, not typed) |
 | TC-F1-22 | NFR-03/AC-01 | `develop` deployed | Open public URL | Home page over HTTPS | — | Not run (needs hosting) | Pass (30/10 03:00): https://pagetunnel.vercel.app/ home page over HTTPS |
@@ -58,5 +58,7 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 | **Total** | **21 / 24** | 0 | **0** | 3 |
 
 **PO acceptance (05/11/2026, Nguyễn Minh Chính):** US-01, US-02, US-03, US-04 – every AC passed on the hosted URL → **Done (14 SP)**. NFR-01 stays In Review until TC-19 (hash in the hosted database) is shown; NFR-03 stays In Review until TC-24 on 17/11.
+
+**PO acceptance (06/11/2026, Nguyễn Minh Chính):** NFR-01 – TC-F1-19 passed on the hosted database (06/11, Đạt) and TC-F1-21 on the host; AC-02 is covered by the automated INT test (TC-F1-20) → **Done (2 SP)**. F1 accepted so far: 16 of 18 SP; NFR-03 waits for TC-F1-24 (17/11).
 
 Raw observations: `evidence/hosted/run-log-2026-10-30.md`.
