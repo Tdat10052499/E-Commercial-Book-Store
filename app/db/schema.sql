@@ -56,6 +56,10 @@ CREATE TABLE IF NOT EXISTS books (
   created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+-- US-25 (CR-06): who last changed the book. The NAME is copied at save time (not a user FK), so a later
+-- rename or lock of that account does not change the audit line (US-25/AC-03). Seed books keep 'System' (AC-02).
+-- ADD COLUMN IF NOT EXISTS makes the migration safe to run twice (S3-T05).
+ALTER TABLE books ADD COLUMN IF NOT EXISTS updated_by_name VARCHAR(100) NOT NULL DEFAULT 'System';
 CREATE INDEX IF NOT EXISTS books_visible_newest_idx ON books (created_at DESC, id DESC) WHERE NOT is_deleted;  -- US-10
 CREATE INDEX IF NOT EXISTS books_author_id_idx ON books (author_id);
 CREATE INDEX IF NOT EXISTS books_category_id_idx ON books (category_id);

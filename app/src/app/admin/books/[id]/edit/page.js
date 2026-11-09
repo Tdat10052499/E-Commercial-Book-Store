@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { requireCatalogEditor } from '@/lib/current-user';
-import { getBook, listCatalogOptions } from '@lib/catalog';
+import { getBook, listCatalogOptions, formatLastUpdated } from '@lib/catalog';
 import BookForm from '../../BookForm';
 import { updateBookAction } from '../../actions';
 
@@ -18,6 +18,7 @@ export default async function EditBookPage({ params }) {
     <section>
       <p><Link href="/admin/books">← All books</Link></p>
       <h1>Edit book</h1>
+      <p className="muted" data-testid="last-updated">{formatLastUpdated(book.updated_by_name, book.updated_at)}</p>
       <BookForm action={updateBookAction} options={options} book={book} submitLabel="Save changes" pendingLabel="Saving…" />
     </section>
   );
