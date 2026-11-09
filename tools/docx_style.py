@@ -251,6 +251,7 @@ def _cite(m):
 def plain_text(text):
     """Readable ASCII-style text: no section signs or math/arrow symbols."""
     text = re.sub(r"\[([^\]]*(?:§|#)[^\]]*)\]", _cite, text)
+    text = text.replace(" · ", "; ")
     for a, b in SYMBOLS:
         text = text.replace(a, b)
     return re.sub(r"Sec\. +", "Sec. ", text)
@@ -285,3 +286,103 @@ def style_docx(path, header_text, cover=None, plain=True, toc=True):
     upd.set(qn("w:val"), "true")
     settings.append(upd)
     doc.save(path)
+
+
+def _toc_entries(doc, toc_p):
+    out, after = [], False
+    for p in doc.paragraphs:
+        if p._p is toc_p:
+            after = True
+            continue
+        name = p.style.name if p.style is not None else ""
+        if after and name in ("Heading 1", "Heading 2") and p.text.strip():
+            out.append((1 if name == "Heading 1" else 2, p.text.strip()))
+    return out
+
+
+def _write_toc(doc, toc_p, entries, pages, instr):
+    """Replace the empty TOC field by a field whose cached result already lists the headings."""
+    from docx.enum.text import WD_TAB_ALIGNMENT, WD_TAB_LEADER
+    from docx.text.paragraph import Paragraph
+    sec = doc.sections[0]
+    right = sec.page_width - sec.left_margin - sec.right_margin
+    has_end = bool(toc_p.xpath(".//w:fldChar[@w:fldCharType='end']"))
+    nxt = toc_p.getnext()
+    while nxt is not None and nxt.tag == qn("w:p"):  # old cached entries up to the field end, then the note
+        if not has_end:
+            has_end = bool(nxt.xpath(".//w:fldChar[@w:fldCharType='end']"))
+        elif "Update Field" not in "".join(nxt.itertext()):
+            break
+        nn = nxt.getnext()
+        nxt.getparent().remove(nxt)
+        nxt = nn
+    for r in list(toc_p):
+        if r.tag != qn("w:pPr"):
+            toc_p.remove(r)
+    paras = [Paragraph(toc_p, doc._body)]
+    for _ in entries[1:]:
+        q = OxmlElement("w:p")
+        paras[-1]._p.addnext(q)
+        paras.append(Paragraph(q, doc._body))
+
+    def fld(par, kind, text=None):
+        run = par.add_run()
+        if kind == "instr":
+            el = OxmlElement("w:instrText")
+            el.set(qn("xml:space"), "preserve")
+            el.text = text
+        else:
+            el = OxmlElement("w:fldChar")
+            el.set(qn("w:fldCharType"), kind)
+        run._r.append(el)
+
+    for k, (par, (level, text), page) in enumerate(zip(paras, entries, pages)):
+        if k == 0:
+            fld(par, "begin")
+            fld(par, "instr", instr)
+            fld(par, "separate")
+        pf = par.paragraph_format
+        pf.left_indent = Cm(0 if level == 1 else 0.6)
+        pf.space_after = Pt(3 if level == 1 else 1)
+        pf.tab_stops.add_tab_stop(right, WD_TAB_ALIGNMENT.RIGHT, WD_TAB_LEADER.DOTS)
+        _font(par.add_run(text + "\t" + str(page)), size=11 if level == 1 else 10.5, bold=level == 1)
+        if k == len(entries) - 1:
+            fld(par, "end")
+
+
+def prerender_toc(path, instr='TOC \\o "1-2" \\h \\z \\u'):
+    """Fill the TOC with headings and page numbers (from a LibreOffice render), so Word opens it without asking
+    to update fields. Two passes, so the page numbers already include the TOC's own length."""
+    import subprocess
+    import tempfile
+    from pathlib import Path as P
+
+    def locate():
+        doc = Document(path)
+        toc_p = next(p._p for p in doc.paragraphs if p._p.xpath(".//w:instrText[contains(., 'TOC')]"))
+        return doc, toc_p
+
+    doc, toc_p = locate()
+    entries = _toc_entries(doc, toc_p)
+    _write_toc(doc, toc_p, entries, ["0"] * len(entries), instr)
+    for el in doc.settings.element.findall(qn("w:updateFields")):
+        doc.settings.element.remove(el)
+    doc.save(path)
+    with tempfile.TemporaryDirectory() as tmp:
+        subprocess.run(["soffice", "--headless", "--convert-to", "pdf", "--outdir", tmp, str(path)],
+                       check=True, capture_output=True)
+        pdf = next(P(tmp).glob("*.pdf"))
+        txt = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], capture_output=True, text=True).stdout
+    pages_text = [re.sub(r"\s+", " ", t) for t in txt.split("\f")]
+    toc_last = max(i for i, t in enumerate(pages_text) if entries and entries[-1][1][:25] in t and "....." in t) \
+        if any("....." in t for t in pages_text) else 1
+    pages, cur = [], toc_last + 1
+    for _, text in entries:
+        key = re.sub(r"\s+", " ", text)[:40]
+        found = next((i for i in range(cur, len(pages_text)) if key in pages_text[i]), cur)
+        pages.append(str(found + 1))
+        cur = found
+    doc, toc_p = locate()
+    _write_toc(doc, toc_p, entries, pages, instr)
+    doc.save(path)
+    return list(zip(entries, pages))
