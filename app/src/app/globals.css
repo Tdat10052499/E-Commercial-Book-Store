@@ -145,6 +145,9 @@ th, td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--li
 .book-card-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
 /* Book detail – F4 (US-11): cover beside the facts from 768 px, stacked on phones. */
+.back-link { margin: 0 0 20px; font-size: .85rem; }
+.back-link a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); text-decoration: none; }
+.back-link a:hover { color: var(--ink); }
 .book-detail { display: grid; gap: clamp(24px, 4vw, 56px); grid-template-columns: 1fr; align-items: start; }
 @media (min-width: 768px) { .book-detail { grid-template-columns: minmax(220px, 2fr) 3fr; } }
 .book-detail-cover { max-width: 360px; width: 100%; }
