@@ -44,3 +44,4 @@
 | 09/11/2026 | Hồ Du Tuấn Đạt | Claude | S3-T09 (ECBS-155): search theo tên sách hoặc tác giả trong listBooksPage + validateFilters, 11 test (TC-F5-01…03) | app/lib/catalog.js, app/lib/catalog-validation.js, app/src/app/page.js, app/tests/search.test.js |
 | 09/11/2026 | Hồ Du Tuấn Đạt | Claude | Ghi Daily D4 theo tóm tắt của Đạt; S3-T09 Done 0.9 h trong sprint-backlog; log 54m Jira ECBS-155 | pm/sprints/S3/daily-log.md, pm/sprints/S3/sprint-backlog.md |
 | 09/11/2026 | Hồ Du Tuấn Đạt | Claude Code | Log Daily D4 duration (15 min) in daily log, sprint backlog and Jira ECBS-173 | pm/sprints/S3/daily-log.md, pm/sprints/S3/sprint-backlog.md |
+| 09/11/2026 | Nguyễn Minh Chính | Claude (Claude app, cloud session) | Ghi chú gửi Đạt ngày 09/11: việc cần làm (approve/merge #33, #34, release, S3-T11, dọn dữ liệu test), interface lọc cho S3-T11/T10, tên tác giả commit | `pm/sprints/S3/notes/2026-11-09_Chinh-to-Dat.md` | Chính |
