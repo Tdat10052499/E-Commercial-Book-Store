@@ -51,9 +51,9 @@ Held: **yes** (Đạt and Chính) · Duration: 15 min (start time not recorded) 
 | Member | Planned today | Done since last Daily | Doing today | Blockers |
 |---|---|---|---|---|
 | Hồ Du Tuấn Đạt | S3-T09, S3-D4 | Hosted test run of the admin/Staff functions passed (S3-T02); "Last updated by" shown on the book edit page (US-25, S3-T05/T07); fixed a display error seen in Supabase (Đạt's words: "fix lỗi hiển thị trong Supabase") | S3-T09 search (PR #30); merge the open S3 PRs | – |
-| Nguyễn Minh Chính | S3-T08, S3-D4 | Not recorded | Not recorded | Not recorded |
+| Nguyễn Minh Chính | S3-T08, S3-D4 | S3-T04 and S3-T06 in review (PR #21, #22); S3-T08 Back to list (PR #29); S3-T03 part 1 – US-05, US-06, US-24 accepted | Hosted checks TC-F2-12, TC-F2-19, NFR-04 admin pages → S3-T03 part 2; S3-T10 filter bar next | PRs waited for review all day; DEF-S3-02 found at 23:27 (fix PR #33) |
 
-Notes: Đạt's row is written from his summary of the meeting (09/11 23:20). Chính's row, the time and the channel are to be filled by Chính.
+Notes: Đạt's row is written from his summary of the meeting (09/11 23:20). Chính's row is written from the PR and Jira record of 09/11 (23:35); start time not recorded.
 
 ## D5 – Tue 10/11
 Time: TBD · Channel: TBD

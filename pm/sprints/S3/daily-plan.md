@@ -14,11 +14,11 @@
 
 **Chính**
 - [ ] S3-T03 · ECBS-149 (0.5 h) – PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses
-- [ ] S3-T04 · ECBS-150 (2 h) – Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md`
+- [x] S3-T04 · ECBS-150 (2 h) – Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md`
 
 **Đạt**
 - [ ] S3-T02 · ECBS-148 (1.5 h) – Hosted run of the admin and Staff cases left *Blocked* in S2 (TC-F2, TC-CR) with the Staff test account; results and screenshots into `test-cases-F2F3.md`
-- [ ] S3-T05 · ECBS-151 (1.5 h) – Data model: `books.updated_by_name` + migration safe to run twice; seed books show "System"
+- [x] S3-T05 · ECBS-151 (1.5 h) – Data model: `books.updated_by_name` + migration safe to run twice; seed books show "System"
 
 **Both**
 - [ ] S3-D2 · ECBS-171 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
@@ -28,10 +28,10 @@
 ## D3 – Sun 08/11  (Chính 2.75 h · Đạt 2.75 h)
 
 **Chính**
-- [ ] S3-T06 · ECBS-152 (2.5 h) – Detail page `/books/[id]`: cover, title, author, category, price, description, stock (AC-01); friendly "Sorry, this book is not available" page with HTTP 404 for a missing, hidden or non-numeric id (AC-03); book cards link to it
+- [x] S3-T06 · ECBS-152 (2.5 h) – Detail page `/books/[id]`: cover, title, author, category, price, description, stock (AC-01); friendly "Sorry, this book is not available" page with HTTP 404 for a missing, hidden or non-numeric id (AC-03); book cards link to it
 
 **Đạt**
-- [ ] S3-T07 · ECBS-153 (2.5 h) – Add/edit book actions store the user's name and time; admin edit page shows "Last updated by <name> at dd/mm/yyyy HH:mm" (AC-01…03); tests; PR merged
+- [x] S3-T07 · ECBS-153 (2.5 h) – Add/edit book actions store the user's name and time; admin edit page shows "Last updated by <name> at dd/mm/yyyy HH:mm" (AC-01…03); tests; PR merged
 
 **Both**
 - [ ] S3-D3 · ECBS-172 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
@@ -41,13 +41,13 @@
 ## D4 – Mon 09/11  (Chính 2.25 h · Đạt 2.75 h)
 
 **Chính**
-- [ ] S3-T08 · ECBS-154 (2 h) – "Back to list" returns to the same page with the same search and filter (AC-02), page 1 when opened directly (AC-04); tests; PR merged and deployed
+- [x] S3-T08 · ECBS-154 (2 h) – "Back to list" returns to the same page with the same search and filter (AC-02), page 1 when opened directly (AC-04); tests; PR merged and deployed
 
 **Đạt**
-- [ ] S3-T09 · ECBS-155 (2.5 h) – Search in `listBooksPage`: keyword on title **or** author, case-insensitive, partial, trimmed, ≤ 100 chars, `%` `_` `'` treated as text (AC-01, AC-03); integration tests
+- [x] S3-T09 · ECBS-155 (2.5 h) – Search in `listBooksPage`: keyword on title **or** author, case-insensitive, partial, trimmed, ≤ 100 chars, `%` `_` `'` treated as text (AC-01, AC-03); integration tests
 
 **Both**
-- [ ] S3-D4 · ECBS-173 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
+- [x] S3-D4 · ECBS-173 (0.5 h) – Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00
 
 *End of D4: plan remaining 21 h.*
 
