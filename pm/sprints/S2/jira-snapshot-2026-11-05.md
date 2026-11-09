@@ -1,6 +1,6 @@
 # Jira snapshot – Sprint 2 (ECBS, board 2, sprint id 6) – 05/11/2026 00:30
 
-Entered by Nguyễn Minh Chính through the Jira REST API (AI-assisted). Sprint dates in Jira: 30/10/2026 00:00 – 05/11/2026 23:59 (GMT+7).
+Entered by Nguyễn Minh Chính through the Jira REST API. Sprint dates in Jira: 30/10/2026 00:00 – 05/11/2026 23:59 (GMT+7).
 
 **Board history (honest note):** the S2 tasks were entered in Jira only on 05/11/2026 00:20; the board was not updated during 30/10–04/11 (Retro 1 action A3 not met). Sprint 1 is still *active* in Jira and Sprint 2 *future*: closing Sprint 1 (Leader S1) and starting Sprint 2 is pending, so Jira's own burndown for S2 is not available yet.
 
