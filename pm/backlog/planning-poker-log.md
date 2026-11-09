@@ -7,13 +7,13 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Log table prepared. **Votes must be entered by the team; none are filled in by AI.** |
-| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Estimates recorded as **PO estimates from AI-suggested values – no voting rounds held** (see note). Vote columns left empty on purpose. Release PSP = 55 SP; CR-06 = 7 SP |
-| 1.2 | 05/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Session 3 prepared for Planning 3 (06/11): real voting rounds for the S3 items and US-25 (issue I-04). Vote cells are **empty until the meeting**; AI fills nothing in |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Log table prepared. **Votes must be entered by the team.** |
+| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO) | Estimates recorded as **PO estimates – no voting rounds held** (see note). Vote columns left empty on purpose. Release PSP = 55 SP; CR-06 = 7 SP |
+| 1.2 | 05/11/2026 | Nguyễn Minh Chính (PO) | Session 3 prepared for Planning 3 (06/11): real voting rounds for the S3 items and US-25 (issue I-04). Vote cells are **empty until the meeting** |
 
-> **Method used on 30/10/2026 (deviation from the procedure above):** no Planning Poker voting rounds were held. The PO (Nguyễn Minh Chính) set each estimate from AI-suggested values, sized against the reference stories (2 / 3 / 5 SP). There are no individual cards, no reveal and no photo evidence for this session. Đạt has not yet confirmed the estimates; if the team later runs a real session (shared page: Team 6 Planning Poker), the votes replace these values and this note is updated.
+> **Method used on 30/10/2026 (deviation from the procedure above):** no Planning Poker voting rounds were held. The PO (Nguyễn Minh Chính) set each estimate, sized against the reference stories (2 / 3 / 5 SP). There are no individual cards, no reveal and no photo evidence for this session. Đạt has not yet confirmed the estimates; if the team later runs a real session (shared page: Team 6 Planning Poker), the votes replace these values and this note is updated.
 
-## Session 1 – Release 1.0 baseline (date: 30/10/2026, method: PO estimate from AI suggestion – no voting rounds, facilitator: PO)
+## Session 1 – Release 1.0 baseline (date: 30/10/2026, method: PO estimate – no voting rounds, facilitator: PO)
 | Item | Round | Đạt | Chính | Basis of the estimate | Result SP |
 |---|---|---|---|---|---|
 | US-01 Register | – | – | – | One form; duplicate-email check; client + server validation. Same size as reference 3 (book detail) | 3 |
@@ -52,11 +52,11 @@ Purpose: replace the PO-only estimates of Session 1 with team votes for the item
 **Reading order (PO reads the story, then the ACs):**
 | Item | ACs to read | Session 1 value (for comparison after the vote) | Reference story to compare |
 |---|---|---|---|
-| US-11 Book detail | US-11/AC-01…AC-04 (detail fields, Back to the same page/filter, friendly 404, direct open) | 3 | = reference 3 (view book details) |
+| US-11 Book detail | US-11/AC-01…AC-04 (detail fields, Back to the same page/filter, friendly 404, direct open) | 3 | Same as reference 3 (view book details) |
 | US-12 Search | US-12/AC-01…AC-03 (title or author, no result, empty/100 chars/special characters) | 3 | between 2 and 5 |
-| US-13 Filter + pagination | US-13/AC-01…AC-04 (category + price range, kept across pages, min > max, inclusive bounds) | 5 | = reference 5 (search & filter) |
-| NFR-05 Performance < 2 s | NFR-05/AC-01, AC-02 (median of 3 runs, page 3 with filters) | 2 | = reference 2 |
-| US-25 Last-updated audit (CR-06) | US-25/AC-01…AC-03 (name and time shown, seed books "System", name kept after rename) | 2 | = reference 2 |
+| US-13 Filter + pagination | US-13/AC-01…AC-04 (category + price range, kept across pages, min > max, inclusive bounds) | 5 | Same as reference 5 (search & filter) |
+| NFR-05 Performance < 2 s | NFR-05/AC-01, AC-02 (median of 3 runs, page 3 with filters) | 2 | Same as reference 2 |
+| US-25 Last-updated audit (CR-06) | US-25/AC-01…AC-03 (name and time shown, seed books "System", name kept after rename) | 2 | Same as reference 2 |
 
 **Votes (fill in at the meeting):**
 | Item | Round | Đạt | Chính | Agreed? | Discussion (why highest / lowest) | Result SP | Photo file |

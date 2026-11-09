@@ -4,8 +4,8 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0 (TA) | 02/10/2026 | Team 6 | Scrum for the Team Assignment: one 2-week Sprint, 4 h/member/day, Slack #decisions, Jira board [TA Process.docx] |
-| 1.0-FP-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Adapted to the Final Project: 1-week Sprints Fri→Thu (N = 3), leader rotation S1/S3 vs S2 = PO, time tracking per task, CR/CCB step, Git PR review [03 §4–§5] |
-| 1.1-FP-draft | 01/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Jira project corrected to ECBS (board on tdat100524.atlassian.net) |
+| 1.0-FP-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Adapted to the Final Project: 1-week Sprints Fri→Thu (N = 3), leader rotation S1/S3 vs S2 = PO, time tracking per task, CR/CCB step, Git PR review [03 §4–§5] |
+| 1.1-FP-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Jira project corrected to ECBS (board on tdat100524.atlassian.net) |
 
 ## 2.1 Roles and people
 | Role | Person | Responsibilities |

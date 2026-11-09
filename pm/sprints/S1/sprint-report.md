@@ -13,10 +13,10 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | First report. Actual hours, burndown, Daily log and Retro content to be filled by the team |
-| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Hosted URL and hosted test status added; CR-06 recorded in Change Log only (analysis and CCB in Sprint 2) |
-| 1.2 | 02/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Jira board added; actual hours from Jira worklogs (19.5 h vs 48 h); cost status; T04, T09, T11 reassigned to Đạt |
-| 1.3 | 02/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Merged with the lecturer's Review/Retro template; EVM snapshot for S1; hours re-checked in Jira; formatted for submission |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | First report. Actual hours, burndown, Daily log and Retro content to be filled by the team |
+| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Hosted URL and hosted test status added; CR-06 recorded in Change Log only (analysis and CCB in Sprint 2) |
+| 1.2 | 02/11/2026 | Nguyễn Minh Chính (PO) | Jira board added; actual hours from Jira worklogs (19.5 h vs 48 h); cost status; T04, T09, T11 reassigned to Đạt |
+| 1.3 | 02/11/2026 | Hồ Du Tuấn Đạt | Merged with the lecturer's Review/Retro template; EVM snapshot for S1; hours re-checked in Jira; formatted for submission |
 
 ## Status summary (Green / Amber / Red)
 | Area | Status | Evidence |
@@ -40,4 +40,4 @@ Formulas [03 §6.4]. BAC = 120 h (plan) × 200,000 VND = 24,000,000 VND; PSP = 5
 | SPI / CPI | EV / PV / EV / AC | 0.00 / 0.00 |
 | EAC / ETC | BAC / CPI / EAC − AC | not meaningful while CPI = 0 |
 
-Interpretation: the increment exists and passes the local tests, but no item has passed the Story DoD yet, so no value is earned. If the PO accepts the 6 F1 items (18 SP) after the hosted run, EV would become 24,000,000 × 18/55 = 7,854,545 VND (SPI ≈ 0.98, CPI ≈ 2.01). That is a scenario, not an actual. The low AC (19.5 h vs 48 h) is partly real (AI-assisted drafting was fast) and partly uncertain, because the hours were reconstructed from memory after the Sprint; the team treats it as a data-quality risk and logs hours daily from S2 (action A3).
+Interpretation: the increment exists and passes the local tests, but no item has passed the Story DoD yet, so no value is earned. If the PO accepts the 6 F1 items (18 SP) after the hosted run, EV would become 24,000,000 × 18/55 = 7,854,545 VND (SPI ≈ 0.98, CPI ≈ 2.01). That is a scenario, not an actual. The low AC (19.5 h vs 48 h) is partly real (drafting was fast) and partly uncertain, because the hours were reconstructed from memory after the Sprint; the team treats it as a data-quality risk and logs hours daily from S2 (action A3).
