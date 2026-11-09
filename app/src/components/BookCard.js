@@ -1,18 +1,18 @@
 import Link from 'next/link';
-import { formatPrice } from '@lib/catalog-validation';
+import { formatPrice, detailHref } from '@lib/catalog-validation';
 
 // US-10/AC-01: one card = cover, title, author, price. Books without a cover get a typographic one.
-// US-11/AC-01: the whole card opens the book's detail page.
+// US-11/AC-01: the whole card opens the book's detail page; AC-02: it carries the list state for "Back to list".
 export function coverSrc(book) {
   if (book.has_upload) return `/book-covers/${book.id}`;
   return book.cover_url || null;
 }
 
-export default function BookCard({ book }) {
+export default function BookCard({ book, listQuery = '' }) {
   const src = coverSrc(book);
   return (
     <article className="book-card">
-      <Link className="book-card-link" href={`/books/${book.id}`}>
+      <Link className="book-card-link" href={detailHref(book.id, listQuery)}>
         <div className="book-cover">
           {src
             ? <img src={src} alt={`Cover of ${book.title}`} loading="lazy" width={200} height={300} />
