@@ -4,7 +4,7 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0 (TA) | 02/10/2026 | Team 6 | Communication plan in TA Assign.xlsx; Slack #decisions for feedback [TA Process.docx] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Updated for Final Project roles, weekly Sprint events, CCB and Weekly Status Report. Channel names to be confirmed |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Updated for Final Project roles, weekly Sprint events, CCB and Weekly Status Report. Channel names to be confirmed |
 
 ## 7.1 Communication matrix
 | Stakeholder | Information | Channel | Frequency | Sender |
