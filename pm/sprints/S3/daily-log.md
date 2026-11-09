@@ -8,6 +8,7 @@ Timebox ≤ 10 min; asynchronous allowed but logged [03 §4.2]. Channel: **Disco
 | 0.1 | 07/11/2026 | Nguyễn Minh Chính | Empty log for S3 with the planned tasks per day |
 | 0.2 | 08/11/2026 | Nguyễn Minh Chính | D1–D3 recorded: D1 held on Discord (22:00, about 45 min); D2 and D3 not held |
 | 0.3 | 09/11/2026 | Hồ Du Tuấn Đạt | Late asynchronous update from Đạt for D2 and D3, written 09/11 ~01:15 from the commit, PR and Jira timestamps. The meetings stay *Not held* |
+| 0.4 | 09/11/2026 | Hồ Du Tuấn Đạt | D4 held; Đạt's row from his summary of the meeting |
 
 ## D1 – Fri 06/11
 Time: 22:00, about 45 min (over the 10-min Daily timebox) · Channel: Discord · Held: **yes**
@@ -45,12 +46,14 @@ Held: **Not held** · Channel: –
 Hours logged in Jira for this work (reconstructed from timestamps, confirmed by Đạt 09/11): ECBS-148 1h20m, ECBS-151 15m, ECBS-153 20m. No hours on ECBS-171/172, since the Dailies were not held.
 
 ## D4 – Mon 09/11
-Time: TBD · Channel: TBD
+Held: **yes** (Đạt and Chính) · Duration: 15 min (start time not recorded) · Channel: TBD (Discord?)
 
 | Member | Planned today | Done since last Daily | Doing today | Blockers |
 |---|---|---|---|---|
-| Hồ Du Tuấn Đạt | S3-T09, S3-D4 | | | |
-| Nguyễn Minh Chính | S3-T08, S3-D4 | | | |
+| Hồ Du Tuấn Đạt | S3-T09, S3-D4 | Hosted test run of the admin/Staff functions passed (S3-T02); "Last updated by" shown on the book edit page (US-25, S3-T05/T07); fixed a display error seen in Supabase (Đạt's words: "fix lỗi hiển thị trong Supabase") | S3-T09 search (PR #30); merge the open S3 PRs | – |
+| Nguyễn Minh Chính | S3-T08, S3-D4 | Not recorded | Not recorded | Not recorded |
+
+Notes: Đạt's row is written from his summary of the meeting (09/11 23:20). Chính's row, the time and the channel are to be filled by Chính.
 
 ## D5 – Tue 10/11
 Time: TBD · Channel: TBD
