@@ -3,8 +3,12 @@ import CoverWall from '@/components/CoverWall';
 import BookCard from '@/components/BookCard';
 import { getCurrentUser } from '@/lib/current-user';
 import { listBooksPage } from '@lib/catalog';
+import { ROLE_LABEL } from '@lib/validation';
 
 export const dynamic = 'force-dynamic';
+
+// DEF-S3-01: every role gets its own label (a Store Staff user was called "a Customer").
+const withArticle = (label) => `${/^[AEIOU]/i.test(label) ? 'an' : 'a'} ${label}`;
 
 const ROADMAP = [
   { sprint: 'Sprint 1', title: 'Accounts & roles', text: 'Register, sign in and keep the shop safe with administrator controls.', live: true },
@@ -14,7 +18,7 @@ const ROADMAP = [
 
 export default async function HomePage() {
   const user = await getCurrentUser();
-  const { books } = await listBooksPage(1, 6);
+  const { books } = await listBooksPage(1, {}, 6);
   return (
     <>
       <section className="hero">
@@ -23,7 +27,7 @@ export default async function HomePage() {
           <h1>Stories worth<br />turning the page for.</h1>
           <p className="lead">
             {user
-              ? `Welcome back, ${user.name}. You are signed in as ${user.role === 'admin' ? 'an Administrator' : 'a Customer'}.`
+              ? `Welcome back, ${user.name}. You are signed in as ${withArticle(ROLE_LABEL[user.role] || 'Customer')}.`
               : 'A hand-picked catalogue from our stores, on any phone, tablet or desktop.'}
           </p>
           <div className="actions">
