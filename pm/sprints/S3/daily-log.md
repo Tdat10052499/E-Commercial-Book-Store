@@ -57,14 +57,14 @@ Held: **yes** (Đạt and Chính) · Duration: 15 min (start time not recorded) 
 Notes: Đạt's row is written from his summary of the meeting (09/11 23:20). Chính's row is written from the PR and Jira record of 09/11 (23:35); start time not recorded.
 
 ## D5 – Tue 10/11
-Time: 09:15 · Channel: asynchronous (written in the repo) · Held: **asynchronous update** – Đạt's row posted; Chính's row TBD (Chính to add)
+Time: 09:15 (Đạt) and 14:30 (Chính) · Channel: asynchronous (written in the repo) · Held: **asynchronous update** – both rows posted
 
 | Member | Planned today | Done since last Daily | Doing today | Blockers |
 |---|---|---|---|---|
 | Hồ Du Tuấn Đạt | S3-T11, S3-D5 | Reviewed and merged PR #32 (Daily D4, 23:24), PR #33 (DEF-S3-02 44 px tap targets, 23:47) and PR #34 (S3-T03 hosted checks part 2, 23:54) on 09/11 | (1) Release `develop → main` in the morning so Chính can re-run TC-F2-11 and TC-F3-06; (2) S3-T11 category + price filter (US-13), merged and deployed before tonight; (3) clean the test data on production before UAT 13/11 (book id 33, category *Kids*, authors *Tuấn Đạt* / *Minh Chính*, Emma's price/stock, account *READER D*) | None. Risk: Chính's S3-T10 filter bar depends on S3-T11; if S3-T11 slips past tonight, S3-T10 and the D6 regression (S3-T16) slip too |
-| Nguyễn Minh Chính | S3-T10, S3-T12, S3-D5 | TBD – Chính | TBD – Chính | TBD – Chính |
+| Nguyễn Minh Chính | S3-T10, S3-T12, S3-D5 | After D4 (09/11): hosted checks part 2 – TC-F2-12, TC-F2-19, TC-F3-05 Pass, TC-F3-06 Fail → DEF-S3-02 fixed (PR #33); US-08, US-09 accepted (PR #34). 10/11: after release PR #35, re-ran TC-F2-11 and TC-F3-06 on the host → Pass, DEF-S3-02 closed; US-07, NFR-04 accepted → 45/62 SP (PR #36); S3-T10 filter bar (PR #38, 104/104 tests); S3-T12 UAT script part 1, 57 ACs (PR #39); lecturer templates added (PR #42) and the S1/S2 c2/c3 moved into them (PR #43, S3-T23) | Check the filter bar with category and price as soon as S3-T11 is live; review Đạt's PR #40 (Favorite button is out of scope → Request changes) and PR #41 | S3-T11 is not on GitHub yet: the category/price filter (TC-F5-04…07) cannot run, and S3-T14 tomorrow depends on it. PRs #36, #38, #39, #42, #43 wait for review |
 
-Notes: Đạt's row is written from the git and PR record of 09/11 and today's plan. Hours for S3-D5 are logged by each member in Jira (ECBS-174).
+Notes: Đạt's row is written from the git and PR record of 09/11 and today's plan. Chính's row is written by Chính from the PR and Jira record of 09/11–10/11 (14:30). Hours for S3-D5 are logged by each member in Jira (ECBS-174).
 
 ## D6 – Wed 11/11
 Time: TBD · Channel: TBD
