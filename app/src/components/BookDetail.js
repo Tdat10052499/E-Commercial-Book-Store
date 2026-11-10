@@ -1,5 +1,6 @@
 import { formatPrice } from '@lib/catalog-validation';
 import { coverSrc } from '@/components/BookCard';
+import CoverImage from '@/components/CoverImage';
 
 export function stockText(stock) {
   const n = Number(stock) || 0;
@@ -12,9 +13,7 @@ export default function BookDetail({ book }) {
   return (
     <article className="book-detail">
       <div className="book-detail-cover book-cover">
-        {src
-          ? <img src={src} alt={`Cover of ${book.title}`} width={400} height={600} />
-          : <div className="cover" aria-hidden="true"><span className="cover-title">{book.title}</span><span className="cover-author">{book.author_name}</span></div>}
+        <CoverImage src={src} title={book.title} author={book.author_name} width={400} height={600} lazy={false} />
       </div>
       <div className="book-detail-info">
         <h1 className="book-detail-title">{book.title}</h1>
