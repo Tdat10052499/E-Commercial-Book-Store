@@ -7,7 +7,7 @@
 | `FP_Template_SprintReport.docx` | 10/11/2026 (downloaded by Nguyễn Minh Chính) | `c3_SprintReport_S#.docx` | **New** – use from Sprint 3 (S3-T23 export, S3-T21 report) |
 | `SprintBacklog_Template.xlsx` | 10/11/2026 (downloaded by Nguyễn Minh Chính) | `c2_SprintBacklog_S#.xlsx` (cumulative workbook) | **New** – use from Sprint 3 (S3-T23 export, S3-T22 workbook). [03 Appendix B] calls it `FP_Template_ProjectWorkbook.xlsx` |
 
-S1 and S2 files were submitted before these two templates were available, using the Review/Retro template and our own workbook layout. Because `c2` is cumulative, `c2_SprintBacklog_S3` re-presents S1 and S2 in the template layout from the same data (no figures change).
+S1 and S2 files were submitted before these two templates were available, using the Review/Retro template and our own workbook layout. On 10/11/2026 they were re-exported into the new templates by `tools/export_templates.py` (S1, S2, S3) from the sources at the commits of the submitted files (S1 `04831ed`, S2 `469d2b9`), so no figure changes; the submitted versions stay in the git history at those commits. Sheets and parts the templates do not have are copied unchanged from the submitted files (c3: section 8 = Review/Retro record, section 9 = status, EVM, Weekly Status, Jira snapshot).
 
 ## FP_Template_SprintReport.docx – structure
 Header `HK261_SPM_FP_Team#_c3_SprintReport_S#` → set to `Team6` and `S3`.
@@ -35,7 +35,7 @@ Yellow cells with blue text = input; black text = formula (do not edit); green r
 | Sheet | Columns / formulas | Notes for our data |
 |---|---|---|
 | README | How to use | Keep |
-| Team | Team, N = 3, **focus factor 0.8**; member, ID, fixed role, Leader of Sprint #, hours per Sprint; planned hours = hours × N; capacity per Sprint = Σ hours × focus factor | Our plan: 20 h per member per Sprint, already counted as focused hours (capacity 40 h per Sprint, `plan/INPUTS.md` §2). Focus factor 0.8 would give 32 h and break consistency with c1/c3 → **team to decide** (proposal: set 1.0 and explain in a note) |
+| Team | Team, N = 3, **focus factor 0.8**; member, ID, fixed role, Leader of Sprint #, hours per Sprint; planned hours = hours × N; capacity per Sprint = Σ hours × focus factor | Our plan: 20 h per member per Sprint, already counted as focused hours (capacity 40 h per Sprint, `plan/INPUTS.md` §2). Set to **1.0** with a note, because 0.8 would give 32 h and break consistency with c1/c3 |
 | ProductBacklog | Order, ID, Epic/Feature, User Story, MoSCoW, SP, AC (GWT, one per line), DoR, Sprint, Status, Related CR, Note; rows 5–40; totals PSP (Must + Should) and SP Done | 28 items fit |
 | PlanningPoker | Date, Story, Round, votes M1–M3, Max, Min, Agreed SP, reasoning | 2 members → M3 empty. Votes only from the recorded log (`pm/backlog/`) |
 | S1_Backlog / S2_Backlog / S3_Backlog | Task ID, Story, Task, Owner, Estimate, **remaining hours per task D1–D7**, Actual, State; Ideal and Actual remaining; line chart | Rows 5–29 = 25 tasks. S3 has 30 rows (23 tasks + 7 Daily) → extend the range and the formulas. Remaining per day = estimate while the task is not Done, 0 from its *Done on* day (same rule as the burndown we already report) |
