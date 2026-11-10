@@ -19,6 +19,10 @@ npm run dev                        # http://localhost:3000
 ```
 `db:migrate` reads variables from the shell, e.g. `set -a; . ./.env.local; set +a; npm run db:migrate`.
 
+## Extra demo books and home banners (UI polish, outside the Release 1.0 backlog)
+- `npm run db:seed-demo` adds 54 more books (8 categories) with Open Library covers; `node db/seed-demo.js --remove` takes them out again. On Vercel set `SEED_DEMO_BOOKS=1` to load them during the build. `db:seed` and the tests still use only the 30 seed books.
+- Home banners: drop the images listed in `public/banners/README.md` into `public/banners/`; texts and links are in `src/lib/home-content.js`.
+
 ## Tests
 - `npm test` – unit + integration tests (needs a PostgreSQL database in `TEST_DATABASE_URL`, default `postgresql://bookstore:bookstore@localhost:5432/bookstore_test`; the tables are truncated).
 - `npm run e2e` – browser test of every F1 AC against a running app (`BASE_URL`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`).
