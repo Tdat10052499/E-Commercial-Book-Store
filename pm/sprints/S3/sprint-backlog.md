@@ -7,6 +7,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.3 | 10/11/2026 | Nguyễn Minh Chính (PO) | S3-T23 points to the lecturer templates received 10/11 (`SprintBacklog_Template.xlsx`, `FP_Template_SprintReport.docx`) |
 | 0.2 | 07/11/2026 | Nguyễn Minh Chính (PO) | Tasks entered in Jira Sprint 3 (ECBS-147…176): Original Estimate, owner, due date = planned day, label S3_Backlog, links to the stories; Jira column added |
 | 0.1 | 07/11/2026 | Nguyễn Minh Chính (PO) | Day-by-day plan: S3 items split into tasks of ≤ 2.5 h, one owner each, a planned day for every task, a Daily task each day (Retro 2 action: no Sprint-end crunch) |
 
@@ -69,7 +70,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T20 | ECBS-166 | UAT | UAT minutes form for 13/11 (result per AC, Sponsor sign-off) → `c5_UAT.docx` | Chính | 1 | D7 Thu 12/11 |  |  | To Do |
 | S3-T21 | ECBS-167 | PM | EVM S3, burndown and Sprint Report `c3_SprintReport_S3` (test cases F4/F5, release notes) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
 | S3-T22 | ECBS-168 | PM | Workbook `c2_SprintBacklog_S3` (cumulative) + `c0_Eval_S3`; upload before 23:59 | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
-| S3-T23 | ECBS-169 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`) | Chính | 1 | D6 Wed 11/11 |  |  | To Do |
+| S3-T23 | ECBS-169 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`), using the lecturer templates `SprintBacklog_Template.xlsx` (c2) and `FP_Template_SprintReport.docx` (c3) received 10/11 – see `docs/templates/README.md` | Chính | 1 | D6 Wed 11/11 |  |  | To Do |
 | S3-D1 | ECBS-170 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 | 06/11 | 0.75 Chính · Đạt TBD | Done – held on Discord 22:00, ~45 min |
 | S3-D2 | ECBS-171 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | Not held (07/11) |
 | S3-D3 | ECBS-172 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | Not held (08/11) |
