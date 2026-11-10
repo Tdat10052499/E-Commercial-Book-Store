@@ -163,6 +163,19 @@ th, td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--li
 .book-detail-subhead { margin: 24px 0 8px; font-size: .8rem; text-transform: uppercase; letter-spacing: .14em; }
 .book-detail-description { margin: 0; line-height: 1.6; white-space: pre-line; overflow-wrap: anywhere; }
 .empty-state { padding: 48px 0; text-align: center; }
+/* Search and filter bar – F5 (US-12, US-13): stacked on phones, 2 columns from 768 px, one row from 1100 px. */
+.filter-bar { display: grid; gap: 16px 24px; grid-template-columns: 1fr; margin: 0 0 28px; padding: 18px 0 22px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+@media (min-width: 768px) { .filter-bar { grid-template-columns: 1fr 1fr; } .filter-search { grid-column: 1 / -1; } }
+@media (min-width: 1100px) { .filter-bar { grid-template-columns: 2fr 1.2fr 1.6fr auto; align-items: end; } .filter-search { grid-column: auto; } }
+.filter-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.filter-field legend { padding: 0; font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+.filter-price-inputs { display: flex; align-items: center; gap: 10px; }
+.filter-price-inputs input { min-width: 0; }
+.filter-actions { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; }
+.filter-actions .btn-ghost { display: inline-flex; align-items: center; text-decoration: none; }
+.filter-error { grid-column: 1 / -1; margin: 0; color: var(--error); font-size: .9rem; }
+.empty .btn-ghost { display: inline-flex; align-items: center; text-decoration: none; }
+
 .empty { padding: 48px 0; text-align: center; color: var(--muted); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .pagination { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-top: clamp(32px, 5vw, 56px); }
 .pagination a, .pagination span { min-width: 44px; min-height: 44px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center;
