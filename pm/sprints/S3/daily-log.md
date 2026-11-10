@@ -9,6 +9,7 @@ Timebox ≤ 10 min; asynchronous allowed but logged [03 §4.2]. Channel: **Disco
 | 0.2 | 08/11/2026 | Nguyễn Minh Chính | D1–D3 recorded: D1 held on Discord (22:00, about 45 min); D2 and D3 not held |
 | 0.3 | 09/11/2026 | Hồ Du Tuấn Đạt | Late asynchronous update from Đạt for D2 and D3, written 09/11 ~01:15 from the commit, PR and Jira timestamps. The meetings stay *Not held* |
 | 0.4 | 09/11/2026 | Hồ Du Tuấn Đạt | D4 held; Đạt's row from his summary of the meeting |
+| 0.5 | 10/11/2026 | Hồ Du Tuấn Đạt | D5: Đạt's asynchronous update (09:15); Chính's row left for Chính |
 
 ## D1 – Fri 06/11
 Time: 22:00, about 45 min (over the 10-min Daily timebox) · Channel: Discord · Held: **yes**
@@ -56,12 +57,14 @@ Held: **yes** (Đạt and Chính) · Duration: 15 min (start time not recorded) 
 Notes: Đạt's row is written from his summary of the meeting (09/11 23:20). Chính's row is written from the PR and Jira record of 09/11 (23:35); start time not recorded.
 
 ## D5 – Tue 10/11
-Time: TBD · Channel: TBD
+Time: 09:15 · Channel: asynchronous (written in the repo) · Held: **asynchronous update** – Đạt's row posted; Chính's row TBD (Chính to add)
 
 | Member | Planned today | Done since last Daily | Doing today | Blockers |
 |---|---|---|---|---|
-| Hồ Du Tuấn Đạt | S3-T11, S3-D5 | | | |
-| Nguyễn Minh Chính | S3-T10, S3-T12, S3-D5 | | | |
+| Hồ Du Tuấn Đạt | S3-T11, S3-D5 | Reviewed and merged PR #32 (Daily D4, 23:24), PR #33 (DEF-S3-02 44 px tap targets, 23:47) and PR #34 (S3-T03 hosted checks part 2, 23:54) on 09/11 | (1) Release `develop → main` in the morning so Chính can re-run TC-F2-11 and TC-F3-06; (2) S3-T11 category + price filter (US-13), merged and deployed before tonight; (3) clean the test data on production before UAT 13/11 (book id 33, category *Kids*, authors *Tuấn Đạt* / *Minh Chính*, Emma's price/stock, account *READER D*) | None. Risk: Chính's S3-T10 filter bar depends on S3-T11; if S3-T11 slips past tonight, S3-T10 and the D6 regression (S3-T16) slip too |
+| Nguyễn Minh Chính | S3-T10, S3-T12, S3-D5 | TBD – Chính | TBD – Chính | TBD – Chính |
+
+Notes: Đạt's row is written from the git and PR record of 09/11 and today's plan. Hours for S3-D5 are logged by each member in Jira (ECBS-174).
 
 ## D6 – Wed 11/11
 Time: TBD · Channel: TBD

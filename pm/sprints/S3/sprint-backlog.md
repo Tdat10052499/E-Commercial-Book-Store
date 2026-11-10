@@ -57,7 +57,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T08 | ECBS-154 | US-11 | "Back to list" returns to the same page with the same search and filter (AC-02), page 1 when opened directly (AC-04); tests; PR merged and deployed | Chính | 2 | D4 Mon 09/11 | 09/11 | 1 (Chính, logged 09/11) | Done – PR #29 merged 09/11 |
 | S3-T09 | ECBS-155 | US-12 | Search in `listBooksPage`: keyword on title **or** author, case-insensitive, partial, trimmed, ≤ 100 chars, `%` `_` `'` treated as text (AC-01, AC-03); integration tests | Đạt | 2.5 | D4 Mon 09/11 | 09/11 | 0.9 (Đạt, 22:56–23:50, logged 09/11) | Done – PR #30 merged |
 | S3-T10 | ECBS-156 | US-12/13 | Filter bar on `/books`: search box, category list, min/max price; "No books match your search" + Clear filters (US-12/AC-02); "Minimum price must not exceed maximum price" (US-13/AC-03); parameters kept in the URL and the page links (US-13/AC-02); 360/768/1280 px | Chính | 2.5 | D5 Tue 10/11 |  |  | To Do |
-| S3-T11 | ECBS-157 | US-13 | Filter in `listBooksPage`: category + price range, bounds inclusive (AC-01, AC-04); min > max refused on the server (AC-03); works with search and paging; integration tests; PR merged and deployed | Đạt | 2.5 | D5 Tue 10/11 |  |  | To Do |
+| S3-T11 | ECBS-157 | US-13 | Filter in `listBooksPage`: category + price range, bounds inclusive (AC-01, AC-04); min > max refused on the server (AC-03); works with search and paging; integration tests; PR merged and deployed | Đạt | 2.5 | D5 Tue 10/11 |  |  | In Progress (10/11) |
 | S3-T12 | ECBS-158 | UAT | UAT script part 1: every AC of F1–F3 and US-24 as a step with expected result and Pass/Fail → `pm/uat/uat-script.md` | Chính | 1 | D5 Tue 10/11 |  |  | To Do |
 | S3-T13 | ECBS-159 | UAT | UAT script part 2: F4, F5, NFR-05, US-25 ACs; list of test accounts for the session | Chính | 1 | D7 Thu 12/11 |  |  | To Do |
 | S3-T14 | ECBS-160 | Test | Hosted run of the F4, F5, US-25 test cases; results and defects (a Low defect is fixed the same day) | Chính | 2 | D6 Wed 11/11 |  |  | To Do |
@@ -74,7 +74,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-D2 | ECBS-171 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | Not held (07/11) |
 | S3-D3 | ECBS-172 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | Not held (08/11) |
 | S3-D4 | ECBS-173 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 | 09/11 | 0.25 Đạt · 0.25 Chính | Done |
-| S3-D5 | ECBS-174 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 |  |  | To Do |
+| S3-D5 | ECBS-174 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 |  |  | In Progress – Đạt async update 09:15 |
 | S3-D6 | ECBS-175 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D6 Wed 11/11 |  |  | To Do |
 | S3-D7 | ECBS-176 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D7 Thu 12/11 |  |  | To Do |
 | **Total** | | | | | **39.5** | | | | |
