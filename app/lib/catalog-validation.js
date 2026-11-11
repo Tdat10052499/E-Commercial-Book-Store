@@ -91,6 +91,15 @@ function backToListHref(from) {
 }
 const detailHref = (id, listQuery) => (listQuery ? `/books/${id}?from=${encodeURIComponent(listQuery)}` : `/books/${id}`);
 
+// US-13/AC-02: page links keep the search and filter; US-12/AC-02: "Clear filters" only when one is set.
+function listPageHref(params = {}, page = 1, basePath = '/books') {
+  const qs = listQueryString({ ...params, page });
+  return qs ? `${basePath}?${qs}` : basePath;
+}
+function hasActiveFilters(params = {}) {
+  return listQueryString({ ...params, page: 1 }) !== '';
+}
+
 // US-12, US-13: list filters, shared by the /books form and the server (S3-T09 keyword; category and price come in S3-T11).
 // US-12/AC-03: the keyword is trimmed and cut to 100 characters, so an over-long keyword still searches instead of failing.
 function validateFilters(raw = {}) {
@@ -103,5 +112,5 @@ const formatPrice = (price) => priceFormat.format(Number(price));
 
 module.exports = {
   CATALOG_LIMITS, COVER, PAGE_SIZE, validateCategory, validateAuthor, validateBook, validateCover,
-  inUseMessage, resolvePage, formatPrice, SEARCH_MAX, validateFilters, listQueryString, backToListHref, detailHref,
+  inUseMessage, resolvePage, formatPrice, SEARCH_MAX, validateFilters, listQueryString, listPageHref, hasActiveFilters, backToListHref, detailHref,
 };
