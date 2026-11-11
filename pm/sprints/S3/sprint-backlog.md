@@ -7,6 +7,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.3 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Synced with Jira: S3-D5 Done 10/11 (2 h Đạt). Proposed owner swap for the test runs (T02 remaining cases → Chính, T14 → Đạt) so the runner is never the writer of the test cases – to be confirmed at Daily D6; owner column unchanged until then |
 | 0.2 | 07/11/2026 | Nguyễn Minh Chính (PO) | Tasks entered in Jira Sprint 3 (ECBS-147…176): Original Estimate, owner, due date = planned day, label S3_Backlog, links to the stories; Jira column added |
 | 0.1 | 07/11/2026 | Nguyễn Minh Chính (PO) | Day-by-day plan: S3 items split into tasks of ≤ 2.5 h, one owner each, a planned day for every task, a Daily task each day (Retro 2 action: no Sprint-end crunch) |
 
@@ -48,7 +49,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | Task | Jira | Item | Description | Owner | Est. h (plan) | Planned day | Done on | Actual h (Jira) | Status |
 |---|---|---|---|---|---|---|---|---|---|
 | S3-T01 | ECBS-147 | Scrum | Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3 | Both | 1.5 | D1 Fri 06/11 |  |  | To Do |
-| S3-T02 | ECBS-148 | Carried | Hosted run of the admin and Staff cases left *Blocked* in S2 (TC-F2, TC-CR) with the Staff test account; results and screenshots into `test-cases-F2F3.md` | Đạt | 1.5 | D2 Sat 07/11 |  | 1.33 (Đạt, reconstructed, logged 09/11) | In Review – PR #24 merged, #27; TC-F2-11/12/19 left |
+| S3-T02 | ECBS-148 | Carried | Hosted run of the admin and Staff cases left *Blocked* in S2 (TC-F2, TC-CR) with the Staff test account; results and screenshots into `test-cases-F2F3.md` | Đạt | 1.5 | D2 Sat 07/11 |  | 1.33 (Đạt, reconstructed, logged 09/11) | In Review – PR #24 merged, #27; TC-F2-11/12/19 left · **Proposed at D6: Chính runs the remaining TC-CR cases (written by Đạt) – runner ≠ writer; confirm at Daily D6** |
 | S3-T03 | ECBS-149 | Carried | PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses | Chính | 0.5 | D2 Sat 07/11 |  | 0.75 (Chính, logged 09/11) | In Progress – accepted 09/11: US-05, US-06, US-24, US-08, US-09 (19 SP); US-07 and NFR-04 wait (see po-acceptance.md) |
 | S3-T04 | ECBS-150 | Test | Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md` | Chính | 2 | D2 Sat 07/11 | 09/11 | 1 (Chính, logged 08/11) | Done – PR #21 merged 09/11 |
 | S3-T05 | ECBS-151 | US-25 | Data model: `books.updated_by_name` + migration safe to run twice; seed books show "System" | Đạt | 1.5 | D2 Sat 07/11 | 08/11 | 0.25 (Đạt, reconstructed, logged 09/11) | Done – PR #23 merged |
@@ -57,10 +58,10 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T08 | ECBS-154 | US-11 | "Back to list" returns to the same page with the same search and filter (AC-02), page 1 when opened directly (AC-04); tests; PR merged and deployed | Chính | 2 | D4 Mon 09/11 | 09/11 | 1 (Chính, logged 09/11) | Done – PR #29 merged 09/11 |
 | S3-T09 | ECBS-155 | US-12 | Search in `listBooksPage`: keyword on title **or** author, case-insensitive, partial, trimmed, ≤ 100 chars, `%` `_` `'` treated as text (AC-01, AC-03); integration tests | Đạt | 2.5 | D4 Mon 09/11 | 09/11 | 0.9 (Đạt, 22:56–23:50, logged 09/11) | Done – PR #30 merged |
 | S3-T10 | ECBS-156 | US-12/13 | Filter bar on `/books`: search box, category list, min/max price; "No books match your search" + Clear filters (US-12/AC-02); "Minimum price must not exceed maximum price" (US-13/AC-03); parameters kept in the URL and the page links (US-13/AC-02); 360/768/1280 px | Chính | 2.5 | D5 Tue 10/11 |  |  | To Do |
-| S3-T11 | ECBS-157 | US-13 | Filter in `listBooksPage`: category + price range, bounds inclusive (AC-01, AC-04); min > max refused on the server (AC-03); works with search and paging; integration tests; PR merged and deployed | Đạt | 2.5 | D5 Tue 10/11 |  |  | To Do |
+| S3-T11 | ECBS-157 | US-13 | Filter in `listBooksPage`: category + price range, bounds inclusive (AC-01, AC-04); min > max refused on the server (AC-03); works with search and paging; integration tests; PR merged and deployed | Đạt | 2.5 | D5 Tue 10/11 |  |  | In Review – code + 10 tests on `feat/P25-filter-server` (PR TBD); **moved from D5 to D6**: Đạt was busy on 10/11 (reason given by Đạt); planned day kept as D5 for the burndown |
 | S3-T12 | ECBS-158 | UAT | UAT script part 1: every AC of F1–F3 and US-24 as a step with expected result and Pass/Fail → `pm/uat/uat-script.md` | Chính | 1 | D5 Tue 10/11 |  |  | To Do |
 | S3-T13 | ECBS-159 | UAT | UAT script part 2: F4, F5, NFR-05, US-25 ACs; list of test accounts for the session | Chính | 1 | D7 Thu 12/11 |  |  | To Do |
-| S3-T14 | ECBS-160 | Test | Hosted run of the F4, F5, US-25 test cases; results and defects (a Low defect is fixed the same day) | Chính | 2 | D6 Wed 11/11 |  |  | To Do |
+| S3-T14 | ECBS-160 | Test | Hosted run of the F4, F5, US-25 test cases; results and defects (a Low defect is fixed the same day) | Chính | 2 | D6 Wed 11/11 |  |  | To Do · **Proposed at D6: Đạt runs TC-F4/F5/US-25 (written by Chính) – runner ≠ writer; confirm at Daily D6** |
 | S3-T15 | ECBS-161 | NFR-05 | Load time on the host with DevTools, 3 runs, median: page 1, and page 3 with search + filter (AC-01, AC-02); add an index only if > 2 s | Chính | 1 | D6 Wed 11/11 |  |  | To Do |
 | S3-T16 | ECBS-162 | Test | Regression F1–F3: full automated suite + hosted smoke list (login, admin, Staff, grid) | Đạt | 1.5 | D6 Wed 11/11 |  |  | To Do |
 | S3-T17 | ECBS-163 | PM | Weekly Status S3 (Green/Amber/Red), risk register and issue log | Đạt | 1 | D6 Wed 11/11 |  |  | To Do |
@@ -74,7 +75,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-D2 | ECBS-171 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | Not held (07/11) |
 | S3-D3 | ECBS-172 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | Not held (08/11) |
 | S3-D4 | ECBS-173 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 | 09/11 | 0.25 Đạt · 0.25 Chính | Done |
-| S3-D5 | ECBS-174 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 |  |  | To Do |
+| S3-D5 | ECBS-174 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 | 10/11 | 2 Đạt (Jira ECBS-174, logged 11/11) · Chính: TBD | Done – asynchronous update, both rows posted (PR #41) |
 | S3-D6 | ECBS-175 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D6 Wed 11/11 |  |  | To Do |
 | S3-D7 | ECBS-176 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D7 Thu 12/11 |  |  | To Do |
 | **Total** | | | | | **39.5** | | | | |

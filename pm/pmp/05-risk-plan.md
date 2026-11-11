@@ -7,6 +7,7 @@
 | 1.1 | 04/11/2026 | Nguyễn Minh Chính (Leader S2) | S2 monitoring [03 §6.2-5]: R04 closed (Jira time tracking works, 17 worklogs); R05 occurred → I-03; R06 occurred for Planning Poker → I-04; R08 re-scored (P 2 → 3); R03, R10 status updated; R11 (unclear Staff scope) and R12 (late integration of F2) added; I-01 updated, I-02…I-04 opened |
 | 1.2 | 06/11/2026 | Nguyễn Minh Chính (Leader S2) | Sprint 2 end: R12 occurred → I-02 closed (F2 and CR-06 delivered 05/11 22:52); I-06 added (PRs without recorded review, Đạt's hours not logged); I-05 kept open |
 | 1.3 | 06/11/2026 | Nguyễn Minh Chính (Leader S2) | I-06: Đạt's S2 hours logged in Jira 06/11 |
+| 1.4-draft | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | I-07 added (R09 occurred: Đạt busy on 10/11, S3-T11 moved to D6) – S3-T17 |
 
 ## 5.1 Process
 1. **Identify** at Planning, Daily (blockers) and Retro; anyone may add a risk.
@@ -40,3 +41,4 @@
 | I-03 | R05 | 30/10/2026 | CR-06 approved (Option B): +5 SP / +8.5 h in S2, +2 SP / +3.5 h in S3 | S2 commitment 29 SP vs expected velocity 18.3 SP and actual S1 velocity 0 SP | Rebaseline v1.1 (PSP 62, BAC 26.4 M); S2 sized by hours (39.75 h ≤ 40 h); drop order agreed | PO | Open – review at Review 2 |
 | I-05 | R06 | 05/11/2026 | Daily Scrum channel not agreed (c1 v1.0 says Slack #daily-standup, PMP-2 source says TBD) and no Daily was logged in S1 or before 05/11 in S2 (Retro 1 action A1 not met) | Rubric S3 needs a Daily log; plan and practice differ | Team agrees the real channel at Review/Retro 2 (06/11); PMP-2, PMP-7 and the Daily logs updated to match; daily entries from S3 on | Leader S2 → Leader S3 | Open – deferred by the team 05/11 |
 | I-04 | R06 | 30/10/2026 | Story points were set by the PO alone, without Planning Poker voting rounds | Rubric B4 needs a Planning Poker log | Hold a real Planning Poker round for the S3 items and US-25 at Planning 3 (06/11) and log the votes | PO | Open |
+| I-07 | R09 | 10/11/2026 | Đạt was busy on Tue 10/11 (D5): S3-T11 (category + price filter, 2.5 h) did not start; S3-T10 (Chính) waited on a merge conflict and review. Burndown flat on D5 (25.5 → 25 h after sync) | S3-T11 moved to D6; S3-T14/T15 (hosted F5 run, NFR-05) start one day later; schedule risk for the S3 end (12/11) | T11 built 11/11 (PR #47, 114/114 tests); #38 conflict resolved; owner swap proposed for the test runs (runner ≠ writer); priority to the tasks that block others | Leader S3 | Open – close when #47 is merged and deployed |
