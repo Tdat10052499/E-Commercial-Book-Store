@@ -270,25 +270,30 @@ async function countVisibleBooks() {
 // Backslash, % and _ are escaped, so they are matched as plain characters and never act as wildcards.
 const likePattern = (text) => `%${text.replace(/[\\%_]/g, (ch) => `\\${ch}`)}%`;
 
-function visibleBooksWhere(filters) {
+function visibleBooksWhere(applied) {
   const where = ['NOT b.is_deleted'];
   const params = [];
-  if (filters.q) {
-    params.push(likePattern(filters.q));
-    const p = `$${params.length}`;
+  const add = (value) => { params.push(value); return `$${params.length}`; };
+  if (applied.q) {
+    const p = add(likePattern(applied.q));
     where.push(`(b.title ILIKE ${p} ESCAPE '\\' OR a.name ILIKE ${p} ESCAPE '\\')`);
   }
+  // US-13/AC-01, AC-04 (S3-T11): category and an inclusive price range.
+  if (applied.categoryId) where.push(`b.category_id = ${add(applied.categoryId)}`);
+  if (applied.min !== null && applied.min !== undefined) where.push(`b.price >= ${add(applied.min)}`);
+  if (applied.max !== null && applied.max !== undefined) where.push(`b.price <= ${add(applied.max)}`);
   return { sql: where.join(' AND '), params };
 }
 
 const BOOK_JOINS = 'FROM books b LEFT JOIN authors a ON a.id = b.author_id LEFT JOIN categories c ON c.id = b.category_id';
 
 // Visible books only (US-07/AC-01), newest first, 12 per page (US-10/AC-01…AC-03), narrowed by the search
-// keyword (US-12). `rawFilters` is the raw query ({ q, category, min, max }); validateFilters cleans it.
+// keyword (US-12), category and price range (US-13). `rawFilters` is the raw query ({ q, category, min, max });
+// validateFilters cleans it.
 // Returns the cleaned `filters` so the form can show them again, and `error` for a filter that was refused.
 async function listBooksPage(rawPage, rawFilters = {}, pageSize = PAGE_SIZE) {
-  const { filters, error } = validateFilters(rawFilters);
-  const { sql, params } = visibleBooksWhere(filters);
+  const { filters, applied, error } = validateFilters(rawFilters);
+  const { sql, params } = visibleBooksWhere(applied);
   const { rows: [{ n: total }] } = await pool.query(`SELECT count(*)::int AS n ${BOOK_JOINS} WHERE ${sql}`, params);
   const { page, lastPage, offset } = resolvePage(rawPage, total, pageSize);
   const { rows } = await pool.query(

@@ -73,12 +73,13 @@ export const STAFF_PICKS = ['demo-01', 'seed-08', 'demo-15', 'seed-26', 'demo-30
 // Category rails shown on the home page, in this order. Categories with no visible books are skipped.
 export const CATEGORY_RAILS = ['Novel', 'Vietnamese Literature', 'Fantasy & Sci-Fi', 'Children', 'Mystery & Thriller', 'Self-help'];
 
-// Short promises under the hero. Only things the site really does (no cart or payment in Release 1.0).
+// Four customer benefits under the hero. Each one is something the site really does today
+// (no cart, payment or delivery in Release 1.0 [03 §2.2], so none of those are promised).
 export const SERVICES = [
-  { icon: 'book', title: 'Hand-picked titles', text: 'Chosen by booksellers, not algorithms' },
-  { icon: 'device', title: 'Any screen', text: 'Phone, tablet or desktop' },
-  { icon: 'shield', title: 'Safe accounts', text: 'Passwords stored hashed, never in plain text' },
-  { icon: 'chat', title: 'Real people', text: 'Our store staff keep the catalogue up to date' },
+  { icon: 'book', title: 'Hand-picked by booksellers', text: 'Every title is chosen by our store staff, not by an algorithm.' },
+  { icon: 'eye', title: 'Know before you choose', text: 'Cover, description, price and stock on every book page.' },
+  { icon: 'heart', title: 'Save your favourites', text: 'Tap the heart on any book to keep a shortlist on this device.' },
+  { icon: 'shield', title: 'Your account, protected', text: 'Passwords are stored hashed and never shown to anyone, staff included.' },
 ];
 
 export const slug = (name) => String(name).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd')
