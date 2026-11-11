@@ -52,7 +52,7 @@ SPRINTS = {
     "S3": {"n": 3, "start": "06/11/2026", "end": "12/11/2026", "leader": DAT,
            "days": ["Fri 06/11", "Sat 07/11", "Sun 08/11", "Mon 09/11", "Tue 10/11", "Wed 11/11", "Thu 12/11"],
            "backlog": "pm/sprints/S3/sprint-backlog.md", "daily": "pm/sprints/S3/daily-log.md",
-           "report": None, "committed": 39,
+           "report": "pm/sprints/S3/sprint-report.md", "committed": 39,
            "tests": ["pm/sprints/S3/test-cases-F4F5.md"], "png": "pm/sprints/S3/evidence/burndown-S3.png"},
 }
 FEATURES = {"F1": "F1 Account & access", "F2": "F2 Book management", "F3": "F3 Book list",
@@ -1241,7 +1241,18 @@ def c3_report(sprint, out):
             d.add_paragraph("Sprint Review 3 and Retrospective 3 are held on Fri 13/11/2026; their record is added "
                             "after the meeting (TBD).")
             d.add_paragraph("9. Trạng thái Sprint, EVM và báo cáo / Sprint status, EVM and reports", style="Heading 1")
-            d.add_paragraph("Weekly Status S3 (S3-T17) and EVM S3 (S3-T21): TBD at the Sprint end.")
+            import export_s2  # Markdown → Word with landscape pages for wide tables (same as the S2 report)
+            parts9 = [("Sprint status and EVM", "pm/sprints/S3/sprint-report.md"),
+                      ("Weekly Status Report – Sprint 3", "pm/sprints/S3/weekly-status.md"),
+                      ("Regression F1–F3", "pm/sprints/S3/regression-F1-F3.md")]
+            k = 0
+            for title, rel in parts9:
+                if (ROOT / rel).exists():
+                    k += 1
+                    export_s2._md_sections(d, f"9.{k}. {title}", export_s2._report_md(ROOT / rel), last=False)
+            if not k:
+                d.add_paragraph("Weekly Status S3 (S3-T17) and EVM S3 (S3-T21): TBD at the Sprint end.")
+            portrait_break(d)
     move_new(d, anchor10, parts)
 
     # 10. Work allocation
