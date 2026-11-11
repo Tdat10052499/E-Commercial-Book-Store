@@ -2,6 +2,7 @@
 
 UI polish outside the Release 1.0 backlog. The home page reads these paths from `src/lib/home-content.js`.
 Until a file is uploaded the banner shows its colour gradient, so the page never looks broken.
+All 9 files were added on 10/11/2026 (cropped to size, JPG quality 85, 38–196 KB).
 
 **Rules for every banner**
 - JPG (or WebP with the same name and `.webp`, then update `home-content.js`), sRGB, ≤ 300 KB.
@@ -11,15 +12,15 @@ Until a file is uploaded the banner shows its colour gradient, so the page never
 
 | # | File name | Where | Size (px) | Idea | Source / licence |
 |---|---|---|---|---|---|
-| 1 | `banner-hero-new-arrivals.jpg` | Hero slide 1 | 1920 × 640 | New books on a wooden table, morning light | TBD |
-| 2 | `banner-hero-vietnamese-literature.jpg` | Hero slide 2 | 1920 × 640 | Áo dài / lanterns / old Hà Nội street with books | TBD |
-| 3 | `banner-hero-staff-picks.jpg` | Hero slide 3 | 1920 × 640 | Bookseller hands holding a stack of books | TBD |
-| 4 | `banner-hero-book-fair.jpg` | Hero slide 4 | 1920 × 640 | Outdoor book fair, stalls and readers | TBD |
-| 5 | `promo-children-corner.jpg` | Tile 1 | 800 × 450 | Child reading a picture book | TBD |
-| 6 | `promo-fantasy-scifi.jpg` | Tile 2 | 800 × 450 | Night sky / map / castle illustration | TBD |
-| 7 | `promo-self-help.jpg` | Tile 3 | 800 × 450 | Notebook, coffee, calm desk | TBD |
-| 8 | `banner-side-reading-challenge.jpg` | Beside "Staff picks" (replaces the promo video) | 600 × 800 | Person reading by a window, portrait | TBD |
-| 9 | `banner-strip-member-benefits.jpg` | Full-width strip near the footer | 1920 × 360 | Long shelf of book spines | TBD |
+| 1 | `banner-hero-new-arrivals.jpg` | Hero slide 1 | 1920 × 640 | New books on a wooden table, morning light | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
+| 2 | `banner-hero-vietnamese-literature.jpg` | Hero slide 2 | 1920 × 640 | Áo dài / lanterns / old Hà Nội street with books | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
+| 3 | `banner-hero-staff-picks.jpg` | Hero slide 3 | 1920 × 640 | Bookseller hands holding a stack of books | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
+| 4 | `banner-hero-book-fair.jpg` | Hero slide 4 | 1920 × 640 | Outdoor book fair, stalls and readers | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
+| 5 | `promo-children-corner.jpg` | Tile 1 | 800 × 450 | Child reading a picture book | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
+| 6 | `promo-fantasy-scifi.jpg` | Tile 2 | 800 × 450 | Night sky / map / castle illustration | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
+| 7 | `promo-self-help.jpg` | Tile 3 | 800 × 450 | Notebook, coffee, calm desk | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
+| 8 | `banner-side-reading-challenge.jpg` | Beside "Staff picks" (replaces the promo video) | 600 × 800 | Person reading by a window, portrait | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
+| 9 | `banner-strip-member-benefits.jpg` | Full-width strip near the footer | 1920 × 360 | Long shelf of book spines | AI-generated (Google Gemini), 10/11/2026 – prompts in project files `ui-polish/banner-prompts.md` |
 
 Optional extras if you want more slides later (add them to `HERO_SLIDES` / `PROMO_TILES`):
 `banner-hero-back-to-school.jpg`, `banner-hero-summer-reading.jpg`, `banner-hero-tet-gift-books.jpg`,
