@@ -14,6 +14,7 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0.1-draft | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Draft from the Product Backlog, PRs and test records; tag, date, acceptance column and known issues to be confirmed at release (S3-T19) |
+| 0.2-draft | 12/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Known issues: Favorite button kept as out of scope (Leader decision 12/11); DEF-S3-03 tap-target regression and its effect on NFR-04 |
 
 ## 1. What is in v1.0
 Release 1.0 scope: 20 items, **62 SP** (baseline v1.1, after CR-06). "Accepted" = every AC passed on the hosted site, code reviewed and merged, automated tests pass (Story DoD).
@@ -32,7 +33,7 @@ Release 1.0 scope: 20 items, **62 SP** (baseline v1.1, after CR-06). "Accepted" 
 | | US-09 Authors | Add, edit, remove (only when no visible book uses it) | S2 | 09/11 |
 | | NFR-02 Sample data | 30 sample books in 6 categories with covers, prices, stock | S2 | S2 end |
 | F3 Browse | US-10 Book grid | 12 books per page, newest first, safe page numbers | S2 | S2 end |
-| | NFR-04 Responsive UI | 2 / 3 / 4 columns at 360 / 768 / 1280 px, tap targets ≥ 44 px | S2 | **TBD** |
+| | NFR-04 Responsive UI | 2 / 3 / 4 columns at 360 / 768 / 1280 px, tap targets ≥ 44 px | S2 | **TBD** (DEF-S3-03, §3) |
 | F4 Book detail | US-11 Detail page | Full details, "Back to list" keeps page, search and filter; friendly "not available" | S3 | **TBD** |
 | F5 Search & filter | US-12 Search | Title or author, case-insensitive, partial; `%` and `'` treated as text | S3 | **TBD** |
 | | US-13 Filter + paging | Category and inclusive price range; min > max refused; filters kept across pages | S3 | **TBD** |
@@ -41,7 +42,7 @@ Release 1.0 scope: 20 items, **62 SP** (baseline v1.1, after CR-06). "Accepted" 
 | | US-25 Last-updated audit | "Last updated by <name> at <time>" on each book | S3 | **TBD** |
 | Hosting | NFR-03 Hosting | Public HTTPS site, kept alive | S1 | **TBD** – TC-F1-24 on 17/11 |
 
-**Outside the Release 1.0 backlog** (UI polish, no SP): home page banners and book rails, card hover with View and Favorite (Favorite is stored in the visitor's browser only), reworked footer, optional 54-book demo catalogue (loaded only with `SEED_DEMO_BOOKS=1`).
+**Outside the Release 1.0 backlog** (UI polish, no SP): home page banners and book rails, card hover with View and Favorite (Favorite: known issue, see §3), reworked footer, optional 54-book demo catalogue (loaded only with `SEED_DEMO_BOOKS=1`).
 
 ## 2. Quality at release
 | Check | Result |
@@ -56,6 +57,8 @@ Release 1.0 scope: 20 items, **62 SP** (baseline v1.1, after CR-06). "Accepted" 
 - **NFR-03/AC-03** (site still up after one week) can only be checked on 17/11 (TC-F1-24).
 - The free Supabase database pauses after a week without traffic; the keep-alive described in `app/README.md` must stay on.
 - No checkout or payment: Release 1.0 is a catalogue with accounts and back office (see the Product Backlog for later releases).
+- **Favorite button (heart) on book cards is outside the Release 1.0 scope** [03 §2.2]: it was added with the home page UI polish (PR #40) and is kept by decision of the Leader S3 (12/11/2026, after the PO asked to remove it or list it here). It only remembers favourites **in the visitor's own browser** (localStorage): nothing is stored on the server, nothing is shared between devices or accounts, and it has no acceptance criteria or tests in this release.
+- **DEF-S3-03** (NFR-04/AC-02): after the footer rework (8b9e376) the footer links *Home*, *Log in* and *Novels* were 36–41 px wide, under 44 × 44 px (TC-F3-06 re-run 12/11, Đạt). Fix in PR #52; NFR-04 counts as accepted only after the fix is released and TC-F3-06 passes again: **TBD**.
 - Further items found at UAT (13/11): **TBD**.
 
 ## 4. How to run
