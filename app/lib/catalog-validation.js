@@ -91,11 +91,46 @@ function backToListHref(from) {
 }
 const detailHref = (id, listQuery) => (listQuery ? `/books/${id}?from=${encodeURIComponent(listQuery)}` : `/books/${id}`);
 
-// US-12, US-13: list filters, shared by the /books form and the server (S3-T09 keyword; category and price come in S3-T11).
+// US-13/AC-02: page links keep the search and filter; US-12/AC-02: "Clear filters" only when one is set.
+function listPageHref(params = {}, page = 1, basePath = '/books') {
+  const qs = listQueryString({ ...params, page });
+  return qs ? `${basePath}?${qs}` : basePath;
+}
+function hasActiveFilters(params = {}) {
+  return listQueryString({ ...params, page: 1 }) !== '';
+}
+
+// US-12, US-13: list filters, shared by the /books form and the server (S3-T09 keyword, S3-T11 category and price).
 // US-12/AC-03: the keyword is trimmed and cut to 100 characters, so an over-long keyword still searches instead of failing.
+// US-13: category is a category id; min/max are whole VND amounts (the same digits-only rule as listQueryString, so a
+// page link keeps exactly the filter that was applied – AC-02). Bounds are inclusive (AC-04). A value that is not a
+// valid id or amount is ignored, like an invalid page number (US-10/AC-03). min > max is refused: the error message is
+// returned and the price range is not applied (AC-03); keyword and category still apply.
+const PRICE_RANGE_ERROR = 'Minimum price must not exceed maximum price';
+const ID_OR_AMOUNT = /^\d{1,12}$/;
 function validateFilters(raw = {}) {
   const q = clean(first(raw.q)).slice(0, SEARCH_MAX);
-  return { filters: { q }, error: null };
+  const pick = (key) => {
+    const v = clean(first(raw[key]));
+    return ID_OR_AMOUNT.test(v) ? v : '';
+  };
+  const category = pick('category');
+  const min = pick('min');
+  const max = pick('max');
+  const filters = { q, category, min, max }; // shown again in the form
+  const applied = {
+    q,
+    categoryId: category && Number(category) > 0 ? Number(category) : null,
+    min: min === '' ? null : Number(min),
+    max: max === '' ? null : Number(max),
+  };
+  let error = null;
+  if (applied.min !== null && applied.max !== null && applied.min > applied.max) {
+    error = PRICE_RANGE_ERROR;
+    applied.min = null;
+    applied.max = null;
+  }
+  return { filters, applied, error };
 }
 
 const priceFormat = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', minimumFractionDigits: 0, maximumFractionDigits: 2 });
@@ -103,5 +138,5 @@ const formatPrice = (price) => priceFormat.format(Number(price));
 
 module.exports = {
   CATALOG_LIMITS, COVER, PAGE_SIZE, validateCategory, validateAuthor, validateBook, validateCover,
-  inUseMessage, resolvePage, formatPrice, SEARCH_MAX, validateFilters, listQueryString, backToListHref, detailHref,
+  inUseMessage, resolvePage, formatPrice, SEARCH_MAX, PRICE_RANGE_ERROR, validateFilters, listQueryString, listPageHref, hasActiveFilters, backToListHref, detailHref,
 };
