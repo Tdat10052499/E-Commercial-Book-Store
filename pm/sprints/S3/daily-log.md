@@ -11,6 +11,7 @@ Timebox ≤ 10 min; asynchronous allowed but logged [03 §4.2]. Channel: **Disco
 | 0.4 | 09/11/2026 | Hồ Du Tuấn Đạt | D4 held; Đạt's row from his summary of the meeting |
 | 0.5 | 10/11/2026 | Hồ Du Tuấn Đạt | D5: Đạt's asynchronous update (09:15); Chính's row left for Chính |
 | 0.6 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | D6 held on Discord 19:15–19:30; decisions recorded; channel fixed (I-05). Chính's row: TBD (Chính) |
+| 0.7 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | D4: note on the verbal S3-T01 talk of 09/11 ~22:00 (reported late) |
 
 ## D1 – Fri 06/11
 Time: 22:00, about 45 min (over the 10-min Daily timebox) · Channel: Discord · Held: **yes**
@@ -49,6 +50,8 @@ Hours logged in Jira for this work (reconstructed from timestamps, confirmed by 
 
 ## D4 – Mon 09/11
 Held: **yes** (Đạt and Chính) · Duration: 15 min (start time not recorded) · Channel: TBD (Discord?)
+
+> Same evening, about 22:00, about 30 min: verbal talk about Retro 2 and Planning 3 (S3-T01) – not recorded at the time and not in Jira; reported late by Đạt on 11/11. Decisions were taken and recorded at the T01 meeting on 11/11 (`pm/sprints/S2/review-retro.md`).
 
 | Member | Planned today | Done since last Daily | Doing today | Blockers |
 |---|---|---|---|---|

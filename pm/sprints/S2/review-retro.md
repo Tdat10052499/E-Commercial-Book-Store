@@ -8,6 +8,7 @@
 | 1.0 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Review 2 and Retro 2 recorded from the team's account on 11/11; open points marked TBD |
 | 1.1 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Retro 2 actions: 6 proposed, merged into 4 by the team (Chính agreed) |
 | 1.2 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Planning 3 confirmed by the Leader S3; Planning Poker Session 3 held (T01 meeting 40 min) |
+| 1.3 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Added the verbal discussion of 09/11 ~22:00 (30 min, not recorded at the time, reported 11/11) |
 
 ## 1. Sprint Review 2 (Fri 06/11/2026, in class)
 | Field | Record |
@@ -20,6 +21,8 @@
 Follow-up of the feedback: action **A6** below; in Sprint 3 the burndown is produced daily by `tools/s3_tracker.py` from a day-by-day plan.
 
 ## 2. Retrospective 2 (Wed 11/11/2026, Discord)
+First discussed **verbally on Mon 09/11 at about 22:00 (about 30 min, Retro 2 and Planning 3 topics)** – no record and no Jira entry at the time, no Discord message mentions it; reported by Đạt on 11/11. The decisions, actions and votes below were made and recorded on 11/11.
+
 | Went well | To improve |
 |---|---|
 | Both members were more proactive about time this week | Time is still the main problem |
