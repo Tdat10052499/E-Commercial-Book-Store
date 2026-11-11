@@ -67,12 +67,14 @@ Time: 09:15 (Đạt) and 14:30 (Chính) · Channel: asynchronous (written in the
 Notes: Đạt's row is written from the git and PR record of 09/11 and today's plan. Chính's row is written by Chính from the PR and Jira record of 09/11–10/11 (14:30). Hours for S3-D5 are logged by each member in Jira (ECBS-174).
 
 ## D6 – Wed 11/11
-Time: TBD · Channel: TBD
+Time: 20:15 (Chính) · Channel: asynchronous (written in the repo) · Held: **asynchronous update** – Chính's row posted; Đạt's row TBD (Đạt to add)
 
 | Member | Planned today | Done since last Daily | Doing today | Blockers |
 |---|---|---|---|---|
-| Hồ Du Tuấn Đạt | S3-T16, S3-T17, S3-D6 | | | |
-| Nguyễn Minh Chính | S3-T14, S3-T15, S3-T23, S3-D6 | | | |
+| Hồ Du Tuấn Đạt | S3-T16, S3-T17, S3-D6 (+ S3-T14, owner changed at D6) | TBD – Đạt | TBD – Đạt | TBD – Đạt |
+| Nguyễn Minh Chính | S3-T15, S3-T23, S3-D6 (S3-T14 → Đạt) | Daily D5 row (PR #41); S3-T10 Done – PR #38 approved by Đạt and merged 18:32; `develop` merged into the open PRs #36, #39, #41, #42, #43 (conflicts with PR #48 solved, all mergeable); S3 export (S3-T23, PR #43) now also renders the Sprint 3 report, weekly status and regression; release PR #50 (`develop → main`) opened – 114/114 tests on `develop` | **PO decision:** the runner is not the writer – S3-T14 goes to Đạt; the S3-T02 cases that were left (TC-F2-11, -12, -19) were already run by Chính (all Pass). S3-T15 NFR-05 timing as soon as PR #50 is deployed | The hosted site has no filter bar yet (checked 20:05): S3-T14 and S3-T15 wait for PR #50 (Đạt's approval). PRs #36, #39, #42, #43 wait for review |
+
+Notes: Chính's row is written by Chính from the PR and Jira record of 10/11–11/11 (20:15).
 
 ## D7 – Thu 12/11
 Time: TBD · Channel: TBD
