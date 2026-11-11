@@ -1,12 +1,13 @@
 # Sprint 2 – Review & Retrospective
 
-*Part of S3-T01 (ECBS-147). Review 2 was held in class on Fri 06/11/2026; Retro 2 was held late, on Wed 11/11/2026 (Discord, after Daily D6). Recorded with the real dates.*
+*Part of S3-T01 (ECBS-147). Review 2 was held in class on Fri 06/11/2026; Retro 2, the Planning 3 confirmation and Planning Poker Session 3 were held late, on Wed 11/11/2026 (Discord, 40 min, after Daily D6). Recorded with the real dates.*
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Review 2 and Retro 2 recorded from the team's account on 11/11; open points marked TBD |
 | 1.1 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Retro 2 actions: 6 proposed, merged into 4 by the team (Chính agreed) |
+| 1.2 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Planning 3 confirmed by the Leader S3; Planning Poker Session 3 held (T01 meeting 40 min) |
 
 ## 1. Sprint Review 2 (Fri 06/11/2026, in class)
 | Field | Record |
@@ -35,5 +36,5 @@ Action items – **6 proposed (A1–A6), the team merged them into 4** on 11/11 
 
 ## 3. Sprint Planning 3
 - Sprint Backlog S3 proposed by the PO on 07/11 (`pm/sprints/S3/sprint-backlog.md` v0.1–0.2) and entered in Jira Sprint 3 (ECBS-147…176).
-- Confirmation of the Sprint Goal and the backlog by the Leader S3: **TBD**.
-- Planning Poker Session 3 (`pm/backlog/planning-poker-log.md`): **TBD** (held with votes, or not held – issue I-04).
+- **Confirmed by the Leader S3 (Đạt) on 11/11** at the T01 meeting: Sprint Goal and Sprint Backlog S3 unchanged.
+- **Planning Poker Session 3 held 11/11** (after the build, calibration): US-11 3 · US-12 5 · US-13 5 · NFR-05 5 · US-25 3 = 21 SP vs 15 SP in Session 1/2. Rounds, reasons and the baseline question (PO decision) in `pm/backlog/planning-poker-log.md`.

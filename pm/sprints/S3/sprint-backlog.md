@@ -7,6 +7,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.5 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | S3-T01 Done 11/11 (planned D1): Retro 2, Planning 3 confirmation, Planning Poker Session 3 |
 | 0.4 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Daily D6 decisions: S3-T14, S3-T15 → Đạt and remaining TC-CR runs → Chính (runner ≠ writer); S3-T22 → Chính; S3-D6 Done; S3-T01 In Progress (Review 2 06/11, Retro 2 11/11) |
 | 0.3 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Synced with Jira: S3-D5 Done 10/11 (2 h Đạt). Proposed owner swap for the test runs (T02 remaining cases → Chính, T14 → Đạt) so the runner is never the writer of the test cases – to be confirmed at Daily D6; owner column unchanged until then |
 | 0.2 | 07/11/2026 | Nguyễn Minh Chính (PO) | Tasks entered in Jira Sprint 3 (ECBS-147…176): Original Estimate, owner, due date = planned day, label S3_Backlog, links to the stories; Jira column added |
@@ -49,7 +50,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 
 | Task | Jira | Item | Description | Owner | Est. h (plan) | Planned day | Done on | Actual h (Jira) | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| S3-T01 | ECBS-147 | Scrum | Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3 | Both | 1.5 | D1 Fri 06/11 |  |  | In Progress – Review 2 held 06/11 in class (Đạt presented); Retro 2 held 11/11 (`S2/review-retro.md`); Planning 3 confirmation and Planning Poker Session 3: TBD |
+| S3-T01 | ECBS-147 | Scrum | Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3 | Both | 1.5 | D1 Fri 06/11 | 11/11 | 0.67 Đạt (40 min meeting) · Chính: TBD | Done – Review 2 held 06/11 in class; Retro 2, Planning 3 confirmation and Planning Poker Session 3 held 11/11 (5 days late – planned D1) |
 | S3-T02 | ECBS-148 | Carried | Hosted run of the admin and Staff cases left *Blocked* in S2 (TC-F2, TC-CR) with the Staff test account; results and screenshots into `test-cases-F2F3.md` | Đạt | 1.5 | D2 Sat 07/11 |  | 1.33 (Đạt, reconstructed, logged 09/11) | In Review – PR #24 merged, #27; TC-F2-11/12/19 left · **Agreed at Daily D6 (11/11): Chính re-runs TC-CR-01…05 (written by Đạt) – runner ≠ writer** |
 | S3-T03 | ECBS-149 | Carried | PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses | Chính | 0.5 | D2 Sat 07/11 |  | 0.75 (Chính, logged 09/11) | In Progress – accepted 09/11: US-05, US-06, US-24, US-08, US-09 (19 SP); US-07 and NFR-04 wait (see po-acceptance.md) |
 | S3-T04 | ECBS-150 | Test | Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md` | Chính | 2 | D2 Sat 07/11 | 09/11 | 1 (Chính, logged 08/11) | Done – PR #21 merged 09/11 |
