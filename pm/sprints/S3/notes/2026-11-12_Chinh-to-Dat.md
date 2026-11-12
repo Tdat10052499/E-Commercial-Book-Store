@@ -15,7 +15,7 @@ Cảm ơn Đạt đã chạy xong S3-T14 và S3-T15 (#56, #58), sửa DEF-S3-03 
 | CR-07 | PO đề nghị CCB ngày 13/11 **đổi baseline** sang kết quả Planning Poker Session 3 (PSP 62 → 68; giờ và chi phí không đổi). Trước khi CCB quyết định, các file S3 vẫn dùng baseline v1.1 | #60 |
 | S3-T13 UAT script phần 2 | Ready for review | #44 |
 | S3-T20 Biên bản UAT + `c5_UAT.docx` | Sẵn sàng; chưa điền gì trước buổi UAT | #54 (nối tiếp #44) |
-| S3-T18 Nghiệm thu | **Nhận** US-11, US-12, US-13, NFR-05, US-25 (+15 SP). **NFR-04 tạm giữ** cho tới khi TC-F3-06 pass lại sau bản sửa DEF-S3-03 → lũy kế **57/62 SP** (60/62 khi NFR-04 pass) | #61 |
+| S3-T18 Nghiệm thu | **Nhận** US-11, US-12, US-13, NFR-05, US-25 (+15 SP). NFR-04 được nhận lại sau khi Đạt chạy lại TC-F3-06 và pass lúc 18:38 → lũy kế **60/62 SP** (NFR-03 kiểm tra ngày 17/11) | #61 |
 | S3-T22 Script c0_Eval_S3 | `tools/export_templates.py S3` tạo cả c0. Workload tính theo giờ kế hoạch; **cột E–G để Leader S3 (Đạt) chấm** | #55 |
 | Giờ Jira của Chính | Đã log đủ: T01, T13, T18, T20, T23, D5, D6, cùng phần chạy lại của T02 và T16 | – |
 
@@ -23,9 +23,8 @@ Cảm ơn Đạt đã chạy xong S3-T14 và S3-T15 (#56, #58), sửa DEF-S3-03 
 
 | # | Việc | Ghi chú |
 |---|---|---|
-| 1 | Review rồi merge: **#44 → #54**, **#55**, **#60**, **#61** | Nhớ approve trước khi merge (A2) |
-| 2 | **Chạy lại TC-F3-06 ở 360 px** sau #57 (smoke 11) | Pass thì NFR-04 được tính lại → 60/62 SP. Ghi vào `test-cases-F2F3.md` |
-| 3 | S3-T21: EVM S3 và Sprint Report | Dùng số trong #61: 57 (hoặc 60)/62 SP, baseline v1.1. CR-07 ghi là *Pending CCB* |
+| 1 | Review rồi merge **#60**, **#61** (#44, #54, #55 đã merge – cảm ơn Đạt) | Nhớ approve trước khi merge (A2) |
+| 3 | S3-T21: EVM S3 và Sprint Report | Dùng số trong #61: 60/62 SP, baseline v1.1. CR-07 ghi là *Pending CCB* |
 | 4 | Chạy `python3 tools/export_templates.py S3` sau khi đã merge xong và giờ Jira đã đủ | Ra c2, c3, c0 của S3 trong `deliverables/S3/` |
 | 5 | **Chấm cột E–G** trong `c0_Eval_S3.xlsx` (Leader S3) | Script không bao giờ ghi đè khi đã có điểm |
 | 6 | Nộp c0, c2, c3, c5 trước **23:59** | `c5_UAT.docx` đã có trong #54 |
