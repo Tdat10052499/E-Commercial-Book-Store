@@ -6,7 +6,7 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0.1 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Automated part run on `develop` `8ebbd0b`; hosted smoke list prepared, results TBD |
-| 0.2 | 12/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Hosted smoke items 6–10 run by Đạt with Claude in Chrome (12/11 ~18:18–18:28, Đạt with Claude in Chrome (Admin session opened by Đạt)): 5/5 Pass; item 11 TBD (DevTools); items 1–5, 12–14 are Chính's |
+| 0.2 | 12/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Hosted smoke items 6–10 run by Đạt with Claude in Chrome (12/11 ~18:18–18:28, Đạt with Claude in Chrome (Admin session opened by Đạt)): 5/5 Pass; item 11 Pass in DevTools (Đạt, ~18:40); items 1–5, 12–14 are Chính's |
 
 ## 1. Automated part (run 11/11/2026)
 Environment: PostgreSQL 16 in the Claude sandbox, `npm test` on `develop` at `8ebbd0b` (after PR #38). Run by Đạt with AI assistance; the test code was written in S1–S3 by both members (see each PR).
@@ -42,7 +42,7 @@ To run **after** the `develop → main` release that brings #38 and #47. Use tes
 | 8 | Hide book | TC-F2-09 (F2F3) | Delete → confirm in the popup | Gone from `/books`, detail and search | Đạt | Pass – Delete → popup "Delete “Smoke test 12/11”?" → Delete: gone from the admin list, /books and search; /books/35 → HTTP 404 "Sorry, this book is not available" (clean-up done) | 12/11 |
 | 9 | Category | TC-F2-12 (F2F3) | Add a category | Listed; offered in the book form | Đạt | Pass – "  Test 12-11 " → "Category “Test 12-11” added", name trimmed, offered in the book form; then removed (clean-up done) | 12/11 |
 | 10 | Grid | TC-F3-01 (F2F3) | Open `/books` | 12 cards, newest first, prices in VND | Đạt | Pass – 12 cards, prices in ₫, newest first, no horizontal scroll (wide window, 4 columns) | 12/11 |
-| 11 | Responsive | TC-F3-05 (F2F3) | 360 / 768 / 1280 px | 2 / 3 / 4 columns, no horizontal scroll | Đạt | TBD – window resize had no effect in the Chrome tool; check 360 / 768 / 1280 px in DevTools (Đạt) | 12/11 |
+| 11 | Responsive | TC-F3-05 (F2F3) | 360 / 768 / 1280 px | 2 / 3 / 4 columns, no horizontal scroll | Đạt | Pass – /books in Chrome DevTools: Moto G4 360 px → 2 columns, filter bar stacked; tablet (768 px as reported by Đạt; width not visible in the screenshot) → 3 columns; Responsive 1280 px → 4 columns, filter bar on one row; no horizontal scroll; "30 titles · page 1 of 3" (screenshots 12/11 ~18:40) | 12/11 |
 | 12 | Staff adds book | TC-CR-01 (F2F3) | Staff test account adds a book | Saved | TBD | TBD | TBD |
 | 13 | Staff no delete | TC-CR-02 (F2F3) | Staff opens the book list | No Delete button | TBD | TBD | TBD |
 | 14 | Staff no accounts | TC-CR-03 (F2F3) | Staff opens `/admin/accounts` | HTTP 403 "Access denied" | TBD | TBD | TBD |
