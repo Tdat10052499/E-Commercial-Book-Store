@@ -7,6 +7,7 @@ Written before the code (S3-T04), so the developers can build against them. The 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.1 | 10/11/2026 | Nguyễn Minh Chính | TC-F4-03 hosted Pass after release PR #35 |
 | 1.0 | 08/11/2026 | Nguyễn Minh Chính | Test cases for US-11, US-12, US-13, NFR-05, US-25 from the ACs, with expected results from the seed data; planned test level per case; regression list for S3 |
 
 ## Seed data used
@@ -24,7 +25,7 @@ Written before the code (S3-T04), so the developers can build against them. The 
 |---|---|---|---|---|---|---|---|---|
 | TC-F4-01 | US-11/AC-01 | M | Customer on `/books?page=2` | Click the first card on page 2 | Detail page of that book shows cover, title, author, category, price (VND), description and stock; also check *A Tale of Two Cities* shows stock **0** | INT (data) + E2E | Not run – built in S3-T06 | TBD (S3-T14) |
 | TC-F4-02 | US-11/AC-02 | M | Customer on `/books?page=2&q=e&min=50000&max=250000` (search + filter: 22 books, 2 pages) | Open a book → click **Back to list** | Returns to `/books` page 2 with the same `q`, `min` and `max` in the URL, the search box and the filter still filled | E2E | Not run – built in S3-T08 | TBD (S3-T14) |
-| TC-F4-03 | US-11/AC-03 | E | Book id 99999 does not exist; a hidden book X; id `abc` | Open `/books/99999`, `/books/<X>`, `/books/abc`, `/books/-1` | Each time: "Sorry, this book is not available" + link to the catalogue; HTTP **404**; no stack trace or SQL text | INT (data) + HTTP check | Not run – built in S3-T06 | TBD (S3-T14) |
+| TC-F4-03 | US-11/AC-03 | E | Book id 99999 does not exist; a hidden book X; id `abc` | Open `/books/99999`, `/books/<X>`, `/books/abc`, `/books/-1` | Each time: "Sorry, this book is not available" + link to the catalogue; HTTP **404**; no stack trace or SQL text | INT (data) + HTTP check | Not run – built in S3-T06 | Pass (10/11 00:11, Chính, after release PR #35) – `/books/99999`, `/books/abc`, `/books/31`, `/books/34` and the hidden test book `/books/33` → HTTP 404 "Sorry, this book is not available" + Browse the catalogue; no technical details |
 | TC-F4-04 | US-11/AC-04 | B | No previous list (URL typed or opened in a new tab) | Open `/books/<id>` directly → click **Back to list** | Goes to `/books` page 1, no search or filter | E2E | Not run – built in S3-T08 | TBD (S3-T14) |
 
 ## F5 – Search and filter (US-12, US-13)
