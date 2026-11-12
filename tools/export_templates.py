@@ -630,13 +630,20 @@ def fill_changes(wb, sprint):
             continue
         decided = clean(d["decision"])
         approved = decided.lower().startswith("approve")
+        pending = not decided or decided.upper() == "TBD" or decided.lower().startswith("pending")
+        impact = clean(d["impact summary (plan)"])
+        hours = re.search(r"≈\s*(\d+)\s*h", impact)
+        hours = num(hours.group(1)) if hours else (0 if "unchanged" in impact.lower() else None)
+        psp = re.search(r"PSP (\d+) → (\d+)", " ".join(clean(v) for v in d.values()))
+        sp = (int(psp.group(2)) - int(psp.group(1))) if psp else (7 if clean(d["cr id"]) == "CR-06" else None)
+        if sp is not None and not approved:
+            sp = f"+{sp} if approved" if clean(d["cr id"]) != "CR-06" else "TBD (Planning Poker before CCB)"
         vals = [clean(d["cr id"]), clean(d["date received"]), clean(d["requester"]),
-                f"{clean(d['title'])}. {clean(d['description'])}",
-                7 if approved else "TBD (Planning Poker before CCB)",
-                num(re.search(r"≈\s*(\d+)\s*h", clean(d["impact summary (plan)"])).group(1)), None,
-                "Approved" if approved else ("Pending" if not decided or decided.upper() == "TBD" else decided),
-                clean(d["ccb date"]) if approved else f"{clean(d['ccb date'])} (planned)",
-                "baseline-v1.1" if approved else "baseline-v1.0", clean(d["status"])]
+                f"{clean(d['title'])}. {clean(d['description'])}", sp, hours, None,
+                "Approved" if approved else ("Pending" if pending else decided),
+                clean(d["ccb date"]) if approved else f"{clean(d['ccb date']).replace(' (planned', ' (planned')}",
+                "baseline-v1.1" if approved else ("baseline-v1.0" if clean(d["cr id"]) == "CR-06" else "baseline-v1.1 (current)"),
+                clean(d["status"])]
         for c, v in enumerate(vals, 1):
             if c != 7:
                 put(ws, 5 + k, c, nice(v) if isinstance(v, float) else v)
