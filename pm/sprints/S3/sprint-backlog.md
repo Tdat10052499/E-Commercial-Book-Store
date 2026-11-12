@@ -7,6 +7,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.13 | 12/11/2026 | Nguyễn Minh Chính (PO) | S3-T18 In Review (PR #61), 0.25 h |
 | 0.12 | 12/11/2026 | Nguyễn Minh Chính (PO) | Chính's actual hours from Jira: S3-T01 0.67, S3-D5 0.25, S3-D6 0.25, S3-T23 1 (Done, PR #43 merged) |
 | 0.11 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | S3-T10, S3-T11 Done 11/11: released in #50 at 21:00, deploy checked 23:57 |
 | 0.10 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | S3-T01 Done 11/11 (planned D1): Retro 2, Planning 3 confirmation, Planning Poker Session 3 |
@@ -74,7 +75,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T15 | ECBS-161 | NFR-05 | Load time on the host with DevTools, 3 runs, median: page 1, and page 3 with search + filter (AC-01, AC-02); add an index only if > 2 s | Đạt | 1 | D6 Wed 11/11 | 12/11 |  | Done – medians 0.50 s (/books) and 0.38 s (page 3, search + filter), < 2 s; no index needed (PR #56). Owner Chính → Đạt at D6 |
 | S3-T16 | ECBS-162 | Test | Regression F1–F3: full automated suite + hosted smoke list (login, admin, Staff, grid) | Đạt | 1.5 | D6 Wed 11/11 |  |  | To Do |
 | S3-T17 | ECBS-163 | PM | Weekly Status S3 (Green/Amber/Red), risk register and issue log | Đạt | 1 | D6 Wed 11/11 |  |  | To Do |
-| S3-T18 | ECBS-164 | PO | PO acceptance of the S3 items that passed; Product Backlog and Jira | Chính | 0.5 | D7 Thu 12/11 |  |  | To Do |
+| S3-T18 | ECBS-164 | PO | PO acceptance of the S3 items that passed; Product Backlog and Jira | Chính | 0.5 | D7 Thu 12/11 |  | 0.25 (Chính, Jira) | In Review – PR #61: US-11, US-12, US-13, NFR-05, US-25 accepted 12/11; NFR-04 re-check pending |
 | S3-T19 | ECBS-165 | Release | Release v1.0: `develop` → `main`, tag `v1.0`, release notes (features, known issues, how to run) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
 | S3-T20 | ECBS-166 | UAT | UAT minutes form for 13/11 (result per AC, Sponsor sign-off) → `c5_UAT.docx` | Chính | 1 | D7 Thu 12/11 |  |  | To Do |
 | S3-T21 | ECBS-167 | PM | EVM S3, burndown and Sprint Report `c3_SprintReport_S3` (test cases F4/F5, release notes) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
