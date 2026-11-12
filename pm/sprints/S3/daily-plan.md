@@ -13,7 +13,7 @@
 ## D2 – Sat 07/11  (Chính 2.75 h · Đạt 3.25 h)
 
 **Chính**
-- [ ] S3-T03 · ECBS-149 (0.5 h) – PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses
+- [x] S3-T03 · ECBS-149 (0.5 h) – PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses
 - [x] S3-T04 · ECBS-150 (2 h) – Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md`
 
 **Đạt**

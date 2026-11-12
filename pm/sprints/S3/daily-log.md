@@ -76,7 +76,9 @@ Time: 19:15 (earlier than the agreed 22:00 because of the evening's work plan) �
 | Member | Planned today | Done since last Daily | Doing today | Blockers |
 |---|---|---|---|---|
 | Hồ Du Tuấn Đạt | S3-T16, S3-T17, S3-D6 (+ S3-T11 moved from D5) | S3-T11 server filter built, PR #47 (114/114 tests); #38 merge conflict resolved; backlog synced with Jira (PR #48); T16 automated part 104/104; T17 draft; release notes and Sprint Report drafts (PR #49) | Release `develop → main`; hosted re-check TC-F2-11, TC-F3-06; S3-T14 hosted run (F4/F5/US-25); smoke items 6–11; S3-T15 NFR-05; finish T17 | Hosted runs wait for the release |
-| Nguyễn Minh Chính | S3-T14, S3-T15, S3-T23, S3-D6 | TBD (Chính) | TBD (Chính) | TBD (Chính) |
+| Nguyễn Minh Chính | S3-T14, S3-T15, S3-T23, S3-D6 | Daily D5 row (PR #41); S3-T10 filter bar approved by Đạt and merged (PR #38); S3-T12 UAT script part 1 (PR #39) and S3-T23 export script into the lecturer templates (PR #43) ready for review | Merge `develop` into the open PRs after #48; open the release PR `develop → main` for the hosted runs; after the owner change: re-run TC-CR-01…05 and smoke items 1–5, 12–14 (cases written by Đạt) | Hosted runs wait for the release; PRs #36, #39, #42, #43 wait for review |
+
+Chính's row is written by Chính from the PR and Jira record of 10/11–11/11.
 
 Decisions:
 1. **Runner ≠ writer** for test runs: Chính re-runs TC-CR-01…05 (written by Đạt) and smoke items 1–5, 12–14; Đạt runs TC-F2-11, TC-F3-06, S3-T14, S3-T15 and smoke items 6–11 (cases written by Chính). → S3-T14, S3-T15 owner Đạt.
