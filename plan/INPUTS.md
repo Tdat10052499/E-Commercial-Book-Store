@@ -50,5 +50,5 @@
 | 05/11/2026 | Staff được xóa category/author không? | Nhóm tự quyết (PO): không – chỉ Admin được xóa |
 | 05/11/2026 | Đổi vai trò có thu hồi phiên đang mở không? | Nhóm tự quyết (PO): không – quyền mới áp dụng từ lần đăng nhập sau (đúng CR AC4) |
 | | Nộp S1 theo đề (29/10) hay theo mục eLearning (02/11)? [06 §3] | TBD |
-| | Template `FinalProject/HK261/Templates` ở đâu? | TBD |
+| 10/11/2026 | Template `FinalProject/HK261/Templates` ở đâu? | Chính đã tải về 10/11/2026: `SprintBacklog_Template.xlsx`, `FP_Template_SprintReport.docx` (mới), `FP_Template_Eval.xlsx`, `FP_Template_SprintReview_Retro.docx` → `docs/templates/` (xem `docs/templates/README.md`). Chưa có: ChangeRequest, UAT, FinalReport |
 | | Tiêu chí C2 Demo có tính điểm không? | TBD |
