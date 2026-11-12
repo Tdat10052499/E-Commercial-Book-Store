@@ -167,6 +167,8 @@ def state(status):
         return "Done"
     if s.startswith("to do") or not s:
         return "To Do"
+    if s.startswith("not held"):  # a Daily that did not take place (S3-D2, S3-D3) – never "In Progress"
+        return "Not held"
     return "In Progress"
 
 
@@ -630,13 +632,29 @@ def fill_changes(wb, sprint):
             continue
         decided = clean(d["decision"])
         approved = decided.lower().startswith("approve")
-        vals = [clean(d["cr id"]), clean(d["date received"]), clean(d["requester"]),
+        cr = clean(d["cr id"])
+        impact = clean(d["impact summary (plan)"])
+        # Hours: "≈ N h" in the impact summary; a CR that keeps hours unchanged (CR-07) counts 0 h.
+        m_h = re.search(r"≈\s*(\d+)\s*h", impact)
+        hours = num(m_h.group(1)) if m_h else (0 if "unchanged" in impact.lower() else None)
+        # SP: CR-06 adds US-24 + US-25 (7 SP); other CRs give "PSP a → b" in the impact summary.
+        m_sp = re.search(r"PSP\s*(\d+)\s*→\s*(\d+)", impact)
+        if cr == "CR-06":
+            sp = 7 if approved else "TBD (Planning Poker before CCB)"
+        elif m_sp:
+            sp = f"+{int(m_sp.group(2)) - int(m_sp.group(1))}" + ("" if approved else " (pending CCB)")
+        else:
+            sp = "TBD"
+        if approved:
+            base = "baseline-v1.1" if cr == "CR-06" else "next baseline"
+        else:
+            base = "baseline-v1.0" if cr == "CR-06" else "baseline-v1.1 (current)"
+        vals = [cr, clean(d["date received"]), clean(d["requester"]),
                 f"{clean(d['title'])}. {clean(d['description'])}",
-                7 if approved else "TBD (Planning Poker before CCB)",
-                num(re.search(r"≈\s*(\d+)\s*h", clean(d["impact summary (plan)"])).group(1)), None,
+                sp, hours, None,
                 "Approved" if approved else ("Pending" if not decided or decided.upper() == "TBD" else decided),
                 clean(d["ccb date"]) if approved else f"{clean(d['ccb date'])} (planned)",
-                "baseline-v1.1" if approved else "baseline-v1.0", clean(d["status"])]
+                base, clean(d["status"])]
         for c, v in enumerate(vals, 1):
             if c != 7:
                 put(ws, 5 + k, c, nice(v) if isinstance(v, float) else v)
