@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { formatPrice, detailHref } from '@lib/catalog-validation';
 import CoverImage from '@/components/CoverImage';
+import CardActions from '@/components/CardActions';
 
 // US-10/AC-01: one card = cover, title, author, price. Books without a cover get a typographic one.
 // US-11/AC-01: the whole card opens the book's detail page; AC-02: it carries the list state for "Back to list".
@@ -11,9 +12,10 @@ export function coverSrc(book) {
 
 export default function BookCard({ book, listQuery = '' }) {
   const src = coverSrc(book);
+  const href = detailHref(book.id, listQuery);
   return (
     <article className="book-card">
-      <Link className="book-card-link" href={detailHref(book.id, listQuery)}>
+      <Link className="book-card-link" href={href}>
         <div className="book-cover">
           <CoverImage src={src} title={book.title} author={book.author_name} width={200} height={300} />
         </div>
@@ -21,6 +23,8 @@ export default function BookCard({ book, listQuery = '' }) {
         <p className="book-author muted">{book.author_name || 'Unknown author'}</p>
         <p className="book-price">{formatPrice(book.price)}</p>
       </Link>
+      {/* Hover bar sits over the bottom of the cover, outside the link (no buttons inside an <a>). */}
+      <div className="book-card-overlay"><CardActions id={book.id} title={book.title} href={href} /></div>
     </article>
   );
 }
