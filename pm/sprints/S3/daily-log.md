@@ -87,6 +87,13 @@ Decisions:
 4. Daily channel: **Discord at 22:00** (I-05 closed).
 5. Plan for the rest of the Sprint: D6 tasks and the late tasks on D6; D7 tasks on D7; Sprint Review video recorded on D7 afternoon.
 
+**Chính's asynchronous update, 20:15 (PR #51, approved by Đạt; brought in here because #51 conflicted):**
+
+| Member | Planned today | Done since last Daily | Doing today | Blockers |
+|---|---|---|---|---|
+| Nguyễn Minh Chính | S3-T15, S3-T23, S3-D6 (S3-T14 → Đạt) | Daily D5 row (PR #41); S3-T10 Done – PR #38 approved by Đạt and merged 18:32; `develop` merged into the open PRs #36, #39, #41, #42, #43 (conflicts with PR #48 solved, all mergeable); S3 export (S3-T23, PR #43) now also renders the Sprint 3 report, weekly status and regression; release PR #50 (`develop → main`) opened – 114/114 tests on `develop` | **PO decision:** the runner is not the writer – S3-T14 goes to Đạt; the S3-T02 cases that were left (TC-F2-11, -12, -19) were already run by Chính (all Pass). S3-T15 NFR-05 timing as soon as PR #50 is deployed | The hosted site has no filter bar yet (checked 20:05): S3-T14 and S3-T15 wait for PR #50 (Đạt's approval). PRs #36, #39, #42, #43 wait for review |
+
+
 ## D7 – Thu 12/11
 Time: TBD · Channel: TBD
 
