@@ -5,6 +5,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.3 | 12/11/2026 | Nguyễn Minh Chính (PO) | S3-T18: Sprint 3 items accepted after Đạt's hosted run (S3-T14, S3-T15) – US-11, US-12, US-13, NFR-05, US-25 (15 SP, baseline v1.1); NFR-04 re-check pending after DEF-S3-03 |
 | 1.2 | 10/11/2026 | Nguyễn Minh Chính (PO) | S3-T03, part 3: after release PR #35, TC-F2-11 and TC-F3-06 Pass on the host → US-07 and NFR-04 accepted (5 SP); all 24 carried SP accepted, S3-T03 Done |
 | 1.1 | 09/11/2026 | Nguyễn Minh Chính (PO) | S3-T03, part 2: hosted checks run by the PO 23:24–23:27 → US-08 and US-09 accepted (6 SP); NFR-04 waits for DEF-S3-02 (PR #33); US-07 waits for the detail page in production |
 | 1.0 | 09/11/2026 | Nguyễn Minh Chính (PO) | S3-T03, part 1: US-05, US-06, US-24 accepted after Đạt's hosted run of 08–09/11 (S3-T02); four carried items wait for one missing check each |
@@ -31,3 +32,25 @@
 | **Cumulative accepted (10/11)** | **45 of 62** |
 
 EV and SPI/CPI are recalculated at the Sprint end (S3-T21) from the cumulative accepted SP and the hours in Jira.
+
+## Sprint 3 items (S3-T18, 12/11/2026)
+Hosted run by Đạt on 12/11 (runner ≠ writer, cases written by Chính): `test-cases-F4F5.md`. Code reviewed and merged into `develop`, released to `main` (#50, #57); automated suite 114/114 Pass.
+
+| Item | SP (baseline v1.1) | Hosted evidence | Decision (12/11/2026) | Note |
+|---|---|---|---|---|
+| US-11 Book detail | 3 | TC-F4-01…04 Pass (12/11 ~17:20, Đạt) | **Accepted – Done** | – |
+| US-12 Search | 3 | TC-F5-01…03 Pass (12/11 ~17:20, Đạt) | **Accepted – Done** | – |
+| US-13 Filter and pagination | 5 | TC-F5-04…07 Pass (12/11 ~17:20, Đạt) | **Accepted – Done** | TC-F5-04 gave 3 books because *Emma* was 167,000 ₫ on the host after earlier tests; correct for that price, and *Emma* is back at 119,000 since 18:01 |
+| NFR-05 Performance | 2 | TC-NFR05-01 median 0.50 s, TC-NFR05-02 median 0.38 s (12/11, Đạt) | **Accepted – Done** | both < 2 s |
+| US-25 Last-updated audit (CR-06) | 2 | TC-CR-06, TC-CR-07 Pass; TC-CR-08 lock step Pass (12/11 18:01–18:10, Đạt) | **Accepted – Done** | AC-03 rename part: Release 1.0 has no account rename screen; checked by the automated test `audit.test.js` (Pass); TC-CR-08 reworded by its writer |
+| NFR-04 Responsive UI | (3, accepted 10/11) | DEF-S3-03 (footer links 36–41 px wide, found 12/11 01:45 by Đạt) fixed in #52, released in #57 | **Re-check pending** – TC-F3-06 re-run by Đạt | counted again when TC-F3-06 passes |
+| **Accepted on 12/11** | **15** | | | |
+
+| Cumulative accepted SP (baseline v1.1, PSP 62) | SP |
+|---|---|
+| Up to 10/11 | 45 |
+| NFR-04 on hold (re-check after DEF-S3-03) | − 3 |
+| Accepted 12/11: US-11, US-12, US-13, NFR-05, US-25 | + 15 |
+| **Cumulative accepted (12/11)** | **57 of 62** (60 of 62 when the NFR-04 re-check passes; NFR-03 2 SP is checked on 17/11) |
+
+CR-07 (Change Log): the PO asks the CCB on 13/11 to re-baseline the S3 story points to the Planning Poker Session 3 result (PSP 62 → 68). Until the CCB decides, the figures above use baseline v1.1.
