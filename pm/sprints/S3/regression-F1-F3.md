@@ -6,6 +6,7 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0.1 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Automated part run on `develop` `8ebbd0b`; hosted smoke list prepared, results TBD |
+| 0.2 | 12/11/2026 | Nguyễn Minh Chính (PO) | Hosted smoke items 1–5 and 12–14 run by Chính (runner ≠ writer) on https://pagetunnel.vercel.app/ 18:06–18:27: 8 Pass |
 
 ## 1. Automated part (run 11/11/2026)
 Environment: PostgreSQL 16 in the Claude sandbox, `npm test` on `develop` at `8ebbd0b` (after PR #38). Run by Đạt with AI assistance; the test code was written in S1–S3 by both members (see each PR).
@@ -31,20 +32,20 @@ To run **after** the `develop → main` release that brings #38 and #47. Use tes
 
 | # | Area | TC (source) | Steps | Expected | Run by | Result | Date |
 |---|---|---|---|---|---|---|---|
-| 1 | Login | TC-F1-05 (F1) | Log in with a Customer test account | Logged in, redirected to `/` | TBD | TBD | TBD |
-| 2 | Logout + protected page | TC-F1-08 (F1) | Log out, open `/admin` | Sent to Login | TBD | TBD | TBD |
-| 3 | Admin creates account | TC-F1-10 (F1) | Admin → Accounts → create a Customer | Account listed with the role | TBD | TBD | TBD |
-| 4 | Admin cannot lock self | TC-F1-12 (F1) | Admin tries to lock own account | Refused with a message | TBD | TBD | TBD |
-| 5 | Access control | TC-F1-16 (F1) | Customer opens `/admin/books` | HTTP 403 | TBD | TBD | TBD |
+| 1 | Login | TC-F1-05 (F1) | Log in with a Customer test account | Logged in, redirected to `/` | Chính | Pass – *UAT Customer* (new test account) logged in, sent to `/`, "Hi, UAT Customer" in the header (18:16) | 12/11/2026 |
+| 2 | Logout + protected page | TC-F1-08 (F1) | Log out, open `/admin` | Sent to Login | Chính | Pass – logged out, `/admin` → `/login?next=%2Fadmin` (18:17) | 12/11/2026 |
+| 3 | Admin creates account | TC-F1-10 (F1) | Admin → Accounts → create a Customer | Account listed with the role | Chính | Pass – *UAT Customer* (Customer) created: "Account uat.customer@test.com created" (18:14; the password was typed by Chính) | 12/11/2026 |
+| 4 | Admin cannot lock self | TC-F1-12 (F1) | Admin tries to lock own account | Refused with a message | Chính | Pass – "You cannot lock your own account", status stays Active (18:06) | 12/11/2026 |
+| 5 | Access control | TC-F1-16 (F1) | Customer opens `/admin/books` | HTTP 403 | Chính | Pass – `/admin/books` as a Customer → HTTP 403 "Access denied" (18:16) | 12/11/2026 |
 | 6 | Add book | TC-F2-01 (F2F3) | Admin adds a valid book with a JPG cover | Saved; first card on `/books` page 1 | TBD | TBD | TBD |
 | 7 | Edit book | TC-F2-05 (F2F3) | Change the price of that book | New price on `/books` and the detail page | TBD | TBD | TBD |
 | 8 | Hide book | TC-F2-09 (F2F3) | Delete → confirm in the popup | Gone from `/books`, detail and search | TBD | TBD | TBD |
 | 9 | Category | TC-F2-12 (F2F3) | Add a category | Listed; offered in the book form | TBD | TBD | TBD |
 | 10 | Grid | TC-F3-01 (F2F3) | Open `/books` | 12 cards, newest first, prices in VND | TBD | TBD | TBD |
 | 11 | Responsive | TC-F3-05 (F2F3) | 360 / 768 / 1280 px | 2 / 3 / 4 columns, no horizontal scroll | TBD | TBD | TBD |
-| 12 | Staff adds book | TC-CR-01 (F2F3) | Staff test account adds a book | Saved | TBD | TBD | TBD |
-| 13 | Staff no delete | TC-CR-02 (F2F3) | Staff opens the book list | No Delete button | TBD | TBD | TBD |
-| 14 | Staff no accounts | TC-CR-03 (F2F3) | Staff opens `/admin/accounts` | HTTP 403 "Access denied" | TBD | TBD | TBD |
+| 12 | Staff adds book | TC-CR-01 (F2F3) | Staff test account adds a book | Saved | Chính | Pass – see TC-CR-01 re-run (18:25) | 12/11/2026 |
+| 13 | Staff no delete | TC-CR-02 (F2F3) | Staff opens the book list | No Delete button | Chính | Pass – see TC-CR-02 re-run (18:22) | 12/11/2026 |
+| 14 | Staff no accounts | TC-CR-03 (F2F3) | Staff opens `/admin/accounts` | HTTP 403 "Access denied" | Chính | Pass – see TC-CR-03 re-run (18:21) | 12/11/2026 |
 | 15 | Clean-up | – | Hide the test books and categories added above | Shop shows only real catalogue data | TBD | TBD | TBD |
 
 Result: TBD / 15. Defects found go to the defect table of `test-cases-F4F5.md` with the date and the runner.
