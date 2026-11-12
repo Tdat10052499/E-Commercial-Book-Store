@@ -5,6 +5,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.1 | 12/11/2026 | Nguyễn Minh Chính (PO) | PO confirmation of the Retro 2 actions A1–A4 (PR #41 review) |
 | 1.0 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Review 2 and Retro 2 recorded from the team's account on 11/11; open points marked TBD |
 | 1.1 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Retro 2 actions: 6 proposed, merged into 4 by the team (Chính agreed) |
 | 1.2 | 11/11/2026 | Hồ Du Tuấn Đạt (Leader S3, AI-assisted) | Planning 3 confirmed by the Leader S3; Planning Poker Session 3 held (T01 meeting 40 min) |
@@ -36,6 +37,8 @@ Action items – **6 proposed (A1–A6), the team merged them into 4** on 11/11 
 | A2 | One new branch from `develop` per task; the other member approves the PR on GitHub before it is merged; nothing pushed after its PR is merged | Both | each PR | no PR merged without approval from 11/11 | A2 + A3 |
 | A3 | "Run by" column in every test-case file; the runner is never the writer | Chính (PO) | 12/11, before UAT | every hosted result names a runner ≠ writer | A4 |
 | A4 | Update a task as soon as it is finished: Done in Jira and the backlog, real hours the same day; D7 tasks stay on D7 – answer to the Review 2 burndown feedback | Both | from D6 | burndown D6–D7 follows the plan line; 100 % of Done tasks have hours on their day | A5 + A6 |
+
+Confirmed by the PO, Nguyễn Minh Chính, on 12/11/2026 (review of PR #41): A1–A4 as written above.
 
 ## 3. Sprint Planning 3
 - Sprint Backlog S3 proposed by the PO on 07/11 (`pm/sprints/S3/sprint-backlog.md` v0.1–0.2) and entered in Jira Sprint 3 (ECBS-147…176).
