@@ -7,6 +7,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.12 | 12/11/2026 | Nguyễn Minh Chính (PO) | Chính's actual hours from Jira: S3-T01 0.67, S3-D5 0.25, S3-D6 0.25, S3-T23 1 (Done, PR #43 merged) |
 | 0.11 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | S3-T10, S3-T11 Done 11/11: released in #50 at 21:00, deploy checked 23:57 |
 | 0.10 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | S3-T01 Done 11/11 (planned D1): Retro 2, Planning 3 confirmation, Planning Poker Session 3 |
 | 0.9 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Daily D6 decisions: S3-T14, S3-T15 → Đạt and remaining TC-CR runs → Chính (runner ≠ writer); S3-T22 → Chính; S3-D6 Done; S3-T01 In Progress (Review 2 06/11, Retro 2 11/11) |
@@ -55,7 +56,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 
 | Task | Jira | Item | Description | Owner | Est. h (plan) | Planned day | Done on | Actual h (Jira) | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| S3-T01 | ECBS-147 | Scrum | Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3 | Both | 1.5 | D1 Fri 06/11 | 11/11 | 1.17 Đạt (Jira: 0.5 verbal talk 09/11 22:00, logged late + 0.67 meeting 11/11 19:30–20:10) · Chính: TBD | Done – Review 2 held 06/11 in class; Retro 2, Planning 3 confirmation and Planning Poker Session 3 held 11/11 (5 days late – planned D1) |
+| S3-T01 | ECBS-147 | Scrum | Review 2 + Retro 2 + Sprint Planning 3: S3 goal, Planning Poker Session 3 votes, this backlog into Jira Sprint 3 | Both | 1.5 | D1 Fri 06/11 | 11/11 | 1.17 Đạt (Jira: 0.5 verbal talk 09/11 22:00, logged late + 0.67 meeting 11/11 19:30–20:10) · 0.67 Chính (Jira, meeting 11/11 19:30–20:10) | Done – Review 2 held 06/11 in class; Retro 2, Planning 3 confirmation and Planning Poker Session 3 held 11/11 (5 days late – planned D1) |
 | S3-T02 | ECBS-148 | Carried | Hosted run of the admin and Staff cases left *Blocked* in S2 (TC-F2, TC-CR) with the Staff test account; results and screenshots into `test-cases-F2F3.md` | Đạt | 1.5 | D2 Sat 07/11 |  | 1.33 (Đạt, reconstructed, logged 09/11) | In Review – PR #24 merged, #27; TC-F2-11/12/19 left · **Agreed at Daily D6 (11/11): Chính re-runs TC-CR-01…05 (written by Đạt) – runner ≠ writer** |
 | S3-T03 | ECBS-149 | Carried | PO acceptance of US-05…09, NFR-04, US-24 against the Story DoD; Product Backlog and Jira statuses | Chính | 0.5 | D2 Sat 07/11 | 10/11 | 0.75 (Chính, logged 09/11) | Done – all 24 carried SP accepted (US-05…09, NFR-04, US-24); see po-acceptance.md · **12/11: NFR-04 reopened** – TC-F3-06 re-run by Đạt Fail (DEF-S3-03, footer links 36–41 px wide after the footer rework); fix PR #52 |
 | S3-T04 | ECBS-150 | Test | Test cases F4, F5, US-25 from the ACs (≥ 1 per AC: main, exception, boundary) → `test-cases-F4F5.md` | Chính | 2 | D2 Sat 07/11 | 09/11 | 1 (Chính, logged 08/11) | Done – PR #21 merged 09/11 |
@@ -77,13 +78,13 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T20 | ECBS-166 | UAT | UAT minutes form for 13/11 (result per AC, Sponsor sign-off) → `c5_UAT.docx` | Chính | 1 | D7 Thu 12/11 |  |  | To Do |
 | S3-T21 | ECBS-167 | PM | EVM S3, burndown and Sprint Report `c3_SprintReport_S3` (test cases F4/F5, release notes) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
 | S3-T22 | ECBS-168 | PM | Workbook `c2_SprintBacklog_S3` (cumulative) + `c0_Eval_S3`; upload before 23:59 | Chính | 1.5 | D7 Thu 12/11 |  |  | To Do · **Owner Đạt → Chính (Daily D6, 11/11)** – built by the S3 export script (S3-T23) |
-| S3-T23 | ECBS-169 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`), using the lecturer templates `SprintBacklog_Template.xlsx` (c2) and `FP_Template_SprintReport.docx` (c3) received 10/11 – see `docs/templates/README.md` | Chính | 1 | D6 Wed 11/11 | 12/11 |  | Done – PR #43 (export_templates.py, lecturer templates) approved by Đạt and merged 12/11 |
+| S3-T23 | ECBS-169 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`), using the lecturer templates `SprintBacklog_Template.xlsx` (c2) and `FP_Template_SprintReport.docx` (c3) received 10/11 – see `docs/templates/README.md` | Chính | 1 | D6 Wed 11/11 | 12/11 | 1 (Chính, Jira) | Done – PR #43 approved and merged by Đạt 12/11 17:10; `tools/export_templates.py S3` builds c2_S3 and c3_S3 |
 | S3-D1 | ECBS-170 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 | 06/11 | 0.75 Chính · Đạt TBD | Done – held on Discord 22:00, ~45 min |
 | S3-D2 | ECBS-171 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | Not held (07/11) |
 | S3-D3 | ECBS-172 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | Not held (08/11) |
 | S3-D4 | ECBS-173 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 | 09/11 | 0.25 Đạt · 0.25 Chính | Done |
-| S3-D5 | ECBS-174 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 | 10/11 | 2 Đạt (Jira ECBS-174, logged 11/11) · Chính: TBD | Done – asynchronous update, both rows posted (PR #41) |
-| S3-D6 | ECBS-175 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D6 Wed 11/11 | 11/11 | 0.5 Đạt · Chính: TBD | Done – held on Discord 19:15–19:30 |
+| S3-D5 | ECBS-174 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 | 10/11 | 2 Đạt (Jira ECBS-174, logged 11/11) · 0.25 Chính (Jira) | Done – asynchronous update, both rows posted (PR #41) |
+| S3-D6 | ECBS-175 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D6 Wed 11/11 | 11/11 | 0.5 Đạt · 0.25 Chính (Jira) | Done – held on Discord 19:15–19:30 |
 | S3-D7 | ECBS-176 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D7 Thu 12/11 |  |  | To Do |
 | **Total** | | | | | **39.5** | | | | |
 
