@@ -7,6 +7,7 @@
 |---|---|---|---|
 | 0.1 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Automated part run on `develop` `8ebbd0b`; hosted smoke list prepared, results TBD |
 | 0.2 | 12/11/2026 | Nguyễn Minh Chính (PO) | Hosted smoke items 1–5 and 12–14 run by Chính (runner ≠ writer) on https://pagetunnel.vercel.app/ 18:06–18:27: 8 Pass |
+| 0.3 | 12/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Hosted smoke items 6–10 run by Đạt with Claude in Chrome (12/11 ~18:18–18:28, Đạt with Claude in Chrome (Admin session opened by Đạt)): 5/5 Pass; item 11 Pass in DevTools (Đạt, ~18:40); items 1–5, 12–14 are Chính's |
 
 ## 1. Automated part (run 11/11/2026)
 Environment: PostgreSQL 16 in the Claude sandbox, `npm test` on `develop` at `8ebbd0b` (after PR #38). Run by Đạt with AI assistance; the test code was written in S1–S3 by both members (see each PR).
@@ -37,12 +38,12 @@ To run **after** the `develop → main` release that brings #38 and #47. Use tes
 | 3 | Admin creates account | TC-F1-10 (F1) | Admin → Accounts → create a Customer | Account listed with the role | Chính | Pass – *UAT Customer* (Customer) created: "Account uat.customer@test.com created" (18:14; the password was typed by Chính) | 12/11/2026 |
 | 4 | Admin cannot lock self | TC-F1-12 (F1) | Admin tries to lock own account | Refused with a message | Chính | Pass – "You cannot lock your own account", status stays Active (18:06) | 12/11/2026 |
 | 5 | Access control | TC-F1-16 (F1) | Customer opens `/admin/books` | HTTP 403 | Chính | Pass – `/admin/books` as a Customer → HTTP 403 "Access denied" (18:16) | 12/11/2026 |
-| 6 | Add book | TC-F2-01 (F2F3) | Admin adds a valid book with a JPG cover | Saved; first card on `/books` page 1 | TBD | TBD | TBD |
-| 7 | Edit book | TC-F2-05 (F2F3) | Change the price of that book | New price on `/books` and the detail page | TBD | TBD | TBD |
-| 8 | Hide book | TC-F2-09 (F2F3) | Delete → confirm in the popup | Gone from `/books`, detail and search | TBD | TBD | TBD |
-| 9 | Category | TC-F2-12 (F2F3) | Add a category | Listed; offered in the book form | TBD | TBD | TBD |
-| 10 | Grid | TC-F3-01 (F2F3) | Open `/books` | 12 cards, newest first, prices in VND | TBD | TBD | TBD |
-| 11 | Responsive | TC-F3-05 (F2F3) | 360 / 768 / 1280 px | 2 / 3 / 4 columns, no horizontal scroll | TBD | TBD | TBD |
+| 6 | Add book | TC-F2-01 (F2F3) | Admin adds a valid book with a JPG cover | Saved; first card on `/books` page 1 | Đạt | Pass – "Smoke test 12/11" (JPG cover, 50,000) added → "Book … added", first card on /books page 1 | 12/11 |
+| 7 | Edit book | TC-F2-05 (F2F3) | Change the price of that book | New price on `/books` and the detail page | Đạt | Pass – price changed to 60,000 → "Changes saved"; 60.000 ₫ on /books and the detail page; "Last updated by Administrator at 12/11/2026 18:25" | 12/11 |
+| 8 | Hide book | TC-F2-09 (F2F3) | Delete → confirm in the popup | Gone from `/books`, detail and search | Đạt | Pass – Delete → popup "Delete “Smoke test 12/11”?" → Delete: gone from the admin list, /books and search; /books/35 → HTTP 404 "Sorry, this book is not available" (clean-up done) | 12/11 |
+| 9 | Category | TC-F2-12 (F2F3) | Add a category | Listed; offered in the book form | Đạt | Pass – "  Test 12-11 " → "Category “Test 12-11” added", name trimmed, offered in the book form; then removed (clean-up done) | 12/11 |
+| 10 | Grid | TC-F3-01 (F2F3) | Open `/books` | 12 cards, newest first, prices in VND | Đạt | Pass – 12 cards, prices in ₫, newest first, no horizontal scroll (wide window, 4 columns) | 12/11 |
+| 11 | Responsive | TC-F3-05 (F2F3) | 360 / 768 / 1280 px | 2 / 3 / 4 columns, no horizontal scroll | Đạt | Pass – /books in Chrome DevTools: Moto G4 360 px → 2 columns, filter bar stacked; tablet (768 px as reported by Đạt; width not visible in the screenshot) → 3 columns; Responsive 1280 px → 4 columns, filter bar on one row; no horizontal scroll; "30 titles · page 1 of 3" (screenshots 12/11 ~18:40) | 12/11 |
 | 12 | Staff adds book | TC-CR-01 (F2F3) | Staff test account adds a book | Saved | Chính | Pass – see TC-CR-01 re-run (18:25) | 12/11/2026 |
 | 13 | Staff no delete | TC-CR-02 (F2F3) | Staff opens the book list | No Delete button | Chính | Pass – see TC-CR-02 re-run (18:22) | 12/11/2026 |
 | 14 | Staff no accounts | TC-CR-03 (F2F3) | Staff opens `/admin/accounts` | HTTP 403 "Access denied" | Chính | Pass – see TC-CR-03 re-run (18:21) | 12/11/2026 |
