@@ -1,17 +1,18 @@
 # UAT Script – Release 1.0 (E-Commercial Book Store)
 
-*User Acceptance Test with the Sponsor/Customer, Dr. Bùi Minh Phụng · Fri 13/11/2026, in class · Hosted site https://pagetunnel.vercel.app/ · Prepared by Nguyễn Minh Chính (PO). Part 1 (this version): F1, F2, F3 and US-24 (CR-06). Part 2 (S3-T13, 12/11): F4, F5, NFR-05, US-25 and the test accounts.*
+*User Acceptance Test with the Sponsor/Customer, Dr. Bùi Minh Phụng · Fri 13/11/2026, in class · Hosted site https://pagetunnel.vercel.app/ · Prepared by Nguyễn Minh Chính (PO). Part 1: F1, F2, F3 and US-24 (CR-06). Part 2: F4, F5, NFR-05, US-25 (CR-06) and the test accounts.*
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.2 | 10/11/2026 | Nguyễn Minh Chính (PO) | Part 2 (S3-T13, prepared ahead of D7): F4 (US-11), F5 (US-12, US-13), NFR-05, US-25 – 16 ACs; test accounts (roles, no passwords); session order and clean-up. Total 73 ACs |
 | 0.1 | 10/11/2026 | Nguyễn Minh Chính (PO) | Part 1 (S3-T12): one UAT step per AC for F1 (US-01…04, NFR-01, NFR-03), F2 (US-05…09), F3 (US-10, NFR-02, NFR-04) and US-24 – 57 ACs |
 
 ## How the session runs
 1. The team shares the screen. The Sponsor says what to do, or does it; the team member at the keyboard follows the *Step* column.
 2. **Live** = done in front of the Sponsor on the hosted site. **Evidence** = an AC that cannot be shown live (database content, a fixed date, a file of exactly 2 MB, an empty catalogue); the team shows the recorded test result and the Sponsor accepts or rejects it.
 3. The Sponsor's verdict goes in *Result* (Pass / Fail) and any remark in *Comment*. A Fail becomes a defect with a severity; Release 1.0 is accepted when no High defect is open (Release DoD).
-4. Accounts (names only, passwords are given in the session, never written here): **Admin** = Administrator, **Staff** = Store Staff, **Cust** = Customer, **Cust2** = a second Customer used for lock tests. The list is in Part 2.
+4. Accounts (names only, passwords are given in the session, never written here): **Admin** = Administrator, **Staff** = Store Staff, **Cust** = Customer, **Cust2** = a second Customer used for lock tests. The list is in *Test accounts* below.
 5. Data: the 30 seed books (`app/db/seed-data.js`). Test data made during UAT is hidden or removed afterwards.
 
 ## F1 – Accounts, login, administration
@@ -100,4 +101,72 @@
 | US-24 (CR-06) | 5 | 4 | 1 | 0 |
 | **Total Part 1** | **57** | **45** | **7** | **5** |
 
-*Clean-up after the session: hide *UAT Book* and *UAT Staff Book*, remove the UAT categories and author, set *Cust* back to Customer, unlock *Cust2*.*
+## F4 – Book detail (US-11)
+
+| UAT | AC | Account | Step | Expected result | Way | Result | Comment |
+|---|---|---|---|---|---|---|---|
+| UAT-F4-01 | US-11/AC-01 | – | On `/books` page 2, click the first card; then open *A Tale of Two Cities* | Detail page: cover, title, author, category, price (VND), description and stock; *A Tale of Two Cities* shows stock 0 | Live | | |
+| UAT-F4-02 | US-11/AC-02 | – | Open `/books?q=e&min=50000&max=250000&page=2` → open a book → **Back to list** | Back on page 2 with the same keyword and prices in the URL and in the filter bar | Live | | |
+| UAT-F4-03 | US-11/AC-03 | – | Open `/books/99999`, `/books/abc` and the hidden *UAT Book* (after UAT-F2-10) | "Sorry, this book is not available" + link to the catalogue; HTTP 404 (DevTools → Network); no technical details | Live | | |
+| UAT-F4-04 | US-11/AC-04 | – | Paste a detail URL into a new tab → **Back to list** | `/books` page 1, no search or filter | Live | | |
+
+## F5 – Search and filter (US-12, US-13)
+
+| UAT | AC | Account | Step | Expected result | Way | Result | Comment |
+|---|---|---|---|---|---|---|---|
+| UAT-F5-01 | US-12/AC-01 | – | Search `AUSTEN`, then `darwin`, then `expect` | `AUSTEN` → *Pride and Prejudice*, *Emma* (author, any case); `darwin` → the 2 Darwin books; `expect` → *Great Expectations* (part of a title) | Live | | |
+| UAT-F5-02 | US-12/AC-02 | – | Search `zzqx` → click **Clear filters** | "No books match your search" + Clear filters; the link shows all books again | Live | | |
+| UAT-F5-03 | US-12/AC-03 | – | Search (a) nothing, (b) three spaces, (c) `%`, (d) `'`; show the automated test with 100 and 101 characters | (a), (b) all books; (c), (d) treated as text – "No books match your search", no error page; 100 characters searched; longer input cut to 100 or refused with a message, no error page (TC-F5-03) | Live + Evidence | | |
+| UAT-F5-04 | US-13/AC-01 | – | Category **Novel**, price **50000 – 150000** → Apply | Exactly 4 books: *Pride and Prejudice*, *Jane Eyre*, *Emma*, *A Tale of Two Cities*; *Great Expectations* (152,000) not shown | Live | | |
+| UAT-F5-05 | US-13/AC-02 | – | Search `e`, price 50000 – 250000 → Apply → page 2 | 22 results on 2 pages; page 2 keeps `q`, `min`, `max` in the URL and the filter bar stays filled | Live | | |
+| UAT-F5-06 | US-13/AC-03 | – | Min **200000**, max **100000** → Apply; then type the URL `/books?min=200000&max=100000` | "Minimum price must not exceed maximum price"; the price filter is not applied (same result from the typed URL – server check) | Live | | |
+| UAT-F5-07 | US-13/AC-04 | – | (a) min = max = 129000; (b) min = max = 49000; (c) min 260000, no max | (a) *Pride and Prejudice*; (b) *As a Man Thinketh*; (c) *The Decline and Fall of the Roman Empire* – the bounds are included | Live | | |
+
+## NFR-05 – Performance
+
+| UAT | AC | Account | Step | Expected result | Way | Result | Comment |
+|---|---|---|---|---|---|---|---|
+| UAT-NFR05-01 | NFR-05/AC-01 | – | Show the recorded result of TC-NFR05-01 (DevTools, 3 loads of `/books`, median); optionally load `/books` once live with DevTools → Network open | Median < 2 s | Evidence (+ Live) | | |
+| UAT-NFR05-02 | NFR-05/AC-02 | – | Same for `/books?page=3&q=n&min=50000&max=250000` (TC-NFR05-02) | Median < 2 s | Evidence (+ Live) | | |
+
+## US-25 – "Last updated by" audit (CR-06)
+
+| UAT | AC | Account | Step | Expected result | Way | Result | Comment |
+|---|---|---|---|---|---|---|---|
+| UAT-CR-06 | US-25/AC-01 | UAT Staff | Edit the stock of *UAT Staff Book* (from UAT-CR-01) → Save → open its admin page | "Last updated by UAT Staff at dd/mm/yyyy HH:mm" with the time of the save (GMT+7) | Live | | |
+| UAT-CR-07 | US-25/AC-02 | Admin | Open the admin page of a seed book never edited (e.g. *Meditations*) | "Last updated by System at …" (seed time) | Live | | |
+| UAT-CR-08 | US-25/AC-03 | Admin | Rename the account *UAT Staff* → *UAT Staff Renamed*, then lock it; open *UAT Staff Book* again | Still "Last updated by UAT Staff at …" (name stored at the time of the update) | Live | | |
+
+## Test accounts (prepared by Chính and Đạt before 13/11)
+Names and roles only. Emails and passwords are not written in the repository; they are kept by the team and typed in the session.
+
+| Short name | Display name | Role | Status before UAT | Used in |
+|---|---|---|---|---|
+| Admin | (team admin account) | Administrator | Active | UAT-F1-10…14, F1-17, F2-01…20, CR-04, CR-07, CR-08 |
+| Staff | *UAT Staff* (new, made by Admin in UAT-F1-10 or before the session) | Store Staff | Active | UAT-CR-01…03, CR-05, CR-06 |
+| Cust | *UAT Customer* | Customer | Active | UAT-F1-05, F1-08, F1-09, F1-16, F1-18, F2-11, CR-04 |
+| Cust2 | *UAT Customer 2* | Customer | Active (locked and unlocked during UAT-F1-12) | UAT-F1-07, F1-12, F1-14 |
+| – | new account typed in the session | Customer | – | UAT-F1-01…04, F1-21 |
+
+## Session order (about 45 min)
+1. Public pages, signed out: UAT-F1-22, F1-23, F3-01…03, F3-05, F3-07, F3-08, F4-01…04, F5-01…07 (needs category/price filter, S3-T11).
+2. Customer: UAT-F1-01…09, F1-15, F1-16, F1-18.
+3. Admin: UAT-F1-10…14, F1-17, F2-01…20 (UAT-F4-03 and F2-11 after F2-10), CR-04, CR-07.
+4. Store Staff: UAT-CR-01…03, CR-05, CR-06; then Admin: CR-08.
+5. Evidence: UAT-F1-19…21, F1-24, F3-04, F3-06, F5-03 (100/101 characters), NFR05-01, NFR05-02, CR-02.
+
+## Summary – Part 2
+| Feature | ACs | Live | Live + Evidence | Evidence only |
+|---|---|---|---|---|
+| F4 (US-11) | 4 | 4 | 0 | 0 |
+| F5 (US-12, US-13) | 7 | 6 | 1 | 0 |
+| NFR-05 | 2 | 0 | 0 | 2 |
+| US-25 (CR-06) | 3 | 3 | 0 | 0 |
+| **Total Part 2** | **16** | **13** | **1** | **2** |
+
+## Release 1.0 total
+| | ACs | Live | Live + Evidence | Evidence only |
+|---|---|---|---|---|
+| Part 1 + Part 2 | **73** | 58 | 8 | 7 |
+
+*Clean-up after the session: hide *UAT Book* and *UAT Staff Book*, remove the UAT categories and author, set *Cust* back to Customer, unlock *Cust2*, keep *UAT Staff Renamed* locked (it holds the audit record of UAT-CR-08).*

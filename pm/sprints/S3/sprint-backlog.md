@@ -7,6 +7,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.8 | 12/11/2026 | Nguyễn Minh Chính (PO) | S3-T23 Done (PR #43 merged); S3-T13 In Review (PR #44) |
 | 0.7 | 11/11/2026 | Nguyễn Minh Chính (PO) | D6 decision: S3-T14 owner Chính → Đạt (runner ≠ writer); S3-T02 remaining cases already run by Chính; S3-T14, S3-T15 wait for release PR #50 |
 | 0.6 | 11/11/2026 | Nguyễn Minh Chính (PO) | S3-T10 Done 11/11 (PR #38 merged), actual hours of S3-T10 and S3-T12 from Jira |
 | 0.5 | 10/11/2026 | Nguyễn Minh Chính (PO) | S3-T10, S3-T12, S3-T23 In Review (PR #38, #39, #43); Done on and actual hours filled when merged and logged in Jira |
@@ -64,7 +65,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T10 | ECBS-156 | US-12/13 | Filter bar on `/books`: search box, category list, min/max price; "No books match your search" + Clear filters (US-12/AC-02); "Minimum price must not exceed maximum price" (US-13/AC-03); parameters kept in the URL and the page links (US-13/AC-02); 360/768/1280 px | Chính | 2.5 | D5 Tue 10/11 | 11/11 | 1.75 (Chính, Jira) | Done – PR #38 approved by Đạt and merged 11/11 18:32; category/price filter live with S3-T11 (PR #47) after the next release |
 | S3-T11 | ECBS-157 | US-13 | Filter in `listBooksPage`: category + price range, bounds inclusive (AC-01, AC-04); min > max refused on the server (AC-03); works with search and paging; integration tests; PR merged and deployed | Đạt | 2.5 | D5 Tue 10/11 |  |  | In Review – code + 10 tests on `feat/P25-filter-server` (PR TBD); **moved from D5 to D6**: Đạt was busy on 10/11 (reason given by Đạt); planned day kept as D5 for the burndown |
 | S3-T12 | ECBS-158 | UAT | UAT script part 1: every AC of F1–F3 and US-24 as a step with expected result and Pass/Fail → `pm/uat/uat-script.md` | Chính | 1 | D5 Tue 10/11 | 12/11 | 1 (Chính, Jira) | Done – PR #39 approved by Đạt and merged 12/11 |
-| S3-T13 | ECBS-159 | UAT | UAT script part 2: F4, F5, NFR-05, US-25 ACs; list of test accounts for the session | Chính | 1 | D7 Thu 12/11 |  |  | To Do |
+| S3-T13 | ECBS-159 | UAT | UAT script part 2: F4, F5, NFR-05, US-25 ACs; list of test accounts for the session | Chính | 1 | D7 Thu 12/11 |  |  | In Review – PR #44 ready for review 12/11 (D7) |
 | S3-T14 | ECBS-160 | Test | Hosted run of the F4, F5, US-25 test cases; results and defects (a Low defect is fixed the same day) | Đạt | 2 | D6 Wed 11/11 |  |  | To Do · **Owner changed Chính → Đạt at D6 (11/11), PO decision: the runner is not the writer of the test cases**; starts after release PR #50 (develop → main) |
 | S3-T15 | ECBS-161 | NFR-05 | Load time on the host with DevTools, 3 runs, median: page 1, and page 3 with search + filter (AC-01, AC-02); add an index only if > 2 s | Đạt | 1 | D6 Wed 11/11 |  |  | To Do · **Owner Chính → Đạt (Daily D6, 11/11; confirmed by the Leader 12/11)** – starts after the release that brings #52 |
 | S3-T16 | ECBS-162 | Test | Regression F1–F3: full automated suite + hosted smoke list (login, admin, Staff, grid) | Đạt | 1.5 | D6 Wed 11/11 |  |  | To Do |
@@ -74,7 +75,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T20 | ECBS-166 | UAT | UAT minutes form for 13/11 (result per AC, Sponsor sign-off) → `c5_UAT.docx` | Chính | 1 | D7 Thu 12/11 |  |  | To Do |
 | S3-T21 | ECBS-167 | PM | EVM S3, burndown and Sprint Report `c3_SprintReport_S3` (test cases F4/F5, release notes) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
 | S3-T22 | ECBS-168 | PM | Workbook `c2_SprintBacklog_S3` (cumulative) + `c0_Eval_S3`; upload before 23:59 | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
-| S3-T23 | ECBS-169 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`), using the lecturer templates `SprintBacklog_Template.xlsx` (c2) and `FP_Template_SprintReport.docx` (c3) received 10/11 – see `docs/templates/README.md` | Chính | 1 | D6 Wed 11/11 | 12/11 |  | Done – PR #43 (export_templates.py, lecturer templates) approved by Đạt and merged 12/11 |
+| S3-T23 | ECBS-169 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`), using the lecturer templates `SprintBacklog_Template.xlsx` (c2) and `FP_Template_SprintReport.docx` (c3) received 10/11 – see `docs/templates/README.md` | Chính | 1 | D6 Wed 11/11 | 12/11 |  | Done – PR #43 approved and merged by Đạt 12/11 17:10; `tools/export_templates.py S3` builds c2_S3 and c3_S3 |
 | S3-D1 | ECBS-170 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 | 06/11 | 0.75 Chính · Đạt TBD | Done – held on Discord 22:00, ~45 min |
 | S3-D2 | ECBS-171 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | Not held (07/11) |
 | S3-D3 | ECBS-172 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D3 Sun 08/11 |  |  | Not held (08/11) |
