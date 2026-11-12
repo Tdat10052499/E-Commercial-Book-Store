@@ -6,6 +6,7 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0.1 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Automated part run on `develop` `8ebbd0b`; hosted smoke list prepared, results TBD |
+| 0.2 | 12/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Hosted smoke items 6–10 run by Đạt with Claude in Chrome (12/11 ~18:18–18:28, Đạt with Claude in Chrome (Admin session opened by Đạt)): 5/5 Pass; item 11 TBD (DevTools); items 1–5, 12–14 are Chính's |
 
 ## 1. Automated part (run 11/11/2026)
 Environment: PostgreSQL 16 in the Claude sandbox, `npm test` on `develop` at `8ebbd0b` (after PR #38). Run by Đạt with AI assistance; the test code was written in S1–S3 by both members (see each PR).
@@ -36,12 +37,12 @@ To run **after** the `develop → main` release that brings #38 and #47. Use tes
 | 3 | Admin creates account | TC-F1-10 (F1) | Admin → Accounts → create a Customer | Account listed with the role | TBD | TBD | TBD |
 | 4 | Admin cannot lock self | TC-F1-12 (F1) | Admin tries to lock own account | Refused with a message | TBD | TBD | TBD |
 | 5 | Access control | TC-F1-16 (F1) | Customer opens `/admin/books` | HTTP 403 | TBD | TBD | TBD |
-| 6 | Add book | TC-F2-01 (F2F3) | Admin adds a valid book with a JPG cover | Saved; first card on `/books` page 1 | TBD | TBD | TBD |
-| 7 | Edit book | TC-F2-05 (F2F3) | Change the price of that book | New price on `/books` and the detail page | TBD | TBD | TBD |
-| 8 | Hide book | TC-F2-09 (F2F3) | Delete → confirm in the popup | Gone from `/books`, detail and search | TBD | TBD | TBD |
-| 9 | Category | TC-F2-12 (F2F3) | Add a category | Listed; offered in the book form | TBD | TBD | TBD |
-| 10 | Grid | TC-F3-01 (F2F3) | Open `/books` | 12 cards, newest first, prices in VND | TBD | TBD | TBD |
-| 11 | Responsive | TC-F3-05 (F2F3) | 360 / 768 / 1280 px | 2 / 3 / 4 columns, no horizontal scroll | TBD | TBD | TBD |
+| 6 | Add book | TC-F2-01 (F2F3) | Admin adds a valid book with a JPG cover | Saved; first card on `/books` page 1 | Đạt | Pass – "Smoke test 12/11" (JPG cover, 50,000) added → "Book … added", first card on /books page 1 | 12/11 |
+| 7 | Edit book | TC-F2-05 (F2F3) | Change the price of that book | New price on `/books` and the detail page | Đạt | Pass – price changed to 60,000 → "Changes saved"; 60.000 ₫ on /books and the detail page; "Last updated by Administrator at 12/11/2026 18:25" | 12/11 |
+| 8 | Hide book | TC-F2-09 (F2F3) | Delete → confirm in the popup | Gone from `/books`, detail and search | Đạt | Pass – Delete → popup "Delete “Smoke test 12/11”?" → Delete: gone from the admin list, /books and search; /books/35 → HTTP 404 "Sorry, this book is not available" (clean-up done) | 12/11 |
+| 9 | Category | TC-F2-12 (F2F3) | Add a category | Listed; offered in the book form | Đạt | Pass – "  Test 12-11 " → "Category “Test 12-11” added", name trimmed, offered in the book form; then removed (clean-up done) | 12/11 |
+| 10 | Grid | TC-F3-01 (F2F3) | Open `/books` | 12 cards, newest first, prices in VND | Đạt | Pass – 12 cards, prices in ₫, newest first, no horizontal scroll (wide window, 4 columns) | 12/11 |
+| 11 | Responsive | TC-F3-05 (F2F3) | 360 / 768 / 1280 px | 2 / 3 / 4 columns, no horizontal scroll | Đạt | TBD – window resize had no effect in the Chrome tool; check 360 / 768 / 1280 px in DevTools (Đạt) | 12/11 |
 | 12 | Staff adds book | TC-CR-01 (F2F3) | Staff test account adds a book | Saved | TBD | TBD | TBD |
 | 13 | Staff no delete | TC-CR-02 (F2F3) | Staff opens the book list | No Delete button | TBD | TBD | TBD |
 | 14 | Staff no accounts | TC-CR-03 (F2F3) | Staff opens `/admin/accounts` | HTTP 403 "Access denied" | TBD | TBD | TBD |
