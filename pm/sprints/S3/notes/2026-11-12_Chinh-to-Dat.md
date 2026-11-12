@@ -24,11 +24,11 @@ Cảm ơn Đạt đã chạy xong S3-T14 và S3-T15 (#56, #58), sửa DEF-S3-03 
 | # | Việc | Ghi chú |
 |---|---|---|
 | 1 | Review rồi merge **#60**, **#61** (#44, #54, #55 đã merge – cảm ơn Đạt) | Nhớ approve trước khi merge (A2) |
-| 3 | S3-T21: EVM S3 và Sprint Report | Dùng số trong #61: 60/62 SP, baseline v1.1. CR-07 ghi là *Pending CCB* |
-| 4 | Chạy `python3 tools/export_templates.py S3` sau khi đã merge xong và giờ Jira đã đủ | Ra c2, c3, c0 của S3 trong `deliverables/S3/` |
-| 5 | **Chấm cột E–G** trong `c0_Eval_S3.xlsx` (Leader S3) | Script không bao giờ ghi đè khi đã có điểm |
-| 6 | Nộp c0, c2, c3, c5 trước **23:59** | `c5_UAT.docx` đã có trong #54 |
-| 7 | Daily D7 lúc 22:00 trên Discord (A1) | |
+| 2 | S3-T21: EVM S3 và Sprint Report | Dùng số trong #61: 60/62 SP, baseline v1.1. CR-07 ghi là *Pending CCB* |
+| 3 | Chạy `python3 tools/export_templates.py S3` sau khi đã merge xong và giờ Jira đã đủ | Ra c2, c3, c0 của S3 trong `deliverables/S3/` |
+| 4 | **Chấm cột E–G** trong `c0_Eval_S3.xlsx` (Leader S3) | Script không bao giờ ghi đè khi đã có điểm |
+| 5 | Nộp c0, c2, c3, c5 trước **23:59** | `c5_UAT.docx` đã có trong #54 |
+| 6 | Daily D7 lúc 22:00 trên Discord (A1) | |
 
 ## 3. Chuẩn bị UAT ngày 13/11
 - Tài khoản *UAT Customer* (uat.customer@test.com, Customer) đã có. Mật khẩu do Chính giữ, không ghi vào repo.
