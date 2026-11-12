@@ -83,7 +83,7 @@ input[aria-invalid="true"] { border-bottom-color: var(--error); }
 .auth { width: 100%; max-width: min(460px, 100%); margin: clamp(8px, 3vw, 32px) auto; }
 .auth .form { margin-top: 28px; }
 .switch { margin-top: 24px; font-size: .9rem; }
-.switch a, .section-head > a { display: inline-flex; align-items: center; min-height: 44px; } /* NFR-04/AC-02 */
+.switch a, .section-head > a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; } /* NFR-04/AC-02 (DEF-S3-03): "Log in" on /register */
 
 /* Admin */
 .admin { display: grid; gap: 24px; }
@@ -138,7 +138,7 @@ th, td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--li
 
 /* Book detail – F4 (US-11): cover beside the facts from 768 px, stacked on phones. */
 .back-link { margin: 0 0 20px; font-size: .85rem; }
-.back-link a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); text-decoration: none; }
+.back-link a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; color: var(--muted); text-decoration: none; }
 .back-link a:hover { color: var(--ink); }
 .book-detail { display: grid; gap: clamp(24px, 4vw, 56px); grid-template-columns: 1fr; align-items: start; }
 @media (min-width: 768px) { .book-detail { grid-template-columns: minmax(220px, 2fr) 3fr; } }
@@ -336,8 +336,8 @@ button.card-action:hover, .card-action:hover { background: var(--soft); color: v
 @media (min-width: 600px) { .footer-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .footer-head { margin: 0; min-height: 44px; display: flex; align-items: center; color: var(--ink); font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; }
 .footer-links { list-style: none; margin: 0; padding: 0; display: grid; }
-.footer-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); text-decoration: none; transition: color .2s; } /* NFR-04/AC-02 */
+.footer-links a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; color: var(--muted); text-decoration: none; transition: color .2s; } /* NFR-04/AC-02: 44 × 44 px (DEF-S3-03) */
 .footer-links a:hover, .footer-links a:focus-visible { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 .footer-bottom { display: flex; flex-wrap: wrap; gap: 4px 24px; justify-content: space-between; align-items: center; padding: 16px var(--page-pad); border-top: 1px solid var(--line); font-size: .75rem; }
 .footer-bottom p { margin: 0; }
-.footer-credit a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); text-underline-offset: 3px; }
+.footer-credit a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; color: var(--ink); text-underline-offset: 3px; } /* NFR-04/AC-02 (DEF-S3-03) */
