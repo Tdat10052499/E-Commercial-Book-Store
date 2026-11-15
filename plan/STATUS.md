@@ -2,7 +2,7 @@
 
 *Cập nhật file này ở cuối mỗi phase (trong cùng PR với sản phẩm của phase). Trạng thái: `todo` · `in_progress` · `blocked` (ghi lý do) · `done`. Ngày theo GMT+7. Định nghĩa phase ở `plan/ROADMAP.md`.*
 
-Cập nhật lần cuối: 15/11/2026 – Chính (đóng dự án, P33)
+Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 
 | ID | Phase | Hạn | Trạng thái | Người làm | Ngày xong | PR | Ghi chú |
 |---|---|---|---|---|---|---|---|
@@ -39,9 +39,9 @@ Cập nhật lần cuối: 15/11/2026 – Chính (đóng dự án, P33)
 | P30 | Đóng gói và nộp S3 | 12/11 23:59 | done | Đạt, Chính | 12/11 | #55, #65, #66 | Nộp đúng hạn (Chính xác nhận 15/11); file nộp chưa đưa lên repo |
 | P31 | Review 3 + UAT + biên bản | 13/11 | done | Đạt, Chính | 13/11 | docs/P33 | Video Review 3 đã nộp; UAT **Accepted** 73/73; CCB CR-07 Approve (Chính cung cấp 15/11) |
 | P32 | Hosting cuối, tài khoản demo, dữ liệu đóng dự án | 14/11 | todo | Đạt |  |  | Dữ liệu đóng dự án đã thu (Jira 15/11, 85.23 h). Còn: tài khoản demo cho Final Report, giờ sau 12/11 19:59 |
-| P33 | Final Report, EVM, Lessons Learned, PMP/Workbook Final | 15/11 | in_progress | Chính (c6, c2), Đạt (c1) |  | docs/P33 | c6 v0.1 và c2 Final xuất 15/11 (`tools/export_final.py`); còn: TBD (giờ, tag, tài khoản demo, link video), c1 PMP Final (Đạt) |
-| P34 | Slide + video demo | 15/11 | todo | Đạt (slide) |  |  | Video ≤ 3 phút có kịch bản AC pass và fail [03 §8] |
-| P35 | Nộp cuối + Eval360 | 15/11 23:59 | todo |  |  |  |  |
+| P33 | Final Report, EVM, Lessons Learned, PMP/Workbook Final | 15/11 | in_progress | Chính |  | #67 | 16/11: c1 PMP Final, c2 Final, c6 Final Report xuất xong (`tools/export_final.py`). Còn TBD: giờ sau 12/11 19:59, tag v1.0, tài khoản demo, link video, chữ ký UAT |
+| P34 | Slide + video demo | 15/11 | in_progress | Chính (slide), Đạt (video) |  | #67 | 16/11: c6_Slides.pptx 15 slide + speaker notes chia người nói (`tools/slides_final.js`). Còn: video demo ≤ 3 phút |
+| P35 | Nộp cuối + Eval360 | 15/11 23:59 | in_progress | Chính, Đạt |  | #67 | 2 file Eval360 (cột E–G mỗi người tự chấm); nộp lên eLearning: TBD (sau hạn 15/11 23:59) |
 | P36 | Thuyết trình | 17/11 07:00 | todo |  |  |  |  |
 
 ## Nhật ký thay đổi trạng thái
@@ -53,3 +53,4 @@ Cập nhật lần cuối: 15/11/2026 – Chính (đóng dự án, P33)
 | 05/11/2026 | Chính | CCB Approve B ghi nhận; P13, P14, P20 → done; P15, P16, P18, P19, P21 → in_progress; P17 giao Đạt |
 | 06/11/2026 | Chính | Cuối S2: P15, P16, P17, P19 → done; P18, P21 vẫn in_progress (test admin trên host, upload) |
 | 15/11/2026 | Chính | Cập nhật S3 theo repo/Jira và kết quả 13/11 do Chính cung cấp: P18, P22–P26, P28–P31 → done; P27 in_progress (thiếu tag v1.0); P33 → in_progress (c6, c2 Final) |
+| 16/11/2026 | Chính | Bộ nộp Final xuất đủ 5 loại file (c1, c2, c6 Report, c6 Slides, Eval360 × 2); P33–P35 → in_progress chờ điền TBD và nộp |

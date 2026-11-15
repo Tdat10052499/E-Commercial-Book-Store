@@ -46,3 +46,16 @@ Branch này được tạo từ **PR #65 của Đạt** (`fix/P30-export-any-cr`
   | SPI / CPI | 0.97 / 1.50 |
   | EAC | 17.562.545 |
 - **Lỗi:** 6 lỗi tìm thấy, đều đã sửa, 0 lỗi còn mở; 114/114 test tự động pass.
+
+## 4. Cập nhật 16/11/2026 02:50 – bộ nộp Final đã xuất đủ
+Đã quá hạn 15/11 23:59 mà repo chưa có c1 Final và slide, nên Chính xuất đủ bộ Final trong PR #67 (`deliverables/Final/`):
+
+| File | Cách tạo | Đạt cần làm |
+|---|---|---|
+| `…c1_ProjectPlan_Final.docx` | PMP 7 phần trong `pm/pmp/` + mục *Changes since v1.0* (`00-pmp-final.md`) | Đọc lại, bổ sung góp ý của GV ở Review 1 và Review 3 (đang để TBD) |
+| `…c2_SprintBacklog_Final.xlsx` | `tools/export_final.py` | – |
+| `…c6_FinalReport.docx` | `pm/final/final-report.md` | – |
+| `…c6_Slides.pptx` | `tools/slides_final.js`: 15 slide, mỗi slide có ghi chú ai nói và nói gì (Đạt: slide 1–2, 5, 7, 9–10, 13; Chính: 3–4, 6, 8, 11–12, 14) | Xem phần mình nói; làm **video demo ≤ 3 phút** (slide 10) |
+| `Eval360_Team6_2374802010097.xlsx` | Template Eval của GV; khối lượng = giờ kế hoạch S1–S3 (Đạt 73.75 h, Chính 53.5 h) | **Tự chấm cột E–G** cho cả hai người rồi nộp |
+
+Mục 2 ở trên (tag v1.0, log giờ, đóng Sprint 3 trên Jira, gửi tài khoản demo) vẫn còn nguyên.

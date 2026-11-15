@@ -15,6 +15,7 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0.1 | 15/11/2026 | Nguyễn Minh Chính (PO) | First full draft from the Sprint records, the PO acceptance record, the UAT of 13/11, the CCB decision on CR-07 and Jira (read 15/11). Fields marked **TBD** need data from the team before submission |
+| 0.2 | 16/11/2026 | Nguyễn Minh Chính (PO) | Final batch completed: PMP Final (c1), slides (c6) and Eval360 forms built from the same figures; no figure changed |
 
 **How to read the figures.** *Plan* = baseline values (Release Plan, Sprint Backlogs). *Actual* = Jira worklogs, GitHub and the PO acceptance record. Rate 200,000 VND per person-hour, N = 3 [03 §6.4]. Story points (SP) count only when the item meets the Story DoD (all ACs pass on the hosted site, reviewed PR, tests pass, PO acceptance).
 

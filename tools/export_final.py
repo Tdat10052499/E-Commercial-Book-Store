@@ -1,4 +1,4 @@
-"""Final submission files [03 §7]: c6_FinalReport.docx and c2_SprintBacklog_Final.xlsx.
+"""Final submission files [03 §7]: c1_ProjectPlan_Final.docx, c6_FinalReport.docx, c2_SprintBacklog_Final.xlsx.
 
 Usage: python3 tools/export_final.py   → deliverables/Final/
 - c6: pm/final/final-report.md → pandoc → docx_style (cover, TOC, tables). No lecturer template for the Final
@@ -61,6 +61,76 @@ def c6():
     docx_style.style_docx(out, "HK261 SPM – Team 6 Page Turners – Final Report Release 1.0 (c6)", cover=COVER)
     docx_style.prerender_toc(out)
     return out
+
+
+PMP_PARTS = ["00-pmp-final.md", "01-charter.md", "02-tailored-scrum.md", "03-master-release-plan.md",
+             "04-quality-plan.md", "05-risk-plan.md", "06-configuration-management.md", "07-communication-plan.md"]
+
+
+def c1():
+    out = OUT / f"{PREFIX}c1_ProjectPlan_Final.docx"
+    text = "\n\n".join((ROOT / "pm" / "pmp" / f).read_text(encoding="utf-8").replace("`", "") for f in PMP_PARTS)
+    tmp = ROOT / "pm" / "pmp" / ".pmp-final.tmp.md"
+    tmp.write_text(text, encoding="utf-8")
+    try:
+        subprocess.run(["pandoc", "--from", "gfm", "-o", str(out), str(tmp)], check=True)
+    finally:
+        tmp.unlink()
+    cover = dict(COVER, title="PROJECT MANAGEMENT PLAN – FINAL",
+                 version="PMP v1.0 (29/10/2026) updated with CR-06, CR-07 and the lecturer's feedback")
+    docx_style.style_docx(out, "HK261 SPM – Team 6 Page Turners – Project Management Plan Final (c1)", cover=cover)
+    docx_style.prerender_toc(out)
+    return out
+
+
+def eval360():
+    """One 360° peer evaluation per member in the lecturer's Eval template [03 §7, §9.5]. Workload = planned task hours of
+    Sprints 1–3 (scoring guide: task distribution); the scores E–G are entered by each evaluator, never by this script."""
+    from datetime import datetime
+    from openpyxl.styles import Protection
+    plan = {"Đạt": 0.0, "Chính": 0.0}
+    for sp in ("S1", "S2", "S3"):
+        for t in et.sprint_tasks(sp, sp):
+            for who in plan:
+                if t["owner"].startswith("Both"):
+                    plan[who] += t["est"] / 2
+                elif t["owner"].startswith(who):
+                    plan[who] += t["est"]
+    total = sum(plan.values())
+    members = [(et.DAT, "Developer (Sprint Leader S1 & S3)", "Đạt"),
+               (et.CHINH, "Product Owner + Developer (Sprint Leader S2)", "Chính")]
+    outs = []
+    for evaluator in (et.CHINH, et.DAT):
+        out = OUT / f"Eval360_Team6_{evaluator[1]}.xlsx"
+        if out.exists() and load_workbook(out)["Eval"]["E10"].value is not None:
+            outs.append(out)          # scores already entered by the evaluator: keep them
+            continue
+        wb = load_workbook(et.TPL / "FP_Template_Eval.xlsx")
+        for name in wb.sheetnames:
+            if name != "Eval":
+                del wb[name]
+        ws = wb["Eval"]
+        ws["A2"] = "Final Project HK261 – 360° evaluation at the end of the project (Sprints 1–3)"
+        ws["B4"], ws["B5"], ws["B6"] = et.TEAM, evaluator[0], evaluator[1]
+        ws["B7"] = datetime.now(et.TZ7).strftime("%d/%m/%Y")
+        for row, (m, role, key) in zip((10, 11), members):
+            ws.cell(row, 1, m[1])
+            ws.cell(row, 2, m[0])
+            ws.cell(row, 3, role)
+            ws.cell(row, 4, round(plan[key] / total, 4))
+            for c in (5, 6, 7):
+                ws.cell(row, c).value = None
+                ws.cell(row, c).protection = Protection(locked=False)
+            ws.cell(row, 12, f"Workload = planned task hours {et.nice(plan[key])}/{et.nice(total)} h in S1–S3 "
+                             "(Sprint Backlogs; \"Both\" tasks half each). E–G: entered by the evaluator.")
+        for c in range(4, 8):
+            ws.cell(12, c).value = None
+        ws["A24"] = (f"Note: {evaluator[0]} enters E (0–1), F (0–10) and G (0–1) for both members (self and peer) "
+                     "before submission. Workload uses PLANNED hours, as the scoring guide says.")
+        ws["A24"].font = Font(italic=True, color="B42318")
+        wb.save(out)
+        outs.append(out)
+    return outs
 
 
 def evm_sheet(wb):
@@ -152,6 +222,10 @@ if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
     which = sys.argv[1] if len(sys.argv) > 1 else "all"
     files = []
+    if which in ("all", "eval"):
+        files.extend(eval360())
+    if which in ("all", "c1"):
+        files.append(c1())
     if which in ("all", "c6"):
         files.append(c6())
     if which in ("all", "c2"):
