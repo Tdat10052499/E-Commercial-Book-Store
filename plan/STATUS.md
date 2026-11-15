@@ -2,7 +2,7 @@
 
 *Cập nhật file này ở cuối mỗi phase (trong cùng PR với sản phẩm của phase). Trạng thái: `todo` · `in_progress` · `blocked` (ghi lý do) · `done`. Ngày theo GMT+7. Định nghĩa phase ở `plan/ROADMAP.md`.*
 
-Cập nhật lần cuối: 06/11/2026 – Chính (cuối Sprint 2)
+Cập nhật lần cuối: 15/11/2026 – Chính (đóng dự án, P33)
 
 | ID | Phase | Hạn | Trạng thái | Người làm | Ngày xong | PR | Ghi chú |
 |---|---|---|---|---|---|---|---|
@@ -24,23 +24,23 @@ Cập nhật lần cuối: 06/11/2026 – Chính (cuối Sprint 2)
 | P15 | Xây F2 | 03/11 | done | Chính, Đạt | 05/11 | #8, #11, #16 | Chính: data model, seed, category, author (PR #8); Đạt: thêm/sửa/ẩn sách (PR #11, #16). Đã deploy. NFR-02 Done; US-05…09 In Review (chờ test admin trên host) |
 | P16 | Xây F3 | 04/11 | done | Chính | 05/11 | #8 | Lưới sách pass trên host 05/11 23:55; US-10 Done; NFR-04 In Review (trang admin) |
 | P17 | Xây CR-06 (nếu Approve) | 04/11 | done | Đạt | 05/11 | #11, #12 | US-24 đã deploy; In Review (chờ test Staff trên host); US-25 sang S3 |
-| P18 | Test case F2, F3, CR-06 + regression F1 | 05/11 | in_progress | Chính, Đạt |  | #12 | 33 TC (28 Chính + 5 CR Đạt) + regression F1; 71/71 tự động pass; host: trang công khai 7 Pass; còn: test admin/Staff trên host |
+| P18 | Test case F2, F3, CR-06 + regression F1 | 05/11 | done | Chính, Đạt | 12/11 | #12, #36, #59, #60 | Các case admin/Staff chạy trên host trong S3 (S3-T02), tất cả Pass; 24 SP mang sang S3 được nghiệm thu 09–12/11 |
 | P19 | Theo dõi S2 + Weekly Status + Risk/Issue (liên tục) | 05/11 | done | Chính | 06/11 | docs PR | Weekly Status v1.2, risk v1.2 (I-02 đóng, I-05, I-06 mở); còn: giờ S2 của Đạt |
 | P20 | Phiếu c4_ChangeRequest | 05/11 | done | Chính | 05/11 | docs PR | deliverables/S2/…c4_ChangeRequest_CR01.docx |
 | P21 | Đóng gói và nộp S2 | 05/11 23:59 | in_progress | Chính |  |  | c0 (đã chấm), c2, c3, c4 bản cuối 06/11; còn: upload |
-| P22 | Review/Retro 2 | 06/11 | todo |  |  |  |  |
-| P23 | Sprint Planning 3 | 06/11 | in_progress | Đạt, Chính |  |  | Kế hoạch S3 theo từng ngày (PO đề xuất 07/11): `pm/sprints/S3/sprint-backlog.md`, `daily-plan.md`, `daily-log.md`, `tools/s3_tracker.py`; Leader S3 xác nhận |
-| P24 | Xây F4 | 09/11 | todo |  |  |  |  |
-| P25 | Xây F5 | 10/11 | todo |  |  |  |  |
-| P26 | Test F4, F5 + regression + hiệu năng | 11/11 | todo |  |  |  |  |
-| P27 | Release v1.0 (tag, release notes) | 12/11 | todo |  |  |  |  |
-| P28 | UAT script | 12/11 | todo |  |  |  |  |
-| P29 | Theo dõi S3 + EVM nháp (liên tục) | 12/11 | todo |  |  |  |  |
-| P30 | Đóng gói và nộp S3 | 12/11 23:59 | todo |  |  |  |  |
-| P31 | Review 3 + UAT + biên bản | 13/11 | todo |  |  |  |  |
-| P32 | Hosting cuối, tài khoản demo, dữ liệu đóng dự án | 14/11 | todo |  |  |  |  |
-| P33 | Final Report, EVM, Lessons Learned, PMP/Workbook Final | 15/11 | todo |  |  |  |  |
-| P34 | Slide + video demo | 15/11 | todo |  |  |  |  |
+| P22 | Review/Retro 2 | 06/11 | done | Đạt, Chính | 11/11 | #41 | Review 2 trên lớp 06/11 (Đạt trình bày); Retro 2 trễ 5 ngày (11/11), 4 action A1–A4 |
+| P23 | Sprint Planning 3 | 06/11 | done | Đạt, Chính | 11/11 | #41 | Kế hoạch theo ngày (PO 07/11); Leader S3 xác nhận 11/11; Planning Poker Session 3 (11/11, sau khi làm) → CR-07 |
+| P24 | Xây F4 | 09/11 | done | Đạt | 12/11 | #22, #29 | US-11 nghiệm thu 12/11 |
+| P25 | Xây F5 | 10/11 | done | Đạt, Chính | 12/11 | #30, #38, #47 | US-12, US-13 nghiệm thu 12/11 |
+| P26 | Test F4, F5 + regression + hiệu năng | 11/11 | done | Chính (viết), Đạt (chạy) | 12/11 | #56, #58, #59, #60 | 16 case S3 (15 Pass + TC-CR-08 Partial); smoke 15/15; NFR-05 0.50 s / 0.38 s; 114/114 |
+| P27 | Release v1.0 (tag, release notes) | 12/11 | in_progress | Đạt |  | #57, #62, #64 | Release notes 1.0 và release PR #57 (12/11) xong. **Còn: tag `v1.0`** (PR #64 develop → main đang mở) |
+| P28 | UAT script | 12/11 | done | Chính | 12/11 | #39, #44, #54 | 73 AC; c5_UAT.docx |
+| P29 | Theo dõi S3 + EVM nháp (liên tục) | 12/11 | done | Đạt | 12/11 | #62 | Weekly Status S3 1.0, Sprint Report S3, EVM D7 (SPI 0.97, CPI 1.50) |
+| P30 | Đóng gói và nộp S3 | 12/11 23:59 | done | Đạt, Chính | 12/11 | #55, #65, #66 | Nộp đúng hạn (Chính xác nhận 15/11); file nộp chưa đưa lên repo |
+| P31 | Review 3 + UAT + biên bản | 13/11 | done | Đạt, Chính | 13/11 | docs/P33 | Video Review 3 đã nộp; UAT **Accepted** 73/73; CCB CR-07 Approve (Chính cung cấp 15/11) |
+| P32 | Hosting cuối, tài khoản demo, dữ liệu đóng dự án | 14/11 | todo | Đạt |  |  | Dữ liệu đóng dự án đã thu (Jira 15/11, 85.23 h). Còn: tài khoản demo cho Final Report, giờ sau 12/11 19:59 |
+| P33 | Final Report, EVM, Lessons Learned, PMP/Workbook Final | 15/11 | in_progress | Chính (c6, c2), Đạt (c1) |  | docs/P33 | c6 v0.1 và c2 Final xuất 15/11 (`tools/export_final.py`); còn: TBD (giờ, tag, tài khoản demo, link video), c1 PMP Final (Đạt) |
+| P34 | Slide + video demo | 15/11 | todo | Đạt (slide) |  |  | Video ≤ 3 phút có kịch bản AC pass và fail [03 §8] |
 | P35 | Nộp cuối + Eval360 | 15/11 23:59 | todo |  |  |  |  |
 | P36 | Thuyết trình | 17/11 07:00 | todo |  |  |  |  |
 
@@ -52,3 +52,4 @@ Cập nhật lần cuối: 06/11/2026 – Chính (cuối Sprint 2)
 | 30/10/2026 | Chính | P01 vai trò + capacity kế hoạch chốt; P03 thêm Master Plan Excel; P09 chốt phương án B; P13 → in_progress (nháp S2_Backlog) |
 | 05/11/2026 | Chính | CCB Approve B ghi nhận; P13, P14, P20 → done; P15, P16, P18, P19, P21 → in_progress; P17 giao Đạt |
 | 06/11/2026 | Chính | Cuối S2: P15, P16, P17, P19 → done; P18, P21 vẫn in_progress (test admin trên host, upload) |
+| 15/11/2026 | Chính | Cập nhật S3 theo repo/Jira và kết quả 13/11 do Chính cung cấp: P18, P22–P26, P28–P31 → done; P27 in_progress (thiếu tag v1.0); P33 → in_progress (c6, c2 Final) |

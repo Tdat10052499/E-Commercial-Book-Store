@@ -5,6 +5,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.5 | 15/11/2026 | Nguyễn Minh Chính (PO) | After the CCB (13/11, CR-07 Approve): same decisions counted on baseline v1.2 → **66 of 68 SP**; UAT 13/11 73/73 ACs Pass. NFR-03 stays for 17/11 |
 | 1.4 | 12/11/2026 | Nguyễn Minh Chính (PO) | NFR-04 accepted again after Đạt's TC-F3-06 re-run (DEF-S3-03 fixed) → cumulative 60 of 62 SP |
 | 1.3 | 12/11/2026 | Nguyễn Minh Chính (PO) | S3-T18: Sprint 3 items accepted after Đạt's hosted run (S3-T14, S3-T15) – US-11, US-12, US-13, NFR-05, US-25 (15 SP, baseline v1.1); NFR-04 re-check pending after DEF-S3-03 |
 | 1.2 | 10/11/2026 | Nguyễn Minh Chính (PO) | S3-T03, part 3: after release PR #35, TC-F2-11 and TC-F3-06 Pass on the host → US-07 and NFR-04 accepted (5 SP); all 24 carried SP accepted, S3-T03 Done |
@@ -55,3 +56,12 @@ Hosted run by Đạt on 12/11 (runner ≠ writer, cases written by Chính): `tes
 | **Cumulative accepted (12/11)** | **60 of 62** (NFR-03 Hosting, 2 SP: its AC needs the site online until 17/11 – checked on 17/11) |
 
 CR-07 (Change Log): the PO asks the CCB on 13/11 to re-baseline the S3 story points to the Planning Poker Session 3 result (PSP 62 → 68). Until the CCB decides, the figures above use baseline v1.1.
+
+**After the CCB (13/11/2026, CR-07 Approve – baseline v1.2, PSP 68).** The acceptance decisions do not change; only the SP of three S3 items change (US-12 3 → 5, NFR-05 2 → 5, US-25 2 → 3).
+
+| Cumulative accepted SP (baseline v1.2, PSP 68) | SP |
+|---|---|
+| Up to 10/11 (S1 and S2 items, unchanged) | 45 |
+| Accepted 12/11: US-11 3, US-12 5, US-13 5, NFR-05 5, US-25 3 | + 21 |
+| UAT with the Sponsor 13/11: 73/73 ACs Pass, Release 1.0 accepted | ± 0 (already counted) |
+| **Cumulative accepted (15/11)** | **66 of 68** – NFR-03 (2 SP) is accepted by the PO after the check on 17/11 (TC-F1-24) |
