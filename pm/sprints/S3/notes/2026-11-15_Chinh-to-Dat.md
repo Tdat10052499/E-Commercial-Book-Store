@@ -65,3 +65,10 @@ Mục 2 ở trên (tag v1.0, log giờ, đóng Sprint 3 trên Jira, gửi tài k
 - Chính gửi Đạt file **kịch bản thuyết trình** (đi theo 15 slide, dài 10:00). Phần của Đạt: slide 1–2, 5, 7, 9–10 (demo), 13.
 - Sáng 17/11 lúc 06:45, **Đạt mở website và chụp màn hình** làm bằng chứng NFR-03 (TC-F1-24), gửi Chính để Chính nghiệm thu 2 SP còn lại.
 - Website đang chạy (16/11 22:30, 30 sách). Danh mục thử nghiệm *Kids* vẫn còn trong bộ lọc: nếu Đạt muốn thì xóa trước giờ thuyết trình (danh mục không có sách thì xóa được).
+
+## 6. Cập nhật 16/11/2026 23:30 – sau khi Đạt merge và gắn tag
+Cảm ơn Đạt đã merge #65, #67, #64 và gắn `v1.0`, `baseline-v1.2`. PR #66 cũng đã đóng.
+
+- Có 4 worklog mới của Đạt (4.5 h) nên tổng giờ đổi: **89.73 h**, AC 17.946.000, **CPI 1.43**, EAC 18.489.818. SPI giữ 0.97.
+- PR mới `docs/P33-final-hours` đã cập nhật Final Report v0.3, c2 Final và slide (slide 2, 11, 12) theo số này. Đạt nhớ **dùng CPI 1.43** khi trình bày.
+- Trên Jira, S3-T17, T19, T21 và D7 đã có giờ nhưng vẫn ở *To Do / In Progress*, còn Sprint 3 vẫn mở. Đạt chuyển 4 việc này sang Done rồi **Complete sprint**. Chính sẽ tự log giờ T22 của mình.

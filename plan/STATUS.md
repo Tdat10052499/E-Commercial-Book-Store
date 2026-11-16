@@ -33,7 +33,7 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | P24 | Xây F4 | 09/11 | done | Đạt | 12/11 | #22, #29 | US-11 nghiệm thu 12/11 |
 | P25 | Xây F5 | 10/11 | done | Đạt, Chính | 12/11 | #30, #38, #47 | US-12, US-13 nghiệm thu 12/11 |
 | P26 | Test F4, F5 + regression + hiệu năng | 11/11 | done | Chính (viết), Đạt (chạy) | 12/11 | #56, #58, #59, #60 | 16 case S3 (15 Pass + TC-CR-08 Partial); smoke 15/15; NFR-05 0.50 s / 0.38 s; 114/114 |
-| P27 | Release v1.0 (tag, release notes) | 12/11 | in_progress | Đạt |  | #57, #62, #64 | Release notes 1.0 và release PR #57 (12/11) xong. **Còn: tag `v1.0`** (PR #64 develop → main đang mở) |
+| P27 | Release v1.0 (tag, release notes) | 12/11 | done | Đạt | 16/11 | #57, #62, #64 | PR #64 merge vào `main` và tag `v1.0`, `baseline-v1.2` lúc 16/11 22:59 (trễ 4 ngày) |
 | P28 | UAT script | 12/11 | done | Chính | 12/11 | #39, #44, #54 | 73 AC; c5_UAT.docx |
 | P29 | Theo dõi S3 + EVM nháp (liên tục) | 12/11 | done | Đạt | 12/11 | #62 | Weekly Status S3 1.0, Sprint Report S3, EVM D7 (SPI 0.97, CPI 1.50) |
 | P30 | Đóng gói và nộp S3 | 12/11 23:59 | done | Đạt, Chính | 12/11 | #55, #65, #66 | Nộp đúng hạn (Chính xác nhận 15/11); file nộp chưa đưa lên repo |
@@ -54,3 +54,4 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | 06/11/2026 | Chính | Cuối S2: P15, P16, P17, P19 → done; P18, P21 vẫn in_progress (test admin trên host, upload) |
 | 15/11/2026 | Chính | Cập nhật S3 theo repo/Jira và kết quả 13/11 do Chính cung cấp: P18, P22–P26, P28–P31 → done; P27 in_progress (thiếu tag v1.0); P33 → in_progress (c6, c2 Final) |
 | 16/11/2026 | Chính | Bộ nộp Final xuất đủ 5 loại file (c1, c2, c6 Report, c6 Slides, Eval360 × 2); P33–P35 → in_progress chờ điền TBD và nộp |
+| 16/11/2026 23:30 | Chính | Đạt merge #65, #67, #64, gắn tag `v1.0` và `baseline-v1.2`, log 4.5 h trên Jira → P27 done; Final Report v0.3, c2 Final và slide xuất lại với AC 89.73 h (CPI 1.43) |
