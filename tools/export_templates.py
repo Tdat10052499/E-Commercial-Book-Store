@@ -646,7 +646,7 @@ def fill_changes(wb, sprint):
         else:
             sp = "TBD"
         if approved:
-            base = "baseline-v1.1" if cr == "CR-06" else "next baseline"
+            base = {"CR-06": "baseline-v1.1", "CR-07": "baseline-v1.2"}.get(cr, "next baseline")
         else:
             base = "baseline-v1.0" if cr == "CR-06" else "baseline-v1.1 (current)"
         vals = [cr, clean(d["date received"]), clean(d["requester"]),
