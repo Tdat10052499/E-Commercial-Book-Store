@@ -167,6 +167,8 @@ def state(status):
         return "Done"
     if s.startswith("to do") or not s:
         return "To Do"
+    if s.startswith("not held"):  # a Daily that did not take place (S3-D2, S3-D3) – never "In Progress"
+        return "Not held"
     return "In Progress"
 
 
@@ -630,13 +632,29 @@ def fill_changes(wb, sprint):
             continue
         decided = clean(d["decision"])
         approved = decided.lower().startswith("approve")
-        vals = [clean(d["cr id"]), clean(d["date received"]), clean(d["requester"]),
+        cr = clean(d["cr id"])
+        impact = clean(d["impact summary (plan)"])
+        # Hours: "≈ N h" in the impact summary; a CR that keeps hours unchanged (CR-07) counts 0 h.
+        m_h = re.search(r"≈\s*(\d+)\s*h", impact)
+        hours = num(m_h.group(1)) if m_h else (0 if "unchanged" in impact.lower() else None)
+        # SP: CR-06 adds US-24 + US-25 (7 SP); other CRs give "PSP a → b" in the impact summary.
+        m_sp = re.search(r"PSP\s*(\d+)\s*→\s*(\d+)", impact)
+        if cr == "CR-06":
+            sp = 7 if approved else "TBD (Planning Poker before CCB)"
+        elif m_sp:
+            sp = f"+{int(m_sp.group(2)) - int(m_sp.group(1))}" + ("" if approved else " (pending CCB)")
+        else:
+            sp = "TBD"
+        if approved:
+            base = {"CR-06": "baseline-v1.1", "CR-07": "baseline-v1.2"}.get(cr, "next baseline")
+        else:
+            base = "baseline-v1.0" if cr == "CR-06" else "baseline-v1.1 (current)"
+        vals = [cr, clean(d["date received"]), clean(d["requester"]),
                 f"{clean(d['title'])}. {clean(d['description'])}",
-                7 if approved else "TBD (Planning Poker before CCB)",
-                num(re.search(r"≈\s*(\d+)\s*h", clean(d["impact summary (plan)"])).group(1)), None,
+                sp, hours, None,
                 "Approved" if approved else ("Pending" if not decided or decided.upper() == "TBD" else decided),
                 clean(d["ccb date"]) if approved else f"{clean(d['ccb date'])} (planned)",
-                "baseline-v1.1" if approved else "baseline-v1.0", clean(d["status"])]
+                base, clean(d["status"])]
         for c, v in enumerate(vals, 1):
             if c != 7:
                 put(ws, 5 + k, c, nice(v) if isinstance(v, float) else v)
@@ -1401,6 +1419,51 @@ def s3_burndown_note():
             "(S3-T21).")
 
 
+# ---------------------------------------------------------------- c0 eval (S3)
+def c0_eval_s3(out):
+    """Peer evaluation of Sprint 3 in the lecturer template: workload = planned task hours share (scoring guide);
+    the scores E–G are entered by the Leader S3 and are never overwritten by this script."""
+    if out.exists() and load_workbook(out)["Eval"]["E10"].value is not None:
+        return out
+    wb = load_workbook(TPL / "FP_Template_Eval.xlsx")
+    for name in wb.sheetnames:
+        if name != "Eval":
+            del wb[name]
+    ws = wb["Eval"]
+    tasks = sprint_tasks("S3", "S3")
+    plan = {"Đạt": 0.0, "Chính": 0.0}
+    for t in tasks:
+        for who in plan:
+            if t["owner"].startswith("Both"):
+                plan[who] += t["est"] / 2
+            elif t["owner"].startswith(who):
+                plan[who] += t["est"]
+    total = sum(plan.values())
+    ws["B4"], ws["B5"], ws["B6"], ws["B7"] = TEAM, DAT[0], DAT[1], datetime.now(TZ7).strftime("%d/%m/%Y")
+    members = [(DAT, "Developer (Sprint Leader S1 & S3)", "Đạt"),
+               (CHINH, "Product Owner + Developer (Sprint Leader S2)", "Chính")]
+    for row, (m, role, key) in zip((10, 11), members):
+        ws.cell(row, 1, m[1])
+        ws.cell(row, 2, m[0])
+        ws.cell(row, 3, role)
+        ws.cell(row, 4, round(plan[key] / total, 4))
+        for c in (5, 6, 7):
+            ws.cell(row, c).value = None
+        ws.cell(row, 12, f"Workload = planned task hours {nice(plan[key])}/{nice(total)} h (S3 Sprint Backlog, owners after "
+                         "the Daily D6 changes; \"Both\" tasks half each). Columns E–G: Leader S3 to enter.")
+    for c in range(4, 8):
+        ws.cell(12, c).value = None
+    from openpyxl.styles import Protection
+    for row in range(10, 14):
+        for c in (5, 6, 7):
+            ws.cell(row, c).protection = Protection(locked=False)
+    ws["A24"] = ("Note: workload uses PLANNED hours from the task assignment, as the scoring guide says. "
+                 "Leader S3 must enter E (0–1), F (0–10), G (0–1) before submission.")
+    ws["A24"].font = Font(italic=True, color="B42318")
+    wb.save(out)
+    return out
+
+
 # ---------------------------------------------------------------- main
 def build(sprint):
     if sprint == "S3":
@@ -1410,7 +1473,10 @@ def build(sprint):
     sys.path.insert(0, str(ROOT / "tools"))
     c2 = c2_workbook(sprint, out_dir / f"{PREFIX}c2_SprintBacklog_{sprint}.xlsx")
     c3 = c3_report(sprint, out_dir / f"{PREFIX}c3_SprintReport_{sprint}.docx")
-    for f in (c2, c3):
+    files = [c2, c3]
+    if sprint == "S3":
+        files.append(c0_eval_s3(out_dir / f"{PREFIX}c0_Eval_S3.xlsx"))
+    for f in files:
         print("wrote", f.relative_to(ROOT))
 
 
