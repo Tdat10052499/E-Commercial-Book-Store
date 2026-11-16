@@ -59,3 +59,9 @@ Branch này được tạo từ **PR #65 của Đạt** (`fix/P30-export-any-cr`
 | `Eval360_Team6_2374802010097.xlsx` | Template Eval của GV; khối lượng = giờ kế hoạch S1–S3 (Đạt 73.75 h, Chính 53.5 h) | **Tự chấm cột E–G** cho cả hai người rồi nộp |
 
 Mục 2 ở trên (tag v1.0, log giờ, đóng Sprint 3 trên Jira, gửi tài khoản demo) vẫn còn nguyên.
+
+## 5. Cập nhật 16/11/2026 22:40 – chuẩn bị thuyết trình 17/11 07:00
+- Đạt đã được gán review **PR #67**. Thứ tự merge: #65 → #67 → #64, rồi gắn tag `v1.0`.
+- Chính gửi Đạt file **kịch bản thuyết trình** (đi theo 15 slide, dài 10:00). Phần của Đạt: slide 1–2, 5, 7, 9–10 (demo), 13.
+- Sáng 17/11 lúc 06:45, **Đạt mở website và chụp màn hình** làm bằng chứng NFR-03 (TC-F1-24), gửi Chính để Chính nghiệm thu 2 SP còn lại.
+- Website đang chạy (16/11 22:30, 30 sách). Danh mục thử nghiệm *Kids* vẫn còn trong bộ lọc: nếu Đạt muốn thì xóa trước giờ thuyết trình (danh mục không có sách thì xóa được).
