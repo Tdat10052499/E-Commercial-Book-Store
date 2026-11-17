@@ -111,3 +111,13 @@ Sửa số liệu thì sửa Markdown nguồn (`pm/final/final-report.md`, `pm/p
 - Chính đã **gộp 2 commit mới của Đạt** trong PR #69 vào PR #68: bản viết lại bằng ngôn ngữ dễ hiểu và link video Review 3. Final Report v0.6 giữ nguyên văn của Đạt, chỉ áp lại số đóng dự án (**68/68 SP, 98.23 h, SPI 1.00, CPI 1.34**). Risk register thành v2.0 (bản của Đạt cộng R03 đóng ngày 17/11). Script `plain_language.py` vẫn chạy khi xuất c2.
 - **Merge PR #68 là đủ**, vì #69 đã nằm trong đó. Sau đó đóng #69.
 - **Canva:** connector của Chính vẫn báo *permission denied* với design `DAHbGMJQNmE`. Đạt kiểm tra lại: share cho **đúng email tài khoản Canva của Chính**, quyền **Can edit**. Nếu không kịp, Đạt tự sửa slide 1, 7, 12 theo mục 9 rồi xuất PowerPoint.
+
+## 11. Cập nhật 18/11/2026 02:35 – deck Canva đã sửa
+- Chính đã có quyền và **đã sửa trên Canva** (đã lưu):
+  - Slide 1: ngày **20/11/2026**.
+  - Slide 7: S3 thực tế **26.23 h**, Release **68 Done (avg 22.7)** và **98.23 h \***; chú thích "91.23 h trong Sprint + 7 h đóng dự án"; NFR-03 "were confirmed on 17/11".
+  - Slide 12: mốc **Closure (17/11)**: PV 26.4, **EV 26.4, AC 19.6, SPI 1.00, CPI 1.34**; tiêu đề "late, but complete"; hai ô giải thích SPI/CPI theo số mới.
+- **Còn lại trên Canva:**
+  - Speaker notes cho slide 2–9 và 11–14 vẫn trống. Công cụ không ghi được notes, nên **Đạt hoặc Chính dán tay** từ `pm/final/presentation-canva-14-slides.md` v3.1.
+  - Video slide 10: Đạt chèn.
+- **File nộp:** đã xuất deck ra PowerPoint. Chính tải về và đặt tên `HK261_SPM_FP_Team6_c6_Slides.pptx` trong `1_Submissions\Final\` và `deliverables/Final/`. Nếu Đạt chèn video hoặc dán notes sau thời điểm này thì **xuất lại** từ Canva.
