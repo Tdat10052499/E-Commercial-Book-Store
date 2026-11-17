@@ -89,4 +89,4 @@ Canva hiện chỉ lưu speaker notes cũ ở slide 1 và 10 (vẫn đúng). Cô
 
 - Slide 10 vẫn trống khung video; Đạt chèn file video vào Canva.
 - Hạn 8.2 ghi trình bày 07:00 ngày 17/11; nếu lịch đã đổi, cập nhật ngày trên slide 1.
-- 18/11: slide 7 và 12 đã dùng 98.23 h. NFR-03 được PO nghiệm thu 17/11 → 68/68 SP, EV 26.4M, SPI 1.00, CPI 1.34, EAC 19.646M (khớp c6 v0.9). Slide 7: S3 nên ghi 33.23 h, chú thích "Sprint 3 includes 8.5 h closure work (13–17/11)" cho khớp c6.
+- 18/11: slide 7 và 12 đã khớp c6 v0.9 (Claude sửa trên Canva theo yêu cầu của Đạt): S3 33.23 h (gồm 8.5 h closure 13–17/11), Release 98.23 h; EVM Closure (18/11) 26.4 / 26.4 / 19.6, SPI 1.00, CPI 1.34. Slide 1 ghi ngày 20/11: cần xác nhận ngày thuyết trình.
