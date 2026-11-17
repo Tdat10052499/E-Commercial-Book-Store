@@ -106,3 +106,8 @@ Sửa số liệu thì sửa Markdown nguồn (`pm/final/final-report.md`, `pm/p
   | Tất cả | Dán speaker notes từ `pm/final/presentation-canva-14-slides.md` v3.1 |
 - **Sau khi sửa:** xuất từ Canva ra PowerPoint, đặt tên `HK261_SPM_FP_Team6_c6_Slides.pptx` và cho vào `deliverables/Final/` (đây là file nộp).
 - **Kịch bản đọc theo lượt** cho deck Canva (14 lượt, tiếng Anh, ~9:40): Chính gửi file `HK261_SPM_FP_Team6_KichBan_ThuyetTrinh_Canva14.docx`.
+
+## 10. Cập nhật 18/11/2026 01:40
+- Chính đã **gộp 2 commit mới của Đạt** trong PR #69 vào PR #68: bản viết lại bằng ngôn ngữ dễ hiểu và link video Review 3. Final Report v0.6 giữ nguyên văn của Đạt, chỉ áp lại số đóng dự án (**68/68 SP, 98.23 h, SPI 1.00, CPI 1.34**). Risk register thành v2.0 (bản của Đạt cộng R03 đóng ngày 17/11). Script `plain_language.py` vẫn chạy khi xuất c2.
+- **Merge PR #68 là đủ**, vì #69 đã nằm trong đó. Sau đó đóng #69.
+- **Canva:** connector của Chính vẫn báo *permission denied* với design `DAHbGMJQNmE`. Đạt kiểm tra lại: share cho **đúng email tài khoản Canva của Chính**, quyền **Can edit**. Nếu không kịp, Đạt tự sửa slide 1, 7, 12 theo mục 9 rồi xuất PowerPoint.
