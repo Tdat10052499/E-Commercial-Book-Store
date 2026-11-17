@@ -31,8 +31,8 @@ COVER = {
     "version": "Project closure, plan vs actual, Lessons Learned",
     "lines": [
         "Team 6 – Page Turners",
-        "Nguyễn Minh Chính (2275106050051) – Product Owner, Sprint Leader S2",
-        "Hồ Du Tuấn Đạt (2374802010097) – Developer, Sprint Leader S1 & S3",
+        "Nguyễn Minh Chính (2275106050051) – Product Owner, Sprint 2 Leader",
+        "Hồ Du Tuấn Đạt (2374802010097) – Developer, Sprint 1 and Sprint 3 Leader",
         "Sponsor / Customer: Dr. Bùi Minh Phụng",
     ],
     "date": "Ho Chi Minh City, November 2026",
@@ -77,7 +77,7 @@ def c1():
     finally:
         tmp.unlink()
     cover = dict(COVER, title="PROJECT MANAGEMENT PLAN – FINAL",
-                 version="PMP v1.0 (29/10/2026) updated with CR-06, CR-07 and the lecturer's feedback")
+                 version="Project Management Plan version 1.0 (29/10/2026), updated with change requests CR-06 and CR-07 and the lecturer's feedback")
     docx_style.style_docx(out, "HK261 SPM – Team 6 Page Turners – Project Management Plan Final (c1)", cover=cover)
     docx_style.prerender_toc(out)
     return out
@@ -214,6 +214,8 @@ def c2():
         elif k == "Layout":
             ws.cell(r, 2).value = ("Lecturer template SprintBacklog_Template.xlsx (received 10/11/2026) + EVM, UAT, "
                                    "Lessons Learned and AI usage sheets. Data as of 15/11/2026 12:30 (baseline v1.2).")
+    import plain_language  # abbreviations written out and GitHub terms described in plain words (17/11/2026)
+    print("plain language: cells rewritten", plain_language.apply(wb))
     wb.save(out)
     return out
 

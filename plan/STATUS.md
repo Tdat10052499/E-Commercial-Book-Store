@@ -55,3 +55,4 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | 15/11/2026 | Chính | Cập nhật S3 theo repo/Jira và kết quả 13/11 do Chính cung cấp: P18, P22–P26, P28–P31 → done; P27 in_progress (thiếu tag v1.0); P33 → in_progress (c6, c2 Final) |
 | 16/11/2026 | Chính | Bộ nộp Final xuất đủ 5 loại file (c1, c2, c6 Report, c6 Slides, Eval360 × 2); P33–P35 → in_progress chờ điền TBD và nộp |
 | 17/11/2026 | Đạt | P34: làm lại deck Canva thành 14 slide theo yêu cầu 8.2 (10 phút + Q&A), kịch bản + speaker notes chia người nói; ghi chú gửi Chính `pm/sprints/S3/notes/2026-11-17_Dat-to-Chinh.md` |
+| 17/11/2026 | Đạt | P33: viết lại c6, c1 (PMP 7 phần) và c2 Final bằng ngôn ngữ dễ hiểu, không viết tắt, không dùng ký hiệu GitHub; số liệu giữ nguyên |
