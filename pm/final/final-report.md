@@ -21,6 +21,7 @@
 | 0.5 | 18/11/2026 | Hồ Du Tuấn Đạt | Link of the Sprint Review 3 video added. No figure changed |
 | 0.6 | 18/11/2026 | Hồ Du Tuấn Đạt | Link of the demo video added. No figure changed |
 | 0.7 | 18/11/2026 | Hồ Du Tuấn Đạt | Actual hours read from Jira on 18/11: 98.23 hours (13 hours logged after the snapshot of 12/11). Closure Actual Cost, Cost Performance Index (1.50 to 1.30), Estimate at Completion, Sprint 3 hours and work allocation updated. Earned Value, Planned Value and Schedule Performance Index unchanged |
+| 0.8 | 18/11/2026 | Hồ Du Tuấn Đạt | Sprint 3 closed in Jira on 18/11 after the last four tasks were moved to Done; checklist item 7 marked done (the daily meetings of day 2 and day 3 were not held, so their cards stay To Do) |
 
 **How to read the figures.** "Plan" means the values in the agreed plan (the baseline: Release Plan and Sprint Backlogs). "Actual" means what really happened, taken from the hours logged in Jira, the history of the source code on GitHub and the Product Owner's acceptance record. Work is costed at 200,000 VND per person-hour, and the project has 3 Sprints, as set by the course [03 §6.4]. Story points measure the relative size of a piece of work. A story's points count as "Done" only when the story meets the team's Definition of Done: every acceptance criterion passes on the live website, the other member has reviewed the code, all automated tests pass and the Product Owner has accepted the story.
 
@@ -165,7 +166,7 @@ Risks that did not occur: R03 slow first load of the free website (watched until
 | 4 | Hand-over of the code | Source code with a guide on how to install and run it and how to load sample data; automated tests included | GitHub |
 | 5 | Hand-over of the documents | All submitted documents on eLearning; the editable sources and the exported files kept with the code | GitHub, eLearning |
 | 6 | Archive | Labels for all three plan versions ("baseline-v1.0", "baseline-v1.1", "baseline-v1.2"); Jira project kept; AI usage log kept | GitHub, Jira |
-| 7 | Close Sprint 3 in Jira and log the last hours | Hours: done (98.23 hours in Jira, read on 18/11). Sprint 3: **still open in Jira on 18/11**; the tasks for the release of version 1.0, the earned value and Sprint report and the daily meeting of day 7 are still To Do although the work was done and logged | Jira |
+| 7 | Close Sprint 3 in Jira and log the last hours | Done on 18/11: 98.23 hours logged in Jira; the last four Sprint 3 tasks (release of version 1.0, earned value and Sprint report, daily meeting of day 7, task S3-T17) moved to Done and Sprint 3 closed in Jira at 02:12 on 18/11. The daily meeting cards of day 2 and day 3 (ECBS-171, ECBS-172) stay To Do because those meetings were not held | Jira |
 | 8 | Release resources | The website and database (free plans on Vercel and Supabase) stay online until the end of 17/11 and then remain on the free plan; demo accounts kept until the lecturer has graded | Plan |
 | 9 | Lecturer access to the code and the task board | To be confirmed (check that the lecturer can open both links) | None yet |
 | 10 | Lessons learned and peer evaluation | Lessons learned in section 6; each member submits a peer evaluation form | This report, eLearning |
