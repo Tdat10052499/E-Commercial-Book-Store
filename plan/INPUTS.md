@@ -63,4 +63,5 @@
 | Video Sprint Review 3 | Đã quay và nộp | Nguyễn Minh Chính | 15/11/2026 |
 | UAT với Sponsor (13/11) | **Accepted** – 73/73 AC Pass, không có defect, không có CR mới | Nguyễn Minh Chính | 15/11/2026 |
 | CCB CR-07 (13/11) | **Approve** – baseline v1.2, PSP 68 | Nguyễn Minh Chính | 15/11/2026 |
+| Eval360 – phiếu của Chính (người chấm: Nguyễn Minh Chính) | E = 1, F = 10, G = 1 cho cả Đạt và Chính (điểm tối đa). Phiếu của Đạt: Đạt tự chấm | Nguyễn Minh Chính | 18/11/2026 |
 

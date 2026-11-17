@@ -143,7 +143,7 @@ Sửa số liệu thì sửa Markdown nguồn (`pm/final/final-report.md`, `pm/p
 | 1 | Review + **merge PR #68** vào `develop`; đóng PR #69 | Đạt |
 | 2 | Canva: chèn **video demo** vào slide 10; dán **speaker notes** slide 2–14 từ `pm/final/presentation-canva-14-slides.md` v3.2 (công cụ không ghi được notes) | Đạt (Chính hỗ trợ dán notes) |
 | 3 | Xuất Canva → PowerPoint, đặt tên `HK261_SPM_FP_Team6_c6_Slides.pptx`, đưa vào `deliverables/Final/` (PR riêng hoặc commit lên `develop` qua PR) và gửi Chính | Đạt |
-| 4 | Chấm **Eval360** cột E–G cho cả hai người và nộp file của mình | Mỗi người |
+| 4 | Chấm **Eval360** cột E–G cho cả hai người và nộp file của mình. **Chính đã chấm xong 18/11 03:00** (điểm tối đa cho cả hai: E 1, F 10, G 1) → còn phiếu của Đạt (`Eval360_Team6_2374802010097.xlsx`) | Đạt |
 | 5 | Gửi Chính **tài khoản demo** (Admin, Staff, Customer) qua tin nhắn riêng – **không** đưa lên repo | Đạt |
 | 6 | Điền TBD trong file docx nộp: tài khoản demo (Appendix B), giờ UAT, nhận xét GV, lý do CR-07 | Chính |
 | 7 | Nộp lên eLearning: c1, c2, c6 Report, c6 Slides, Eval360 của mình | Chính (c1, c2, c6 ×2), mỗi người Eval360 |
