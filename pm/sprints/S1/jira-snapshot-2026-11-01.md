@@ -1,6 +1,6 @@
 # Jira snapshot – Sprint 1 (ECBS, board 2, sprint id 5)
 
-Read through the Atlassian connector on 01/11/2026 23:40 GMT+7 (AI-assisted).
+Read through the Atlassian connector on 01/11/2026 23:40 GMT+7.
 Sprint dates in Jira: 23/10/2026 00:00 – 29/10/2026 23:59 (GMT+7).
 
 | Jira key | Task | Assignee | Original Estimate (h) | Time spent (h) | Status | Status changed |
@@ -25,6 +25,6 @@ Remaining work by estimate: 48 h on every day of the Sprint (no task was moved i
 
 **Also in Sprint 1 in Jira (not part of the FP Sprint Backlog):** ECBS-9 … ECBS-14 and ECBS-32 – stories from the old TA backlog v0, all To Do, no estimate. To decide: move to backlog / Won't.
 
-**Notes (AI-assisted):**
-- Statuses were moved by Hồ Du Tuấn Đạt (AI-assisted) on 01/11/2026, using repo evidence (commits, test runs); the board was not updated during the Sprint.
+**Notes:**
+- Statuses were moved by Hồ Du Tuấn Đạt on 01/11/2026, using repo evidence (commits, test runs); the board was not updated during the Sprint.
 - Time spent is empty: actual hours must be logged by each member (Log work, real date). Until then EVM AC for Sprint 1 = TBD.

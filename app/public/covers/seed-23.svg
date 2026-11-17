@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" viewBox="0 0 200 300" role="img" aria-label="The Histories">
 <rect width="200" height="300" fill="#6b4e71"/>
 <rect x="12" y="12" width="176" height="276" fill="none" stroke="#fbf6ff" stroke-opacity=".25"/>
-<text x="24" y="70" fill="#fbf6ff" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400"><tspan x="24" dy="0">The Histories</tspan></text>
-<text x="24" y="268" fill="#fbf6ff" fill-opacity=".8" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2">HERODOTUS</text>
+<text x="24" y="70" fill="#fbf6ff" font-family="'Times New Roman', 'Noto Serif', 'Liberation Serif', 'DejaVu Serif', serif" font-size="24" font-weight="400"><tspan x="24" dy="0">The Histories</tspan></text>
+<text x="24" y="268" fill="#fbf6ff" fill-opacity=".8" font-family="Arial, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif" font-size="10" letter-spacing="2"><tspan x="24" dy="0">HERODOTUS</tspan></text>
 </svg>

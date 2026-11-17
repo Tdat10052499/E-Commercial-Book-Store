@@ -7,13 +7,14 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Log table prepared. **Votes must be entered by the team; none are filled in by AI.** |
-| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Estimates recorded as **PO estimates from AI-suggested values – no voting rounds held** (see note). Vote columns left empty on purpose. Release PSP = 55 SP; CR-06 = 7 SP |
-| 1.2 | 05/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Session 3 prepared for Planning 3 (06/11): real voting rounds for the S3 items and US-25 (issue I-04). Vote cells are **empty until the meeting**; AI fills nothing in |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Log table prepared. **Votes must be entered by the team.** |
+| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO) | Estimates recorded as **PO estimates – no voting rounds held** (see note). Vote columns left empty on purpose. Release PSP = 55 SP; CR-06 = 7 SP |
+| 1.2 | 05/11/2026 | Nguyễn Minh Chính (PO) | Session 3 prepared for Planning 3 (06/11): real voting rounds for the S3 items and US-25 (issue I-04). Vote cells are **empty until the meeting** |
+| 1.3 | 11/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Session 3 held 11/11 (late, after the build): rounds 1–2, results 3 · 5 · 5 · 5 · 3 = 21 SP vs 15 SP before; no photo; baseline change left to the PO |
 
-> **Method used on 30/10/2026 (deviation from the procedure above):** no Planning Poker voting rounds were held. The PO (Nguyễn Minh Chính) set each estimate from AI-suggested values, sized against the reference stories (2 / 3 / 5 SP). There are no individual cards, no reveal and no photo evidence for this session. Đạt has not yet confirmed the estimates; if the team later runs a real session (shared page: Team 6 Planning Poker), the votes replace these values and this note is updated.
+> **Method used on 30/10/2026 (deviation from the procedure above):** no Planning Poker voting rounds were held. The PO (Nguyễn Minh Chính) set each estimate, sized against the reference stories (2 / 3 / 5 SP). There are no individual cards, no reveal and no photo evidence for this session. Đạt has not yet confirmed the estimates; if the team later runs a real session (shared page: Team 6 Planning Poker), the votes replace these values and this note is updated.
 
-## Session 1 – Release 1.0 baseline (date: 30/10/2026, method: PO estimate from AI suggestion – no voting rounds, facilitator: PO)
+## Session 1 – Release 1.0 baseline (date: 30/10/2026, method: PO estimate – no voting rounds, facilitator: PO)
 | Item | Round | Đạt | Chính | Basis of the estimate | Result SP |
 |---|---|---|---|---|---|
 | US-01 Register | – | – | – | One form; duplicate-email check; client + server validation. Same size as reference 3 (book detail) | 3 |
@@ -46,25 +47,41 @@
 
 If a real voting session is held later, add rows for round 2/3 whenever votes differ.
 
-## Session 3 – Sprint 3 items, real voting (date: Fri 06/11/2026 at Planning 3, facilitator: PO Nguyễn Minh Chính) – PREPARED, NOT YET HELD
+## Session 3 – Sprint 3 items, real voting (planned Fri 06/11 at Planning 3; **held Wed 11/11/2026**, facilitator: PO Nguyễn Minh Chính) – HELD, after the items were built (calibration)
 Purpose: replace the PO-only estimates of Session 1 with team votes for the items planned in S3 (action for issue I-04, rubric B4). Each member votes privately, reveal together, take a photo of every reveal for `pm/backlog/evidence/`. If round 1 differs, the highest and lowest voter explain, then vote again (max 3 rounds; still different → higher value).
 
 **Reading order (PO reads the story, then the ACs):**
 | Item | ACs to read | Session 1 value (for comparison after the vote) | Reference story to compare |
 |---|---|---|---|
-| US-11 Book detail | US-11/AC-01…AC-04 (detail fields, Back to the same page/filter, friendly 404, direct open) | 3 | = reference 3 (view book details) |
+| US-11 Book detail | US-11/AC-01…AC-04 (detail fields, Back to the same page/filter, friendly 404, direct open) | 3 | Same as reference 3 (view book details) |
 | US-12 Search | US-12/AC-01…AC-03 (title or author, no result, empty/100 chars/special characters) | 3 | between 2 and 5 |
-| US-13 Filter + pagination | US-13/AC-01…AC-04 (category + price range, kept across pages, min > max, inclusive bounds) | 5 | = reference 5 (search & filter) |
-| NFR-05 Performance < 2 s | NFR-05/AC-01, AC-02 (median of 3 runs, page 3 with filters) | 2 | = reference 2 |
-| US-25 Last-updated audit (CR-06) | US-25/AC-01…AC-03 (name and time shown, seed books "System", name kept after rename) | 2 | = reference 2 |
+| US-13 Filter + pagination | US-13/AC-01…AC-04 (category + price range, kept across pages, min > max, inclusive bounds) | 5 | Same as reference 5 (search & filter) |
+| NFR-05 Performance < 2 s | NFR-05/AC-01, AC-02 (median of 3 runs, page 3 with filters) | 2 | Same as reference 2 |
+| US-25 Last-updated audit (CR-06) | US-25/AC-01…AC-03 (name and time shown, seed books "System", name kept after rename) | 2 | Same as reference 2 |
 
-**Votes (fill in at the meeting):**
+**Votes (11/11/2026):**
+How it was held: the T01 meeting on Discord (40 min, after Daily D6) covered Retro 2 and Planning 3; the round-1 cards were picked **separately** – Đạt about 20:30 (in his AI chat), Chính at 21:42 (in his AI agent) – and revealed together; round 2 by discussion on Discord the same evening. No round 3. **No photo/screenshot** of the reveals was taken (deviation from the evidence rule above); the votes are recorded as both members reported them.
+
 | Item | Round | Đạt | Chính | Agreed? | Discussion (why highest / lowest) | Result SP | Photo file |
 |---|---|---|---|---|---|---|---|
-| US-11 Book detail | 1 | | | | | | |
-| US-12 Search | 1 | | | | | | |
-| US-13 Filter + pagination | 1 | | | | | | |
-| NFR-05 Performance | 1 | | | | | | |
-| US-25 Last-updated audit | 1 | | | | | | |
+| US-11 Book detail | 1 | 3 | 3 | Yes | – | **3** | none |
+| US-12 Search | 1 | 5 | 5 | Yes | – | **5** | none |
+| US-13 Filter + pagination | 1 | 5 | 5 | Yes | – | **5** | none |
+| NFR-05 Performance | 1 | 5 | 3 | No | – | | none |
+| NFR-05 Performance | 2 | 5 | 3 | No | Đạt (5): making the system read from the database as fast as possible is fairly complex optimisation work. Chính (3): in the test runs the system already performs well | **5** – no round 3; both kept their reasons, rule applied (higher value) | none |
+| US-25 Last-updated audit | 1 | 3 | 8 | No | – | | none |
+| US-25 Last-updated audit | 2 | 3 | 3 | Yes | Đạt (3): store who updated the book and show it – not hard. Chính agreed and moved to 3 | **3** | none |
+
+**Comparison with Session 1/2 (calibration):**
+| Item | Session 1/2 (PO estimate) | Session 3 (team vote) | Difference |
+|---|---|---|---|
+| US-11 | 3 | 3 | 0 |
+| US-12 | 3 | 5 | +2 |
+| US-13 | 5 | 5 | 0 |
+| NFR-05 | 2 | 5 | +3 |
+| US-25 | 2 | 3 | +1 |
+| **Total** | **15** | **21** | **+6** |
+
+**Baseline:** **PO decision TBD.** If applied, PSP 62 → 68. Recommendation (Đạt, for the PO): keep baseline v1.1 (62 SP) and use Session 3 as calibration only – the votes were cast after the items were built, so applying them would raise PSP and change EV/SPI of S3 retroactively. Lesson for Retro 3: hold Planning Poker **before** the work starts.
 
 After the session: if a result differs from Session 1, update `product-backlog.md` (SP and PSP), Release Plan §3.4 and the Workbook, and record it in the version history of each (a rebaseline only if PSP changes).

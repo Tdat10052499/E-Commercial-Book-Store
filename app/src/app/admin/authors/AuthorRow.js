@@ -1,5 +1,6 @@
 'use client';
 import { useActionState, useState, useTransition } from 'react';
+import { useConfirm } from '@/components/ConfirmDialog';
 import { CATALOG_LIMITS, validateAuthor } from '@lib/catalog-validation';
 import { updateAuthorAction, removeAuthorAction } from './actions';
 
@@ -8,6 +9,7 @@ export default function AuthorRow({ author, canRemove = true }) {
   const [clientErrors, setClientErrors] = useState({});
   const [removeError, setRemoveError] = useState(null);
   const [removing, startRemove] = useTransition();
+  const [confirm, confirmDialog] = useConfirm();
   const errors = { ...state.errors, ...clientErrors };
   const formId = `author-form-${author.id}`;
 
@@ -17,8 +19,9 @@ export default function AuthorRow({ author, canRemove = true }) {
     if (Object.keys(found).length) e.preventDefault();
   }
 
-  function onRemove() {
-    if (!window.confirm(`Remove author “${author.name}”?`)) return;
+  async function onRemove() {
+    const ok = await confirm({ title: `Remove author “${author.name}”?`, message: 'This cannot be undone.', confirmLabel: 'Remove', danger: true });
+    if (!ok) return;
     const fd = new FormData();
     fd.set('id', author.id);
     startRemove(async () => {
@@ -51,6 +54,7 @@ export default function AuthorRow({ author, canRemove = true }) {
           {canRemove && <button type="button" className="danger" onClick={onRemove} disabled={removing}>{removing ? 'Removing…' : 'Remove'}</button>}
         </div>
         {removeError && <p className="error" role="alert">{removeError}</p>}
+        {confirmDialog}
       </td>
     </tr>
   );

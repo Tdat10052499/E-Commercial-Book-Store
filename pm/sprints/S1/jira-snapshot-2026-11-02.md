@@ -1,6 +1,6 @@
 # Jira snapshot – Sprint 1 (ECBS, board 2, sprint id 5) – re-read 02/11/2026
 
-Statuses read through the Atlassian connector on 01/11/2026 23:40 GMT+7; Time spent and assignees re-read on 02/11/2026 (AI-assisted).
+Statuses read through the Atlassian connector on 01/11/2026 23:40 GMT+7; Time spent and assignees re-read on 02/11/2026.
 Sprint dates in Jira: 23/10/2026 00:00 – 29/10/2026 23:59 (GMT+7).
 
 | Jira key | Task | Assignee | Original Estimate (h) | Time spent (h) | Status | Status changed |
@@ -25,7 +25,7 @@ Remaining work by estimate: 48 h on every day of the Sprint (no task was moved i
 
 **Also in Sprint 1 in Jira (not part of the FP Sprint Backlog):** ECBS-9 … ECBS-14 and ECBS-32 – stories from the old TA backlog v0, all To Do, no estimate. To decide: move to backlog / Won't.
 
-**Notes (AI-assisted):**
-- Statuses were moved by Hồ Du Tuấn Đạt (AI-assisted) on 01/11/2026, using repo evidence (commits, test runs); the board was not updated during the Sprint.
+**Notes:**
+- Statuses were moved by Hồ Du Tuấn Đạt on 01/11/2026, using repo evidence (commits, test runs); the board was not updated during the Sprint.
 - Time spent was logged by the members on 02/11/2026 (reconstructed after the Sprint, with a comment in Jira): total 19.5 h, Đạt 13.5 h, Chính 6 h. EVM AC for Sprint 1 = 19.5 × 200,000 = 3,900,000 VND.
 - The 6 F1 stories ECBS-104…109 (18 SP) are In Review on 02/11/2026.

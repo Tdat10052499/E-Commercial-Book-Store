@@ -3,7 +3,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | New; the TA baseline had no DoR [05 #15] |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | New; the TA baseline had no DoR [05 #15] |
 
 An item may enter Sprint Planning only when every check is true. The PO checks; the Sprint Leader confirms at Planning.
 

@@ -4,8 +4,9 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0 (TA) | 02/10/2026 | Team 6 | Scrum for the Team Assignment: one 2-week Sprint, 4 h/member/day, Slack #decisions, Jira board [TA Process.docx] |
-| 1.0-FP-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Adapted to the Final Project: 1-week Sprints Fri→Thu (N = 3), leader rotation S1/S3 vs S2 = PO, time tracking per task, CR/CCB step, Git PR review [03 §4–§5] |
-| 1.1-FP-draft | 01/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Jira project corrected to ECBS (board on tdat100524.atlassian.net) |
+| 1.0-FP-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Adapted to the Final Project: 1-week Sprints Fri→Thu (N = 3), leader rotation S1/S3 vs S2 = PO, time tracking per task, CR/CCB step, Git PR review [03 §4–§5] |
+| 1.1-FP-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Jira project corrected to ECBS (board on tdat100524.atlassian.net) |
+| 1.2 | 16/11/2026 | Nguyễn Minh Chính (PO) | PMP Final: Daily channel and time (Discord 22:00) |
 
 ## 2.1 Roles and people
 | Role | Person | Responsibilities |
@@ -19,7 +20,7 @@
 | Event | When | Timebox | Output |
 |---|---|---|---|
 | Sprint Planning | Friday after Review (S1: 28/10 catch-up) | ≤ 45 min | Sprint Goal, capacity, items, tasks ≤ 1 person-day in Excel `Sx_Backlog`, then Jira |
-| Daily Scrum | Every working day, asynchronous allowed (channel TBD: Zalo/Teams/Slack) | ≤ 10 min | Daily log (yesterday / today / blockers / hours logged) |
+| Daily Scrum | Every day of the Sprint at 22:00 on Discord (from 11/11, Retro 2 action A1); asynchronous allowed | ≤ 10 min | Daily log (yesterday / today / blockers / hours logged) |
 | Backlog refinement | Mid-Sprint (Tuesday) | 30 min | Next items meet DoR; Planning Poker for new/changed items |
 | Sprint Review | Friday in class | with Retro 30 min + ~10 min presentation | Demo against ACs, burndown, plan vs actual hours |
 | Sprint Retrospective | Friday in class after Review | (incl. above) | ≥ 2 action items tracked in the next Sprint |
@@ -35,7 +36,7 @@ Product Backlog (`pm/backlog/product-backlog.md` → Workbook sheet), Sprint Bac
 | Planning workbook | Excel `HK261_SPM_FP_Team6_c2_SprintBacklog_Sx.xlsx` (cumulative) |
 | Source & configuration | GitHub repo `Tdat10052499/E-Commercial-Book-Store`, PR review |
 | Hosting | Free tier (decided at P04) |
-| Communication | Daily channel TBD; email to Sponsor; class meetings |
+| Communication | Discord (Daily 22:00); email to Sponsor; class meetings |
 
 ## 2.5 Tailoring decisions and related risks
 | Decision | Reason | Risk introduced | Mitigation |

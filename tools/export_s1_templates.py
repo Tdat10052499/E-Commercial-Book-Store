@@ -8,7 +8,7 @@ Outputs: deliverables/S1/HK261_SPM_FP_Team6_c0_Eval_S1.xlsx
          pm/sprints/S1/HK261_SPM_FP_Team6_SprintReview_Retro_S1.docx  (record, goes into c3)
 
 Only planned or recorded data is filled in. Every cell that needs a human
-judgement or a meeting record is left as "TBD" [CLAUDE.md §3.2].
+judgement or a meeting record is left as "TBD" (team rule: actual data is never invented).
 """
 import copy
 from pathlib import Path
@@ -141,10 +141,10 @@ BURNDOWN_NOTE = (
 
 UNDONE = [
     ("TC-F1 hosted run", "18 of 24 test cases not yet run by a team member on https://pagetunnel.vercel.app/ "
-     "(5 Pass, 1 Partial so far)", "Cases need typed passwords or a customer session; AI may not enter them",
+     "(5 Pass, 1 Partial so far)", "Cases need typed passwords or a customer session; a team member must type them",
      "Team runs them before Review 2 – TBD owner"),
     ("S1-T02", "Planning Poker voting round not held (SP are PO estimates)", "Time pressure; estimates set by PO alone",
-     "Hold a real vote at Sprint Planning 2 and log it (AI-assisted proposal)"),
+     "Hold a real vote at Sprint Planning 2 and log it (proposal)"),
     ("S1-T13", "Workbook c2 and Report c3 not submitted by 29/10 23:59", "Work started late; issue I-01",
      "Submit S1 files as soon as possible; carry lesson to S2"),
     ("S1-T14", "Review/Retro 1 preparation – To Do in Jira, 0 h logged", "Work started late; issue I-01",

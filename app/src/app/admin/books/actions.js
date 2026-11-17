@@ -21,9 +21,9 @@ function refresh() {
 
 // US-05 (Admin) and US-24/AC-01 (Store Staff): add a book. Role re-checked on the server.
 export async function createBookAction(_prev, formData) {
-  await requireCatalogEditor('/admin/books/new');
+  const user = await requireCatalogEditor('/admin/books/new');
   const values = read(formData);
-  const { book, errors } = await createBook(values, await readCover(formData));
+  const { book, errors } = await createBook(values, await readCover(formData), user);
   if (errors) return { errors, values };
   refresh();
   return { message: `Book “${book.title}” added`, key: Date.now() };
@@ -32,9 +32,9 @@ export async function createBookAction(_prev, formData) {
 // US-06 (Admin, Store Staff): edit a book; invalid data keeps the old values (AC-02).
 export async function updateBookAction(_prev, formData) {
   const id = formData.get('id');
-  await requireCatalogEditor(`/admin/books/${id}/edit`);
+  const user = await requireCatalogEditor(`/admin/books/${id}/edit`);
   const values = read(formData);
-  const result = await updateBook(id, values, await readCover(formData));
+  const result = await updateBook(id, values, await readCover(formData), user); // US-25: name stored with the change
   if (result.errors) return { errors: result.errors, values };
   if (result.unchanged) return { message: 'No changes – the book is unchanged', values };
   refresh();

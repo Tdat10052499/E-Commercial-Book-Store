@@ -1,23 +1,30 @@
-import { formatPrice } from '@lib/catalog-validation';
+import Link from 'next/link';
+import { formatPrice, detailHref } from '@lib/catalog-validation';
+import CoverImage from '@/components/CoverImage';
+import CardActions from '@/components/CardActions';
 
 // US-10/AC-01: one card = cover, title, author, price. Books without a cover get a typographic one.
+// US-11/AC-01: the whole card opens the book's detail page; AC-02: it carries the list state for "Back to list".
 export function coverSrc(book) {
   if (book.has_upload) return `/book-covers/${book.id}`;
   return book.cover_url || null;
 }
 
-export default function BookCard({ book }) {
+export default function BookCard({ book, listQuery = '' }) {
   const src = coverSrc(book);
+  const href = detailHref(book.id, listQuery);
   return (
     <article className="book-card">
-      <div className="book-cover">
-        {src
-          ? <img src={src} alt={`Cover of ${book.title}`} loading="lazy" width={200} height={300} />
-          : <div className="cover" aria-hidden="true"><span className="cover-title">{book.title}</span><span className="cover-author">{book.author_name}</span></div>}
-      </div>
-      <h3 className="book-title">{book.title}</h3>
-      <p className="book-author muted">{book.author_name || 'Unknown author'}</p>
-      <p className="book-price">{formatPrice(book.price)}</p>
+      <Link className="book-card-link" href={href}>
+        <div className="book-cover">
+          <CoverImage src={src} title={book.title} author={book.author_name} width={200} height={300} />
+        </div>
+        <h3 className="book-title">{book.title}</h3>
+        <p className="book-author muted">{book.author_name || 'Unknown author'}</p>
+        <p className="book-price">{formatPrice(book.price)}</p>
+      </Link>
+      {/* Hover bar sits over the bottom of the cover, outside the link (no buttons inside an <a>). */}
+      <div className="book-card-overlay"><CardActions id={book.id} title={book.title} href={href} /></div>
     </article>
   );
 }

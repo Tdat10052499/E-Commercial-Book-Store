@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import { listPageHref } from '@lib/catalog-validation';
 
 // US-10/AC-01, AC-02: Previous / page numbers / Next; no Next link on the last page.
-export default function Pagination({ page, lastPage, basePath = '/books' }) {
+// US-13/AC-02: every page link keeps the search keyword, category and price range.
+export default function Pagination({ page, lastPage, params = {}, basePath = '/books' }) {
   if (lastPage <= 1) return null;
-  const href = (p) => (p === 1 ? basePath : `${basePath}?page=${p}`);
+  const href = (p) => listPageHref(params, p, basePath);
   const pages = Array.from({ length: lastPage }, (_, i) => i + 1);
   return (
     <nav className="pagination" aria-label="Pages">

@@ -1,5 +1,6 @@
 'use client';
 import { useActionState, useState, useTransition } from 'react';
+import { useConfirm } from '@/components/ConfirmDialog';
 import { CATALOG_LIMITS, validateCategory } from '@lib/catalog-validation';
 import { renameCategoryAction, removeCategoryAction } from './actions';
 
@@ -8,6 +9,7 @@ export default function CategoryRow({ category, canRemove = true }) {
   const [clientErrors, setClientErrors] = useState({});
   const [removeError, setRemoveError] = useState(null);
   const [removing, startRemove] = useTransition();
+  const [confirm, confirmDialog] = useConfirm();
   const errors = { ...state.errors, ...clientErrors };
   const inputId = `cat-${category.id}`;
 
@@ -17,8 +19,9 @@ export default function CategoryRow({ category, canRemove = true }) {
     if (Object.keys(found).length) e.preventDefault();
   }
 
-  function onRemove() {
-    if (!window.confirm(`Remove category “${category.name}”?`)) return;
+  async function onRemove() {
+    const ok = await confirm({ title: `Remove category “${category.name}”?`, message: 'This cannot be undone.', confirmLabel: 'Remove', danger: true });
+    if (!ok) return;
     const fd = new FormData();
     fd.set('id', category.id);
     startRemove(async () => {
@@ -45,6 +48,7 @@ export default function CategoryRow({ category, canRemove = true }) {
       <td data-label="Action">
         {canRemove && <button type="button" className="danger" onClick={onRemove} disabled={removing}>{removing ? 'Removing…' : 'Remove'}</button>}
         {removeError && <p className="error" role="alert">{removeError}</p>}
+        {confirmDialog}
       </td>
     </tr>
   );

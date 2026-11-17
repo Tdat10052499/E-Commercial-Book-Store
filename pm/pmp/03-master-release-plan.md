@@ -8,10 +8,11 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0.1 (TA) | 15/10/2026 | Team 6 | Team Assignment release planning: velocity assumed 22 SP per 2-week Sprint; Must + Should = 79 SP over ~4 Sprints [04 §4] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Rebaselined to the Final Project brief: 3 one-week Sprints, scope F1–F5 only, cart/payment/social login out of scope [03 §2.2, §5]; capacity-based velocity; BAC formula at 200,000 VND/h; CR-06 recorded as pending CCB |
-| 1.1-draft | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Roles confirmed; capacity 20 h per member per Sprint adopted as plan value (40 h/Sprint, 120 h, BAC 24.0 M VND); CR-06 Option B recommended; Excel version added |
-| 1.2-draft | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | SP filled from the PO estimates (`planning-poker-log.md` v1.1, no voting rounds): PSP = 55 SP, expected velocity 18.3 SP/Sprint; baseline row v1.0 completed |
-| 1.3 (baseline v1.1) | 04/11/2026 | Nguyễn Minh Chính (PO + Leader S2, AI-assisted) | **Rebaseline after CCB 30/10 (CR-06 Approve, Option B):** US-24 (5 SP) in S2, US-25 (2 SP) in S3; PSP 55 → 62 SP; planned hours 120 → 132 h (+12 h CR), BAC 24.0 → 26.4 M VND; PV per Sprint recalculated. Actual S1 velocity 0 SP (F1 In Review) recorded for Planning 2. Tags `baseline-v1.0` and `baseline-v1.1` created |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Rebaselined to the Final Project brief: 3 one-week Sprints, scope F1–F5 only, cart/payment/social login out of scope [03 §2.2, §5]; capacity-based velocity; BAC formula at 200,000 VND/h; CR-06 recorded as pending CCB |
+| 1.1-draft | 30/10/2026 | Nguyễn Minh Chính (PO) | Roles confirmed; capacity 20 h per member per Sprint adopted as plan value (40 h/Sprint, 120 h, BAC 24.0 M VND); CR-06 Option B recommended; Excel version added |
+| 1.2-draft | 30/10/2026 | Nguyễn Minh Chính (PO) | SP filled from the PO estimates (`planning-poker-log.md` v1.1, no voting rounds): PSP = 55 SP, expected velocity 18.3 SP/Sprint; baseline row v1.0 completed |
+| 1.3 (baseline v1.1) | 04/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | **Rebaseline after CCB 30/10 (CR-06 Approve, Option B):** US-24 (5 SP) in S2, US-25 (2 SP) in S3; PSP 55 → 62 SP; planned hours 120 → 132 h (+12 h CR), BAC 24.0 → 26.4 M VND; PV per Sprint recalculated. Actual S1 velocity 0 SP (F1 In Review) recorded for Planning 2. Tags `baseline-v1.0` and `baseline-v1.1` created |
+| 1.4 (baseline v1.2) | 15/11/2026 | Nguyễn Minh Chính (PO) | **Rebaseline after CCB 13/11 (CR-07 Approve):** S3 SP re-estimated by Planning Poker Session 3 (US-12 3 → 5, NFR-05 2 → 5, US-25 2 → 3); PSP 62 → 68 SP; hours and BAC unchanged (132 h, 26,400,000 VND). Release 1.0 accepted in UAT 13/11 |
 
 > **Status of figures.** Every number marked **(plan)** is a planning value. Values marked **TBD** need human input (capacity, Planning Poker votes, Jira actuals) and are tracked in `plan/INPUTS.md`. No actual figure appears in this document.
 
@@ -47,16 +48,16 @@ Sprints run Friday → Thursday, one week each, N = 3 [03 §5]. Rotation for a 2
 Feature allocation follows the brief's reference Sprints [03 §2.2]. Any change is decided at Sprint Planning and recorded in §3.8.
 
 ## 3.4 Allocation of backlog items to Sprints (plan)
-SP come from the estimation log (`pm/backlog/planning-poker-log.md` v1.1). On 30/10/2026 they were set by the PO from AI-suggested values, without voting rounds; a later real session replaces them.
+SP come from the estimation log (`pm/backlog/planning-poker-log.md` v1.1). On 30/10/2026 they were set by the PO, without voting rounds; a later real session replaces them.
 
 | Sprint | Items | SP (plan) |
 |---|---|---|
 | S1 | US-01 Register · US-02 Log in/out · US-03 Admin creates & locks accounts · US-04 Server-side role guard · NFR-01 Password hashing & validation · NFR-03 Hosting/deploy skeleton | 18 |
 | S2 | US-05 Add book · US-06 Edit book · US-07 Hide (soft delete) book · US-08 Manage categories · US-09 Manage authors · NFR-02 Seed ≥30 books · US-10 Book grid 12/page newest first · NFR-04 Responsive UI | 24 |
 | S2 – CR-06 (approved 30/10, Option B) | US-24 Store Staff role & permissions | 5 |
-| S3 – CR-06 (approved 30/10, Option B) | US-25 "Last updated by" audit | 2 |
-| S3 | US-11 Book detail page (+friendly not-found, Back keeps page) · US-12 Search by title/author · US-13 Filter by category & price range with pagination · NFR-05 List page < 2 s | 13 |
-| Release 1.0 total | | **PSP = 62** (baseline v1.1; 55 in baseline v1.0) – S1 18 · S2 29 · S3 15 |
+| S3 – CR-06 (approved 30/10, Option B) | US-25 "Last updated by" audit | 2 (baseline v1.1) → **3** (baseline v1.2) |
+| S3 | US-11 Book detail page (+friendly not-found, Back keeps page) · US-12 Search by title/author · US-13 Filter by category & price range with pagination · NFR-05 List page < 2 s | 13 (baseline v1.1) → **18** (baseline v1.2: US-11 3 · US-12 5 · US-13 5 · NFR-05 5) |
+| Release 1.0 total | | **PSP = 68** (baseline v1.2, CR-07) – S1 18 · S2 29 · S3 21; 62 in baseline v1.1 (S3 15), 55 in baseline v1.0 |
 
 ## 3.5 Capacity and expected velocity
 Formula (per Sprint): **Capacity (h) = Σ members (available days × focus hours/day)**. Expected velocity is derived from capacity, not copied from the TA (22 SP / 2 weeks is not applicable to 1-week Sprints [05 #10]).
@@ -131,6 +132,7 @@ Internal windows are the team's proposal and may be adjusted at Sprint Planning.
 |---|---|---|---|---|---|
 | Baseline v1.0 | 30/10/2026 | Sprint 1 submission | 55 SP | 24,000,000 VND | `baseline-v1.0` |
 | Rebaseline v1.1 | 04/11/2026 | CCB 30/10: CR-06 Approve, Option B | 62 SP | 26,400,000 VND (132 h × 200,000; +12 h CR = +2,400,000) | `baseline-v1.1` |
+| Rebaseline v1.2 | 15/11/2026 | CCB 13/11: CR-07 Approve (S3 SP from Planning Poker Session 3) | 68 SP | 26,400,000 VND (unchanged) | `baseline-v1.2` (after merge) |
 
 **PV after the rebaseline (plan):** PV(1) = 8.8 M · PV(2) = 17.6 M · PV(3) = 26.4 M VND. The S1 EVM snapshot (02/11) keeps the v1.0 figures (PV 8.0 M) because it was calculated before the rebaseline; from S2 on, v1.1 is used. The 12 CR hours fit into the planned task hours of S2 (39.75 h ≤ 40 h) and S3 (13 + 2 SP, buffer before UAT).
 

@@ -4,7 +4,8 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0 (TA) | 02/10/2026 | Team 6 | Communication plan in TA Assign.xlsx; Slack #decisions for feedback [TA Process.docx] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Updated for Final Project roles, weekly Sprint events, CCB and Weekly Status Report. Channel names to be confirmed |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Updated for Final Project roles, weekly Sprint events, CCB and Weekly Status Report. Channel names to be confirmed |
+| 1.1 | 16/11/2026 | Nguyễn Minh Chính (PO) | PMP Final: Daily channel and time set to Discord 22:00 (Retro 2 action A1, I-05) |
 
 ## 7.1 Communication matrix
 | Stakeholder | Information | Channel | Frequency | Sender |
@@ -14,7 +15,7 @@
 | Sponsor | Change impact & options; CCB decision record | CCB meeting + Change Log + c4 form | Per CR | PO |
 | Sponsor | Weekly Status Report (G/A/R scope, schedule, cost, quality) | eLearning / email | Weekly from S2 | Sprint Leader |
 | Sponsor | Board and repo access | Jira (Reader), GitHub | Continuous | Đạt |
-| Team | Daily Scrum log | Channel TBD (Zalo/Teams/Slack) | Every working day | Each member |
+| Team | Daily Scrum log | Discord, 22:00 (fixed by Retro 2 action A1, 11/11); record in `daily-log.md` | Every day of the Sprint | Each member |
 | Team | Decisions, feedback | `#decisions` thread / Daily log | When made | Whoever decides |
 | Team | Code changes | GitHub PR | Per task | Author → reviewer |
 | Team | Final Report, UAT minutes | eLearning | 13/11, 15/11 | Leader S3 |
@@ -38,4 +39,4 @@
 | Fri 13/11 | Review 3 + UAT |
 | Sun 15/11 23:59 | Final submission |
 | Tue 17/11 07:00 | Final presentation |
-| Daily (working days) | Daily Scrum ≤ 10 min, time TBD |
+| Daily (working days) | Daily Scrum ≤ 10 min, Discord 22:00 (from 11/11) |

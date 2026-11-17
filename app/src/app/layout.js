@@ -4,6 +4,7 @@ import './globals.css';
 import { getCurrentUser } from '@/lib/current-user';
 import { logoutAction } from './actions';
 import SiteFooter from '@/components/SiteFooter';
+import { ANNOUNCEMENT } from '@/lib/home-content';
 
 const sans = Inter({ subsets: ['latin', 'vietnamese'], variable: '--font-sans', display: 'swap' });
 
@@ -19,6 +20,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={sans.variable}>
       <body>
+        <p className="announcement">{ANNOUNCEMENT}</p>
         <header className="topbar">
           <Link href="/" className="brand">
             PAGE TURNERS

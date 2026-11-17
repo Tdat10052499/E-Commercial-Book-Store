@@ -135,8 +135,8 @@ async function logout(page) {
     await adminPage.goto(`${BASE}/admin/books`);
     const first = adminPage.locator('tbody tr').first();
     const title = (await first.locator('td[data-label="Title"]').innerText()).trim();
-    adminPage.once('dialog', (d) => d.dismiss());
     await first.locator('button:has-text("Delete")').click();
+    await adminPage.locator('dialog.confirm button:has-text("Cancel")').click();
     await adminPage.reload();
     expect(await adminPage.locator('td[data-label="Title"]', { hasText: title }).count() > 0, `"${title}" disappeared after Cancel`);
   });
@@ -145,8 +145,8 @@ async function logout(page) {
   await check('US-24/AC-04 admin changes Customer → Store Staff', async () => {
     await adminPage.goto(`${BASE}/admin/accounts`);
     const row = adminPage.locator('tr', { hasText: created.email });
-    adminPage.once('dialog', (d) => d.accept());
     await row.locator('select').selectOption('staff');
+    await adminPage.locator('dialog.confirm button:has-text("Change role")').click();
     await row.locator('text=Role changed').waitFor();
   });
   const staffPage = await (await browser.newContext()).newPage();
@@ -155,6 +155,12 @@ async function logout(page) {
     await staffPage.waitForURL(`${BASE}/`);
     await staffPage.goto(`${BASE}/admin`);
     await staffPage.waitForSelector('h1:has-text("Back office")');
+  });
+  await check('DEF-S3-01 home page names the Store Staff role', async () => {
+    await staffPage.goto(`${BASE}/`);
+    const lead = (await staffPage.locator('.lead').innerText()).trim();
+    expect(lead.endsWith('You are signed in as a Store Staff.'), `home page says "${lead}"`);
+    await staffPage.goto(`${BASE}/admin`);
   });
   await check('US-24/AC-03 Staff sees no Accounts link', async () => {
     expect(await staffPage.locator('a[href="/admin/accounts"]').count() === 0, 'Accounts link visible to Staff');
@@ -180,11 +186,18 @@ async function logout(page) {
     await staffPage.fill('#f-stock', '0');
     const jpg = Buffer.alloc(1024); Buffer.from([0xff, 0xd8, 0xff, 0xe0]).copy(jpg);
     await staffPage.setInputFiles('#f-cover', { name: 'cover.jpg', mimeType: 'image/jpeg', buffer: jpg });
-    await staffPage.click('form button[type=submit]');
+    await staffPage.click('form:has(#f-title) button[type=submit]');
     await staffPage.waitForSelector('text=added');
     await staffPage.goto(`${BASE}/admin/books`);
     const firstTitle = (await staffPage.locator('tbody tr').first().locator('td[data-label="Title"]').innerText()).trim();
     expect(firstTitle === title, `first row is "${firstTitle}"`);
+  });
+  await check('US-25/AC-01 edit page of the Staff book shows "Last updated by <Staff name> at dd/mm/yyyy HH:mm"', async () => {
+    await staffPage.goto(`${BASE}/admin/books`);
+    await staffPage.locator('tbody tr').first().locator('a:has-text("Edit")').click();
+    const line = (await staffPage.locator('[data-testid="last-updated"]').innerText()).trim();
+    const re = new RegExp(`^Last updated by ${created.name} at \\d{2}/\\d{2}/\\d{4} \\d{2}:\\d{2}$`);
+    expect(re.test(line), `line is "${line}"`);
   });
 
   await check('NFR-04 no horizontal scroll at 360 px (accounts page)', async () => {

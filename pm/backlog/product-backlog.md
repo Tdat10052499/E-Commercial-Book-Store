@@ -1,4 +1,4 @@
-# Product Backlog v1.2 – Release 1.0 (Book Catalogue)
+# Product Backlog v1.4 – Release 1.0 (Book Catalogue)
 
 **Owner:** Product Owner (Nguyễn Minh Chính) · **Estimation:** Fibonacci SP (1, 2, 3, 5, 8, 13) by Planning Poker · **Priority:** MoSCoW · **AC format:** Given–When–Then, numbered `US-xx/AC-0n`, covering main (M), exception (E) and boundary (B) flows.
 
@@ -6,17 +6,19 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0 (TA) | 15/10/2026 | Team 6 | 23 items, 99 SP, numbered conditions as AC, 2-week Sprints [04 §4] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted), PO review pending | Rebaselined to F1–F5 [03 §2.2]: rewrote US-03 to Administrator/Customer with account locking; added server-side access guard, category CRUD, author CRUD; F3 changed from 20 to **12 books/page, newest first**; F4 added friendly not-found and Back-to-same-page; F5 changed to title/author search + category & price-range filter combined with pagination; email confirmation/reset, ISBN-mandatory and Add-to-cart removed from R1.0 ACs; added NFR items (hashing, validation, seed ≥30, hosting, responsive, < 2 s); cart, checkout, orders, promotions, multi-store, reviews, wishlist, recommendations moved to *Won't (this release)* because they are out of scope [03 §2.2], [05 §1, §4]; all ACs rewritten in GWT; IDs renumbered (v0 ID kept for traceability); CR-06 items added as *pending CCB*. **SP cleared for every changed item until re-estimated by Planning Poker** [03 §6.1-3] |
-| 1.1-draft | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | SP set for all 20 R1.0/CR-06 items as PO estimates from AI-suggested values (no voting rounds – see `planning-poker-log.md` v1.1); PSP = 55 |
-| 1.2 (baseline v1.1) | 04/11/2026 | Nguyễn Minh Chính (PO, AI-assisted) | **CR-06 approved by the CCB 30/10 (Option B):** US-24 and US-25 enter the baseline – US-24 in S2, US-25 in S3; **PSP 55 → 62 SP**. US-24/AC-05 completed by a team decision: Staff cannot remove categories/authors. Tag `baseline-v1.1` |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt (PO review pending) | Rebaselined to F1–F5 [03 §2.2]: rewrote US-03 to Administrator/Customer with account locking; added server-side access guard, category CRUD, author CRUD; F3 changed from 20 to **12 books/page, newest first**; F4 added friendly not-found and Back-to-same-page; F5 changed to title/author search + category & price-range filter combined with pagination; email confirmation/reset, ISBN-mandatory and Add-to-cart removed from R1.0 ACs; added NFR items (hashing, validation, seed ≥30, hosting, responsive, < 2 s); cart, checkout, orders, promotions, multi-store, reviews, wishlist, recommendations moved to *Won't (this release)* because they are out of scope [03 §2.2], [05 §1, §4]; all ACs rewritten in GWT; IDs renumbered (v0 ID kept for traceability); CR-06 items added as *pending CCB*. **SP cleared for every changed item until re-estimated by Planning Poker** [03 §6.1-3] |
+| 1.1-draft | 30/10/2026 | Nguyễn Minh Chính (PO) | SP set for all 20 R1.0/CR-06 items as PO estimates (no voting rounds – see `planning-poker-log.md` v1.1); PSP = 55 |
+| 1.2 (baseline v1.1) | 04/11/2026 | Nguyễn Minh Chính (PO) | **CR-06 approved by the CCB 30/10 (Option B):** US-24 and US-25 enter the baseline – US-24 in S2, US-25 in S3; **PSP 55 → 62 SP**. US-24/AC-05 completed by a team decision: Staff cannot remove categories/authors. Tag `baseline-v1.1` |
+| 1.3 | 06/11/2026 | Nguyễn Minh Chính (PO) | US-03/AC-01 role list updated to Administrator, Store Staff or Customer (CR-06 rework of US-03, flagged by Đạt in the F1 regression); no SP or PSP change. S2 acceptance: US-10 and NFR-02 Done 05/11 |
+| 1.4 (baseline v1.2) | 15/11/2026 | Nguyễn Minh Chính (PO) | **CR-07 approved by the CCB 13/11:** S3 story points set to the Planning Poker Session 3 votes (11/11) – US-12 3 → 5, NFR-05 2 → 5, US-25 2 → 3 (US-11 3 and US-13 5 unchanged); **PSP 62 → 68 SP**; scope, hours and BAC unchanged. Release 1.0 accepted in UAT 13/11 (73/73 ACs Pass); NFR-03 accepted by the PO after the check on 17/11 |
 
 ## Summary
 | Group | Items | SP (plan) |
 |---|---|---|
-| Release 1.0 – Must | 18 (US-01…US-13, NFR-01…NFR-05) | 55 (S1 18 · S2 24 · S3 13) |
-| CR-06 – approved 30/10 (Option B) | 2 (US-24 S2, US-25 S3) | 7 |
+| Release 1.0 – Must | 18 (US-01…US-13, NFR-01…NFR-05) | 61 (S1 18 · S2 24 · S3 19) – S3 re-estimated by CR-07 (was 13) |
+| CR-06 – approved 30/10 (Option B) | 2 (US-24 S2, US-25 S3) | 8 (US-24 5 · US-25 3 after CR-07; was 7) |
 | Won't (this release) | 10 | not estimated for R1.0 (v0 SP kept for reference) |
-| **Total items** | **30** | **PSP = 62** (baseline v1.1; was 55 in baseline v1.0) |
+| **Total items** | **30** | **PSP = 68** (baseline v1.2 after CR-07; 62 in baseline v1.1, 55 in baseline v1.0) |
 
 ## A. Release 1.0 items
 | Rank | ID | v0 ID | F | User story | SP | MoSCoW | Sprint (plan) |
@@ -36,15 +38,15 @@
 | 13 | US-10 | US-05 | F3 | As a **customer**, I want to browse books in a grid of 12 per page, newest first, so that I can see what is new. | 3 | Must | S2 |
 | 14 | NFR-04 | US-21 | F3 | As a **customer**, I want every page to work on phone, tablet and desktop so that I can shop from any device. | 3 | Must | S2 |
 | 15 | US-11 | US-07 | F4 | As a **customer**, I want to open a book's detail page and go back to the same list page so that I can compare books without losing my place. | 3 | Must | S3 |
-| 16 | US-12 | US-06 | F5 | As a **customer**, I want to search by title or author so that I can find a specific book quickly. | 3 | Must | S3 |
+| 16 | US-12 | US-06 | F5 | As a **customer**, I want to search by title or author so that I can find a specific book quickly. | 5 | Must | S3 |
 | 17 | US-13 | US-06 | F5 | As a **customer**, I want to filter by category and price range together with search and pagination so that I only see relevant books. | 5 | Must | S3 |
-| 18 | NFR-05 | (US-06 AC) | F3/F5 | As a **customer**, I want the book list to load in under 2 seconds so that browsing feels fast. | 2 | Must | S3 |
+| 18 | NFR-05 | (US-06 AC) | F3/F5 | As a **customer**, I want the book list to load in under 2 seconds so that browsing feels fast. | 5 | Must | S3 |
 
 ## B. CR-06 items (approved by the CCB on 30/10/2026, Option B – in baseline v1.1)
 | ID | F | User story | SP | MoSCoW | Sprint |
 |---|---|---|---|---|---|
 | US-24 | F1, F2 | As a **store staff member**, I want to add and edit books and manage categories and authors, without deleting books or managing accounts, so that I can update the catalogue daily without full admin rights. [CR-06 §1] | 5 | Must | S2 |
-| US-25 | F2 | As an **administrator**, I want each book to show "Last updated by <name> at <time>" so that I know who changed it. [CR-06 §1] | 2 | Must | S3 |
+| US-25 | F2 | As an **administrator**, I want each book to show "Last updated by <name> at <time>" so that I know who changed it. [CR-06 §1] | 3 | Must | S3 |
 
 ## C. Won't (this release) – kept for Release 2
 | ID | v0 ID | Story (short) | v0 SP | Reason |
@@ -78,7 +80,7 @@
 - **US-02/AC-05 (B)** Given the email field, When I enter my email with different letter case or surrounding spaces, Then I am still recognised (email is trimmed and case-insensitive).
 
 ### US-03 Administrator creates and locks accounts
-- **US-03/AC-01 (M)** Given I am signed in as Administrator, When I create an account with a valid name, unique email, initial password and role (Administrator or Customer), Then the account appears in the account list with that role and status *Active*.
+- **US-03/AC-01 (M)** Given I am signed in as Administrator, When I create an account with a valid name, unique email, initial password and role (Administrator, Store Staff or Customer – Store Staff added by CR-06), Then the account appears in the account list with that role and status *Active*.
 - **US-03/AC-02 (M)** Given an active account that is not mine, When I click Lock, Then its status becomes *Locked* and that user can no longer log in; When I click Unlock, Then the user can log in again.
 - **US-03/AC-03 (E)** Given I am signed in as Administrator, When I try to lock my own account, Then the action is refused with "You cannot lock your own account".
 - **US-03/AC-04 (E)** Given I create an account with an email that already exists, Then it is refused with a field-level error and no account is created.

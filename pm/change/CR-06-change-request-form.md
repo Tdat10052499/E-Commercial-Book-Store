@@ -1,13 +1,14 @@
 # Change Request CR-06 – Store Staff role
 
-Source document for `HK261_SPM_FP_Team6_c4_ChangeRequest_CR01.docx` [CR-06 §5-5]. The brief's template `FP_Template_ChangeRequest.docx` is not in the team's materials (`plan/INPUTS.md` §6), so this form follows the five CR steps of [03 §6.2-3] and the fields asked for in [CR-06 §5].
+This is the c4 Change Request form for CR-06. It follows the five CR steps of [03 §6.2-3] and the fields asked for in [CR-06 §5]; the brief's own form template (`FP_Template_ChangeRequest.docx`) was not provided to the team.
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Change Log entry and impact analysis with options A/B/C (`CR-06-impact-analysis.md` v1.0) |
-| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO, AI-assisted) | Option B confirmed as the team recommendation |
-| 2.0 | 05/11/2026 | Nguyễn Minh Chính (PO + Leader S2, AI-assisted) | CCB decision (Approve, Option B), baseline update v1.1 and communication added; issued as the c4 form |
+| 1.0 | 30/10/2026 | Hồ Du Tuấn Đạt | Change Log entry and impact analysis with options A/B/C (impact analysis v1.0) |
+| 1.1 | 30/10/2026 | Nguyễn Minh Chính (PO) | Option B confirmed as the team recommendation |
+| 2.0 | 05/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | CCB decision (Approve, Option B), baseline update v1.1 and communication added; issued as the c4 form |
+| 2.1 | 06/11/2026 | Nguyễn Minh Chính (PO + Leader S2) | Implementation status at the Sprint end: US-24 built and deployed (PR #11, #12) |
 
 ## 1. Change Request form
 | Field | Value |
@@ -100,19 +101,20 @@ Security-sensitive: every permission is checked on the server, not only by hidin
 | Risk register | v1.0 | v1.1: R05 Occurred → I-03, R08 re-scored, R11 added |
 | Configuration | – | Git tags **`baseline-v1.0`** (S1 submission set) and **`baseline-v1.1`** (this rebaseline) |
 
-## 6. Communication (step 5) [PMP-7 §7.1]
+## 6. Communication (step 5)
 | Stakeholder | What | Channel | When | By |
 |---|---|---|---|---|
 | Sponsor | Decision record, impact, baseline v1.1 (this form) | eLearning – S2 submission | 05/11/2026 | PO |
 | Sponsor | Weekly Status Report incl. CR status | eLearning + Review 2 | 05/11, 06/11 | Leader S2 |
 | Team | Decision, new tasks, owners | Jira (ECBS-122, ECBS-139…144), PR description | 05/11/2026 | PO |
 
-## 7. Implementation status (05/11/2026 00:30)
+## 7. Implementation status (end of Sprint 2, 05/11/2026 23:59)
 | Part | Status |
 |---|---|
-| C7 documentation, baseline v1.1, tags | Done |
-| C1–C4, C6 part (US-24, Đạt) | To Do – server hook `CATALOG_EDITORS` prepared in PR #8 |
-| C5, rest of C6 (US-25) | Planned for Sprint 3 |
+| C7 documentation, baseline v1.1, tags | Done (Chính) |
+| C1–C4: `staff` role + migration, permission matrix (`lib/permissions.js`), Admin changes roles, Staff access to book/category/author screens, 403 on delete and accounts | Done – merged PR #11 (Đạt), deployed 05/11 |
+| C6 part: 5 CR test cases (TC-CR-01…05) + F1 regression table | Done – PR #12 (Đạt); automated 71/71 pass; hosted Staff run pending → US-24 In Review |
+| C5, rest of C6 (US-25 last-updated audit) | Planned for Sprint 3 |
 
 ## 8. Sign-off
 | Role | Name | Signature / date |
