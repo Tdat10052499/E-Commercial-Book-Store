@@ -93,3 +93,5 @@ Cảm ơn Đạt đã merge #65, #67, #64 và gắn `v1.0`, `baseline-v1.2`. PR 
 - **Trước 18/11 23:59, mỗi người:**
   - chấm cột E–G trong file Eval360 của mình (`deliverables/Final/Eval360_Team6_2374802010097.xlsx` là của Đạt);
   - Đạt làm video demo ≤ 3 phút (slide 10) và gửi tài khoản demo cho Chính qua tin nhắn riêng.
+
+**→ Bản tổng hợp đầy đủ (17/11 23:00): `pm/final/HANDOVER_2026-11-17_Chinh-to-Dat.md`.**
