@@ -16,6 +16,7 @@
 |---|---|---|---|
 | 0.1 | 15/11/2026 | Nguyễn Minh Chính (PO) | First full draft from the Sprint records, the PO acceptance record, the UAT of 13/11, the CCB decision on CR-07 and Jira (read 15/11). Fields marked **TBD** need data from the team before submission |
 | 0.2 | 16/11/2026 | Nguyễn Minh Chính (PO) | Final batch completed: PMP Final (c1), slides (c6) and Eval360 forms built from the same figures; no figure changed |
+| 0.3 | 17/11/2026 | Hồ Du Tuấn Đạt | Tag `v1.0` (d1d1e15 on `main`, pushed 16/11) and `baseline-v1.2` filled in §2 milestones, closure checklist and links; no figure change |
 
 **How to read the figures.** *Plan* = baseline values (Release Plan, Sprint Backlogs). *Actual* = Jira worklogs, GitHub and the PO acceptance record. Rate 200,000 VND per person-hour, N = 3 [03 §6.4]. Story points (SP) count only when the item meets the Story DoD (all ACs pass on the hosted site, reviewed PR, tests pass, PO acceptance).
 
@@ -73,7 +74,7 @@ Product Backlog v1.4 and the Release Plan (PMP Part 3, §3.4 and §3.8) keep all
 | M4 Baseline v1.0 tag | 30/10 | `baseline-v1.0` created 02/11 |
 | M5 Sprint 2 submission | 05/11 23:59 | Submitted; Sprint files committed 06/11 09:24 (upload time: TBD) |
 | M6 Review 2 | 06/11 | Held 06/11 in class (Đạt presented); Retro 2 held 11/11 (5 days late) |
-| M7 Release v1.0 + release notes | 12/11 | Release notes 1.0 on 12/11; release PR #57 merged into `main` 12/11; tag `v1.0`: **TBD** (S3-T19) |
+| M7 Release v1.0 + release notes | 12/11 | Release notes 1.0 on 12/11; release PR #57 merged into `main` 12/11; tag `v1.0` on `main` (d1d1e15), pushed 16/11 (S3-T19) |
 | M8 Sprint 3 submission | 12/11 23:59 | Submitted on time (c2, c3, c5, c0) |
 | M9 Review 3 + UAT | 13/11 | Review 3 video recorded and submitted; UAT 13/11 **Accepted** (73/73); CCB CR-07 Approve |
 | M10 Final submission | 15/11 23:59 | This report, c1 Final, c2 Final, slides, Eval360 |
@@ -150,7 +151,7 @@ Risks that did not occur: R03 cold start (watching until 17/11), R04 Jira time t
 |---|---|---|---|
 | 1 | Customer acceptance (UAT) | Done 13/11 – Accepted, 73/73 Pass | c5 UAT minutes; Sponsor signature: TBD |
 | 2 | NFR-03 check (site online on 17/11) | Planned 17/11 | TC-F1-24 |
-| 3 | Release on `main` + tag `v1.0` + release notes | Release PR #57 merged 12/11; release notes 1.0; tag `v1.0`: **TBD** (Đạt, S3-T19, PR #64) | GitHub |
+| 3 | Release on `main` + tag `v1.0` + release notes | Release PR #57 merged 12/11; release notes 1.0; tag `v1.0` on `main` (d1d1e15, after PR #64), pushed 16/11; `baseline-v1.2` on `develop` (6efc141) | GitHub |
 | 4 | Hand-over of code | Repository with README (how to run, environment, seed); tests in `app/tests` | Repo |
 | 5 | Hand-over of documents | c0–c6 on eLearning; Markdown sources in `pm/`, exports in `deliverables/` | Repo, eLearning |
 | 6 | Archive | Baseline tags `baseline-v1.0`, `baseline-v1.1`, `baseline-v1.2` (after merge); Jira project ECBS kept; AI usage log kept | Repo, Jira |
@@ -224,7 +225,7 @@ Risks that did not occur: R03 cold start (watching until 17/11), R04 Jira time t
 | Admin demo account | TBD – username and password entered in the submitted file only (never in the public repository) |
 | Store Staff demo account | TBD – as above |
 | Customer demo account | TBD – as above (or register a new account on the site) |
-| Repository | https://github.com/Tdat10052499/E-Commercial-Book-Store (tag `v1.0`: TBD) |
+| Repository | https://github.com/Tdat10052499/E-Commercial-Book-Store (tag `v1.0`) |
 | Jira board | https://tdat100524.atlassian.net/jira/software/projects/ECBS/boards/2 |
 | Demo video (≤ 3 min, AC pass and fail) | TBD |
 | Sprint Review 3 video | TBD (link) |
