@@ -29,7 +29,7 @@
 | Stack (P04) | Next.js + Vercel + Supabase – Đạt chốt 30/10/2026 |
 | URL hosting | https://pagetunnel.vercel.app/ (Vercel; deployed by Đạt, URL provided by Chính 30/10/2026) |
 | Tài khoản demo (admin / customer / staff) | TBD – **không ghi mật khẩu thật vào repo public** |
-| Link video demo | Sprint Review 3 video: recorded and submitted (Chính, 15/11/2026) – https://youtu.be/EyRPk3jFoMA (Đạt, 18/11/2026). Final demo video ≤ 3 min [03 §8]: TBD |
+| Link video demo | Sprint Review 3 video: recorded and submitted (Chính, 15/11/2026) – https://youtu.be/EyRPk3jFoMA (Đạt, 18/11/2026). Final demo video ≤ 3 min [03 §8]: https://youtu.be/pgZeKI_Ijvg (Đạt, 18/11/2026) |
 
 ## 4. Dữ liệu thực tế theo Sprint (lấy từ Jira – Completed Work)
 | Sprint | SP cam kết | SP đạt DoD | Giờ kế hoạch | Giờ thực tế | Nguồn (ảnh/CSV Jira) | Ngày |

@@ -19,6 +19,7 @@
 | 0.3 | 17/11/2026 | Hồ Du Tuấn Đạt | Added the release label "v1.0" of the source code (created 16/11) in the milestones, the closure checklist and the links. No figure changed |
 | 0.4 | 17/11/2026 | Hồ Du Tuấn Đạt | Whole report rewritten in plain language for readers who do not use GitHub or Jira: abbreviations written out in full, GitHub terms replaced by plain descriptions. Only identifiers of user stories, test cases, requirements, change requests, defects, risks, issues and lessons are kept. No figure changed |
 | 0.5 | 18/11/2026 | Hồ Du Tuấn Đạt | Link of the Sprint Review 3 video added. No figure changed |
+| 0.6 | 18/11/2026 | Hồ Du Tuấn Đạt | Link of the demo video added. No figure changed |
 
 **How to read the figures.** "Plan" means the values in the agreed plan (the baseline: Release Plan and Sprint Backlogs). "Actual" means what really happened, taken from the hours logged in Jira, the history of the source code on GitHub and the Product Owner's acceptance record. Work is costed at 200,000 VND per person-hour, and the project has 3 Sprints, as set by the course [03 §6.4]. Story points measure the relative size of a piece of work. A story's points count as "Done" only when the story meets the team's Definition of Done: every acceptance criterion passes on the live website, the other member has reviewed the code, all automated tests pass and the Product Owner has accepted the story.
 
@@ -237,7 +238,7 @@ All file names start with "HK261_SPM_FP_Team6_".
 | Customer demo account | To be confirmed, as above (or register a new account on the website) |
 | Source code | https://github.com/Tdat10052499/E-Commercial-Book-Store (version label "v1.0") |
 | Task board | https://tdat100524.atlassian.net/jira/software/projects/ECBS/boards/2 |
-| Demo video (at most 3 minutes, showing acceptance criteria that pass and fail) | To be confirmed |
+| Demo video (at most 3 minutes, showing acceptance criteria that pass and fail) | https://youtu.be/pgZeKI_Ijvg (2 minutes 58 seconds: 11 test cases, each shown before its run on the live website) |
 | Sprint Review 3 video | https://youtu.be/EyRPk3jFoMA |
 
 ## Appendix C – Work allocation and hours (actual, from the time logged in Jira)
