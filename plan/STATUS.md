@@ -40,7 +40,7 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | P31 | Review 3 + UAT + biên bản | 13/11 | done | Đạt, Chính | 13/11 | docs/P33 | Video Review 3 đã nộp; UAT **Accepted** 73/73; CCB CR-07 Approve (Chính cung cấp 15/11) |
 | P32 | Hosting cuối, tài khoản demo, dữ liệu đóng dự án | 14/11 | todo | Đạt |  |  | Dữ liệu đóng dự án đã thu (Jira 15/11, 85.23 h). Còn: tài khoản demo cho Final Report, giờ sau 12/11 19:59 |
 | P33 | Final Report, EVM, Lessons Learned, PMP/Workbook Final | 15/11 | in_progress | Chính |  | #67 | 16/11: c1 PMP Final, c2 Final, c6 Final Report xuất xong (`tools/export_final.py`). Còn TBD: giờ sau 12/11 19:59, tag v1.0, tài khoản demo, link video, chữ ký UAT |
-| P34 | Slide + video demo | 15/11 | in_progress | Chính (slide), Đạt (video) |  | #67 | 16/11: c6_Slides.pptx 15 slide + speaker notes chia người nói (`tools/slides_final.js`). Còn: video demo ≤ 3 phút |
+| P34 | Slide + video demo | 15/11 | in_progress | Chính (slide), Đạt (video) |  | #67 | 16/11: c6_Slides.pptx 15 slide + speaker notes chia người nói (`tools/slides_final.js`). Còn: video demo ≤ 3 phút 17/11: deck Canva 14 slide theo 8.2 (10 phút), kịch bản `pm/final/presentation-canva-14-slides.md` |
 | P35 | Nộp cuối + Eval360 | 15/11 23:59 | in_progress | Chính, Đạt |  | #67 | 2 file Eval360 (cột E–G mỗi người tự chấm); nộp lên eLearning: TBD (sau hạn 15/11 23:59) |
 | P36 | Thuyết trình | 17/11 07:00 | todo |  |  |  |  |
 
@@ -54,3 +54,4 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | 06/11/2026 | Chính | Cuối S2: P15, P16, P17, P19 → done; P18, P21 vẫn in_progress (test admin trên host, upload) |
 | 15/11/2026 | Chính | Cập nhật S3 theo repo/Jira và kết quả 13/11 do Chính cung cấp: P18, P22–P26, P28–P31 → done; P27 in_progress (thiếu tag v1.0); P33 → in_progress (c6, c2 Final) |
 | 16/11/2026 | Chính | Bộ nộp Final xuất đủ 5 loại file (c1, c2, c6 Report, c6 Slides, Eval360 × 2); P33–P35 → in_progress chờ điền TBD và nộp |
+| 17/11/2026 | Đạt | P34: làm lại deck Canva thành 14 slide theo yêu cầu 8.2 (10 phút + Q&A), kịch bản + speaker notes chia người nói; ghi chú gửi Chính `pm/sprints/S3/notes/2026-11-17_Dat-to-Chinh.md` |
