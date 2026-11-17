@@ -57,6 +57,8 @@
 ## 7. Kết quả các sự kiện (do thành viên cung cấp)
 | Sự kiện | Kết quả | Người cung cấp | Ngày cung cấp |
 |---|---|---|---|
+| Hạn nộp Final dời sang **18/11/2026 23:59**; thuyết trình cuối kỳ dời sang **Thứ Sáu 20/11/2026** (giờ: TBD) | Thông báo mới | Nguyễn Minh Chính | 17/11/2026 |
+| NFR-03/AC-03 (TC-F1-24) | Pass – site online 17/11 22:33 (`pm/sprints/S3/evidence/NFR-03-check-2026-11-17.md`); PO nghiệm thu NFR-03 → 68/68 SP | Nguyễn Minh Chính | 17/11/2026 |
 | Nộp đợt S3 (c2, c3, c5, c0 – hạn 12/11 23:59) | Đã nộp đúng hạn trên eLearning (file nộp chưa có trong repo) | Nguyễn Minh Chính | 15/11/2026 |
 | Video Sprint Review 3 | Đã quay và nộp | Nguyễn Minh Chính | 15/11/2026 |
 | UAT với Sponsor (13/11) | **Accepted** – 73/73 AC Pass, không có defect, không có CR mới | Nguyễn Minh Chính | 15/11/2026 |

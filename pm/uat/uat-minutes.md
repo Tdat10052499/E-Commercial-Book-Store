@@ -47,7 +47,7 @@ Items from the *Known issues* part of the release notes v1.0, shown before the s
 
 | Known issue | Sponsor's remark |
 |---|---|
-| NFR-03/AC-03: site still online on 17/11 (TC-F1-24). Step UAT-F1-24 is recorded as Pass; the PO accepts NFR-03 (2 SP) after the check on 17/11 (`po-acceptance.md`) | TBD |
+| NFR-03/AC-03: site still online on 17/11 (TC-F1-24). Step UAT-F1-24 is recorded as Pass; the PO accepts NFR-03 (2 SP) after the check on 17/11 (`po-acceptance.md`). **Closed 17/11:** TC-F1-24 Pass at 22:33, NFR-03 accepted | TBD |
 | Free Supabase database pauses after a week without traffic (keep-alive in `app/README.md`) | TBD |
 | Favorite button on the book cards (UI outside the Release 1.0 backlog, stored only in the browser) | TBD |
 

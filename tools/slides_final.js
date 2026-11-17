@@ -43,7 +43,7 @@ pres.defineSlideMaster({
   margin: [0.5, 0.6, 0.6, 0.6],
   objects: [
     { placeholder: { options: { name: "title", type: "title", x: 0.6, y: 0.35, w: 12.1, h: 0.9, fontSize: 34, bold: true, color: C.text2, valign: "middle" }, text: "" } },
-    { text: { text: "Team 6 Page Turners · Release 1.0 · Final presentation 17/11/2026", options: { x: 0.6, y: 7.0, w: 9, h: 0.35, fontSize: 11, color: HEX.accent5 } } },
+    { text: { text: "Team 6 Page Turners · Release 1.0 · Final presentation 20/11/2026", options: { x: 0.6, y: 7.0, w: 9, h: 0.35, fontSize: 11, color: HEX.accent5 } } },
   ],
   slideNumber: { x: 12.2, y: 7.0, w: 0.6, h: 0.35, fontSize: 11, color: HEX.accent5 },
 });
@@ -80,7 +80,7 @@ s.addText([
   { text: "Final presentation · Team 6 \"Page Turners\"", options: { breakLine: true } },
   { text: "Hồ Du Tuấn Đạt – Developer, Sprint Leader S1 & S3", options: { breakLine: true } },
   { text: "Nguyễn Minh Chính – Product Owner, Sprint Leader S2", options: { breakLine: true } },
-  { text: "Sponsor: Dr. Bùi Minh Phụng · 17/11/2026" },
+  { text: "Sponsor: Dr. Bùi Minh Phụng · 20/11/2026" },
 ], { placeholder: "body" });
 s.addNotes("Đạt (30 s): Greet, introduce the team and the two roles. We present together: Đạt – team, Sprints 1 and 3, demo; Chính – plan, Sprint 2, changes, plan vs actual, lessons.");
 
@@ -90,12 +90,12 @@ s.addText("Release 1.0 was accepted by the Sponsor", { placeholder: "title" });
 txt(s, "Goal: an online book catalogue – accounts and roles, book management, browsing, details, search and filter (F1–F5) plus the Store Staff role (CR-06).",
   { x: 0.6, y: 1.45, w: 12.1, h: 1.0 });
 stat(s, 0.6, 2.75, 2.85, "73/73", "acceptance criteria Pass at UAT 13/11");
-stat(s, 3.7, 2.75, 2.85, "66/68", "story points Done (NFR-03 on 17/11)");
-stat(s, 6.8, 2.75, 2.85, "0.97", "SPI at closure", C.text2);
-stat(s, 9.9, 2.75, 2.85, "1.43", "CPI at closure", C.text2);
+stat(s, 3.7, 2.75, 2.85, "68/68", "story points Done (all 20 items)");
+stat(s, 6.8, 2.75, 2.85, "1.00", "SPI at closure", C.text2);
+stat(s, 9.9, 2.75, 2.85, "1.47", "CPI at closure", C.text2);
 txt(s, "20 backlog items delivered by 2 members · nothing cut · cart, checkout and social login out of scope",
   { x: 0.6, y: 5.0, w: 12.1, h: 0.9, color: C.text2, italic: true });
-s.addNotes("Đạt (60 s): The goal of Release 1.0 and the result. UAT on 13/11: 73 of 73 ACs Pass, no defect, no new CR. 66 of 68 SP are Done; NFR-03 (site online until 17/11) is checked today. SPI 0.97, CPI 1.43 – explained on the EVM slide.");
+s.addNotes("Đạt (60 s): The goal of Release 1.0 and the result. UAT on 13/11: 73 of 73 ACs Pass, no defect, no new CR. All 68 SP are Done; NFR-03 (site online on 17/11) was checked on 17/11. SPI 1.00, CPI 1.47 – explained on the EVM slide.");
 
 // 3 Plan
 pres.addSection({ title: SECTIONS[1] });
@@ -210,20 +210,20 @@ s.addNotes("Chính (60 s): Velocity 0 → 5 → 45 SP: items were built on time 
 
 // 12 EVM
 s = slide("CONTENT", SECTIONS[4]);
-s.addText("EVM: schedule recovered in Sprint 3", { placeholder: "title" });
+s.addText("EVM: on schedule at closure, below budget", { placeholder: "title" });
 s.addChart(pres.charts.LINE, [
-  { name: "SPI", labels: ["End S1", "End S2", "End S3", "Closure"], values: [0.0, 0.51, 0.97, 0.97] },
-  { name: "CPI", labels: ["End S1", "End S2", "End S3", "Closure"], values: [0.0, 0.69, 1.50, 1.43] },
+  { name: "SPI", labels: ["End S1", "End S2", "End S3", "Closure"], values: [0.0, 0.51, 0.97, 1.00] },
+  { name: "CPI", labels: ["End S1", "End S2", "End S3", "Closure"], values: [0.0, 0.69, 1.50, 1.47] },
 ], Object.assign({ x: 0.6, y: 1.45, w: 6.6, h: 4.7, chartColors: [HEX.accent2, HEX.dk2], lineSize: 3, lineDataSymbolSize: 9,
   showTitle: true, title: "SPI and CPI by snapshot", showValue: true, dataLabelPosition: "t", dataLabelColor: HEX.dk1, dataLabelFormatCode: "0.00",
   showLegend: true, legendPos: "b", valAxisMinVal: 0, valAxisMaxVal: 1.8, valAxisLabelFormatCode: "0.0" }, chartText));
 s.addTable([
   [H("Closure (PSP 68)"), H("VND")],
-  ["PV", "26,400,000"], ["EV (66/68)", "25,623,529"], ["AC (89.73 h)", "17,946,000"], ["EAC = BAC / CPI", "18,489,818"],
+  ["PV", "26,400,000"], ["EV (68/68)", "26,400,000"], ["AC (89.73 h)", "17,946,000"], ["EAC = BAC / CPI", "17,946,000"],
 ], { x: 7.5, y: 1.5, w: 5.2, colW: [2.9, 2.3], fontSize: 20, color: HEX.dk1, border: { type: "solid", pt: 0.75, color: "C9D6D2" }, rowH: 0.6, fontFace: "Calibri" });
-txt(s, "CPI 1.43 is not pure efficiency: some hours rebuilt after the Sprint, AI-assisted work, late logging",
+txt(s, "CPI 1.47 is not pure efficiency: some hours rebuilt after the Sprint, AI-assisted work, late logging",
   { x: 7.5, y: 4.85, w: 5.2, h: 1.3, color: C.accent2, fontSize: 18 });
-s.addNotes("Chính (60 s): PV = BAC × n/N, EV = BAC × SP Done / PSP, AC = hours × 200,000. SPI rose from 0.51 to 0.97 when the carried items were accepted. CPI 1.43 at closure (1.50 before the last hours were logged) – be honest about why. Only gap: NFR-03, checked today.");
+s.addNotes("Chính (60 s): PV = BAC × n/N, EV = BAC × SP Done / PSP, AC = hours × 200,000. SPI rose from 0.51 to 0.97 when the carried items were accepted, and to 1.00 with NFR-03. SPI 1.00 at closure after NFR-03 was accepted on 17/11. CPI 1.47 at closure (1.50 at the end of S3, before the last hours were logged) – be honest about why.");
 
 // 13 Quality
 s = slide("CONTENT", SECTIONS[4]);

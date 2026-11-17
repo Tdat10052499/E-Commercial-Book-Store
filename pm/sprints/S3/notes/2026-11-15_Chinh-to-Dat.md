@@ -72,3 +72,24 @@ Cảm ơn Đạt đã merge #65, #67, #64 và gắn `v1.0`, `baseline-v1.2`. PR 
 - Có 4 worklog mới của Đạt (4.5 h) nên tổng giờ đổi: **89.73 h**, AC 17.946.000, **CPI 1.43**, EAC 18.489.818. SPI giữ 0.97.
 - PR mới `docs/P33-final-hours` đã cập nhật Final Report v0.3, c2 Final và slide (slide 2, 11, 12) theo số này. Đạt nhớ **dùng CPI 1.43** khi trình bày.
 - Trên Jira, S3-T17, T19, T21 và D7 đã có giờ nhưng vẫn ở *To Do / In Progress*, còn Sprint 3 vẫn mở. Đạt chuyển 4 việc này sang Done rồi **Complete sprint**. Chính sẽ tự log giờ T22 của mình.
+
+## 7. Cập nhật 17/11/2026 22:45 – hạn nộp mới 18/11 23:59, thuyết trình Thứ Sáu 20/11
+- **NFR-03 đạt:** Chính mở website lúc 17/11 22:33, `/books` trả về 200 và đủ 30 sách (TC-F1-24 Pass, `pm/sprints/S3/evidence/NFR-03-check-2026-11-17.md`). PO đã nghiệm thu, nên giờ là **68/68 SP**.
+- **Số liệu khi đóng dự án** (dùng thống nhất ở mọi file và trên slide):
+
+  | Chỉ số | Giá trị |
+  |---|---|
+  | SPI | 1.00 |
+  | CPI | 1.47 |
+  | EV = PV = BAC | 26.400.000 |
+  | AC | 17.946.000 (89.73 h) |
+  | EAC | 17.946.000 |
+- **PR #68** đã thêm các thay đổi này. Đạt **review rồi merge trước 18/11 tối** để bộ file nộp khớp với repo.
+- **Jira:**
+  - S3-T17, T19, T21, D7 có giờ nhưng chưa Done. Đạt chuyển sang Done.
+  - D2, D3 không họp: để nguyên hoặc ghi chú "Not held".
+  - Bấm **Complete sprint** cho Sprint 3.
+  - S3-T22 của Chính: Chính tự chuyển và log.
+- **Trước 18/11 23:59, mỗi người:**
+  - chấm cột E–G trong file Eval360 của mình (`deliverables/Final/Eval360_Team6_2374802010097.xlsx` là của Đạt);
+  - Đạt làm video demo ≤ 3 phút (slide 10) và gửi tài khoản demo cho Chính qua tin nhắn riêng.

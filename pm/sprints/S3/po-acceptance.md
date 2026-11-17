@@ -5,6 +5,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.6 | 17/11/2026 | Nguyễn Minh Chính (PO) | NFR-03 accepted after TC-F1-24 Pass on 17/11 22:33 → **68 of 68 SP** (Release 1.0 complete) |
 | 1.5 | 15/11/2026 | Nguyễn Minh Chính (PO) | After the CCB (13/11, CR-07 Approve): same decisions counted on baseline v1.2 → **66 of 68 SP**; UAT 13/11 73/73 ACs Pass. NFR-03 stays for 17/11 |
 | 1.4 | 12/11/2026 | Nguyễn Minh Chính (PO) | NFR-04 accepted again after Đạt's TC-F3-06 re-run (DEF-S3-03 fixed) → cumulative 60 of 62 SP |
 | 1.3 | 12/11/2026 | Nguyễn Minh Chính (PO) | S3-T18: Sprint 3 items accepted after Đạt's hosted run (S3-T14, S3-T15) – US-11, US-12, US-13, NFR-05, US-25 (15 SP, baseline v1.1); NFR-04 re-check pending after DEF-S3-03 |
@@ -64,4 +65,6 @@ CR-07 (Change Log): the PO asks the CCB on 13/11 to re-baseline the S3 story poi
 | Up to 10/11 (S1 and S2 items, unchanged) | 45 |
 | Accepted 12/11: US-11 3, US-12 5, US-13 5, NFR-05 5, US-25 3 | + 21 |
 | UAT with the Sponsor 13/11: 73/73 ACs Pass, Release 1.0 accepted | ± 0 (already counted) |
-| **Cumulative accepted (15/11)** | **66 of 68** – NFR-03 (2 SP) is accepted by the PO after the check on 17/11 (TC-F1-24) |
+| Cumulative accepted (15/11) | 66 of 68 – NFR-03 waits for the check on 17/11 |
+| NFR-03: TC-F1-24 Pass 17/11 22:33 (site online, `evidence/NFR-03-check-2026-11-17.md`) – **accepted** by Nguyễn Minh Chính (PO) | + 2 → NFR-03 Done |
+| **Cumulative accepted (17/11)** | **68 of 68 SP** |
