@@ -5,6 +5,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.7 | 18/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | NFR-03 accepted by the PO on 17/11 after TC-F1-24 (recorded 18/11 on Đạt's confirmation; ECBS-109 moved to Done) → **68 of 68 SP** |
 | 1.6 | 17/11/2026 | Nguyễn Minh Chính (PO) | NFR-03 accepted after TC-F1-24 Pass on 17/11 22:33 → **68 of 68 SP** (Release 1.0 complete) |
 | 1.5 | 15/11/2026 | Nguyễn Minh Chính (PO) | After the CCB (13/11, CR-07 Approve): same decisions counted on baseline v1.2 → **66 of 68 SP**; UAT 13/11 73/73 ACs Pass. NFR-03 stays for 17/11 |
 | 1.4 | 12/11/2026 | Nguyễn Minh Chính (PO) | NFR-04 accepted again after Đạt's TC-F3-06 re-run (DEF-S3-03 fixed) → cumulative 60 of 62 SP |

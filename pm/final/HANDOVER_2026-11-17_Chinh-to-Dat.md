@@ -2,6 +2,8 @@
 
 *Từ: Nguyễn Minh Chính (PO). Gửi: Hồ Du Tuấn Đạt.*
 
+> **Đọc mục 12 trước** (18/11 03:00): tình trạng mới nhất và việc còn lại của từng người.
+
 **Ghi chú này tóm tắt mọi thứ từ 13/11 đến nay.** Các ghi chú trước: `pm/sprints/S3/notes/2026-11-15_Chinh-to-Dat.md` (mục 1–7).
 
 ## 0. Lịch mới
@@ -29,9 +31,9 @@
 |---|---|
 | Phạm vi | 20/20 item; **68/68 SP** Done (baseline v1.2); 73/73 AC Pass ở UAT |
 | Velocity | S1 **0** · S2 **5** · S3 **45** SP (21 mới + 24 mang sang); trung bình 22.7 |
-| Giờ kế hoạch / thực tế | S1 48 / 41 · S2 39.75 / 24 · S3 39.5 / 26.23 · đóng dự án 0 / 7 → **127.25 / 98.23 h** (Jira) |
-| Giờ theo người | Đạt **40.40 h** · Chính **57.83 h** (gồm 7 h đóng dự án) |
-| EVM đóng dự án | PV = EV = BAC **26.400.000** · AC **19.646.000** · **SPI 1.00 · CPI 1.34** · EAC 19.646.000 · ETC 0 |
+| Giờ kế hoạch / thực tế | S1 48 / 41 · S2 39.75 / 24 · S3 39.5 / **33.23** (24.73 trong Sprint + **8.5 h closure 13–17/11**) → **127.25 / 98.23 h** (Jira, đọc 18/11) |
+| Giờ theo người | Đạt **40.40 h** (S3 13.40, gồm 1.5 h release v1.0) · Chính **57.83 h** (S3 19.83, gồm 7 h S3-C1…C4) |
+| EVM đóng dự án (mốc **Closure 18/11**) | PV = EV = BAC **26.400.000** · AC **19.646.000** · **SPI 1.00 · CPI 1.34** · EAC 19.646.000 · ETC 0 |
 | Lỗi | 6 lỗi tìm thấy, đã sửa hết, 0 lỗi mở; 114/114 test tự động |
 | Baseline | v1.0 (30/10, PSP 55, BAC 24 tr) → v1.1 (04/11, CR-06, PSP 62, BAC 26.4 tr) → v1.2 (15/11, CR-07, PSP 68) |
 
@@ -121,3 +123,32 @@ Sửa số liệu thì sửa Markdown nguồn (`pm/final/final-report.md`, `pm/p
   - Speaker notes cho slide 2–9 và 11–14 vẫn trống. Công cụ không ghi được notes, nên **Đạt hoặc Chính dán tay** từ `pm/final/presentation-canva-14-slides.md` v3.1.
   - Video slide 10: Đạt chèn.
 - **File nộp:** đã xuất deck ra PowerPoint. Chính tải về và đặt tên `HK261_SPM_FP_Team6_c6_Slides.pptx` trong `1_Submissions\Final\` và `deliverables/Final/`. Nếu Đạt chèn video hoặc dán notes sau thời điểm này thì **xuất lại** từ Canva.
+
+## 12. Tình trạng 18/11/2026 03:00 – bản gộp cuối (đọc mục này trước)
+**Đã gộp 3 commit mới của Đạt (23e360f, 781f44a, b2faa65) vào PR #68.** Merge #68 là đủ; #69 không còn gì riêng → đóng.
+
+**Cách chia giờ thống nhất (theo deck Canva Đạt đã sửa):** S3 = **33.23 h** = 24.73 h trong Sprint + **8.5 h closure 13–17/11** (Đạt 1.5 h release v1.0; Chính 7 h S3-C1…C4). Đạt 40.40 h · Chính 57.83 h · tổng **98.23 h**. Mốc EVM **Closure (18/11)**: PV = EV = 26.4 tr · AC 19.6 tr · SPI 1.00 · CPI 1.34 · EAC 19.646.000. Mục 2 đã sửa theo cách chia này. Không dùng cách chia cũ "26.23 + 7 h" nữa.
+
+**Đã giữ từ cả hai bên:**
+- Của Đạt: Sprint 3 đã đóng trên Jira 18/11 02:12 (checklist #7 Done), quyền GV ở GitHub/Jira (#9), link video demo, NFR-03 → ECBS-109 Done.
+- Của Chính: lịch đổi (nộp **18/11 23:59**, thuyết trình **Thứ Sáu 20/11**), biên bản kiểm tra NFR-03 lúc 22:33 (`pm/sprints/S3/evidence/NFR-03-check-2026-11-17.md`), mốc EVM "Before the NFR-03 check, 16/11", website giữ online tới hết buổi thuyết trình 20/11 (#8).
+- Version history: Final Report thêm **v1.0** (bản gộp); risk register 1.10 (Chính, R03 đóng) + 1.11 (Đạt, R04); PO acceptance 1.6 + 1.7; kịch bản Canva v3.2 (lời slide 7 theo 33.23 h).
+- c1, c2, c6 Report, Eval360 × 2 đã xuất lại từ nguồn đã gộp.
+
+**File slide nộp (`c6_Slides.pptx`) chưa có trong repo:** bản Chính tải lúc trước còn số cũ (26.23 h, Closure 17/11) nên đã bỏ. Canva hiện đã đúng số. Bản cuối phải xuất **sau khi** chèn video và dán notes.
+
+### Việc còn lại – trước 18/11 23:59
+| # | Việc | Ai |
+|---|---|---|
+| 1 | Review + **merge PR #68** vào `develop`; đóng PR #69 | Đạt |
+| 2 | Canva: chèn **video demo** vào slide 10; dán **speaker notes** slide 2–14 từ `pm/final/presentation-canva-14-slides.md` v3.2 (công cụ không ghi được notes) | Đạt (Chính hỗ trợ dán notes) |
+| 3 | Xuất Canva → PowerPoint, đặt tên `HK261_SPM_FP_Team6_c6_Slides.pptx`, đưa vào `deliverables/Final/` (PR riêng hoặc commit lên `develop` qua PR) và gửi Chính | Đạt |
+| 4 | Chấm **Eval360** cột E–G cho cả hai người và nộp file của mình | Mỗi người |
+| 5 | Gửi Chính **tài khoản demo** (Admin, Staff, Customer) qua tin nhắn riêng – **không** đưa lên repo | Đạt |
+| 6 | Điền TBD trong file docx nộp: tài khoản demo (Appendix B), giờ UAT, nhận xét GV, lý do CR-07 | Chính |
+| 7 | Nộp lên eLearning: c1, c2, c6 Report, c6 Slides, Eval360 của mình | Chính (c1, c2, c6 ×2), mỗi người Eval360 |
+
+### Thứ Sáu 20/11
+- Kịch bản: `HK261_SPM_FP_Team6_KichBan_ThuyetTrinh_Canva14.docx` (14 lượt, ~9:40) – lời slide 7 theo số mới: "98.23 hours in total, including 8.5 hours of closure work counted in Sprint 3".
+- Mở website trước 15 phút; cửa sổ ẩn danh `/books` + cửa sổ Admin đã đăng nhập; có video dự phòng.
+- Câu hỏi dễ gặp: CPI 1.34 (giờ ghi trễ, có AI hỗ trợ – không phải nhanh hơn 34 %), velocity S1 = 0, vì sao closure tính vào S3.

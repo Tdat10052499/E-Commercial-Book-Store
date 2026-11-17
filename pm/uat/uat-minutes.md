@@ -5,6 +5,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.1 | 18/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | NFR-03 checked and accepted 17/11; tag `v1.0` added 16/11. Session time, place, keyboard, Sponsor's remarks and signature still to be filled by the team |
 | 1.0 | 15/11/2026 | Nguyễn Minh Chính (PO) | Session results: 73/73 ACs Pass, no defect, no new change request, decision **Accepted**; CR-07 decided by the CCB the same day (Approve) |
 | 0.1 | 12/11/2026 | Nguyễn Minh Chính (PO) | Form: session data, result per feature (73 ACs of the UAT script v0.2), defects, known issues, change requests, decision, sign-off |
 
@@ -17,7 +18,7 @@
 | Sponsor / Customer | Dr. Bùi Minh Phụng |
 | Team | Hồ Du Tuấn Đạt (Leader S3), Nguyễn Minh Chính (Product Owner) |
 | At the keyboard | TBD |
-| Build under test | Release 1.0 deployed from `main` (release PR #57, 12/11), https://pagetunnel.vercel.app/; tag `v1.0`: TBD (S3-T19) |
+| Build under test | Release 1.0 deployed from `main` (release PR #57, 12/11), https://pagetunnel.vercel.app/; tag `v1.0` added 16/11 (S3-T19) |
 | Script | UAT script v0.2 – 73 ACs (Part I of this document) |
 | Test data | 30 seed books; UAT accounts by role (Admin, UAT Staff, UAT Customer, UAT Customer 2) |
 

@@ -8,6 +8,7 @@ Canva (chỉnh sửa được): https://canva.link/b3s5irrs6rifzb3 · Design ID 
 | v2 | 16/11/2026 | Giải nghĩa thuật ngữ và con số cho người không đọc GitHub |
 | v3 | 17/11/2026 | Theo yêu cầu 8.2 và tham khảo deck Team 02: 14 slide, 10 phút; thêm Charter, danh sách sản phẩm, Release Plan, ước lượng, 3 burndown, velocity/giờ, bảng CR, issues, UAT, EVM theo mốc, 1 bài học quan trọng nhất, Q&A. Chữ trên slide ≥ 30 px (khung 1920×1080), số liệu ở dạng bảng hoặc biểu đồ |
 | v3.1 | 17/11/2026 | Nguyễn Minh Chính: số liệu đóng dự án mới (NFR-03 đạt 17/11, giờ đủ 98.23 h) – speaker notes slide 7, 12, bảng câu hỏi, lưu ý; ngày trình bày 20/11 |
+| v3.2 | 18/11/2026 | Nguyễn Minh Chính: gộp với bản của Đạt; lời nói slide 7 theo cách chia giờ trên Canva (S3 33.23 h gồm 8.5 h closure) |
 
 Nguồn số liệu: Final Report c6 (`pm/final/final-report.md` §2–§5), Charter (`pm/pmp/01-charter.md`), Release Plan (`pm/pmp/03-master-release-plan.md`), burndown PNG trong `pm/sprints/S*/evidence/`. Không thêm số mới ngoài các file này.
 
@@ -60,7 +61,7 @@ Canva hiện chỉ lưu speaker notes cũ ở slide 1 và 10 (vẫn đúng). Cô
 
 **6 · Đạt (0:40).** These are the three burndowns of task hours. Grey is the plan, gold is actual. Sprint 1 is flat because hours were logged in Jira only after the Sprint; 10 hours were left. Sprint 2 dropped only at the end because most work was merged on the last day; 6.25 hours left. Sprint 3 follows the plan more closely, ending with 7 hours left, but two Daily meetings were missed.
 
-**7 · Chính (0:35).** Velocity is the story points the Product Owner accepted as Done inside the Sprint. Ours was 0, 5 and 45. The early numbers are low because items were built on time but accepted one Sprint later: 16 points of Sprint 1 in the Sprint 2 week, and 24 points of Sprint 2 in Sprint 3. NFR-03 was checked on 17/11, so all 68 of 68 points are Done, an average of 22.7. We planned 127.25 task hours; we logged 91.23 hours in the Sprints plus 7 hours of closure work, 98.23 hours in total against a budget of 132.
+**7 · Chính (0:35).** Velocity is the story points the Product Owner accepted as Done inside the Sprint. Ours was 0, 5 and 45. The early numbers are low because items were built on time but accepted one Sprint later: 16 points of Sprint 1 in the Sprint 2 week, and 24 points of Sprint 2 in Sprint 3. NFR-03 was checked on 17/11, so all 68 of 68 points are Done, an average of 22.7. We planned 127.25 task hours; we logged 98.23 hours in total, including 8.5 hours of closure work counted in Sprint 3, against a budget of 132.
 
 **8 · Chính (0:35).** We had two Change Requests. CR-06 came from the Sponsor on 27/10: a Store Staff role that edits books but not accounts, and shows "Last updated by". The board approved Option B on 30/10: plus 7 points, 12 hours and 2.4 million VND. All 8 of its criteria passed at UAT. CR-07 came from the Product Owner on 12/11 after Planning Poker re-sized Sprint 3: plus 6 points, no extra hours or cost, approved on 13/11. Both followed the same steps: log, impact analysis, board decision, new baseline.
 
@@ -89,5 +90,6 @@ Canva hiện chỉ lưu speaker notes cũ ở slide 1 và 10 (vẫn đúng). Cô
 ## 5. Lưu ý
 
 - Slide 10 vẫn trống khung video; Đạt chèn file video vào Canva.
-- Lịch đã đổi: nộp 18/11 23:59, trình bày **Thứ Sáu 20/11** → cập nhật ngày trên slide 1.
-- Giờ đã chốt 17/11: **98.23 h** (91.23 h trong Sprint + 7 h đóng dự án). **Slide 7 và 12 trên Canva phải sửa** theo số mới: 68/68 SP, SPI 1.00, CPI 1.34, AC 19.6 tr.
+- Lịch đã đổi: nộp **18/11 23:59**, trình bày **Thứ Sáu 20/11** (giờ chưa chốt). Slide 1 đã ghi 20/11/2026.
+- 18/11: slide 7 và 12 trên Canva đã khớp c6: S3 33.23 h (gồm 8.5 h closure 13–17/11), Release 98.23 h, 68/68 SP; EVM Closure (18/11) 26.4 / 26.4 / 19.6, SPI 1.00, CPI 1.34.
+- Còn lại trên Canva (Đạt): chèn video vào slide 10, dán speaker notes cho slide 2–14, rồi xuất lại PowerPoint `HK261_SPM_FP_Team6_c6_Slides.pptx`.

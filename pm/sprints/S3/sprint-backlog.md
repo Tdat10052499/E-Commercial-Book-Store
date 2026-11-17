@@ -7,6 +7,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.16 | 18/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Synced with Jira (read 18/11): S3-T17, S3-T19, S3-T21, S3-D7 moved to Done and Sprint 3 closed; closure hours of T17, T19, T21, T22, D7 (logged 16–17/11) |
 | 0.15 | 12/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | Synced with Jira (read 12/11 18:55): S3-T02, S3-T16, S3-T18 Done 12/11; actual hours of T02, T14, T15, T16, T18 |
 | 0.14 | 12/11/2026 | Nguyễn Minh Chính (PO) | S3-T13, S3-T20 Done (PR #44, #54 merged); S3-T18 In Review (PR #61, 0.25 h); NFR-04 re-check passed |
 | 0.13 | 12/11/2026 | Nguyễn Minh Chính (PO) | S3-T13 (0.5 h), S3-T20 (0.5 h, PR #54) In Review; S3-T23 Done (1 h) |
@@ -76,12 +77,12 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-T14 | ECBS-160 | Test | Hosted run of the F4, F5, US-25 test cases; results and defects (a Low defect is fixed the same day) | Đạt | 2 | D6 Wed 11/11 | 12/11 | 0.5 Đạt (Jira) | Done – 14 of 14 hosted cases run 12/11: TC-F4-01…04, TC-F5-01…07 Pass (~17:20, Đạt with Claude in Chrome, PR #56); TC-CR-06, 07 Pass, TC-CR-08 Partial – rename not available in the UI, covered by the automated test (~18:05, Đạt). Owner Chính → Đạt at D6 (runner ≠ writer) |
 | S3-T15 | ECBS-161 | NFR-05 | Load time on the host with DevTools, 3 runs, median: page 1, and page 3 with search + filter (AC-01, AC-02); add an index only if > 2 s | Đạt | 1 | D6 Wed 11/11 | 12/11 | 0.25 Đạt (Jira) | Done – medians 0.50 s (/books) and 0.38 s (page 3, search + filter), < 2 s; no index needed (PR #56). Owner Chính → Đạt at D6 |
 | S3-T16 | ECBS-162 | Test | Regression F1–F3: full automated suite + hosted smoke list (login, admin, Staff, grid) | Đạt | 1.5 | D6 Wed 11/11 | 12/11 | 0.42 (Jira: Đạt 0.25 · Chính 0.17) | Done – automated 114/114; hosted smoke 15/15 Pass: 1–5, 12–14 Chính (PR #60), 6–11 Đạt (PR #59); test data cleaned |
-| S3-T17 | ECBS-163 | PM | Weekly Status S3 (Green/Amber/Red), risk register and issue log | Đạt | 1 | D6 Wed 11/11 |  |  | To Do |
+| S3-T17 | ECBS-163 | PM | Weekly Status S3 (Green/Amber/Red), risk register and issue log | Đạt | 1 | D6 Wed 11/11 | 16/11 | 1 Đạt (Jira, logged 16/11) | Done (Jira, 18/11) |
 | S3-T18 | ECBS-164 | PO | PO acceptance of the S3 items that passed; Product Backlog and Jira | Chính | 0.5 | D7 Thu 12/11 | 12/11 | 0.25 Chính (Jira) | Done – PR #61 merged 12/11: US-11, US-12, US-13, NFR-05, US-25 accepted; NFR-04 re-accepted after DEF-S3-03 → 60/62 SP |
-| S3-T19 | ECBS-165 | Release | Release v1.0: `develop` → `main`, tag `v1.0`, release notes (features, known issues, how to run) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
+| S3-T19 | ECBS-165 | Release | Release v1.0: `develop` → `main`, tag `v1.0`, release notes (features, known issues, how to run) | Đạt | 1.5 | D7 Thu 12/11 | 16/11 | 1.5 Đạt (Jira, logged 16/11) | Done (Jira, 18/11) |
 | S3-T20 | ECBS-166 | UAT | UAT minutes form for 13/11 (result per AC, Sponsor sign-off) → `c5_UAT.docx` | Chính | 1 | D7 Thu 12/11 | 12/11 | 0.5 (Chính, Jira) | Done – PR #54 merged 12/11: uat-minutes.md + c5_UAT.docx |
-| S3-T21 | ECBS-167 | PM | EVM S3, burndown and Sprint Report `c3_SprintReport_S3` (test cases F4/F5, release notes) | Đạt | 1.5 | D7 Thu 12/11 |  |  | To Do |
-| S3-T22 | ECBS-168 | PM | Workbook `c2_SprintBacklog_S3` (cumulative) + `c0_Eval_S3`; upload before 23:59 | Chính | 1.5 | D7 Thu 12/11 |  |  | To Do · **Owner Đạt → Chính (Daily D6, 11/11)** – built by the S3 export script (S3-T23) |
+| S3-T21 | ECBS-167 | PM | EVM S3, burndown and Sprint Report `c3_SprintReport_S3` (test cases F4/F5, release notes) | Đạt | 1.5 | D7 Thu 12/11 | 16/11 | 1.5 Đạt (Jira, logged 16/11) | Done (Jira, 18/11) |
+| S3-T22 | ECBS-168 | PM | Workbook `c2_SprintBacklog_S3` (cumulative) + `c0_Eval_S3`; upload before 23:59 | Chính | 1.5 | D7 Thu 12/11 | 17/11 | 1 Chính (Jira, logged 17/11) | Done · **Owner Đạt → Chính (Daily D6, 11/11)** – built by the S3 export script (S3-T23) |
 | S3-T23 | ECBS-169 | PM | Export script for the S3 files (`tools/export_s3.py`, based on `export_s2.py`), using the lecturer templates `SprintBacklog_Template.xlsx` (c2) and `FP_Template_SprintReport.docx` (c3) received 10/11 – see `docs/templates/README.md` | Chính | 1 | D6 Wed 11/11 | 12/11 | 1 (Chính, Jira) | Done – PR #43 approved and merged by Đạt 12/11 17:10; `tools/export_templates.py S3` builds c2_S3 and c3_S3 |
 | S3-D1 | ECBS-170 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D1 Fri 06/11 | 06/11 | 0.75 Chính · Đạt TBD | Done – held on Discord 22:00, ~45 min |
 | S3-D2 | ECBS-171 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D2 Sat 07/11 |  |  | Not held (07/11) |
@@ -89,7 +90,7 @@ Planned day = the day the task should be finished. **Done on** (dd/mm) and **Act
 | S3-D4 | ECBS-173 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D4 Mon 09/11 | 09/11 | 0.25 Đạt · 0.25 Chính | Done |
 | S3-D5 | ECBS-174 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D5 Tue 10/11 | 10/11 | 2 Đạt (Jira ECBS-174, logged 11/11) · 0.25 Chính (Jira) | Done – asynchronous update, both rows posted (PR #41) |
 | S3-D6 | ECBS-175 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D6 Wed 11/11 | 11/11 | 0.5 Đạt · 0.25 Chính (Jira) | Done – held on Discord 19:15–19:30 |
-| S3-D7 | ECBS-176 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D7 Thu 12/11 |  |  | To Do |
+| S3-D7 | ECBS-176 | Scrum | Daily Scrum (≤ 10 min) + move the cards + log the hours in Jira before 22:00 | Both | 0.5 | D7 Thu 12/11 | 16/11 | 0.5 Đạt · 0.5 Chính (Jira, logged 16–17/11) | Done (Jira, 18/11) |
 | **Total** | | | | | **39.5** | | | | |
 
 ## Planned burndown (plan line)

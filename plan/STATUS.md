@@ -62,3 +62,4 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | 17/11/2026 | Đạt | P34: làm lại deck Canva thành 14 slide theo yêu cầu 8.2 (10 phút + Q&A), kịch bản + speaker notes chia người nói; ghi chú gửi Chính `pm/sprints/S3/notes/2026-11-17_Dat-to-Chinh.md` |
 | 17/11/2026 | Đạt | P33: viết lại c6, c1 (PMP 7 phần) và c2 Final bằng ngôn ngữ dễ hiểu, không viết tắt, không dùng ký hiệu GitHub; số liệu giữ nguyên |
 | 18/11/2026 02:35 | Chính | P34: deck Canva sửa slide 1 (20/11), 7 (68/68, 98.23 h), 12 (SPI 1.00, CPI 1.34) và lưu; xuất PowerPoint. Còn: speaker notes (dán tay), video slide 10 |
+| 18/11/2026 03:00 | Chính | P33/P34: gộp 3 commit mới của Đạt (Sprint 3 đóng trên Jira, NFR-03 68/68, Canva slide 7/12); thống nhất giờ S3 33.23 h (gồm 8.5 h closure), mốc Closure 18/11; xuất lại c1, c2, c6, Eval360; handover §12 liệt kê việc còn lại. c6_Slides.pptx chờ Đạt xuất sau khi chèn video + notes |
