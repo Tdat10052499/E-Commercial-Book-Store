@@ -9,7 +9,7 @@
 | Hosted site | https://pagetunnel.vercel.app/ (Vercel + Supabase) |
 | Repository | https://github.com/Tdat10052499/E-Commercial-Book-Store |
 | Jira board | https://tdat100524.atlassian.net/jira/software/projects/ECBS/boards/2 (project ECBS) |
-| Data as of | Tue 17/11/2026 22:40 (GMT+7); NFR-03 check 17/11 22:33. Hours: Jira worklogs read 16/11 23:20 (89.73 h; Đạt's last 4 worklogs entered 16/11 23:08) |
+| Data as of | Tue 17/11/2026 22:40 (GMT+7); NFR-03 check 17/11 22:33. Hours: Jira worklogs read 17/11 23:40 (**98.23 h**, all members' hours logged) |
 
 ## Version history
 | Version | Date | Author | Change |
@@ -18,6 +18,7 @@
 | 0.2 | 16/11/2026 | Nguyễn Minh Chính (PO) | Final batch completed: PMP Final (c1), slides (c6) and Eval360 forms built from the same figures; no figure changed |
 | 0.3 | 16/11/2026 | Nguyễn Minh Chính (PO) | Đạt's last S3 hours logged in Jira 16/11 (S3-T17 1 h, T19 1.5 h, T21 1.5 h, Daily D7 0.5 h): AC 85.23 → **89.73 h**, CPI 1.50 → **1.43**, EAC 18,489,818 VND. Tag `v1.0` and `baseline-v1.2` created 16/11 22:59 (release PR #64) |
 | 0.4 | 17/11/2026 | Nguyễn Minh Chính (PO) | NFR-03/AC-03 checked on 17/11 22:33 (TC-F1-24 Pass) and NFR-03 accepted by the PO → **68 of 68 SP**, EV = BAC, **SPI 1.00, CPI 1.47**. Final submission moved to 18/11 23:59, presentation to Fri 20/11 |
+| 0.5 | 17/11/2026 | Nguyễn Minh Chính (PO) | Chính's last hours logged in Jira 17/11: S3-T22 1 h, Daily D7 0.5 h, and four closure tasks S3-C1…C4 (Review 3 video 1 h, UAT 2 h, Final batch 15/11 2 h, 16–17/11 2 h) → AC **98.23 h**, **CPI 1.34**, EAC 19,646,000 VND |
 
 **How to read the figures.** *Plan* = baseline values (Release Plan, Sprint Backlogs). *Actual* = Jira worklogs, GitHub and the PO acceptance record. Rate 200,000 VND per person-hour, N = 3 [03 §6.4]. Story points (SP) count only when the item meets the Story DoD (all ACs pass on the hosted site, reviewed PR, tests pass, PO acceptance).
 
@@ -28,7 +29,7 @@
 - **Accepted by the Sponsor at UAT on 13/11/2026: 73 of 73 acceptance criteria Pass**, no defect found, no new change request (c5 UAT minutes).
 - Scope delivered: F1–F5 and the approved change CR-06 (Store Staff role and "Last updated by" audit) – 20 backlog items. Nothing was cut; cart, checkout and social login stayed out of scope [03 §2.2].
 - **68 of 68 SP meet the DoD** (baseline v1.2 after CR-07). The last item, NFR-03 (site online until 17/11), was checked on 17/11 and accepted by the PO.
-- EVM at closure: **SPI 1.00, CPI 1.47** (§3.3).
+- EVM at closure: **SPI 1.00, CPI 1.34** (§3.3).
 - Quality: 114/114 automated tests; 6 defects found in the Sprints, all fixed (none Critical or High was recorded); 0 open defects.
 - Two change requests handled through the Change Log and the CCB: CR-06 (Sponsor, Approve Option B) and CR-07 (PO, re-baseline of the S3 story points, Approve).
 
@@ -36,7 +37,7 @@
 |---|---|---|
 | Scope | 20 items, PSP 55 (v1.0) → 62 (v1.1, CR-06) → **68** (v1.2, CR-07) | 20/20 items delivered; 68/68 SP Done; 73/73 ACs Pass in UAT |
 | Schedule | 3 Sprints, UAT 13/11, final 15/11 | UAT held 13/11 and accepted; acceptance came late in each Sprint (§2, §3.2) |
-| Cost | BAC 26,400,000 VND (132 h) | AC 17,946,000 VND (89.73 h logged) – see §3.3 for the limits of this figure |
+| Cost | BAC 26,400,000 VND (132 h) | AC 19,646,000 VND (98.23 h logged, incl. 7 h of closure work) – see §3.3 for the limits of this figure |
 | Quality | 0 open Critical/High defects, 100 % AC coverage | 0 open defects; one or more test cases per AC (73 ACs) |
 
 ## 2. Results of each Sprint
@@ -48,7 +49,7 @@
 | Committed SP | 18 | 29 (24 + US-24 5) | 15 (v1.1) → **21** (v1.2) + 24 SP carried from S2 |
 | SP Done at the Sprint end (velocity) | **0** | **5** (US-10, NFR-02) | **45** (21 new + 24 carried) |
 | SP accepted later | 16 in S2 week (US-01…04 05/11, NFR-01 06/11); NFR-03 2 SP on 17/11 | 24 in S3 (09/11 – 12/11) | – |
-| Task hours plan / actual | 48 / **41** | 39.75 / **24** | 39.5 / **24.73** (20.23 by 12/11 18:46 + 4.5 h logged by Đạt 16/11; Chính's last hours TBD) |
+| Task hours plan / actual | 48 / **41** | 39.75 / **24** | 39.5 / **26.23** (20.23 by 12/11 18:46 + 6 h logged 16–17/11); + 7 h closure work 13–17/11 (not planned) |
 | Burndown (§3.2) | Flat at 48 h: hours reconstructed after the Sprint | 39.75 → 30.75 → **6.25 h**: most work merged on the last day | Flat D1–D2 and D5, steep D4 and D6, not 0 on D7 (Daily D2, D3 not held) |
 | Main problems | S1 files not in the repo by 29/10 23:59 (I-01); no Planning Poker votes (I-04); hours reconstructed | F2 started late (I-02); hosted admin run left to the last hour; PRs merged without review (I-06); Daily not held (I-05) | Retro 2 / Planning 3 held 5 days late; Đạt busy 10/11 (I-07); UI work outside the backlog caused DEF-S3-03; Planning Poker after the build (CR-07) |
 | How they were solved | Catch-up 29–30/10; Retro 1 actions A1–A3 (Daily, early drafts, same-day hours) | PO took the data-model task (I-02); S2 sized by hours not SP; carried items accepted in S3 after hosted runs | Daily plan with one Daily task per day; runner ≠ writer; approval before merge (A2); tasks updated the same day (A4) |
@@ -104,16 +105,16 @@ Formulas [03 §6.4]: PV = BAC × n/N; EV = BAC × SP Done / PSP; AC = actual hou
 | End S2, 06/11 (v1.1: 26.4 M · 62) | 17,600,000 | 8,941,935 (21/62) | 13,000,000 (65 h) | 0.51 | 0.69 | 38,380,952 |
 | End S3, 12/11 18:55 (v1.1: 26.4 M · 62) | 26,400,000 | 25,548,387 (60/62) | 17,046,000 (85.23 h) | 0.97 | 1.50 | 17,614,200 |
 | Before the NFR-03 check, 16/11 (v1.2: 26.4 M · 68) | 26,400,000 | 25,623,529 (66/68) | 17,946,000 (89.73 h) | 0.97 | 1.43 | 18,489,818 |
-| **Closure, 17/11 (v1.2: 26.4 M · 68)** | **26,400,000** | **26,400,000 (68/68)** | **17,946,000 (89.73 h)** | **1.00** | **1.47** | **17,946,000** |
+| **Closure, 17/11 (v1.2: 26.4 M · 68)** | **26,400,000** | **26,400,000 (68/68)** | **19,646,000 (98.23 h)** | **1.00** | **1.34** | **19,646,000** |
 
-Closure values: SV = EV − PV = 0 VND; CV = EV − AC = +8,454,000 VND; EAC = BAC / CPI = AC (the work is complete); ETC = 0 VND. The S1 actual hours were later corrected from 19.5 h to 41 h (part 2 of the hosted run logged 05/11), which is why AC at the end of S2 uses 65 h.
+Closure values: SV = EV − PV = 0 VND; CV = EV − AC = +6,754,000 VND; EAC = BAC / CPI = AC (the work is complete); ETC = 0 VND. The S1 actual hours were later corrected from 19.5 h to 41 h (part 2 of the hosted run logged 05/11), which is why AC at the end of S2 uses 65 h.
 
 **Interpretation.**
 - **Schedule:** SPI 1.00 at closure: all 68 SP are Done (NFR-03 checked on 17/11). During the project the SPI was far lower (0.00 after S1, 0.51 after S2), because items were accepted one Sprint after they were built. Earned value came late, not missing.
-- **Cost:** CPI 1.47 means the team logged far fewer hours (89.73 h) than planned (132 h). This is not only efficiency:
+- **Cost:** CPI 1.34 means the team logged fewer hours (98.23 h, of which 7 h closure work) than budgeted (132 h). This is not only efficiency:
   - S1 and S2 hours were partly reconstructed after the Sprint (LL-02).
   - Part of the testing and documentation was AI-assisted (Appendix D), so the estimates made without AI were high (LL-06).
-  - Some hours were logged days late (Đạt's last 4.5 h on 16/11), and Chính's hours after 12/11 19:59 are not yet in Jira (TBD).
+  - Some hours were logged days late (the last 13.5 h on 16–17/11, for work done 12–17/11).
   - Read the CPI as "the project used less logged effort than its budget", not as proof that the team works 50 % faster than planned.
 - **CR-07 effect:** re-estimating the S3 items raised PSP from 62 to 68. EV changed by +75,142 VND at the end of S3 (60/62 → 66/68 of BAC); at closure EV = BAC either way.
 
@@ -157,7 +158,7 @@ Risks that did not occur: R03 cold start (site online on 17/11), R04 Jira time t
 | 4 | Hand-over of code | Repository with README (how to run, environment, seed); tests in `app/tests` | Repo |
 | 5 | Hand-over of documents | c0–c6 on eLearning; Markdown sources in `pm/`, exports in `deliverables/` | Repo, eLearning |
 | 6 | Archive | Baseline tags `baseline-v1.0`, `baseline-v1.1`, `baseline-v1.2` (16/11); Jira project ECBS kept; AI usage log kept | Repo, Jira |
-| 7 | Close Sprint 3 in Jira and log the last hours | Partly – Đạt's last hours logged 16/11; Chính's last hours TBD; Sprint 3 still open in Jira on 16/11 (S3-T17, T19, T21, D7 not moved to Done) | Jira |
+| 7 | Close Sprint 3 in Jira and log the last hours | Partly – all hours logged by 17/11 (98.23 h; closure tasks S3-C1…C4); Sprint 3 still open in Jira on 17/11 (S3-T17, T19, T21, D7 not moved to Done) | Jira |
 | 8 | Release resources | Hosting (Vercel, Supabase free tier) kept online at least until the final presentation (Fri 20/11), then left on the free tier; demo accounts kept until the lecturer has graded | Plan |
 | 9 | Lecturer access to repo and board | TBD (confirm the lecturer can open both links) | – |
 | 10 | Lessons learned and Eval360 | Lessons Learned §6; each member submits Eval360 | This report; eLearning |
@@ -199,8 +200,8 @@ Risks that did not occur: R03 cold start (site online on 17/11), R04 Jira time t
 - **Recommendation:** Approve on GitHub before every merge (all PRs since 12/11 met this); a *Run by* column in every test file; the runner is never the writer (Retro 2 actions A2, A3).
 
 ### LL-06 Take AI assistance into account when estimating
-- **Situation:** Part of the testing and documentation in S3 was AI-assisted; S3 logged 24.73 h against 39.5 h planned.
-- **Impact:** CPI 1.47 at closure looks like strong efficiency but mixes several causes; the plan line of the burndown was too high.
+- **Situation:** Part of the testing and documentation in S3 was AI-assisted; S3 logged 26.23 h against 39.5 h planned.
+- **Impact:** CPI 1.34 at closure looks like strong efficiency but mixes several causes; the plan line of the burndown was too high.
 - **Cause:** Estimates were made as if all work was manual.
 - **Lesson:** A tool that changes productivity changes the baseline; the effect must be measured and declared.
 - **Recommendation:** Record AI use per task (as the AI usage log does) and re-estimate with Planning Poker once the team knows how much it saves; keep the human review time in every estimate.
@@ -233,13 +234,13 @@ Risks that did not occur: R03 cold start (site online on 17/11), R04 Jira time t
 | Sprint Review 3 video | TBD (link) |
 
 ## Appendix C – Work allocation and hours (actual, Jira worklogs)
-| Member | Role | S1 h | S2 h | S3 h | Total h | Pull requests opened |
-|---|---|---|---|---|---|---|
-| Hồ Du Tuấn Đạt | Developer, Leader S1 and S3 | 13.5 | 13.5 | 13.40 | 40.40 | 42 |
-| Nguyễn Minh Chính | Product Owner, Developer, Leader S2 | 27.5 | 10.5 | 11.33 | 49.33 | 24 |
-| **Team** | | **41** | **24** | **24.73** | **89.73** | **66** |
+| Member | Role | S1 h | S2 h | S3 h | Closure 13–17/11 h | Total h | Pull requests opened |
+|---|---|---|---|---|---|---|---|
+| Hồ Du Tuấn Đạt | Developer, Leader S1 and S3 | 13.5 | 13.5 | 13.40 | – | 40.40 | 42 |
+| Nguyễn Minh Chính | Product Owner, Developer, Leader S2 | 27.5 | 10.5 | 12.83 | 7.00 | 57.83 | 24 |
+| **Team** | | **41** | **24** | **26.23** | **7.00** | **98.23** | **66** |
 
-Đạt's S3 total includes 4.5 h logged on 16/11 (S3-T17, T19, T21, Daily D7). Chính's hours after 12/11 19:59 (S3-T22, Daily D7, Review 3 video) are TBD until logged in Jira. Commits: only 1 commit is dated in the S1 week (the S1 work was committed on 30/10); both members committed in S2 and S3. Commits made in AI-assisted sessions are part of the members' own pull requests.
+S1 hours by task owner (the S1 hours were reconstructed and entered by Chính). S3 includes the hours logged on 16–17/11: Đạt 4.5 h (S3-T17, T19, T21, Daily D7), Chính 1.5 h (S3-T22, Daily D7). Closure = Jira tasks S3-C1…C4 (Review 3 video, UAT 13/11, Final batch 15–17/11), logged 17/11. Commits: only 1 commit is dated in the S1 week (the S1 work was committed on 30/10); both members committed in S2 and S3. Commits made in AI-assisted sessions are part of the members' own pull requests.
 
 ## Appendix D – Declaration of AI use
 The team used AI assistants as support only. Every use is recorded, one row per use, in `pm/ai-usage-log.md` (date, member, tool, purpose, files affected, who checked it). The member who used the tool reviewed the result, and the other member reviewed it again in the pull request. No actual data was produced by AI: hours, Planning Poker votes, CCB decisions, UAT results, acceptance decisions and evaluation scores come only from the team and the Sponsor.

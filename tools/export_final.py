@@ -44,7 +44,7 @@ EVM = [
     ("End of Sprint 2", "v1.1", 26400000, 62, 2, 21, 65, "06/11/2026"),
     ("End of Sprint 3", "v1.1", 26400000, 62, 3, 60, 85.23, "12/11/2026 18:55"),
     ("Before the NFR-03 check", "v1.2", 26400000, 68, 3, 66, 89.73, "16/11/2026 23:20 – Jira worklogs (Đạt +4.5 h on 16/11)"),
-    ("Closure (Final)", "v1.2", 26400000, 68, 3, 68, 89.73, "17/11/2026 22:40 – NFR-03 accepted after TC-F1-24 Pass; Chính's hours after 12/11 19:59 TBD"),
+    ("Closure (Final)", "v1.2", 26400000, 68, 3, 68, 98.23, "17/11/2026 23:40 – NFR-03 accepted; all hours logged incl. 7 h closure work (S3-C1…C4)"),
 ]
 
 
@@ -167,7 +167,7 @@ def evm_sheet(wb):
         "SPI = EV / PV · CPI = EV / AC · EAC = BAC / CPI · ETC = EAC − AC.",
         "Closure: 68 of 68 SP meet the DoD; NFR-03 (2 SP) accepted by the PO after the check on 17/11 22:33 (site online). "
         "UAT 13/11: 73/73 ACs Pass, Release 1.0 accepted.",
-        "CPI 1.47: fewer hours logged (89.73 h) than planned (132 h) – S1/S2 hours partly reconstructed, part of the "
+        "CPI 1.34: fewer hours logged (98.23 h incl. 7 h closure work) than budgeted (132 h) – S1/S2 hours partly reconstructed, part of the "
         "S3 testing and documents AI-assisted, some hours logged late or not yet logged. See Final Report §3.3.",
         "Baselines: v1.0 (30/10) PSP 55, BAC 24.0 M · v1.1 (04/11, CR-06) PSP 62, BAC 26.4 M · v1.2 (15/11, CR-07) PSP 68, "
         "BAC 26.4 M.",
@@ -214,7 +214,7 @@ def c2():
             ws.cell(r, 2).value = "Final submission (cumulative: Sprints 1–3 and closure)"
         elif k == "Layout":
             ws.cell(r, 2).value = ("Lecturer template SprintBacklog_Template.xlsx (received 10/11/2026) + EVM, UAT, "
-                                   "Lessons Learned and AI usage sheets. Data as of 17/11/2026 22:40 (baseline v1.2).")
+                                   "Lessons Learned and AI usage sheets. Data as of 17/11/2026 23:40 (baseline v1.2).")
     wb.save(out)
     return out
 

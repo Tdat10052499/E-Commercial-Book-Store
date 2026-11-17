@@ -1,4 +1,4 @@
-# Bàn giao cho Đạt – bộ nộp Final (Thứ Ba 17/11/2026, 23:00)
+# Bàn giao cho Đạt – bộ nộp Final (Thứ Ba 17/11/2026, 23:00 · cập nhật 23:50)
 
 *Từ: Nguyễn Minh Chính (PO). Gửi: Hồ Du Tuấn Đạt.*
 
@@ -21,27 +21,28 @@
 | 16/11 | Merge #65, #67, #64; **tag `v1.0`** trên `main` và **`baseline-v1.2`** (22:59); đóng #66; log 4.5 h (T17, T19, T21, D7) | Đạt | GitHub, Jira |
 | 16/11 | Final Report v0.3 theo 89.73 h (CPI 1.43) | Chính | PR #68 |
 | 17/11 22:33 | **NFR-03 kiểm tra trên site: Pass** (`/books` 200, 30 sách) → PO nghiệm thu → **68/68 SP** | Chính | `pm/sprints/S3/evidence/NFR-03-check-2026-11-17.md` |
-| 17/11 | Final Report v0.4, c2, slide, kịch bản thuyết trình: SPI 1.00, CPI 1.47; ngày mới | Chính | PR #68 |
+| 17/11 | Final Report v0.4, c2, slide, kịch bản thuyết trình: SPI 1.00; ngày mới | Chính | PR #68 |
+| 17/11 23:40 | Log giờ của Chính: S3-T22 1 h (Done), D7 0.5 h; tạo 4 task đóng dự án **S3-C1…C4** trong Sprint 3 (video Review 3 1 h, UAT 2 h, Final 15/11 2 h, Final 16–17/11 2 h, đều Done) → **98.23 h**, CPI 1.34; Final Report v0.5 | Chính | Jira ECBS-168, 176, 177–180; PR #68 |
 
 ## 2. Số liệu chốt (dùng giống nhau ở mọi file, slide và lời nói)
 | Chỉ số | Giá trị |
 |---|---|
 | Phạm vi | 20/20 item; **68/68 SP** Done (baseline v1.2); 73/73 AC Pass ở UAT |
 | Velocity | S1 **0** · S2 **5** · S3 **45** SP (21 mới + 24 mang sang); trung bình 22.7 |
-| Giờ kế hoạch / thực tế | S1 48 / 41 · S2 39.75 / 24 · S3 39.5 / 24.73 → **127.25 / 89.73 h** (Jira) |
-| Giờ theo người | Đạt **40.40 h** · Chính **49.33 h** (chưa gồm giờ T22 của Chính) |
-| EVM đóng dự án | PV = EV = BAC **26.400.000** · AC **17.946.000** · **SPI 1.00 · CPI 1.47** · EAC 17.946.000 · ETC 0 |
+| Giờ kế hoạch / thực tế | S1 48 / 41 · S2 39.75 / 24 · S3 39.5 / 26.23 · đóng dự án 0 / 7 → **127.25 / 98.23 h** (Jira) |
+| Giờ theo người | Đạt **40.40 h** · Chính **57.83 h** (gồm 7 h đóng dự án) |
+| EVM đóng dự án | PV = EV = BAC **26.400.000** · AC **19.646.000** · **SPI 1.00 · CPI 1.34** · EAC 19.646.000 · ETC 0 |
 | Lỗi | 6 lỗi tìm thấy, đã sửa hết, 0 lỗi mở; 114/114 test tự động |
 | Baseline | v1.0 (30/10, PSP 55, BAC 24 tr) → v1.1 (04/11, CR-06, PSP 62, BAC 26.4 tr) → v1.2 (15/11, CR-07, PSP 68) |
 
-Giải thích CPI 1.47 (đúng như trong report): giờ S1/S2 một phần dựng lại sau Sprint, một phần việc có AI hỗ trợ, một số giờ log muộn. **Không** nói là nhóm làm nhanh hơn 47 %.
+Giải thích CPI 1.34 (đúng như trong report): giờ S1/S2 một phần dựng lại sau Sprint, một phần việc có AI hỗ trợ, một số giờ log muộn. **Không** nói là nhóm làm nhanh hơn 34 %.
 
 ## 3. File đã cập nhật (nhánh `docs/P33-final-hours`, PR #68)
 | File | Phiên bản / thay đổi |
 |---|---|
 | `deliverables/Final/HK261_SPM_FP_Team6_c1_ProjectPlan_Final.docx` | PMP 7 phần + mục *Changes since v1.0* (`pm/pmp/00-pmp-final.md`) |
 | `deliverables/Final/HK261_SPM_FP_Team6_c2_SprintBacklog_Final.xlsx` | Template GV + sheet EVM (công thức, 5 mốc), UAT_Summary, WeeklyStatus_S3, LessonsLearned, AI_Usage; NFR-03 Done |
-| `deliverables/Final/HK261_SPM_FP_Team6_c6_FinalReport.docx` | Final Report v0.4 (`pm/final/final-report.md`) |
+| `deliverables/Final/HK261_SPM_FP_Team6_c6_FinalReport.docx` | Final Report v0.5 (`pm/final/final-report.md`) |
 | `deliverables/Final/HK261_SPM_FP_Team6_c6_Slides.pptx` | 15 slide, ngày 20/11; ghi chú mỗi slide nói ai trình bày |
 | `deliverables/Final/Eval360_Team6_2374802010097.xlsx` | **File của Đạt** (template Eval của GV; cột E–G để trống) |
 | `deliverables/Final/Eval360_Team6_2275106050051.xlsx` | File của Chính |
@@ -58,7 +59,7 @@ Giải thích CPI 1.47 (đúng như trong report): giờ S1/S2 một phần dự
 | # | Việc | Ghi chú |
 |---|---|---|
 | 1 | **Review rồi merge PR #68** vào `develop` (nhớ bấm Approve) | Để file nộp khớp với repo |
-| 2 | **Jira:** chuyển S3-T17, T19, T21, D7 sang Done; ghi D2, D3 là *Not held* (hoặc để nguyên); rồi **Complete sprint** cho Sprint 3 | Jira vẫn còn 7 việc chưa Done |
+| 2 | **Jira:** chuyển S3-T17, T19, T21, D7 sang Done; ghi D2, D3 là *Not held* (hoặc để nguyên); rồi **Complete sprint** cho Sprint 3. **Không log thêm giờ** cho các việc đã có giờ, nếu không phải báo Chính xuất lại | Còn 6 việc chưa Done (T22 và S3-C1…C4 đã Done) |
 | 3 | **Chấm Eval360** của Đạt: cột E (đúng hạn 0–1), F (chất lượng 0–10), G (họp 0–1) cho **cả hai người**; nộp file của mình | Cột D (khối lượng) đã tính theo giờ kế hoạch: Đạt 58 %, Chính 42 % |
 | 4 | **Video demo ≤ 3 phút** có cả AC pass và AC fail [03 §8] → gửi link cho Chính | Cùng kịch bản với slide 10: tìm "darwin", lọc Novel 50k–150k, chi tiết + Back, khoảng giá ngược (fail), "Last updated by" |
 | 5 | Gửi Chính **tài khoản demo** (Admin, Staff, Customer) qua tin nhắn riêng | Chính chỉ gõ vào file docx nộp, **không** đưa lên repo |
@@ -66,7 +67,7 @@ Giải thích CPI 1.47 (đúng như trong report): giờ S1/S2 một phần dự
 | 7 | (Tùy chọn) Xoá danh mục thử *Kids* trên site trước buổi thuyết trình | Dữ liệu thật – Đạt quyết |
 
 ## 5. Việc Chính sẽ làm
-- Log giờ S3-T22 trên Jira, chuyển sang Done, rồi xuất lại c2/c6 (CPI có thể đổi nhẹ).
+- ~~Log giờ S3-T22~~ – xong 17/11 23:40 (cùng D7 và 4 task S3-C1…C4).
 - Điền các ô TBD trong file docx nộp: tài khoản demo, link video, giờ UAT, nhận xét của GV, lý do CR-07.
 - Nộp c1, c2, c6 Report, c6 Slides và Eval360 của Chính trước 18/11 23:59.
 

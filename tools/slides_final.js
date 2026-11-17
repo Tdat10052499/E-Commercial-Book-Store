@@ -92,10 +92,10 @@ txt(s, "Goal: an online book catalogue – accounts and roles, book management, 
 stat(s, 0.6, 2.75, 2.85, "73/73", "acceptance criteria Pass at UAT 13/11");
 stat(s, 3.7, 2.75, 2.85, "68/68", "story points Done (all 20 items)");
 stat(s, 6.8, 2.75, 2.85, "1.00", "SPI at closure", C.text2);
-stat(s, 9.9, 2.75, 2.85, "1.47", "CPI at closure", C.text2);
+stat(s, 9.9, 2.75, 2.85, "1.34", "CPI at closure", C.text2);
 txt(s, "20 backlog items delivered by 2 members · nothing cut · cart, checkout and social login out of scope",
   { x: 0.6, y: 5.0, w: 12.1, h: 0.9, color: C.text2, italic: true });
-s.addNotes("Đạt (60 s): The goal of Release 1.0 and the result. UAT on 13/11: 73 of 73 ACs Pass, no defect, no new CR. All 68 SP are Done; NFR-03 (site online on 17/11) was checked on 17/11. SPI 1.00, CPI 1.47 – explained on the EVM slide.");
+s.addNotes("Đạt (60 s): The goal of Release 1.0 and the result. UAT on 13/11: 73 of 73 ACs Pass, no defect, no new CR. All 68 SP are Done; NFR-03 (site online on 17/11) was checked on 17/11. SPI 1.00, CPI 1.34 – explained on the EVM slide.");
 
 // 3 Plan
 pres.addSection({ title: SECTIONS[1] });
@@ -200,30 +200,30 @@ s.addChart(pres.charts.BAR, [
   showLegend: true, legendPos: "b", valAxisHidden: true }, chartText));
 s.addChart(pres.charts.BAR, [
   { name: "Planned h", labels: ["S1", "S2", "S3"], values: [48, 39.75, 39.5] },
-  { name: "Actual h", labels: ["S1", "S2", "S3"], values: [41, 24, 24.73] },
+  { name: "Actual h", labels: ["S1", "S2", "S3"], values: [41, 24, 26.23] },
 ], Object.assign({ x: 6.85, y: 1.45, w: 5.85, h: 4.6, barDir: "col", barGrouping: "clustered", chartColors: [HEX.accent5, HEX.dk2],
   showTitle: true, title: "Task hours per Sprint (Jira)", showValue: true, dataLabelFormatCode: "0.##", dataLabelPosition: "outEnd", dataLabelColor: HEX.dk1,
   showLegend: true, legendPos: "b", valAxisHidden: true }, chartText));
-txt(s, "S3 committed = 21 SP new + 24 SP carried from S2 · total 89.73 h of 127.25 h planned",
+txt(s, "S3 = 21 SP new + 24 SP carried from S2 · hours: + 7 h closure work, total 98.23 h (budget 132 h)",
   { x: 0.6, y: 6.2, w: 12.1, h: 0.5, color: C.text2, italic: true, fontSize: 18 });
-s.addNotes("Chính (60 s): Velocity 0 → 5 → 45 SP: items were built on time but accepted one Sprint later. Hours: 89.73 h logged against 127.25 h of planned tasks (132 h budget).");
+s.addNotes("Chính (60 s): Velocity 0 → 5 → 45 SP: items were built on time but accepted one Sprint later. Hours: 98.23 h logged in total (91.23 h in the Sprints + 7 h closure work) against 127.25 h of planned tasks and a 132 h budget.");
 
 // 12 EVM
 s = slide("CONTENT", SECTIONS[4]);
 s.addText("EVM: on schedule at closure, below budget", { placeholder: "title" });
 s.addChart(pres.charts.LINE, [
   { name: "SPI", labels: ["End S1", "End S2", "End S3", "Closure"], values: [0.0, 0.51, 0.97, 1.00] },
-  { name: "CPI", labels: ["End S1", "End S2", "End S3", "Closure"], values: [0.0, 0.69, 1.50, 1.47] },
+  { name: "CPI", labels: ["End S1", "End S2", "End S3", "Closure"], values: [0.0, 0.69, 1.50, 1.34] },
 ], Object.assign({ x: 0.6, y: 1.45, w: 6.6, h: 4.7, chartColors: [HEX.accent2, HEX.dk2], lineSize: 3, lineDataSymbolSize: 9,
   showTitle: true, title: "SPI and CPI by snapshot", showValue: true, dataLabelPosition: "t", dataLabelColor: HEX.dk1, dataLabelFormatCode: "0.00",
   showLegend: true, legendPos: "b", valAxisMinVal: 0, valAxisMaxVal: 1.8, valAxisLabelFormatCode: "0.0" }, chartText));
 s.addTable([
   [H("Closure (PSP 68)"), H("VND")],
-  ["PV", "26,400,000"], ["EV (68/68)", "26,400,000"], ["AC (89.73 h)", "17,946,000"], ["EAC = BAC / CPI", "17,946,000"],
+  ["PV", "26,400,000"], ["EV (68/68)", "26,400,000"], ["AC (98.23 h)", "19,646,000"], ["EAC = BAC / CPI", "19,646,000"],
 ], { x: 7.5, y: 1.5, w: 5.2, colW: [2.9, 2.3], fontSize: 20, color: HEX.dk1, border: { type: "solid", pt: 0.75, color: "C9D6D2" }, rowH: 0.6, fontFace: "Calibri" });
-txt(s, "CPI 1.47 is not pure efficiency: some hours rebuilt after the Sprint, AI-assisted work, late logging",
+txt(s, "CPI 1.34 is not pure efficiency: some hours rebuilt after the Sprint, AI-assisted work, late logging",
   { x: 7.5, y: 4.85, w: 5.2, h: 1.3, color: C.accent2, fontSize: 18 });
-s.addNotes("Chính (60 s): PV = BAC × n/N, EV = BAC × SP Done / PSP, AC = hours × 200,000. SPI rose from 0.51 to 0.97 when the carried items were accepted, and to 1.00 with NFR-03. SPI 1.00 at closure after NFR-03 was accepted on 17/11. CPI 1.47 at closure (1.50 at the end of S3, before the last hours were logged) – be honest about why.");
+s.addNotes("Chính (60 s): PV = BAC × n/N, EV = BAC × SP Done / PSP, AC = hours × 200,000. SPI rose from 0.51 to 0.97 when the carried items were accepted, and to 1.00 with NFR-03. SPI 1.00 at closure after NFR-03 was accepted on 17/11. CPI 1.34 at closure (1.50 at the end of S3; the last hours and the closure work were logged later) – be honest about why.");
 
 // 13 Quality
 s = slide("CONTENT", SECTIONS[4]);

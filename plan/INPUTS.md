@@ -17,7 +17,7 @@
 | S1 | Chính | 20 (kế hoạch) | như trên – Chính xác nhận 30/10/2026 |
 | S2 | Đạt | 20 (kế hoạch) | như trên; Đạt xác nhận |
 | S2 | Chính | 20 (kế hoạch) | Chính xác nhận 30/10/2026 |
-| S3 | Đạt | 20 (kế hoạch) | như trên; Đạt xác nhận |
+| S3 | 15 (baseline v1.1) → **21** after CR-07 (CCB Approve 13/11) | **21** S3 items + 24 SP S2 carry-over accepted by the PO 12/11; NFR-03 accepted 17/11 → 68/68 | 39.5 | **26.23** in Jira (Đạt 13.40 · Chính 12.83): 20.23 h by 12/11 18:46 + Đạt 4.5 h (16/11) + Chính 1.5 h (S3-T22 1 h, D7 0.5 h – given by Chính 17/11). Closure work 13–17/11 (S3-C1…C4, Chính): 7 h. **Project total 98.23 h** | Jira worklogs (read 17/11 23:40) | 17/11/2026 – Chính |
 | S3 | Chính | 20 (kế hoạch) | Chính xác nhận 30/10/2026 |
 
 ## 3. Đường dẫn và tài khoản
