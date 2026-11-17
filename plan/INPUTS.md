@@ -36,7 +36,7 @@
 |---|---|---|---|---|---|---|
 | S1 | 18 | 0 at Planning 2; **14** after PO acceptance 05/11 (US-01…04); **16** after NFR-01 accepted 06/11 (TC-19 Pass); NFR-03 pending TC-24 | 48 | 41 (Đạt 13.5 · Chính 27.5) – 19.5 h logged 02/11 + 21.5 h on S1-T12 logged 05/11 (hosted run part 2) | Jira worklogs | 05/11/2026 – Chính |
 | S2 | 29 (24 + US-24) | **5** (US-10, NFR-02 accepted by the PO 05/11 23:59); 24 SP In Review | 39.75 | 24 (Chính 10.5 · Đạt 13.5, logged in Jira 06/11) | Jira sprint 6 | 06/11/2026 – Chính |
-| S3 | 15 (baseline v1.1) → **21** after CR-07 (CCB Approve 13/11) | **21** S3 items + 24 SP S2 carry-over accepted by the PO 12/11 (`po-acceptance.md`); NFR-03 (2 SP) checked 17/11 | 39.5 | **20.23** in Jira (Đạt 8.90 · Chính 11.33 by worklog author; last worklog 12/11 18:46). Hours after 12/11 19:59 (T17, T19, T21, T22, D7, Review 3 video): **TBD – Chính/Đạt to enter** | Jira worklogs (read 15/11 12:30) | 15/11/2026 – Chính |
+| S3 | 15 (baseline v1.1) → **21** after CR-07 (CCB Approve 13/11) | **21** S3 items + 24 SP S2 carry-over accepted by the PO 12/11 (`po-acceptance.md`); NFR-03 (2 SP) checked 17/11 | 39.5 | **20.23** in Jira (Đạt 8.90 · Chính 11.33 by worklog author; last worklog 12/11 18:46). Read again 18/11 (Claude, Jira worklogs): **33.23** h in S3 (+13 h: Đạt 4.5 logged 16/11 on T17, T19, T21, D7; Chính 8.5 logged 17/11 on T22, D7, C1–C4). Project total **98.23 h** | Jira worklogs (read 15/11 12:30) | 15/11/2026 – Chính |
 
 ## 5. Change Request và CCB
 | CR | Ngày nhận | Phương án nhóm đề xuất | Quyết định Sponsor (Approve/Reject/Defer) | Lý do | Ngày |

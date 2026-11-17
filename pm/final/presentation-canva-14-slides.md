@@ -89,4 +89,4 @@ Canva hiện chỉ lưu speaker notes cũ ở slide 1 và 10 (vẫn đúng). Cô
 
 - Slide 10 vẫn trống khung video; Đạt chèn file video vào Canva.
 - Hạn 8.2 ghi trình bày 07:00 ngày 17/11; nếu lịch đã đổi, cập nhật ngày trên slide 1.
-- Giờ thực tế 85.23 h là số Jira ngày 15/11. Nếu giờ thay đổi, sửa slide 7 và 12.
+- Giờ thực tế 85.23 h là số Jira ngày 15/11. Ngày 18/11 Jira có 98.23 h (CPI 1.30, AC 19,646,000, EAC 20.24M): cần sửa slide 7 và 12.
