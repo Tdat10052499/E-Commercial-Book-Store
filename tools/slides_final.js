@@ -7,7 +7,8 @@ const SKILL = process.argv[2];
 const { applyTheme } = require(path.join(SKILL, "scripts", "apply_theme.js"));
 
 const ROOT = path.resolve(__dirname, "..");
-const OUT = path.join(ROOT, "deliverables", "Final", "HK261_SPM_FP_Team6_c6_Slides.pptx");
+// 17/11: the team chose the Canva 14-slide deck (PR #69); this 15-slide deck is kept as an archived alternative.
+const OUT = path.join(ROOT, "pm", "final", "archive", "c6_Slides_15-slide_alternative_NOT-SUBMITTED.pptx");
 const IMG = (n) => path.join(ROOT, "pm", "sprints", `S${n}`, "evidence", `burndown-S${n}.png`);
 
 const THEME = {

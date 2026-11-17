@@ -43,7 +43,7 @@ Giải thích CPI 1.34 (đúng như trong report): giờ S1/S2 một phần dự
 | `deliverables/Final/HK261_SPM_FP_Team6_c1_ProjectPlan_Final.docx` | PMP 7 phần + mục *Changes since v1.0* (`pm/pmp/00-pmp-final.md`) |
 | `deliverables/Final/HK261_SPM_FP_Team6_c2_SprintBacklog_Final.xlsx` | Template GV + sheet EVM (công thức, 5 mốc), UAT_Summary, WeeklyStatus_S3, LessonsLearned, AI_Usage; NFR-03 Done |
 | `deliverables/Final/HK261_SPM_FP_Team6_c6_FinalReport.docx` | Final Report v0.5 (`pm/final/final-report.md`) |
-| `deliverables/Final/HK261_SPM_FP_Team6_c6_Slides.pptx` | 15 slide, ngày 20/11; ghi chú mỗi slide nói ai trình bày |
+| ~~`deliverables/Final/HK261_SPM_FP_Team6_c6_Slides.pptx`~~ | Không dùng (xem mục 9): bộ 15 slide của Chính đã chuyển vào `pm/final/archive/`. File nộp sẽ xuất từ deck Canva |
 | `deliverables/Final/Eval360_Team6_2374802010097.xlsx` | **File của Đạt** (template Eval của GV; cột E–G để trống) |
 | `deliverables/Final/Eval360_Team6_2275106050051.xlsx` | File của Chính |
 | `pm/sprints/S3/po-acceptance.md` v1.6 | 68/68 SP |
@@ -90,3 +90,19 @@ Sửa số liệu thì sửa Markdown nguồn (`pm/final/final-report.md`, `pm/p
 - Chính đã **merge nhánh của PR #69 vào PR #68**, giải xung đột ở `final-report.md`, `STATUS.md`, `ai-usage-log.md`. Phần tag `v1.0` của Đạt được ghi thành dòng 0.5a trong version history. Merge #68 trước, sau đó #69 không còn thay đổi nào và có thể đóng.
 - **Số liệu trên deck Canva đã cũ** (66/68, SPI 0.97, CPI 1.50, 85.23 h). Số chốt là **68/68, SPI 1.00, CPI 1.34, AC 19.6 tr, 98.23 h**. Chính đã sửa speaker notes slide 7, 12 và bảng câu hỏi trong `pm/final/presentation-canva-14-slides.md` (v3.1). **Slide 7 và 12 trên Canva cũng phải sửa** theo số này, và slide 1 đổi ngày thành 20/11.
 - **Đang có 2 bộ slide:** `c6_Slides.pptx` 15 slide (Chính) và deck Canva 14 slide (Đạt). Hai đứa cần **chọn 1 bộ để nộp và trình bày**; bộ được chọn xuất ra `deliverables/Final/HK261_SPM_FP_Team6_c6_Slides.pptx`.
+
+## 9. Chốt 17/11 23:55 – dùng deck Canva 14 slide của Đạt
+- **Chính đồng ý dùng deck Canva** (https://canva.link/b3s5irrs6rifzb3). Bộ `c6_Slides.pptx` 15 slide của Chính đã chuyển vào `pm/final/archive/` và **không nộp**.
+- **Tài khoản Canva của Chính chưa mở được deck** (chưa có quyền). Đạt **share deck cho Chính với quyền chỉnh sửa** (email Chính dùng cho Canva) để Chính sửa và xuất file.
+- **Cần sửa trên Canva trước 18/11 23:59** (Đạt làm, hoặc Chính sau khi có quyền):
+
+  | Slide | Sửa |
+  |---|---|
+  | 1 | Ngày trình bày: **20/11/2026** |
+  | 7 | 68/68 SP Done, trung bình 22.7; giờ: kế hoạch 127.25 h, thực tế 91.23 h trong Sprint + 7 h đóng dự án = **98.23 h** (ngân sách 132 h) |
+  | 11 | Không đổi (73/73, 114 test, 6 lỗi, 0 mở) |
+  | 12 | Mốc đóng dự án: PV 26.4 tr, **EV 26.4 tr**, **AC 19.6 tr**, **SPI 1.00**, **CPI 1.34**; giữ mốc cuối S3 (0.97 / 1.50) |
+  | 10 | Chèn video demo ≤ 3 phút |
+  | Tất cả | Dán speaker notes từ `pm/final/presentation-canva-14-slides.md` v3.1 |
+- **Sau khi sửa:** xuất từ Canva ra PowerPoint, đặt tên `HK261_SPM_FP_Team6_c6_Slides.pptx` và cho vào `deliverables/Final/` (đây là file nộp).
+- **Kịch bản đọc theo lượt** cho deck Canva (14 lượt, tiếng Anh, ~9:40): Chính gửi file `HK261_SPM_FP_Team6_KichBan_ThuyetTrinh_Canva14.docx`.
