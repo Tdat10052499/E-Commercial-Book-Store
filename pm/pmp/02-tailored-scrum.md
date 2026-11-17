@@ -1,49 +1,50 @@
-# PMP Part 2 – Tailored Scrum Process
+# Project Management Plan, Part 2 – Tailored Scrum Process
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0 (TA) | 02/10/2026 | Team 6 | Scrum for the Team Assignment: one 2-week Sprint, 4 h/member/day, Slack #decisions, Jira board [TA Process.docx] |
-| 1.0-FP-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Adapted to the Final Project: 1-week Sprints Fri→Thu (N = 3), leader rotation S1/S3 vs S2 = PO, time tracking per task, CR/CCB step, Git PR review [03 §4–§5] |
-| 1.1-FP-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Jira project corrected to ECBS (board on tdat100524.atlassian.net) |
-| 1.2 | 16/11/2026 | Nguyễn Minh Chính (PO) | PMP Final: Daily channel and time (Discord 22:00) |
+| 1.0 (team assignment) | 02/10/2026 | Team 6 | Scrum for the earlier team assignment: one Sprint of two weeks, 4 hours per member per day, decisions recorded in a Slack channel, Jira task board |
+| 1.0-draft for the Final Project | 30/10/2026 | Hồ Du Tuấn Đạt | Adapted to the Final Project: Sprints of one week from Friday to Thursday (3 Sprints), Sprint Leader rotating (Sprints 1 and 3 one member, Sprint 2 the Product Owner), time tracked per task, a change control step, review of every code change by the other member [03 §4–§5] |
+| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Jira project name corrected to "ECBS" |
+| 1.2 | 16/11/2026 | Nguyễn Minh Chính (Product Owner) | Final version: place and time of the daily meeting (Discord, 22:00) |
+| 1.3 | 17/11/2026 | Hồ Du Tuấn Đạt | Rewritten in plain language without abbreviations; no change of content |
 
 ## 2.1 Roles and people
 | Role | Person | Responsibilities |
 |---|---|---|
-| Sponsor / Customer | Dr. Bùi Minh Phụng (Ms. Le) | Approves PMP v1.0, issues CRs, chairs CCB, attends Reviews, signs UAT |
-| Product Owner (fixed) + Developer | Nguyễn Minh Chính *(to confirm)* | Orders backlog, writes/clarifies ACs, accepts items as Done, represents team at CCB |
-| Sprint Leader / Scrum Master | S1 Hồ Du Tuấn Đạt · S2 Nguyễn Minh Chính · S3 Hồ Du Tuấn Đạt *(to confirm)* | Runs Planning, Daily, Retro; keeps board current; submits Sprint files; presents Review |
-| Developers | Both | Split tasks, estimate hours, build, test, log actual hours |
+| Sponsor and customer | Dr. Bùi Minh Phụng (as Ms. Le) | Approves the first version of the plan, issues change requests, chairs the Change Control Board, attends the Sprint Reviews, signs the acceptance test |
+| Product Owner (fixed) and Developer | Nguyễn Minh Chính | Orders the Product Backlog, writes and clarifies the acceptance criteria, accepts items as Done, represents the team on the Change Control Board |
+| Sprint Leader (acting as Scrum Master) | Sprint 1: Hồ Du Tuấn Đạt; Sprint 2: Nguyễn Minh Chính; Sprint 3: Hồ Du Tuấn Đạt | Runs the Sprint Planning, daily meetings and Retrospective; keeps the task board up to date; submits the Sprint documents; presents the Sprint Review |
+| Developers | Both members | Split the work into tasks, estimate hours, build, test and log the hours actually spent |
 
-## 2.2 Events and timeboxes
-| Event | When | Timebox | Output |
+## 2.2 Meetings and time limits
+| Meeting | When | Time limit | Result |
 |---|---|---|---|
-| Sprint Planning | Friday after Review (S1: 28/10 catch-up) | ≤ 45 min | Sprint Goal, capacity, items, tasks ≤ 1 person-day in Excel `Sx_Backlog`, then Jira |
-| Daily Scrum | Every day of the Sprint at 22:00 on Discord (from 11/11, Retro 2 action A1); asynchronous allowed | ≤ 10 min | Daily log (yesterday / today / blockers / hours logged) |
-| Backlog refinement | Mid-Sprint (Tuesday) | 30 min | Next items meet DoR; Planning Poker for new/changed items |
-| Sprint Review | Friday in class | with Retro 30 min + ~10 min presentation | Demo against ACs, burndown, plan vs actual hours |
-| Sprint Retrospective | Friday in class after Review | (incl. above) | ≥ 2 action items tracked in the next Sprint |
-| CCB meeting | When a CR is issued (CR-06: 30/10) | 15 min | Approve / Reject / Defer with reason |
+| Sprint Planning | Friday after the Sprint Review (Sprint 1: catch-up on 28/10) | At most 45 minutes | Sprint Goal, available hours, selected items, tasks of at most one person-day, first in the Excel workbook and then in Jira |
+| Daily meeting | Every day of the Sprint at 22:00 on Discord (from 11/11, an action of the Sprint 2 Retrospective); a written update is allowed | At most 10 minutes | Daily record: done yesterday, plan for today, blockers, hours logged |
+| Backlog refinement | Middle of the Sprint (Tuesday) | 30 minutes | The next items meet the Definition of Ready; Planning Poker for new or changed items |
+| Sprint Review | Friday in class | 30 minutes together with the Retrospective, plus about 10 minutes of presentation | Demonstration against the acceptance criteria, burndown chart, planned versus actual hours |
+| Sprint Retrospective | Friday in class after the Sprint Review | Included above | At least two actions, followed up in the next Sprint |
+| Change Control Board meeting | When a change request is issued (CR-06: 30/10) | 15 minutes | Approve, reject or postpone, with the reason |
 
-## 2.3 Artifacts
-Product Backlog (`pm/backlog/product-backlog.md` → Workbook sheet), Sprint Backlog per Sprint, Increment on the hosted URL, burndown (Jira + Workbook), Daily log, Risk Register, Issue Log, Change Log, Config Items, EVM sheet; DoR and 3-level DoD (PMP-4).
+## 2.3 Project records
+Product Backlog (kept as a text document and copied into the workbook), a Sprint Backlog for each Sprint, the working product on the live website, burndown charts (Jira and workbook), daily meeting records, risk register, issue log, Change Log, list of items under version control, earned value sheet, Definition of Ready and the three-level Definition of Done (Part 4).
 
 ## 2.4 Tools
 | Purpose | Tool |
 |---|---|
-| Board, estimates, actual hours | Jira Software Cloud (Free, team-managed, project ECBS, board https://tdat100524.atlassian.net) – lecturer invited as Reader (TBD) |
-| Planning workbook | Excel `HK261_SPM_FP_Team6_c2_SprintBacklog_Sx.xlsx` (cumulative) |
-| Source & configuration | GitHub repo `Tdat10052499/E-Commercial-Book-Store`, PR review |
-| Hosting | Free tier (decided at P04) |
-| Communication | Discord (Daily 22:00); email to Sponsor; class meetings |
+| Task board, estimates, actual hours | Jira Software Cloud, free plan, project "ECBS" (https://tdat100524.atlassian.net); the lecturer is invited with read-only access (to be confirmed) |
+| Planning workbook | Excel file "HK261_SPM_FP_Team6_c2_SprintBacklog" for each Sprint, adding to the previous one |
+| Source code and version control | GitHub (https://github.com/Tdat10052499/E-Commercial-Book-Store); every code change is reviewed by the other member |
+| Website hosting | Free plans: Vercel for the website, Supabase for the database |
+| Communication | Discord (daily meeting at 22:00); email to the Sponsor; class meetings |
 
-## 2.5 Tailoring decisions and related risks
-| Decision | Reason | Risk introduced | Mitigation |
+## 2.5 Choices made for this team and the risks they bring
+| Choice | Reason | Risk it brings | How the risk is reduced |
 |---|---|---|---|
-| 1-week Sprints, Fri→Thu | Fixed by the brief | Little buffer per Sprint | Small tasks (≤ 1 person-day), daily re-plan |
-| Asynchronous Daily Scrum allowed | 2 members, different schedules | Blockers noticed late | Log template; 24 h response rule (PMP-7) |
-| PO is also a Developer and Leader S2 | Team of 2 [03 §4.1] | Conflict between accepting and building | Story-DoD checked by the *other* member |
-| Excel first, then Jira | Required by the brief [03 §4.2] | Data inconsistency | Leader reconciles Excel and Jira each Planning |
-| Code review by the only other member | 2 members | Review delays block merges | Review within 12 h; small PRs |
-| AI assistance for drafting | Allowed with declaration [03 §4.2] | Content not understood by members | Every AI-assisted change logged in `pm/ai-usage-log.md` and reviewed in PR |
+| Sprints of one week, Friday to Thursday | Fixed by the course brief | Little spare time in each Sprint | Small tasks (at most one person-day), plan reviewed every day |
+| Written daily update allowed | Two members with different timetables | Blockers noticed late | A fixed template; every message answered within 24 hours (Part 7) |
+| The Product Owner is also a Developer and the Sprint 2 Leader | Team of two [03 §4.1] | Conflict between building an item and accepting it | The Definition of Done of each story is checked by the other member |
+| Excel workbook first, then Jira | Required by the course brief [03 §4.2] | Figures that do not match | The Sprint Leader compares the workbook and Jira at every Sprint Planning |
+| Code reviewed by the only other member | Two members | A late review blocks other work | Review within 12 hours; small code changes |
+| AI tools used to help write documents and code | Allowed if declared [03 §4.2] | Content that the members do not understand | Every use recorded in the AI usage log and reviewed by the other member |

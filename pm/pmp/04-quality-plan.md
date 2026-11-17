@@ -1,50 +1,51 @@
-# PMP Part 4 – Quality Plan
+# Project Management Plan, Part 4 – Quality Plan
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 0 (TA) | 15/10/2026 | Team 6 | Single-level DoD, 7 items (DoD-1…DoD-7) [04 §2] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Split into 3-level DoD (Story / Sprint / Release) with evidence and checker [05 #12]; DoD-2 changed from "merged to main" to "merged to develop via reviewed PR" [05 #13]; added metrics and test approach |
+| 0 (team assignment) | 15/10/2026 | Team 6 | A single Definition of Done with 7 items [04 §2] |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Split into a Definition of Done at three levels (story, Sprint, release), each with its evidence and the person who checks it [05 #12]. The second item changed from "added to the release version of the code" to "added to the shared working version after a review by the other member" [05 #13]. Quality measures and test approach added |
+| 1.1 | 17/11/2026 | Hồ Du Tuấn Đạt | Rewritten in plain language without abbreviations; no change of content |
 
-## 4.1 Definition of Done – 3 levels
-### Story DoD (each backlog item)
-| # | Criterion | Evidence | Checker |
+## 4.1 Definition of Done at three levels
+### Story level (each item of the Product Backlog)
+| # | Criterion | Evidence | Checked by |
 |---|---|---|---|
-| SD-1 | Every AC of the item passes (from v0 DoD-1) | Test case file with actual result = Pass | PO |
-| SD-2 | Code reviewed by the other member and merged into `develop` through a PR (v0 DoD-2, revised) | Approved PR link | Reviewer |
-| SD-3 | Automated tests for new logic pass (v0 DoD-3) | Test run output / CI | Developer |
-| SD-4 | Works at 360/768/1280 px on Chrome and one other browser (v0 DoD-4) | Screenshots | Reviewer |
-| SD-5 | Client and server validation present; no secret in code | PR checklist | Reviewer |
-| SD-6 | Jira task Done with Completed Work logged (v0 DoD-7) | Jira | Leader |
+| Story 1 | Every acceptance criterion of the item passes | Test case document with the actual result "Pass" | Product Owner |
+| Story 2 | The other member has reviewed and approved the code before it is added to the shared working version | Link to the approved code change on GitHub | Reviewer |
+| Story 3 | The automated tests for the new logic pass | Result of the automated test run | Developer |
+| Story 4 | Works at screen widths of 360, 768 and 1280 pixels in Chrome and one other browser | Screenshots | Reviewer |
+| Story 5 | Input is checked in the browser and on the server; no password or secret key in the code | Review checklist | Reviewer |
+| Story 6 | The Jira task is Done and the time spent is logged | Jira | Sprint Leader |
 
-### Sprint DoD (end of each Sprint)
-| # | Criterion | Evidence | Checker |
+### Sprint level (end of each Sprint)
+| # | Criterion | Evidence | Checked by |
 |---|---|---|---|
-| SpD-1 | All committed items meet Story DoD; unfinished items returned to the Product Backlog | Sprint Backlog status | PO |
-| SpD-2 | No open high-severity defect (v0 DoD-5) | Defect list | Leader |
-| SpD-3 | Increment deployed on the hosted URL and demonstrated against ACs | URL + Review demo | Sponsor |
-| SpD-4 | Regression of earlier features passes | Regression test results | Developer |
-| SpD-5 | Workbook, Sprint Report and Jira figures reconciled; files submitted on time | Submission receipt | Leader |
+| Sprint 1 | All committed items meet the story level; unfinished items go back to the Product Backlog | Status in the Sprint Backlog | Product Owner |
+| Sprint 2 | No open high-severity defect | Defect list | Sprint Leader |
+| Sprint 3 | The new version is on the live website and demonstrated against the acceptance criteria | Website address and Sprint Review demonstration | Sponsor |
+| Sprint 4 | Repeat tests of earlier features pass | Results of the repeat tests | Developer |
+| Sprint 5 | Figures in the workbook, the Sprint report and Jira match; documents submitted on time | Submission receipt | Sprint Leader |
 
-### Release DoD (Release 1.0)
-| # | Criterion | Evidence | Checker |
+### Release level (Release 1.0)
+| # | Criterion | Evidence | Checked by |
 |---|---|---|---|
-| RD-1 | F1–F5 (+ approved CRs) all ACs pass in UAT | Signed UAT minutes | Sponsor |
-| RD-2 | NFRs met: ≥ 30 books, list < 2 s, hashing, validation, responsive | NFR test records | PO |
-| RD-3 | `develop` merged into `main`, tag `v1.0`, release notes | GitHub release | Leader S3 |
-| RD-4 | Docs updated: README (how to run), release notes, user notes (v0 DoD-6) | Repo | Reviewer |
-| RD-5 | Site online until 17/11/2026 with demo accounts | URL check | Leader S3 |
+| Release 1 | All acceptance criteria of features F1 to F5 and of the approved change requests pass in the acceptance test | Signed acceptance test minutes | Sponsor |
+| Release 2 | Non-functional requirements met: at least 30 books, book list in under 2 seconds, passwords encrypted, input checked, layout works on all screen sizes | Test records of the non-functional requirements | Product Owner |
+| Release 3 | The shared working version is copied into the release version of the code, labelled "v1.0", with release notes | Release page on GitHub | Sprint 3 Leader |
+| Release 4 | Documents updated: installation guide, release notes, user notes | Source code folder | Reviewer |
+| Release 5 | Website online until 17/11/2026, with demo accounts | Check of the website address | Sprint 3 Leader |
 
-## 4.2 Quality metrics
-| Metric | Formula | Target | Collected |
+## 4.2 Quality measures
+| Measure | How it is calculated | Target | When it is collected |
 |---|---|---|---|
-| AC pass rate | ACs passed ÷ ACs tested | 100 % at Sprint end | Each Sprint, test case file |
-| Test case coverage | ACs with ≥ 1 test case ÷ total ACs | 100 % | Each Sprint |
-| Defects by severity | Count of Critical / High / Medium / Low | 0 open Critical/High at Sprint end | Defect list |
-| Reopen rate | Items reopened after Done ÷ items Done | ≤ 10 % | Each Sprint |
-| Page load | Median of 3 loads of list page | < 2 s | S2, S3 |
+| Acceptance criteria passed | Acceptance criteria passed ÷ acceptance criteria tested | 100% at the end of the Sprint | Every Sprint, from the test case documents |
+| Test coverage | Acceptance criteria with at least one test case ÷ all acceptance criteria | 100% | Every Sprint |
+| Defects by severity | Number of critical, high, medium and low defects | No open critical or high defect at the end of the Sprint | Defect list |
+| Items reopened | Items reopened after Done ÷ items Done | At most 10% | Every Sprint |
+| Page load time | Middle value of 3 loads of the book list | Under 2 seconds | Sprints 2 and 3 |
 
 ## 4.3 Test approach
-- **Test cases from ACs:** at least one test case per AC, format GWT → steps → expected → actual → Pass/Fail [03 §6.1-7].
-- **Levels:** automated tests for validation, auth and permission logic; manual functional tests per AC; regression of earlier features each Sprint; performance check of the list page; UAT script mapped to every AC in S3.
-- **Defect severity:** Critical (blocks a Must AC or security), High (AC fails, workaround exists), Medium (non-AC behaviour), Low (cosmetic).
+- **Test cases from acceptance criteria:** at least one test case for each acceptance criterion, written as Given–When–Then, then steps, expected result, actual result and Pass or Fail [03 §6.1-7].
+- **Test levels:** automated tests for input checks, sign-in and permission logic; manual tests of each acceptance criterion; repeat tests of earlier features every Sprint; a speed check of the book list; an acceptance test script in Sprint 3 that covers every acceptance criterion.
+- **Defect severity:** critical (blocks a "Must have" acceptance criterion, or a security problem), high (an acceptance criterion fails but there is a workaround), medium (behaviour outside the acceptance criteria), low (appearance only).

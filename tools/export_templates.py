@@ -119,9 +119,17 @@ def tables(text):
     return out
 
 
+# Plain-language column names used in the plan from 17/11/2026, mapped to the names the parsers below expect.
+HEADER_ALIASES = {"risk (cause, event, effect)": "Risk (cause → event → effect)", "category": "Cat.",
+                  "prob.": "P", "imp.": "I", "score": "P×I", "strategy and response": "Strategy & response",
+                  "warning sign": "Trigger", "identifier": "CI-ID", "where it is kept": "Location",
+                  "first fixed version": "Baseline"}
+
+
 def table_with(text, *names):
     """First table whose header contains every given column name (case-insensitive prefix match)."""
     for heading, rows in tables(text):
+        rows[0] = [HEADER_ALIASES.get(h.strip().lower(), h) for h in rows[0]]
         hdr = [h.lower() for h in rows[0]]
         if all(any(h.startswith(n.lower()) for h in hdr) for n in names):
             return heading, rows
@@ -568,8 +576,10 @@ def fill_risks(wb, sprint):
     latest = regs[sprint]
     for k, (rid, d) in enumerate(latest.items()):
         r = 5 + k
-        parts = [p.strip() for p in clean(d["risk (cause → event → effect)"]).split("→")]
+        rtext = clean(d["risk (cause → event → effect)"])
+        parts = [p.strip() for p in (rtext.split("→") if "→" in rtext else rtext.split(", so ", 1))]
         cause, risk = (parts[0], " → ".join(parts[1:])) if len(parts) > 1 else ("", parts[0])
+        risk = risk[:1].upper() + risk[1:]
         sr = clean(d["strategy & response"])
         m = re.match(r"(Avoid|Mitigate|Transfer|Accept|Escalate)\s*[:–-]\s*(.*)", sr, re.S)
         strategy, response = (m.group(1), m.group(2)) if m else ("", sr)
