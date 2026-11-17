@@ -15,6 +15,7 @@ Format: GWT → steps → expected → actual [03 §6.1-7, §6.2-2]. **One test 
 | 1.7 | 09/11/2026 | Nguyễn Minh Chính | Hosted checks for S3-T03 (Admin, 23:24–23:27): TC-F2-12 Pass, TC-F2-19 Pass (now complete), TC-F3-05 admin pages Pass, TC-F3-06 re-check Fail → DEF-S3-02 (Low, fix PR #33); category *Horror* renamed back to *Novel* |
 | 1.8 | 10/11/2026 | Nguyễn Minh Chính | After release PR #35: TC-F2-11 Pass (hidden test book id 33 → "not available", 404); TC-F3-06 re-run Pass, DEF-S3-02 closed |
 | 1.9 | 12/11/2026 | Nguyễn Minh Chính (PO) | Writer and Run by (hosted) columns (Retro 2 action A3); TC-CR-01…05 re-run on the host by Chính (runner ≠ writer, Daily D6 decision): 5 Pass |
+| 1.10 | 18/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | TC-F1-24 (NFR-03/AC-03) Pass on 17/11, recorded on Đạt's confirmation that the PO accepted NFR-03 |
 
 *Writer* and *Run by (hosted)* columns added on 12/11/2026 (Retro 2 action A3, owner Nguyễn Minh Chính). From now on a hosted case is never run by its writer; earlier hosted runs where the two are the same are re-run before the UAT (TC-CR-01…05 by Chính; TC-F2-11, TC-F3-06 and S3-T14 by Đạt).
 
@@ -102,7 +103,7 @@ Re-run of the Sprint 1 test cases (`pm/sprints/S1/test-cases-F1.md`) on the Spri
 | TC-F1-21 | NFR-01/AC-03 | Pass (UNIT) | TBD | Đạt | – |
 | TC-F1-22 | NFR-03/AC-01 | Host only | Pass (05/11 23:55, Chính, public pages) – home page over HTTPS | Đạt | Chính |
 | TC-F1-23 | NFR-03/AC-02 | Host only | TBD | Đạt | – |
-| TC-F1-24 | NFR-03/AC-03 | Host only (17/11) | TBD | Đạt | – |
+| TC-F1-24 | NFR-03/AC-03 | Host only (17/11) | Pass (17/11: site online; NFR-03 accepted by the PO) | Đạt | – |
 
 **Note TC-F1-10:** the AC text of US-03/AC-01 still says "role (Administrator or Customer)". Since CR-06 the role list also has *Store Staff*. The PO should decide whether to update the AC text in the Product Backlog (not changed here).
 

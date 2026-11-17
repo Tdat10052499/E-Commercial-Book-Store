@@ -22,6 +22,7 @@
 | 0.6 | 18/11/2026 | Hồ Du Tuấn Đạt | Link of the demo video added. No figure changed |
 | 0.7 | 18/11/2026 | Hồ Du Tuấn Đạt | Actual hours read from Jira on 18/11: 98.23 hours (13 hours logged after the snapshot of 12/11). Closure Actual Cost, Cost Performance Index (1.50 to 1.30), Estimate at Completion, Sprint 3 hours and work allocation updated. Earned Value, Planned Value and Schedule Performance Index unchanged |
 | 0.8 | 18/11/2026 | Hồ Du Tuấn Đạt | Sprint 3 closed in Jira on 18/11 after the last four tasks were moved to Done; checklist item 7 marked done (the daily meetings of day 2 and day 3 were not held, so their cards stay To Do) |
+| 0.9 | 18/11/2026 | Hồ Du Tuấn Đạt | Requirement NFR-03 accepted by the Product Owner on 17/11 (confirmed 18/11): 68 of 68 story points Done; closure Earned Value 26.4 million, Schedule Performance Index 1.00, Cost Performance Index 1.34, Estimate at Completion 19,646,000; checklist items 2 and 9 updated |
 
 **How to read the figures.** "Plan" means the values in the agreed plan (the baseline: Release Plan and Sprint Backlogs). "Actual" means what really happened, taken from the hours logged in Jira, the history of the source code on GitHub and the Product Owner's acceptance record. Work is costed at 200,000 VND per person-hour, and the project has 3 Sprints, as set by the course [03 §6.4]. Story points measure the relative size of a piece of work. A story's points count as "Done" only when the story meets the team's Definition of Done: every acceptance criterion passes on the live website, the other member has reviewed the code, all automated tests pass and the Product Owner has accepted the story.
 
@@ -31,14 +32,14 @@
 **Result.**
 - **The Sponsor accepted the product in the user acceptance test on 13/11/2026: all 73 of 73 acceptance criteria passed.** No defect was found and no new change was requested (acceptance test minutes, file c5).
 - Scope delivered: the five features F1 to F5 (F1 accounts and roles, F2 book management, F3 book list, F4 book details, F5 search and filter) plus the approved change CR-06 (a new Store Staff role and a "Last updated by" record on every book). In total 20 items of the Product Backlog. Nothing was cut. Shopping cart, checkout and sign-in with social media accounts were outside the scope set by the lecturer [03 §2.2].
-- **66 of the 68 planned story points meet the Definition of Done** (plan version 1.2, after change request CR-07). The remaining 2 story points belong to requirement NFR-03 (the website stays online until 17/11); the Product Owner accepts it after the check on 17/11.
-- Earned value at closure: **schedule performance 0.97 and cost performance 1.30** (section 3.3).
+- **All 68 planned story points meet the Definition of Done** (plan version 1.2, after change request CR-07). The last 2 story points, requirement NFR-03 (the website stays online until 17/11), were accepted by the Product Owner after the check on 17/11.
+- Earned value at closure: **schedule performance 1.00 and cost performance 1.34** (section 3.3).
 - Quality: all 114 automated tests pass. Six defects were found during the Sprints and all were fixed; none was rated critical or high. No defect is open.
 - Two change requests went through the Change Log and the Change Control Board (the Sponsor and the team): CR-06 from the Sponsor (approved, option B) and CR-07 from the Product Owner (new size estimate for the Sprint 3 work, approved).
 
 | Item | Plan | Actual |
 |---|---|---|
-| Scope | 20 items. Total planned size 55 story points (plan version 1.0), then 62 (version 1.1, after CR-06), then **68** (version 1.2, after CR-07) | All 20 items delivered; 66 of 68 story points Done; 73 of 73 acceptance criteria passed in the acceptance test |
+| Scope | 20 items. Total planned size 55 story points (plan version 1.0), then 62 (version 1.1, after CR-06), then **68** (version 1.2, after CR-07) | All 20 items delivered; 68 of 68 story points Done; 73 of 73 acceptance criteria passed in the acceptance test |
 | Schedule | 3 Sprints, acceptance test on 13/11, final submission on 15/11 | Acceptance test held on 13/11 and accepted. In each Sprint, acceptance came late (sections 2 and 3.2) |
 | Cost | Budget 26,400,000 VND (132 hours) | Actual cost 19,646,000 VND (98.23 hours logged in Jira, read on 18/11). Section 3.3 explains the limits of this figure |
 | Quality | No open critical or high defect; every acceptance criterion covered by a test case | No open defect; each of the 73 acceptance criteria has at least one test case |
@@ -64,7 +65,7 @@ Velocity, meaning the story points accepted as Done within each Sprint, was 0 in
 | | Plan version 1.0 (30/10) | Plan version 1.1 (04/11, after CR-06) | Plan version 1.2 (15/11, after CR-07) | Actual (15/11) |
 |---|---|---|---|---|
 | Items | 18 (features F1 to F5 and the non-functional requirements) | 20 (user stories US-24 and US-25 added) | 20 | 20 delivered |
-| Total planned story points | 55 | 62 | 68 | 66 Done, plus 2 (requirement NFR-03) on 17/11 |
+| Total planned story points | 55 | 62 | 68 | 68 Done (the last 2, requirement NFR-03, accepted on 17/11) |
 | Story points of Sprint 1 / Sprint 2 / Sprint 3 | 18 / 24 / 13 | 18 / 29 / 15 | 18 / 29 / 21 | 0 / 5 / 45 Done within each Sprint, plus 16 story points of Sprint 1 accepted in the week of Sprint 2 |
 | Added by change requests | None | CR-06: 7 story points, 12 hours, 2,400,000 VND | CR-07: 6 story points, no hours, no cost (new estimate only) | Both change requests delivered |
 | Out of scope | Shopping cart, checkout, payment, sign-in with social media | Same | Same | Not built. Visual improvements of the home page (banners, rows of books, a Favorite button) were built **without an item in the Product Backlog**. This is recorded as lesson LL-04 and as a known issue |
@@ -83,7 +84,7 @@ Version 1.4 of the Product Backlog and the Release Plan (Project Management Plan
 | M8: Sprint 3 submission | 12/11, 23:59 | Submitted on time (workbook, Sprint report, acceptance test document, Sprint evaluation) |
 | M9: Sprint Review 3 and acceptance test | 13/11 | Sprint Review 3 video recorded and submitted; acceptance test on 13/11 **accepted** (73 of 73); board approved CR-07 |
 | M10: final submission | 15/11, 23:59 | This report, the final Project Management Plan, the final workbook, the slides and the peer evaluation forms |
-| M11: final presentation | 17/11, 07:00 | Planned; requirement NFR-03 is checked on the same day |
+| M11: final presentation | 17/11, 07:00 | Requirement NFR-03 checked and accepted on the same day |
 
 **Burndown charts (task hours remaining, planned versus actual).**
 
@@ -113,17 +114,17 @@ Earned Value Management compares the plan, the progress and the cost in money. T
 | End of Sprint 1, 02/11 (version 1.0: 24.0 million, 55) | 8,000,000 | 0 (0 of 55) | 3,900,000 (19.5 hours) | 0.00 | 0.00 | Not computable |
 | End of Sprint 2, 06/11 (version 1.1: 26.4 million, 62) | 17,600,000 | 8,941,935 (21 of 62) | 13,000,000 (65 hours) | 0.51 | 0.69 | 38,380,952 |
 | End of Sprint 3, 12/11 at 18:55 (version 1.1: 26.4 million, 62) | 26,400,000 | 25,548,387 (60 of 62) | 17,046,000 (85.23 hours) | 0.97 | 1.50 | 17,614,200 |
-| **Closure, 18/11 (version 1.2: 26.4 million, 68)** | **26,400,000** | **25,623,529 (66 of 68)** | **19,646,000 (98.23 hours)** | **0.97** | **1.30** | **20,241,334** |
+| **Closure, 18/11 (version 1.2: 26.4 million, 68)** | **26,400,000** | **26,400,000 (68 of 68)** | **19,646,000 (98.23 hours)** | **1.00** | **1.34** | **19,646,000** |
 
-At closure, the schedule variance (Earned Value − Planned Value) is −776,471 VND, the cost variance (Earned Value − Actual Cost) is +5,977,529 VND, and the estimate to complete is 595,334 VND. The closure hours were read from Jira on 18/11/2026: the 13 hours logged after the snapshot of 12/11 at 18:55 are 4.5 hours of Sprint 3 work on the evening of 12/11 (weekly status, earned value and Sprint report, workbook upload, daily meeting of day 7) and 8.5 hours on 13–17/11 (Sprint Review 3 video, acceptance test session, release of version 1.0, final documents). The Sprint 1 hours were later corrected from 19.5 to 41 hours (the second part of the test on the live website was logged on 05/11), which is why the Actual Cost at the end of Sprint 2 uses 65 hours.
+At closure, the schedule variance (Earned Value − Planned Value) is 0 VND, the cost variance (Earned Value − Actual Cost) is +6,754,000 VND, and the estimate to complete is 0 VND, because all the work is done. The closure hours were read from Jira on 18/11/2026: the 13 hours logged after the snapshot of 12/11 at 18:55 are 4.5 hours of Sprint 3 work on the evening of 12/11 (weekly status, earned value and Sprint report, workbook upload, daily meeting of day 7) and 8.5 hours on 13–17/11 (Sprint Review 3 video, acceptance test session, release of version 1.0, final documents). The Sprint 1 hours were later corrected from 19.5 to 41 hours (the second part of the test on the live website was logged on 05/11), which is why the Actual Cost at the end of Sprint 2 uses 65 hours.
 
 **What the figures mean.**
-- **Schedule:** the Schedule Performance Index is 0.97 at closure, meaning about 97% of the planned progress. The only gap is requirement NFR-03 (2 story points), which cannot be checked before 17/11. During the project the index was far lower (0.00 after Sprint 1, 0.51 after Sprint 2), because items were accepted one Sprint after they were built. The value came late; it was not missing.
-- **Cost:** the Cost Performance Index of 1.30 means the team logged fewer hours (98.23) than planned (132). This is not only efficiency:
+- **Schedule:** the Schedule Performance Index is 1.00 at closure: all planned value was delivered. It was 0.97 at the end of Sprint 3, because requirement NFR-03 (2 story points) could only be checked and accepted on 17/11. During the project the index was far lower (0.00 after Sprint 1, 0.51 after Sprint 2), because items were accepted one Sprint after they were built. The value came late; it was not missing.
+- **Cost:** the Cost Performance Index of 1.34 means the team logged fewer hours (98.23) than planned (132). This is not only efficiency:
   - the hours of Sprint 1 and Sprint 2 were partly entered from memory after the Sprint (lesson LL-02);
   - part of the testing and the documentation was done with help from AI tools (Appendix D), so estimates made without AI were too high (lesson LL-06);
   - the hours of the last evening of Sprint 3 and of the closure work were logged several days later (16/11 and 17/11), partly from memory.
-  - The index should be read as "the project used less logged effort than its budget", not as proof that the team works 30% faster than planned.
+  - The index should be read as "the project used less logged effort than its budget", not as proof that the team works 34% faster than planned.
 - **Effect of change request CR-07:** the new estimate of the Sprint 3 items raised the total planned story points from 62 to 68. Earned Value rose by 75,142 VND (from 60 of 62 to 66 of 68 of the budget); with the same hours (85.23 at that time) both indexes stayed at 0.97 and 1.50.
 
 ### 3.4 Quality
@@ -161,14 +162,14 @@ Risks that did not occur: R03 slow first load of the free website (watched until
 | # | Closure activity | Status | Evidence |
 |---|---|---|---|
 | 1 | Customer acceptance (acceptance test) | Done on 13/11: accepted, 73 of 73 passed | Acceptance test minutes (file c5); Sponsor signature to be confirmed |
-| 2 | Check of requirement NFR-03 (website online on 17/11) | Planned for 17/11 | Test case TC-F1-24 |
+| 2 | Check of requirement NFR-03 (website online on 17/11) | Done on 17/11: website online, requirement NFR-03 accepted by the Product Owner (2 story points) | Test case TC-F1-24, Jira |
 | 3 | Release version of the code, version label "v1.0" and release notes | Release version completed on 12/11; release notes 1.0; label "v1.0" added on 16/11; label "baseline-v1.2" added to the working version of the code | GitHub |
 | 4 | Hand-over of the code | Source code with a guide on how to install and run it and how to load sample data; automated tests included | GitHub |
 | 5 | Hand-over of the documents | All submitted documents on eLearning; the editable sources and the exported files kept with the code | GitHub, eLearning |
 | 6 | Archive | Labels for all three plan versions ("baseline-v1.0", "baseline-v1.1", "baseline-v1.2"); Jira project kept; AI usage log kept | GitHub, Jira |
 | 7 | Close Sprint 3 in Jira and log the last hours | Done on 18/11: 98.23 hours logged in Jira; the last four Sprint 3 tasks (release of version 1.0, earned value and Sprint report, daily meeting of day 7, task S3-T17) moved to Done and Sprint 3 closed in Jira at 02:12 on 18/11. The daily meeting cards of day 2 and day 3 (ECBS-171, ECBS-172) stay To Do because those meetings were not held | Jira |
 | 8 | Release resources | The website and database (free plans on Vercel and Supabase) stay online until the end of 17/11 and then remain on the free plan; demo accounts kept until the lecturer has graded | Plan |
-| 9 | Lecturer access to the code and the task board | To be confirmed (check that the lecturer can open both links) | None yet |
+| 9 | Lecturer access to the code and the task board | Lecturer invited to GitHub and Jira; access not checked again (not required by the team) | GitHub, Jira |
 | 10 | Lessons learned and peer evaluation | Lessons learned in section 6; each member submits a peer evaluation form | This report, eLearning |
 
 ## 6. Lessons Learned
@@ -209,7 +210,7 @@ Risks that did not occur: R03 slow first load of the free website (watched until
 
 ### LL-06 Take AI assistance into account when estimating
 - **Situation:** Part of the testing and documentation in Sprint 3 was done with help from AI tools; Sprint 3 logged 33.23 hours against 39.5 hours planned, of which 8.5 hours were closure work after the Sprint.
-- **Impact:** The Cost Performance Index of 1.30 at closure looks like strong efficiency but mixes several causes; the plan line of the burndown chart was too high.
+- **Impact:** The Cost Performance Index of 1.34 at closure looks like strong efficiency but mixes several causes; the plan line of the burndown chart was too high.
 - **Cause:** Estimates were made as if all work was done by hand.
 - **Lesson:** A tool that changes productivity changes the plan; its effect must be measured and declared.
 - **Recommendation:** Record the use of AI for each task (as the AI usage log does) and estimate again with Planning Poker once the team knows how much time it saves; always keep time for human review in every estimate.

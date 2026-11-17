@@ -43,7 +43,7 @@ EVM = [
     ("End of Sprint 1", "v1.0", 24000000, 55, 1, 0, 19.5, "02/11/2026 (S1 hours later corrected to 41 h)"),
     ("End of Sprint 2", "v1.1", 26400000, 62, 2, 21, 65, "06/11/2026"),
     ("End of Sprint 3", "v1.1", 26400000, 62, 3, 60, 85.23, "12/11/2026 18:55"),
-    ("Closure (Final)", "v1.2", 26400000, 68, 3, 66, 98.23, "18/11/2026 – Jira worklogs (13 h logged after 12/11 18:55)"),
+    ("Closure (Final)", "v1.2", 26400000, 68, 3, 68, 98.23, "18/11/2026 – Jira worklogs (13 h logged after 12/11 18:55)"),
 ]
 
 
@@ -164,9 +164,9 @@ def evm_sheet(wb):
     notes = [
         "PV = BAC × n / N · EV = BAC × SP Done / PSP · AC = actual hours × 200,000 · SV = EV − PV · CV = EV − AC · "
         "SPI = EV / PV · CPI = EV / AC · EAC = BAC / CPI · ETC = EAC − AC.",
-        "Closure: 66 of 68 SP meet the DoD; NFR-03 (2 SP) is accepted by the PO after the check on 17/11 (site online). "
-        "UAT 13/11: 73/73 ACs Pass, Release 1.0 accepted.",
-        "CPI 1.30: fewer hours logged (98.23 h) than planned (132 h) – S1/S2 hours partly reconstructed, part of the "
+        "Closure: 68 of 68 SP meet the DoD; NFR-03 (2 SP) accepted by the PO after the check on 17/11 (site online). "
+        "In the UAT on 13/11, 73/73 ACs Pass and Release 1.0 was accepted.",
+        "CPI 1.34: fewer hours logged (98.23 h) than planned (132 h) – S1/S2 hours partly reconstructed, part of the "
         "S3 testing and documents AI-assisted. Closure hours read from Jira on 18/11/2026. See Final Report §3.3.",
         "Baselines: v1.0 (30/10) PSP 55, BAC 24.0 M · v1.1 (04/11, CR-06) PSP 62, BAC 26.4 M · v1.2 (15/11, CR-07) PSP 68, "
         "BAC 26.4 M.",

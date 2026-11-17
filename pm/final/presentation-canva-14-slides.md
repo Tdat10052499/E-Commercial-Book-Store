@@ -89,4 +89,4 @@ Canva hiện chỉ lưu speaker notes cũ ở slide 1 và 10 (vẫn đúng). Cô
 
 - Slide 10 vẫn trống khung video; Đạt chèn file video vào Canva.
 - Hạn 8.2 ghi trình bày 07:00 ngày 17/11; nếu lịch đã đổi, cập nhật ngày trên slide 1.
-- Giờ thực tế 85.23 h là số Jira ngày 15/11. Ngày 18/11 Jira có 98.23 h (CPI 1.30, AC 19,646,000, EAC 20.24M): cần sửa slide 7 và 12.
+- 18/11: slide 7 và 12 đã dùng 98.23 h. NFR-03 được PO nghiệm thu 17/11 → 68/68 SP, EV 26.4M, SPI 1.00, CPI 1.34, EAC 19.646M (khớp c6 v0.9). Slide 7: S3 nên ghi 33.23 h, chú thích "Sprint 3 includes 8.5 h closure work (13–17/11)" cho khớp c6.

@@ -5,6 +5,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.1 | 18/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | NFR-03 checked and accepted 17/11; tag `v1.0` added 16/11. Session time, place, keyboard, Sponsor's remarks and signature still to be filled by the team |
 | 1.0 | 15/11/2026 | Nguyễn Minh Chính (PO) | Session results: 73/73 ACs Pass, no defect, no new change request, decision **Accepted**; CR-07 decided by the CCB the same day (Approve) |
 | 0.1 | 12/11/2026 | Nguyễn Minh Chính (PO) | Form: session data, result per feature (73 ACs of the UAT script v0.2), defects, known issues, change requests, decision, sign-off |
 
@@ -17,7 +18,7 @@
 | Sponsor / Customer | Dr. Bùi Minh Phụng |
 | Team | Hồ Du Tuấn Đạt (Leader S3), Nguyễn Minh Chính (Product Owner) |
 | At the keyboard | TBD |
-| Build under test | Release 1.0 deployed from `main` (release PR #57, 12/11), https://pagetunnel.vercel.app/; tag `v1.0`: TBD (S3-T19) |
+| Build under test | Release 1.0 deployed from `main` (release PR #57, 12/11), https://pagetunnel.vercel.app/; tag `v1.0` added 16/11 (S3-T19) |
 | Script | UAT script v0.2 – 73 ACs (Part I of this document) |
 | Test data | 30 seed books; UAT accounts by role (Admin, UAT Staff, UAT Customer, UAT Customer 2) |
 
@@ -47,7 +48,7 @@ Items from the *Known issues* part of the release notes v1.0, shown before the s
 
 | Known issue | Sponsor's remark |
 |---|---|
-| NFR-03/AC-03: site still online on 17/11 (TC-F1-24). Step UAT-F1-24 is recorded as Pass; the PO accepts NFR-03 (2 SP) after the check on 17/11 (`po-acceptance.md`) | TBD |
+| NFR-03/AC-03: site still online on 17/11 (TC-F1-24). Step UAT-F1-24 is recorded as Pass; checked on 17/11 and NFR-03 (2 SP) accepted by the PO (`po-acceptance.md` v1.6) | TBD |
 | Free Supabase database pauses after a week without traffic (keep-alive in `app/README.md`) | TBD |
 | Favorite button on the book cards (UI outside the Release 1.0 backlog, stored only in the browser) | TBD |
 
