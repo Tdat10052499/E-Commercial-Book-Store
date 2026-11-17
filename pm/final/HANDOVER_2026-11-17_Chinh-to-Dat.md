@@ -85,3 +85,8 @@ python3 tools/export_final.py            # c1, c2, c6 Report, Eval360 → delive
 node tools/slides_final.js <thư mục skill pptx>   # c6 Slides
 ```
 Sửa số liệu thì sửa Markdown nguồn (`pm/final/final-report.md`, `pm/pmp/*.md`…) rồi chạy lại script. **Không** sửa trực tiếp file docx/xlsx.
+
+## 8. Trả lời ghi chú 17/11 của Đạt (PR #69) – 23:50
+- Chính đã **merge nhánh của PR #69 vào PR #68**, giải xung đột ở `final-report.md`, `STATUS.md`, `ai-usage-log.md`. Phần tag `v1.0` của Đạt được ghi thành dòng 0.5a trong version history. Merge #68 trước, sau đó #69 không còn thay đổi nào và có thể đóng.
+- **Số liệu trên deck Canva đã cũ** (66/68, SPI 0.97, CPI 1.50, 85.23 h). Số chốt là **68/68, SPI 1.00, CPI 1.34, AC 19.6 tr, 98.23 h**. Chính đã sửa speaker notes slide 7, 12 và bảng câu hỏi trong `pm/final/presentation-canva-14-slides.md` (v3.1). **Slide 7 và 12 trên Canva cũng phải sửa** theo số này, và slide 1 đổi ngày thành 20/11.
+- **Đang có 2 bộ slide:** `c6_Slides.pptx` 15 slide (Chính) và deck Canva 14 slide (Đạt). Hai đứa cần **chọn 1 bộ để nộp và trình bày**; bộ được chọn xuất ra `deliverables/Final/HK261_SPM_FP_Team6_c6_Slides.pptx`.

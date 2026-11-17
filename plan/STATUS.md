@@ -40,7 +40,7 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | P31 | Review 3 + UAT + biên bản | 13/11 | done | Đạt, Chính | 13/11 | docs/P33 | Video Review 3 đã nộp; UAT **Accepted** 73/73; CCB CR-07 Approve (Chính cung cấp 15/11) |
 | P32 | Hosting cuối, tài khoản demo, dữ liệu đóng dự án | 14/11 | todo | Đạt |  |  | Dữ liệu đóng dự án đã thu (Jira 15/11, 85.23 h). Còn: tài khoản demo cho Final Report, giờ sau 12/11 19:59 |
 | P33 | Final Report, EVM, Lessons Learned, PMP/Workbook Final | 18/11 23:59 | in_progress | Chính |  | #67, #68 | 17/11: Final Report v0.5 – 68/68 SP, SPI 1.00, CPI 1.34 (98.23 h, đủ giờ). Còn TBD: tài khoản demo, link video, nhận xét UAT, lý do CR-07 |
-| P34 | Slide + video demo | 18/11 | in_progress | Chính (slide), Đạt (video) |  | #67, #68 | c6_Slides.pptx (15 slide, ngày 20/11). Còn: video demo ≤ 3 phút |
+| P34 | Slide + video demo | 18/11 | in_progress | Chính, Đạt |  | #67, #68, #69 | Hai bản slide: c6_Slides.pptx 15 slide (Chính) và deck Canva 14 slide theo 8.2 (Đạt, PR #69, `pm/final/presentation-canva-14-slides.md`) – **cần chọn 1 bản**. Còn: video demo ≤ 3 phút |
 | P35 | Nộp cuối + Eval360 | 18/11 23:59 | in_progress | Chính, Đạt |  | #67, #68 | Còn: mỗi người chấm cột E–G Eval360, nộp 6 file lên eLearning |
 | P36 | Thuyết trình | Fri 20/11 (giờ TBD) | todo | Đạt, Chính |  |  | Kịch bản thuyết trình 24 lượt (ngoài repo); NFR-03 đã kiểm tra 17/11 |
 
@@ -57,3 +57,4 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | 16/11/2026 23:30 | Chính | Đạt merge #65, #67, #64, gắn tag `v1.0` và `baseline-v1.2`, log 4.5 h trên Jira → P27 done; Final Report v0.3, c2 Final và slide xuất lại với AC 89.73 h (CPI 1.43) |
 | 17/11/2026 22:45 | Chính | Hạn nộp dời 18/11 23:59, thuyết trình Thứ Sáu 20/11; NFR-03 kiểm tra 17/11 22:33 → 68/68 SP, SPI 1.00, CPI 1.47; Final Report v0.4, c2, slide xuất lại |
 | 17/11/2026 23:45 | Chính | Log giờ của Chính: S3-T22 1 h (Done), D7 0.5 h, 4 task đóng dự án S3-C1…C4 = 7 h → 98.23 h, CPI 1.34; xuất lại report, c2, slide |
+| 17/11/2026 | Đạt | P34: làm lại deck Canva thành 14 slide theo yêu cầu 8.2 (10 phút + Q&A), kịch bản + speaker notes chia người nói; ghi chú gửi Chính `pm/sprints/S3/notes/2026-11-17_Dat-to-Chinh.md` (PR #69, merge vào nhánh của Chính 17/11) |

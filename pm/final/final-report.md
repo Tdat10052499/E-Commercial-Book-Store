@@ -19,6 +19,7 @@
 | 0.3 | 16/11/2026 | Nguyễn Minh Chính (PO) | Đạt's last S3 hours logged in Jira 16/11 (S3-T17 1 h, T19 1.5 h, T21 1.5 h, Daily D7 0.5 h): AC 85.23 → **89.73 h**, CPI 1.50 → **1.43**, EAC 18,489,818 VND. Tag `v1.0` and `baseline-v1.2` created 16/11 22:59 (release PR #64) |
 | 0.4 | 17/11/2026 | Nguyễn Minh Chính (PO) | NFR-03/AC-03 checked on 17/11 22:33 (TC-F1-24 Pass) and NFR-03 accepted by the PO → **68 of 68 SP**, EV = BAC, **SPI 1.00, CPI 1.47**. Final submission moved to 18/11 23:59, presentation to Fri 20/11 |
 | 0.5 | 17/11/2026 | Nguyễn Minh Chính (PO) | Chính's last hours logged in Jira 17/11: S3-T22 1 h, Daily D7 0.5 h, and four closure tasks S3-C1…C4 (Review 3 video 1 h, UAT 2 h, Final batch 15/11 2 h, 16–17/11 2 h) → AC **98.23 h**, **CPI 1.34**, EAC 19,646,000 VND |
+| 0.5a | 17/11/2026 | Hồ Du Tuấn Đạt | Tag `v1.0` (d1d1e15 on `main`) and `baseline-v1.2` filled in §2, closure checklist and links (PR #69); merged into this version, no figure change |
 
 **How to read the figures.** *Plan* = baseline values (Release Plan, Sprint Backlogs). *Actual* = Jira worklogs, GitHub and the PO acceptance record. Rate 200,000 VND per person-hour, N = 3 [03 §6.4]. Story points (SP) count only when the item meets the Story DoD (all ACs pass on the hosted site, reviewed PR, tests pass, PO acceptance).
 
