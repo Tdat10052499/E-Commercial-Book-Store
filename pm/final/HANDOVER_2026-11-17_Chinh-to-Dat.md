@@ -2,7 +2,7 @@
 
 *Từ: Nguyễn Minh Chính (PO). Gửi: Hồ Du Tuấn Đạt.*
 
-> **Đọc mục 13 trước** (18/11 09:45): tình trạng mới nhất và việc còn lại của từng người.
+> **Đọc mục 14 trước** (18/11 09:50): bản chốt cuối – đã xong gì, Đạt cần cung cấp gì, ai nộp file nào.
 
 **Ghi chú này tóm tắt mọi thứ từ 13/11 đến nay.** Các ghi chú trước: `pm/sprints/S3/notes/2026-11-15_Chinh-to-Dat.md` (mục 1–7).
 
@@ -167,3 +167,40 @@ Sửa số liệu thì sửa Markdown nguồn (`pm/final/final-report.md`, `pm/p
 | 3 | Gửi Chính **tài khoản demo** (Admin, Staff, Customer) qua tin nhắn riêng – **không** đưa lên repo | Đạt |
 | 4 | Điền trong file c6 docx nộp: tài khoản demo (Appendix B); giờ UAT, nhận xét và chữ ký Sponsor (nếu có) | Chính |
 | 5 | Nộp c1, c2, c6 Report, c6 Slides, Eval360 của Chính lên eLearning | Chính |
+
+## 14. CHỐT 18/11/2026 09:50 – đọc mục này là đủ
+### 14.1 Đã xong
+| Hạng mục | Tình trạng |
+|---|---|
+| c1 Project Plan Final | Xong, đã xuất lại 18/11 |
+| c2 Sprint Backlog Final | Xong; số liệu đóng dự án: 68/68 SP, 98.23 h, SPI 1.00, CPI 1.34; lý do CR-07 đã ghi |
+| c6 Final Report | Xong, chỉ còn 2 tài khoản demo (xem 14.2). Tài khoản **Admin đã điền** trong bản nộp trên máy Chính (không đưa lên repo). Biên bản UAT ghi **GV không ký** (Chính xác nhận) |
+| c6 Slides | **Xong**: deck Canva 14 slide, video ở slide 10, speaker notes cả 14 slide; Chính đã tải bản PowerPoint cuối (14 notes + video đã kiểm tra) |
+| Eval360 của Chính | Xong (E 1, F 10, G 1 cho cả hai) |
+| Jira | Sprint 3 đã đóng (Đạt, 18/11 02:12); 98.23 h |
+| Repo | Mọi thay đổi ở **PR #68** (nhánh `docs/P33-final-hours`), chờ Đạt review và merge |
+
+### 14.2 Đạt cần cung cấp / làm (trước 18/11 23:59)
+| # | Việc | Ghi chú |
+|---|---|---|
+| 1 | Gửi Chính **tài khoản demo Store Staff** (email + mật khẩu) qua **tin nhắn riêng** | Chính gõ vào c6 bản nộp. **Không** commit lên repo, **không** ghi vào PR/issue |
+| 2 | Gửi Chính **tài khoản demo Customer**, hoặc báo "không có" | Không có thì Chính ghi "Register a new account on the website (sign-up page)" |
+| 3 | Mở `deliverables/Final/Eval360_Team6_2374802010097.xlsx` (hoặc bản Chính gửi), **chấm cột E–G cho cả hai người** rồi **tự nộp** lên eLearning | E: đúng hạn 0–1 · F: chất lượng 0–10 · G: họp 0–1. Cột D đã tính sẵn |
+| 4 | Review + **merge PR #68** vào `develop`, sau đó **đóng PR #69** (đã gộp hết vào #68) | Merge xong thì repo khớp với bộ file nộp |
+| 5 | **Không sửa deck Canva nữa.** Nếu buộc phải sửa: xuất lại PowerPoint, gửi Chính trước 23:00 | File nộp hiện tại đã có notes + video |
+
+### 14.3 Ai nộp file nào lên eLearning
+| File | Người nộp |
+|---|---|
+| `HK261_SPM_FP_Team6_c1_ProjectPlan_Final.docx` | Chính |
+| `HK261_SPM_FP_Team6_c2_SprintBacklog_Final.xlsx` | Chính |
+| `HK261_SPM_FP_Team6_c6_FinalReport.docx` (có tài khoản demo) | Chính |
+| `HK261_SPM_FP_Team6_c6_Slides.pptx` | Chính |
+| `Eval360_Team6_2275106050051.xlsx` | Chính |
+| `Eval360_Team6_2374802010097.xlsx` | **Đạt** |
+
+### 14.4 Thuyết trình Thứ Sáu 20/11 (giờ TBD)
+- Deck: Canva https://canva.link/b3s5irrs6rifzb3 (bật Presenter view để xem notes). Phần nói của mỗi người ghi ở đầu note từng slide (ĐẠT / CHÍNH + thời lượng). Kịch bản đầy đủ: `pm/final/presentation-canva-14-slides.md` v3.3.
+- Đạt nói slide 1, 3, 6, 9, 10 (demo video), 11, 14. Chính nói slide 2, 4, 5, 7, 8, 12, 13.
+- Trước giờ: mở website trước 15 phút; mở sẵn cửa sổ ẩn danh `/books` và cửa sổ Admin đã đăng nhập; video dự phòng https://youtu.be/pgZeKI_Ijvg.
+- Câu hỏi dễ gặp: CPI 1.34 (giờ ghi trễ, có AI hỗ trợ – không phải nhanh hơn 34 %); velocity S1 = 0 (làm xong nhưng nghiệm thu Sprint sau); vì sao 8.5 h closure tính vào S3; vì sao GV không ký biên bản UAT (nghiệm thu đã ghi trong biên bản).
