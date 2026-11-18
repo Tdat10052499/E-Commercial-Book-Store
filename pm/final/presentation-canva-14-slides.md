@@ -9,6 +9,7 @@ Canva (chỉnh sửa được): https://canva.link/b3s5irrs6rifzb3 · Design ID 
 | v3 | 17/11/2026 | Theo yêu cầu 8.2 và tham khảo deck Team 02: 14 slide, 10 phút; thêm Charter, danh sách sản phẩm, Release Plan, ước lượng, 3 burndown, velocity/giờ, bảng CR, issues, UAT, EVM theo mốc, 1 bài học quan trọng nhất, Q&A. Chữ trên slide ≥ 30 px (khung 1920×1080), số liệu ở dạng bảng hoặc biểu đồ |
 | v3.1 | 17/11/2026 | Nguyễn Minh Chính: số liệu đóng dự án mới (NFR-03 đạt 17/11, giờ đủ 98.23 h) – speaker notes slide 7, 12, bảng câu hỏi, lưu ý; ngày trình bày 20/11 |
 | v3.2 | 18/11/2026 | Nguyễn Minh Chính: gộp với bản của Đạt; lời nói slide 7 theo cách chia giờ trên Canva (S3 33.23 h gồm 8.5 h closure) |
+| v3.3 | 18/11/2026 | Nguyễn Minh Chính: speaker notes của 14 slide đã dán vào Canva (18/11 09:40); slide 10 đã có video (Đạt chèn), thêm link dự phòng |
 
 Nguồn số liệu: Final Report c6 (`pm/final/final-report.md` §2–§5), Charter (`pm/pmp/01-charter.md`), Release Plan (`pm/pmp/03-master-release-plan.md`), burndown PNG trong `pm/sprints/S*/evidence/`. Không thêm số mới ngoài các file này.
 
@@ -67,7 +68,7 @@ Canva hiện chỉ lưu speaker notes cũ ở slide 1 và 10 (vẫn đúng). Cô
 
 **9 · Đạt (0:35).** These are the main issues. Sprint 1 files were late; we held a catch-up session. F2 started late, so the Product Owner took the data-model task, and 24 points were accepted in Sprint 3. We had no Planning Poker votes in Sprints 1 and 2; a voting session on 11/11 led to CR-07. Daily meetings were skipped and PRs merged without review; we moved the Daily to Discord at 22:00 and required approval before merge from 12/11. When I was busy on 10/11, a task moved to day 6 and we swapped the test owner.
 
-**10 · Đạt (0:10 + video ≤ 3:00).** Now a short demo on the live site, pagetunnel.vercel.app. You will see the pass cases: search, filter, book details, and the Store Staff edit that shows "Last updated by". Then a fail case: an invalid price range is blocked with a clear message. [Play video – file to be inserted, TBD]
+**10 · Đạt (0:10 + video ≤ 3:00).** Now a short demo on the live site, pagetunnel.vercel.app. You will see the pass cases: search, filter, book details, and the Store Staff edit that shows "Last updated by". Then a fail case: an invalid price range is blocked with a clear message. [Play the video in this slide (2:58). Backup link: https://youtu.be/pgZeKI_Ijvg]
 
 **11 · Đạt (0:25).** UAT means the Sponsor used the live site and checked every acceptance criterion. On 13/11, 73 of 73 passed, including 8 of 8 for CR-06. All 114 automated tests pass. We found 6 defects and none is open. The reopen rate was 5%, and the book list loads in 0.50 seconds against a 2-second target.
 
@@ -92,4 +93,4 @@ Canva hiện chỉ lưu speaker notes cũ ở slide 1 và 10 (vẫn đúng). Cô
 - Slide 10 vẫn trống khung video; Đạt chèn file video vào Canva.
 - Lịch đã đổi: nộp **18/11 23:59**, trình bày **Thứ Sáu 20/11** (giờ chưa chốt). Slide 1 đã ghi 20/11/2026.
 - 18/11: slide 7 và 12 trên Canva đã khớp c6: S3 33.23 h (gồm 8.5 h closure 13–17/11), Release 98.23 h, 68/68 SP; EVM Closure (18/11) 26.4 / 26.4 / 19.6, SPI 1.00, CPI 1.34.
-- Còn lại trên Canva (Đạt): chèn video vào slide 10, dán speaker notes cho slide 2–14, rồi xuất lại PowerPoint `HK261_SPM_FP_Team6_c6_Slides.pptx`.
+- 18/11 09:40: video slide 10 đã có (Đạt chèn); speaker notes 14 slide đã dán và lưu trên Canva; PowerPoint đã xuất lại.

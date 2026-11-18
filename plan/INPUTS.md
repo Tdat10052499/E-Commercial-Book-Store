@@ -42,7 +42,7 @@
 | CR | Ngày nhận | Phương án nhóm đề xuất | Quyết định Sponsor (Approve/Reject/Defer) | Lý do | Ngày |
 |---|---|---|---|---|---|
 | CR-06 | 27/10/2026 | Phương án B (PO Chính chốt đề xuất 30/10/2026) | **Approve – phương án B** | Sponsor đồng ý lập luận của nhóm: giao đủ CR trong R1.0, giữ capacity S2 cho F2/F3 | 30/10/2026 (Chính cung cấp 04/11/2026) |
-| CR-07 | 12/11/2026 | Phương án B: baseline v1.2, PSP 62 → 68 (PO đề xuất) | **Approve** | TBD | 13/11/2026 (Chính cung cấp 15/11/2026) |
+| CR-07 | 12/11/2026 | Phương án B: baseline v1.2, PSP 62 → 68 (PO đề xuất) | **Approve** | Phiếu Planning Poker phiên 3 (11/11) là kích thước thật của việc S3, chính xác hơn ước lượng cũ; không thêm giờ, không thêm chi phí (Chính xác nhận 18/11/2026) | 13/11/2026 (Chính cung cấp 15/11/2026) |
 
 ## 6. Câu trả lời / góp ý của GV
 | Ngày | Câu hỏi hoặc chủ đề | Trả lời của GV |

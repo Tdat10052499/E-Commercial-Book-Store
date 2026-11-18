@@ -2,7 +2,7 @@
 
 *Từ: Nguyễn Minh Chính (PO). Gửi: Hồ Du Tuấn Đạt.*
 
-> **Đọc mục 12 trước** (18/11 03:00): tình trạng mới nhất và việc còn lại của từng người.
+> **Đọc mục 13 trước** (18/11 09:45): tình trạng mới nhất và việc còn lại của từng người.
 
 **Ghi chú này tóm tắt mọi thứ từ 13/11 đến nay.** Các ghi chú trước: `pm/sprints/S3/notes/2026-11-15_Chinh-to-Dat.md` (mục 1–7).
 
@@ -152,3 +152,18 @@ Sửa số liệu thì sửa Markdown nguồn (`pm/final/final-report.md`, `pm/p
 - Kịch bản: `HK261_SPM_FP_Team6_KichBan_ThuyetTrinh_Canva14.docx` (14 lượt, ~9:40) – lời slide 7 theo số mới: "98.23 hours in total, including 8.5 hours of closure work counted in Sprint 3".
 - Mở website trước 15 phút; cửa sổ ẩn danh `/books` + cửa sổ Admin đã đăng nhập; có video dự phòng.
 - Câu hỏi dễ gặp: CPI 1.34 (giờ ghi trễ, có AI hỗ trợ – không phải nhanh hơn 34 %), velocity S1 = 0, vì sao closure tính vào S3.
+
+## 13. Cập nhật 18/11/2026 09:45 – slide xong
+- **Canva:** slide 10 đã có video demo (Đạt chèn). **Speaker notes của cả 14 slide đã dán và lưu** (theo `pm/final/presentation-canva-14-slides.md` v3.3; ghi tên người nói + thời lượng ở đầu mỗi note). Đạt **không cần dán notes nữa**.
+- **File slide nộp:** Chính tải bản PowerPoint mới (có notes + video) vào `1_Submissions\Final\`. Nếu Đạt sửa gì thêm trên Canva thì phải xuất lại và báo Chính.
+- **CR-07:** lý do quyết định CCB đã ghi (Chính xác nhận): phiếu Planning Poker phiên 3 là kích thước thật của việc S3, chính xác hơn ước lượng cũ; không thêm giờ, không thêm chi phí. Đã cập nhật change log v1.5, Final Report v1.1, c2, c6.
+- **Eval360 của Chính:** đã chấm (E 1, F 10, G 1 cho cả hai).
+
+### Việc còn lại – trước 18/11 23:59
+| # | Việc | Ai |
+|---|---|---|
+| 1 | Review + **merge PR #68**, đóng PR #69 | Đạt |
+| 2 | Chấm **Eval360** của Đạt (cột E–G) và nộp file của mình | Đạt |
+| 3 | Gửi Chính **tài khoản demo** (Admin, Staff, Customer) qua tin nhắn riêng – **không** đưa lên repo | Đạt |
+| 4 | Điền trong file c6 docx nộp: tài khoản demo (Appendix B); giờ UAT, nhận xét và chữ ký Sponsor (nếu có) | Chính |
+| 5 | Nộp c1, c2, c6 Report, c6 Slides, Eval360 của Chính lên eLearning | Chính |
