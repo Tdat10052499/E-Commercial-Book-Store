@@ -1,6 +1,6 @@
 # Change Request CR-06 – Store Staff role
 
-This is the c4 Change Request form for CR-06. It follows the five CR steps of [03 §6.2-3] and the fields asked for in [CR-06 §5]; the brief's own form template (`FP_Template_ChangeRequest.docx`) was not provided to the team.
+This is the c4 Change Request form for CR-06. It follows the five change request steps of the Final Project brief (sections 6.2–6.3) and the fields asked for in the CR-06 brief (section 5); the brief's own form template (`FP_Template_ChangeRequest.docx`) was not provided to the team.
 
 ## Version history
 | Version | Date | Author | Change |
