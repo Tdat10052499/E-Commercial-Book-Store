@@ -25,6 +25,7 @@
 | 0.9 | 18/11/2026 | Hồ Du Tuấn Đạt | Requirement NFR-03 accepted by the Product Owner on 17/11 (confirmed 18/11): 68 of 68 story points Done; closure Earned Value 26.4 million, Schedule Performance Index 1.00, Cost Performance Index 1.34, Estimate at Completion 19,646,000; checklist items 2 and 9 updated |
 | 1.0 | 18/11/2026 | Nguyễn Minh Chính (Product Owner) | Both closure updates merged: hours as read from Jira on 18/11 (Sprint 3 33.23 hours, of which 8.5 hours closure work); final submission moved to 18/11 and the presentation to Friday 20/11; NFR-03 check record (17/11, 22:33) referenced; earned value snapshot before the NFR-03 check kept. Same figures as slides 7 and 12 of the presentation |
 | 1.1 | 18/11/2026 | Nguyễn Minh Chính (Product Owner) | Reason of the board decision on change request CR-07 added (section 4) |
+| 1.2 | 18/11/2026 | Nguyễn Minh Chính (Product Owner) | Closure checklist item 1: the acceptance test minutes were not signed by the Sponsor |
 
 **How to read the figures.** "Plan" means the values in the agreed plan (the baseline: Release Plan and Sprint Backlogs). "Actual" means what really happened, taken from the hours logged in Jira, the history of the source code on GitHub and the Product Owner's acceptance record. Work is costed at 200,000 VND per person-hour, and the project has 3 Sprints, as set by the course [03 §6.4]. Story points measure the relative size of a piece of work. A story's points count as "Done" only when the story meets the team's Definition of Done: every acceptance criterion passes on the live website, the other member has reviewed the code, all automated tests pass and the Product Owner has accepted the story.
 
@@ -164,7 +165,7 @@ Risks that did not occur: R03 slow first load of the free website (online when c
 ## 5. Closure checklist
 | # | Closure activity | Status | Evidence |
 |---|---|---|---|
-| 1 | Customer acceptance (acceptance test) | Done on 13/11: accepted, 73 of 73 passed | Acceptance test minutes (file c5); Sponsor signature to be confirmed |
+| 1 | Customer acceptance (acceptance test) | Done on 13/11: accepted, 73 of 73 passed | Acceptance test minutes (file c5); not signed by the Sponsor (acceptance recorded in the minutes) |
 | 2 | Check of requirement NFR-03 (website online on 17/11) | Done on 17/11 at 22:33: website online, book list with 30 books; NFR-03 accepted by the Product Owner | Test case TC-F1-24; check record NFR-03-check-2026-11-17 |
 | 3 | Release version of the code, version label "v1.0" and release notes | Release version completed on 12/11; release notes 1.0; label "v1.0" added on 16/11; label "baseline-v1.2" added to the working version of the code | GitHub |
 | 4 | Hand-over of the code | Source code with a guide on how to install and run it and how to load sample data; automated tests included | GitHub |

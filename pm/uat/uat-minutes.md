@@ -5,6 +5,7 @@
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 1.2 | 18/11/2026 | Nguyễn Minh Chính (PO) | Sign-off: the Sponsor did not sign the minutes (confirmed by Chính) |
 | 1.1 | 18/11/2026 | Hồ Du Tuấn Đạt (AI-assisted) | NFR-03 checked and accepted 17/11; tag `v1.0` added 16/11. Session time, place, keyboard, Sponsor's remarks and signature still to be filled by the team |
 | 1.0 | 15/11/2026 | Nguyễn Minh Chính (PO) | Session results: 73/73 ACs Pass, no defect, no new change request, decision **Accepted**; CR-07 decided by the CCB the same day (Approve) |
 | 0.1 | 12/11/2026 | Nguyễn Minh Chính (PO) | Form: session data, result per feature (73 ACs of the UAT script v0.2), defects, known issues, change requests, decision, sign-off |
@@ -70,6 +71,6 @@ Sponsor's comments: TBD
 ## 7. Sign-off
 | Role | Name | Signature | Date |
 |---|---|---|---|
-| Sponsor / Customer | Dr. Bùi Minh Phụng | TBD | 13/11/2026 |
+| Sponsor / Customer | Dr. Bùi Minh Phụng | Not signed (confirmed by Nguyễn Minh Chính, 18/11/2026) | 13/11/2026 |
 | Product Owner | Nguyễn Minh Chính | | |
 | Sprint Leader S3 | Hồ Du Tuấn Đạt | | |
