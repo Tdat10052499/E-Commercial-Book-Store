@@ -193,6 +193,46 @@ def extra_sheets(wb):
     })
 
 
+def release_plan_v12(wb):
+    """The ReleasePlan sheet is copied from the Sprint 2 file (baseline v1.1). The Final file adds baseline v1.2
+    (CR-07, CCB 13/11/2026) from PMP Part 3 §3.8 so that baseline and updated versions are both shown."""
+    from copy import copy
+    ws = wb["ReleasePlan"]
+    rows = {str(ws.cell(r, 1).value): r for r in range(1, ws.max_row + 1) if ws.cell(r, 1).value}
+    r11 = rows.get("Rebaseline v1.1")
+    if not r11 or ws.cell(r11 + 1, 1).value:
+        return
+    vals = ["Rebaseline v1.2", "15/11/2026",
+            "CCB 13/11: CR-07 Approve (Sprint 3 story points re-estimated in Planning Poker session 3: "
+            "US-12 3 → 5, NFR-05 2 → 5, US-25 2 → 3)",
+            "68 SP", "26,400,000 VND (unchanged: no hours added)", "baseline-v1.2"]
+    for c, v in enumerate(vals, 1):
+        src, dst = ws.cell(r11, c), ws.cell(r11 + 1, c)
+        dst.value = v
+        dst._style = copy(src._style)
+    ws.row_dimensions[r11 + 1].height = ws.row_dimensions[r11].height
+    for r in range(1, 4):
+        v = ws.cell(r, 1).value
+        if isinstance(v, str) and "Release Plan v1.3" in v:
+            ws.cell(r, 1).value = v.replace("Release Plan v1.3", "Release Plan v1.4 (baseline v1.2)")
+    last = max(r for r in range(1, ws.max_row + 1) if ws.cell(r, 1).value)
+    vh = ["1.4 (baseline v1.2)", "15/11/2026", "Nguyễn Minh Chính (PO)",
+          "Rebaseline after CCB 13/11 (CR-07 Approve): PSP 62 → 68 SP, BAC unchanged 26,400,000 VND; tag baseline-v1.2. "
+          "Row added to this sheet in the Final file (18/11/2026)."]
+    for c, v in enumerate(vh, 1):
+        dst = ws.cell(last + 1, c)
+        dst.value = v
+        dst._style = copy(ws.cell(last, c)._style)
+    ws.row_dimensions[last + 1].height = ws.row_dimensions[last].height
+    pb = wb["ProductBacklog"]
+    resized = {"US-12": "3 → 5", "NFR-05": "2 → 5", "US-25": "2 → 3"}
+    for r in range(5, pb.max_row + 1):
+        item = pb.cell(r, 2).value
+        if item in resized:
+            old = pb.cell(r, 11).value
+            pb.cell(r, 11).value = (f"{old}; " if old else "") + f"CR-07 (SP {resized[item]})"
+
+
 def c2():
     out = OUT / f"{PREFIX}c2_SprintBacklog_Final.xlsx"
     orig = et.index_sheet
@@ -215,6 +255,7 @@ def c2():
         elif k == "Layout":
             ws.cell(r, 2).value = ("Lecturer template SprintBacklog_Template.xlsx (received 10/11/2026) + EVM, UAT, "
                                    "Lessons Learned and AI usage sheets. Data as of 18/11/2026 (baseline v1.2, Sprint 3 closed).")
+    release_plan_v12(wb)
     import plain_language  # abbreviations written out and GitHub terms described in plain words (17/11/2026)
     print("plain language: cells rewritten", plain_language.apply(wb))
     wb.save(out)
