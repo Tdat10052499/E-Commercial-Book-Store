@@ -21,6 +21,10 @@ EVM_RULES = [
 ]
 
 RULES = [
+    # --- Gaps left where internal source codes were removed from sheets copied from earlier submissions ------
+    (r"five CR steps of and the fields asked for in;", "five change request steps of the Final Project brief (sections 6.2–6.3) and the fields asked for in the CR-06 brief (section 5);"),
+    (r"as instructed in\)", "as instructed in the CR-06 brief, section 5)"),
+    (r"due 29/10 23:59 per;", "due 29/10 23:59 according to the CR-06 brief;"),
     # --- GitHub terms -------------------------------------------------------------------------------------------
     (r"\bbranch (?:feat|docs|fix)/[\w.-]+ merged with develop locally", "the working copy of the code combined with the shared working version on a member's computer"),
     (r"\bbranch (?:feat|docs|fix)/[\w.-]+", "the working copy of the code for this task"),
@@ -97,6 +101,9 @@ RULES = [
     (B + r"PMP" + E, "Project Management Plan"),
     (B + r"DoD" + E, "Definition of Done"),
     (B + r"DoR" + E, "Definition of Ready"),
+    (r"\badded NFR items\b", "added non-functional requirement (NFR) items"),
+    (B + r"CRs" + E, "change requests"),
+    (B + r"CR" + E, "change request"),
     (B + r"GWT" + E, "Given–When–Then"),
     (B + r"TBD" + E, "to be confirmed"),
     (B + r"UI" + E, "user interface"),
@@ -146,12 +153,15 @@ def rewrite(text, sheet=""):
     if sheet.startswith("TestCases") and text in CASE_TYPES:
         return CASE_TYPES[text]
     whole = re.fullmatch(r"[A-Z][A-Za-z]{1,4}", text) is not None
+    first = text
     if sheet in EVM_SHEETS:
         for rx, rep in _EVM:
             text = rx.sub(rep, text)
     for rx, rep in _ALL:
         text = rx.sub(rep, text)
-    return text[:1].upper() + text[1:] if whole else text
+    if whole or (first[:1].isupper() and text[:1].islower()):
+        return text[:1].upper() + text[1:]
+    return text
 
 
 def apply(wb):

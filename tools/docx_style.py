@@ -236,7 +236,7 @@ def _toc_only(doc):
             body[0].addprevious(p._p)
 
 
-SOURCES = {"03": "FP Brief", "04": "TA Baseline", "05": "Gap Analysis", "06": "Status", "07": "CR-06"}
+SOURCES = {"03": "Final Project brief", "04": "Team assignment baseline", "05": "Gap analysis", "06": "Status notes", "07": "CR-06"}
 SYMBOLS = [("→", "->"), ("–", "-"), ("−", "-"), ("·", ","), ("×", "x"), ("÷", "/"), ("≥", ">="),
            ("≤", "<="), ("…", "..."), ("≈", "~"), ("§", "Sec. ")]
 
