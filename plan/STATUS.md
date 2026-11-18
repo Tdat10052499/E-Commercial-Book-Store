@@ -33,16 +33,16 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | P24 | Xây F4 | 09/11 | done | Đạt | 12/11 | #22, #29 | US-11 nghiệm thu 12/11 |
 | P25 | Xây F5 | 10/11 | done | Đạt, Chính | 12/11 | #30, #38, #47 | US-12, US-13 nghiệm thu 12/11 |
 | P26 | Test F4, F5 + regression + hiệu năng | 11/11 | done | Chính (viết), Đạt (chạy) | 12/11 | #56, #58, #59, #60 | 16 case S3 (15 Pass + TC-CR-08 Partial); smoke 15/15; NFR-05 0.50 s / 0.38 s; 114/114 |
-| P27 | Release v1.0 (tag, release notes) | 12/11 | in_progress | Đạt |  | #57, #62, #64 | Release notes 1.0 và release PR #57 (12/11) xong. **Còn: tag `v1.0`** (PR #64 develop → main đang mở) |
+| P27 | Release v1.0 (tag, release notes) | 12/11 | done | Đạt | 16/11 | #57, #62, #64 | PR #64 merge vào `main` và tag `v1.0`, `baseline-v1.2` lúc 16/11 22:59 (trễ 4 ngày) |
 | P28 | UAT script | 12/11 | done | Chính | 12/11 | #39, #44, #54 | 73 AC; c5_UAT.docx |
 | P29 | Theo dõi S3 + EVM nháp (liên tục) | 12/11 | done | Đạt | 12/11 | #62 | Weekly Status S3 1.0, Sprint Report S3, EVM D7 (SPI 0.97, CPI 1.50) |
 | P30 | Đóng gói và nộp S3 | 12/11 23:59 | done | Đạt, Chính | 12/11 | #55, #65, #66 | Nộp đúng hạn (Chính xác nhận 15/11); file nộp chưa đưa lên repo |
 | P31 | Review 3 + UAT + biên bản | 13/11 | done | Đạt, Chính | 13/11 | docs/P33 | Video Review 3 đã nộp; UAT **Accepted** 73/73; CCB CR-07 Approve (Chính cung cấp 15/11) |
 | P32 | Hosting cuối, tài khoản demo, dữ liệu đóng dự án | 14/11 | todo | Đạt |  |  | Dữ liệu đóng dự án đã thu (Jira 15/11, 85.23 h). Còn: tài khoản demo cho Final Report, giờ sau 12/11 19:59 |
-| P33 | Final Report, EVM, Lessons Learned, PMP/Workbook Final | 15/11 | in_progress | Chính |  | #67 | 16/11: c1 PMP Final, c2 Final, c6 Final Report xuất xong (`tools/export_final.py`). Còn TBD: giờ sau 12/11 19:59, tag v1.0, tài khoản demo, link video, chữ ký UAT |
-| P34 | Slide + video demo | 15/11 | in_progress | Chính (slide), Đạt (video) |  | #67 | 16/11: c6_Slides.pptx 15 slide + speaker notes chia người nói (`tools/slides_final.js`). Còn: video demo ≤ 3 phút |
-| P35 | Nộp cuối + Eval360 | 15/11 23:59 | in_progress | Chính, Đạt |  | #67 | 2 file Eval360 (cột E–G mỗi người tự chấm); nộp lên eLearning: TBD (sau hạn 15/11 23:59) |
-| P36 | Thuyết trình | 17/11 07:00 | todo |  |  |  |  |
+| P33 | Final Report, EVM, Lessons Learned, PMP/Workbook Final | 18/11 23:59 | in_progress | Chính |  | #67, #68 | 17/11: Final Report v0.5 – 68/68 SP, SPI 1.00, CPI 1.34 (98.23 h, đủ giờ). Còn TBD: tài khoản demo, link video, nhận xét UAT, lý do CR-07 |
+| P34 | Slide + video demo | 18/11 | in_progress | Đạt (deck Canva, video), Chính (số liệu, kịch bản) |  | #68, #69 | **Chốt 17/11: dùng deck Canva 14 slide của Đạt** (https://canva.link/b3s5irrs6rifzb3). Kịch bản v3.1 đã cập nhật số. Còn: sửa slide 1/7/12 trên Canva, chèn video vào slide 10, dán speaker notes, xuất `c6_Slides.pptx` vào `deliverables/Final/`. Deck 15 slide của Chính chuyển vào `pm/final/archive/` (không nộp) |
+| P35 | Nộp cuối + Eval360 | 18/11 23:59 | in_progress | Chính, Đạt |  | #67, #68 | Còn: mỗi người chấm cột E–G Eval360, nộp 6 file lên eLearning |
+| P36 | Thuyết trình | Fri 20/11 (giờ TBD) | todo | Đạt, Chính |  |  | Kịch bản thuyết trình 24 lượt (ngoài repo); NFR-03 đã kiểm tra 17/11 |
 
 ## Nhật ký thay đổi trạng thái
 | Ngày | Người | Thay đổi |
@@ -54,3 +54,14 @@ Cập nhật lần cuối: 16/11/2026 – Chính (bộ nộp Final)
 | 06/11/2026 | Chính | Cuối S2: P15, P16, P17, P19 → done; P18, P21 vẫn in_progress (test admin trên host, upload) |
 | 15/11/2026 | Chính | Cập nhật S3 theo repo/Jira và kết quả 13/11 do Chính cung cấp: P18, P22–P26, P28–P31 → done; P27 in_progress (thiếu tag v1.0); P33 → in_progress (c6, c2 Final) |
 | 16/11/2026 | Chính | Bộ nộp Final xuất đủ 5 loại file (c1, c2, c6 Report, c6 Slides, Eval360 × 2); P33–P35 → in_progress chờ điền TBD và nộp |
+| 16/11/2026 23:30 | Chính | Đạt merge #65, #67, #64, gắn tag `v1.0` và `baseline-v1.2`, log 4.5 h trên Jira → P27 done; Final Report v0.3, c2 Final và slide xuất lại với AC 89.73 h (CPI 1.43) |
+| 17/11/2026 22:45 | Chính | Hạn nộp dời 18/11 23:59, thuyết trình Thứ Sáu 20/11; NFR-03 kiểm tra 17/11 22:33 → 68/68 SP, SPI 1.00, CPI 1.47; Final Report v0.4, c2, slide xuất lại |
+| 17/11/2026 23:45 | Chính | Log giờ của Chính: S3-T22 1 h (Done), D7 0.5 h, 4 task đóng dự án S3-C1…C4 = 7 h → 98.23 h, CPI 1.34; xuất lại report, c2, slide |
+| 17/11/2026 | Đạt | P34: làm lại deck Canva thành 14 slide theo yêu cầu 8.2 (10 phút + Q&A), kịch bản + speaker notes chia người nói; ghi chú gửi Chính `pm/sprints/S3/notes/2026-11-17_Dat-to-Chinh.md` (PR #69, merge vào nhánh của Chính 17/11) |
+| 17/11/2026 23:55 | Chính | P34: chốt dùng deck Canva 14 slide; deck pptx 15 slide chuyển vào archive; kịch bản đọc theo lượt cho deck Canva |
+| 17/11/2026 | Đạt | P34: làm lại deck Canva thành 14 slide theo yêu cầu 8.2 (10 phút + Q&A), kịch bản + speaker notes chia người nói; ghi chú gửi Chính `pm/sprints/S3/notes/2026-11-17_Dat-to-Chinh.md` |
+| 17/11/2026 | Đạt | P33: viết lại c6, c1 (PMP 7 phần) và c2 Final bằng ngôn ngữ dễ hiểu, không viết tắt, không dùng ký hiệu GitHub; số liệu giữ nguyên |
+| 18/11/2026 02:35 | Chính | P34: deck Canva sửa slide 1 (20/11), 7 (68/68, 98.23 h), 12 (SPI 1.00, CPI 1.34) và lưu; xuất PowerPoint. Còn: speaker notes (dán tay), video slide 10 |
+| 18/11/2026 03:00 | Chính | P33/P34: gộp 3 commit mới của Đạt (Sprint 3 đóng trên Jira, NFR-03 68/68, Canva slide 7/12); thống nhất giờ S3 33.23 h (gồm 8.5 h closure), mốc Closure 18/11; xuất lại c1, c2, c6, Eval360; handover §12 liệt kê việc còn lại. c6_Slides.pptx chờ Đạt xuất sau khi chèn video + notes |
+| 18/11/2026 09:45 | Chính | P34: speaker notes 14 slide dán và lưu trên Canva; video slide 10 đã có; xuất lại PowerPoint. P33: lý do CR-07 (Chính xác nhận) ghi vào change log, c6, c2 |
+| 18/11/2026 09:50 | Chính | P33–P35: c6 có tài khoản Admin (chỉ bản nộp, không lên repo); biên bản UAT ghi GV không ký; slide nộp đã kiểm tra (14 notes + video). Còn: Đạt gửi tài khoản Staff/Customer, chấm + nộp Eval360, merge PR #68; Chính nộp 5 file |

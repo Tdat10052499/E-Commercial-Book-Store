@@ -31,8 +31,8 @@ COVER = {
     "version": "Project closure, plan vs actual, Lessons Learned",
     "lines": [
         "Team 6 – Page Turners",
-        "Nguyễn Minh Chính (2275106050051) – Product Owner, Sprint Leader S2",
-        "Hồ Du Tuấn Đạt (2374802010097) – Developer, Sprint Leader S1 & S3",
+        "Nguyễn Minh Chính (2275106050051) – Product Owner, Sprint 2 Leader",
+        "Hồ Du Tuấn Đạt (2374802010097) – Developer, Sprint 1 and Sprint 3 Leader",
         "Sponsor / Customer: Dr. Bùi Minh Phụng",
     ],
     "date": "Ho Chi Minh City, November 2026",
@@ -43,7 +43,8 @@ EVM = [
     ("End of Sprint 1", "v1.0", 24000000, 55, 1, 0, 19.5, "02/11/2026 (S1 hours later corrected to 41 h)"),
     ("End of Sprint 2", "v1.1", 26400000, 62, 2, 21, 65, "06/11/2026"),
     ("End of Sprint 3", "v1.1", 26400000, 62, 3, 60, 85.23, "12/11/2026 18:55"),
-    ("Closure (Final)", "v1.2", 26400000, 68, 3, 66, 85.23, "15/11/2026 12:30 – Jira worklogs; hours after 12/11 19:59 TBD"),
+    ("Before the NFR-03 check", "v1.2", 26400000, 68, 3, 66, 89.73, "16/11/2026 23:20 – Jira worklogs (Đạt +4.5 h on 16/11)"),
+    ("Closure (Final)", "v1.2", 26400000, 68, 3, 68, 98.23, "18/11/2026 – Jira worklogs: all hours logged (13 h after 12/11, incl. 8.5 h closure work 13–17/11); Sprint 3 closed 18/11"),
 ]
 
 
@@ -77,7 +78,7 @@ def c1():
     finally:
         tmp.unlink()
     cover = dict(COVER, title="PROJECT MANAGEMENT PLAN – FINAL",
-                 version="PMP v1.0 (29/10/2026) updated with CR-06, CR-07 and the lecturer's feedback")
+                 version="Project Management Plan version 1.0 (29/10/2026), updated with change requests CR-06 and CR-07 and the lecturer's feedback")
     docx_style.style_docx(out, "HK261 SPM – Team 6 Page Turners – Project Management Plan Final (c1)", cover=cover)
     docx_style.prerender_toc(out)
     return out
@@ -164,10 +165,10 @@ def evm_sheet(wb):
     notes = [
         "PV = BAC × n / N · EV = BAC × SP Done / PSP · AC = actual hours × 200,000 · SV = EV − PV · CV = EV − AC · "
         "SPI = EV / PV · CPI = EV / AC · EAC = BAC / CPI · ETC = EAC − AC.",
-        "Closure: 66 of 68 SP meet the DoD; NFR-03 (2 SP) is accepted by the PO after the check on 17/11 (site online). "
-        "UAT 13/11: 73/73 ACs Pass, Release 1.0 accepted.",
-        "CPI 1.50: fewer hours logged (85.23 h) than planned (132 h) – S1/S2 hours partly reconstructed, part of the "
-        "S3 testing and documents AI-assisted, some hours after 12/11 19:59 not yet logged. See Final Report §3.3.",
+        "Closure: 68 of 68 SP meet the DoD; NFR-03 (2 SP) accepted by the PO after the check on 17/11 22:33 (site online). "
+        "In the UAT on 13/11, 73/73 ACs Pass and Release 1.0 was accepted.",
+        "CPI 1.34: fewer hours logged (98.23 h incl. 8.5 h closure work) than planned (132 h) – S1/S2 hours partly reconstructed, part of the "
+        "S3 testing and documents AI-assisted. Closure hours read from Jira on 18/11/2026. See Final Report §3.3.",
         "Baselines: v1.0 (30/10) PSP 55, BAC 24.0 M · v1.1 (04/11, CR-06) PSP 62, BAC 26.4 M · v1.2 (15/11, CR-07) PSP 68, "
         "BAC 26.4 M.",
     ]
@@ -213,7 +214,9 @@ def c2():
             ws.cell(r, 2).value = "Final submission (cumulative: Sprints 1–3 and closure)"
         elif k == "Layout":
             ws.cell(r, 2).value = ("Lecturer template SprintBacklog_Template.xlsx (received 10/11/2026) + EVM, UAT, "
-                                   "Lessons Learned and AI usage sheets. Data as of 15/11/2026 12:30 (baseline v1.2).")
+                                   "Lessons Learned and AI usage sheets. Data as of 18/11/2026 (baseline v1.2, Sprint 3 closed).")
+    import plain_language  # abbreviations written out and GitHub terms described in plain words (17/11/2026)
+    print("plain language: cells rewritten", plain_language.apply(wb))
     wb.save(out)
     return out
 

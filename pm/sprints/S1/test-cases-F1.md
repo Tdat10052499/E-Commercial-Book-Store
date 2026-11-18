@@ -41,7 +41,7 @@ Format: GWT → steps → expected → actual [03 §6.1-7]. One test case per AC
 | TC-F1-21 | NFR-01/AC-03 | Register form | Name 101 chars; password 65 chars | Rejected (100 / 64 accepted) | UNIT | Pass (30/10) | Pass (30/10 03:03): 101-char name typed → field keeps 100; password field `maxlength=64` (attribute checked, not typed) | Đạt | – |
 | TC-F1-22 | NFR-03/AC-01 | `develop` deployed | Open public URL | Home page over HTTPS | — | Not run (needs hosting) | Pass (30/10 03:00): https://pagetunnel.vercel.app/ home page over HTTPS | Đạt | – |
 | TC-F1-23 | NFR-03/AC-02 | Site idle ≥ 15 min | Open URL | Responds; URL recorded | — | Not run (needs hosting) | Pass (05/11, Chính, hosted run part 2) | Đạt | Chính |
-| TC-F1-24 | NFR-03/AC-03 | 17/11/2026 | Open URL | Online | — | Not run (needs hosting) | Not run – date-bound, run on 17/11/2026 | Đạt | – |
+| TC-F1-24 | NFR-03/AC-03 | 17/11/2026 | Open URL | Online | — | Not run (needs hosting) | **Pass** – 17/11/2026 22:33, `/books` HTTP 200, 30 titles (`pm/sprints/S3/evidence/NFR-03-check-2026-11-17.md`) | Nguyễn Minh Chính | – |
 
 ## Defects found
 | ID | TC | Found | Description | Fix | Status |

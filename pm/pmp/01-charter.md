@@ -1,72 +1,80 @@
-# PMP Part 1 – Project Charter
+# Project Management Plan, Part 1 – Project Charter
 
 ## Version history
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 0 | – | – | Lab 1 (SMART, stakeholders) and Lab 2 (Charter) were not submitted; no prior version exists [05 #21–22] |
-| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Charter written new for Release 1.0 from the Final Project brief [03 §2] and TA baseline [04]. Objectives and stakeholders to be confirmed by the team |
-| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt | BAC and capacity filled with the plan values confirmed on 30/10 (20 h/member/Sprint, 24,000,000 VND) |
+| 0 | None | None | The earlier labs on objectives, stakeholders and the charter were not submitted, so no previous version exists [05 #21–22] |
+| 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Charter written for Release 1.0 from the Final Project brief [03 §2] and the team assignment [04]. Objectives and stakeholders to be confirmed by the team |
+| 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Budget and available hours filled in with the plan values confirmed on 30/10 (20 hours per member per Sprint, 24,000,000 VND) |
+| 1.2 | 17/11/2026 | Hồ Du Tuấn Đạt | Rewritten in plain language without abbreviations; no change of content |
 
 ## 1.1 Project identification
 | Item | Value |
 |---|---|
 | Project | E-Commercial Book Store – Release 1.0 "Book Catalogue" |
-| Customer / Sponsor | Ms. Le, owner of a multi-store book company (role played by Dr. Bùi Minh Phụng) |
-| Performing team | Team 6 "Page Turners" – Hồ Du Tuấn Đạt, Nguyễn Minh Chính |
-| Course | Software Project Management (72ITSE41503), class 261_72ITSE41503_01, Van Lang University |
-| Duration | 23/10/2026 – 17/11/2026, 3 one-week Sprints + closure |
-| Budget (BAC) | 24,000,000 VND (plan) = 120 planned person-hours × 200,000 VND, see PMP-3 §3.6 |
+| Customer and Sponsor | Ms. Le, owner of a company with several bookstores (role played by Dr. Bùi Minh Phụng) |
+| Project team | Team 6 "Page Turners": Hồ Du Tuấn Đạt and Nguyễn Minh Chính |
+| Course | Software Project Management (course code 72ITSE41503), class 261_72ITSE41503_01, Van Lang University |
+| Duration | 23/10/2026 to 17/11/2026: three Sprints of one week each, then closure |
+| Budget | 24,000,000 VND in the first plan = 120 planned person-hours × 200,000 VND (Part 3, section 3.6) |
 
 ## 1.2 Business case
-Ms. Le's company sells through physical stores only. She wants an online bookshop with its own style that works on desktop, phone and tablet [03 §2]. Release 1.0 delivers the catalogue foundation (accounts, book management, browsing, details, search) on which ordering features can be added later.
+Ms. Le's company sells only through physical stores. She wants an online bookshop with its own style that works on computers, phones and tablets [03 §2]. Release 1.0 delivers the foundation of the catalogue (accounts, book management, browsing, book details and search), on which ordering features can be added later.
 
-## 1.3 SMART objectives
+## 1.3 Objectives (specific, measurable, achievable, relevant and time-bound)
 | # | Objective | Measure | Deadline |
 |---|---|---|---|
-| O1 | Deliver F1–F5 on a free public host | 100 % of Release 1.0 ACs pass in UAT | 13/11/2026 |
-| O2 | Meet the NFRs | ≥ 30 sample books; list page < 2 s (median of 3); passwords hashed; client + server validation; responsive at 360/768/1280 px | 12/11/2026 |
-| O3 | Control schedule and cost | SPI and CPI ≥ 0.9 at the end of S3 (AgileEVM) | 12/11/2026 |
-| O4 | Control change | Every CR goes through the 5-step process with a CCB decision recorded within 1 working day of the CCB meeting | per CR |
-| O5 | Run a transparent process | Board updated daily, Daily log every working day, every task has Original Estimate and Completed Work | each Sprint |
+| O1 | Deliver features F1 to F5 on a free public website | All acceptance criteria of Release 1.0 pass in the acceptance test with the Sponsor | 13/11/2026 |
+| O2 | Meet the non-functional requirements | At least 30 sample books; the book list loads in under 2 seconds (middle value of 3 measurements); passwords stored in encrypted form; input checked in the browser and on the server; layout works at screen widths of 360, 768 and 1280 pixels | 12/11/2026 |
+| O3 | Keep schedule and cost under control | Schedule Performance Index and Cost Performance Index both at least 0.9 at the end of Sprint 3 (Earned Value Management for Agile projects) | 12/11/2026 |
+| O4 | Keep changes under control | Every change request goes through the five-step change process, and the Change Control Board decision is recorded within one working day of its meeting | For each change request |
+| O5 | Run a transparent process | Task board updated every day, daily meeting record on every working day, every task has an estimated time and the time actually spent | Every Sprint |
 
 ## 1.4 Scope
-**In scope (Release 1.0):** F1 accounts & roles (register, login, logout, admin creates/locks accounts, ≥ 2 roles, server-side guard); F2 books, categories, authors (soft delete, price > 0, validation); F3 grid 12/page newest first, responsive; F4 detail with friendly not-found and Back-to-same-page; F5 search by title/author, filter by category and price range with pagination; NFRs; hosting until 17/11/2026 [03 §2.2]. CR-06 (Store Staff role) is added only if approved at CCB on 30/10.
+**In scope (Release 1.0):**
+- F1 accounts and roles: register, log in, log out; the administrator creates and locks accounts; at least two roles; access checked on the server.
+- F2 books, categories and authors: a deleted book is hidden, not erased; the price must be greater than zero; input is checked.
+- F3 book list: 12 books per page, newest first, working on every screen size.
+- F4 book details: a friendly message when a book is not found, and a Back button that returns to the same page of the list.
+- F5 search by title or author and filter by category and price range, page by page.
+- The non-functional requirements, and the website online until 17/11/2026 [03 §2.2].
+- Change request CR-06 (Store Staff role) only if the Change Control Board approves it on 30/10.
 
-**Out of scope:** shopping cart, payment, social login [03 §2.2]; orders, promotions, multi-store inventory, reviews, wishlist, recommendations (Release 2, see backlog section C).
+**Out of scope:** shopping cart, payment and sign-in with social media accounts [03 §2.2]; orders, promotions, stock across several stores, reviews, wish lists and recommendations (Release 2, see section C of the Product Backlog).
 
 ## 1.5 Milestones
-See PMP-3 §3.2 (M0 23/10 … M11 17/11).
+See Part 3, section 3.2 (milestone M0 on 23/10 to milestone M11 on 17/11).
 
 ## 1.6 Stakeholders
-| Stakeholder | Role | Interest / influence | Key needs |
+| Stakeholder | Role | Interest and influence | Key needs |
 |---|---|---|---|
-| Ms. Le (Dr. Bùi Minh Phụng) | Sponsor, Customer, CCB chair, UAT signer | High / High | Working increments, controlled change, honest data |
-| Store staff of Ms. Le's company | Future users (CR-06) | High / Low | Update catalogue daily without full admin rights |
-| Online customers | End users | High / Low | Find books fast on any device |
-| Nguyễn Minh Chính | Product Owner + Developer, Leader S2 *(to confirm)* | High / High | Clear priorities, accepted items |
-| Hồ Du Tuấn Đạt | Developer, Leader S1 & S3 *(to confirm)* | High / High | Realistic plan, stable hosting |
-| Faculty of IT, VLU | Academic oversight | Low / Medium | Academic integrity |
+| Ms. Le (Dr. Bùi Minh Phụng) | Sponsor and customer, chair of the Change Control Board, signs the acceptance test | High interest, high influence | Working results every Sprint, changes under control, honest data |
+| Store staff of Ms. Le's company | Future users (change request CR-06) | High interest, low influence | Update the catalogue every day without full administrator rights |
+| Online customers | End users | High interest, low influence | Find books quickly on any device |
+| Nguyễn Minh Chính | Product Owner and Developer, Sprint Leader of Sprint 2 | High interest, high influence | Clear priorities, accepted items |
+| Hồ Du Tuấn Đạt | Developer, Sprint Leader of Sprints 1 and 3 | High interest, high influence | A realistic plan, a stable website |
+| Faculty of Information Technology, Van Lang University | Academic oversight | Low interest, medium influence | Academic integrity |
 
 ## 1.7 Constraints
-- Team of 2 must deliver all of F1–F5; features are not cut, workload is managed through capacity and the Release Plan [03 §2.2].
-- Fixed dates: submissions every Thursday 23:59; late penalty −10 % per 5 h [03 §4.2].
-- Free hosting only; site online until 17/11/2026.
-- Rate 200,000 VND per person-hour; N = 3 Sprints.
+- A team of two must deliver all features F1 to F5. Features are not cut; the workload is managed through the available hours and the Release Plan [03 §2.2].
+- Fixed dates: submissions every Thursday at 23:59; a late submission loses 10% of the Sprint grade for every 5 hours late [03 §4.2].
+- Free hosting only; the website stays online until 17/11/2026.
+- Work is costed at 200,000 VND per person-hour; the project has 3 Sprints.
 
 ## 1.8 Assumptions
-- Each member can contribute 20 hours per Sprint (plan value, confirmed by both members on 30/10/2026).
-- Jira Free supports Original Estimate and Time Spent for the team-managed project (to verify [05 #18]).
-- The free host and database tiers stay available until 17/11/2026.
-- The Sponsor's CCB decision on CR-06 is given on 30/10/2026.
+- Each member can work 20 hours per Sprint (plan value, confirmed by both members on 30/10/2026).
+- The free version of Jira can record the estimated time and the time spent for this project (to be checked [05 #18]).
+- The free plans of the website host and the database stay available until 17/11/2026.
+- The Sponsor gives the Change Control Board decision on change request CR-06 on 30/10/2026.
 
 ## 1.9 Success criteria
-- UAT minutes signed with every Release 1.0 AC passed (and CR-06 ACs if approved).
-- Tag `v1.0` and release notes on the repository; site reachable by the lecturer.
-- All submissions on time with consistent SP, hours and EVM figures across Workbook, Sprint Reports, Final Report and slides.
+- Acceptance test minutes signed, with every acceptance criterion of Release 1.0 passed (and those of CR-06 if it is approved).
+- The release label "v1.0" and the release notes are on GitHub; the lecturer can open the website.
+- Every submission on time, with the same story points, hours and earned value figures in the workbook, the Sprint reports, the Final Report and the slides.
 
 ## 1.10 Approval
 | Name | Role | Decision | Date |
 |---|---|---|---|
-| Dr. Bùi Minh Phụng | Sponsor | TBD | TBD |
-| Nguyễn Minh Chính | Product Owner | TBD | TBD |
-| Hồ Du Tuấn Đạt | Sprint Leader S1 | TBD | TBD |
+| Dr. Bùi Minh Phụng | Sponsor | To be confirmed | To be confirmed |
+| Nguyễn Minh Chính | Product Owner | To be confirmed | To be confirmed |
+| Hồ Du Tuấn Đạt | Sprint Leader of Sprint 1 | To be confirmed | To be confirmed |
