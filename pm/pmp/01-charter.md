@@ -7,6 +7,7 @@
 | 1.0-draft | 30/10/2026 | Hồ Du Tuấn Đạt | Charter written for Release 1.0 from the Final Project brief [03 §2] and the team assignment [04]. Objectives and stakeholders to be confirmed by the team |
 | 1.1-draft | 01/11/2026 | Hồ Du Tuấn Đạt | Budget and available hours filled in with the plan values confirmed on 30/10 (20 hours per member per Sprint, 24,000,000 VND) |
 | 1.2 | 17/11/2026 | Hồ Du Tuấn Đạt | Rewritten in plain language without abbreviations; no change of content |
+| 1.3 | 18/11/2026 | Hồ Du Tuấn Đạt | Approval table (1.10) completed: team approval with baseline version 1.0 on 30/10; no written Sponsor signature, acceptance at the acceptance test on 13/11 |
 
 ## 1.1 Project identification
 | Item | Value |
@@ -75,6 +76,6 @@ See Part 3, section 3.2 (milestone M0 on 23/10 to milestone M11 on 17/11).
 ## 1.10 Approval
 | Name | Role | Decision | Date |
 |---|---|---|---|
-| Dr. Bùi Minh Phụng | Sponsor | To be confirmed | To be confirmed |
-| Nguyễn Minh Chính | Product Owner | To be confirmed | To be confirmed |
-| Hồ Du Tuấn Đạt | Sprint Leader of Sprint 1 | To be confirmed | To be confirmed |
+| Dr. Bùi Minh Phụng | Sponsor | No written signature. The Sponsor accepted the product built to this charter at the acceptance test on 13/11/2026 (73 of 73 acceptance criteria passed) | 13/11/2026 |
+| Nguyễn Minh Chính | Product Owner | Approved: charter baselined with plan version 1.0 (version label "baseline-v1.0") | 30/10/2026 |
+| Hồ Du Tuấn Đạt | Sprint Leader of Sprint 1 | Approved: charter baselined with plan version 1.0 (version label "baseline-v1.0") | 30/10/2026 |
