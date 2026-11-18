@@ -41,7 +41,7 @@ Nguồn số liệu: Final Report c6 (`pm/final/final-report.md` §2–§5), Cha
 | 10 | Video demo | Đạt (giới thiệu) | 0:10 + ≤ 3:00 |
 | 11 | UAT and quality | Đạt | 0:25 |
 | 12 | EVM snapshots | Chính | 0:40 |
-| 13 | Most important lesson: Built is not Done | Chính | 0:35 |
+| 13 | Most important lesson: Test right after building | Chính | 0:35 |
 | 14 | Thank you / Q&A | Đạt | 0:10 |
 
 Tổng dự kiến 9:45 (dư 15 s). Nếu video dài đúng 3:00 và tập vẫn vượt 10:00, rút slide 5 và slide 9 còn 20 s mỗi slide.
@@ -74,7 +74,7 @@ Canva hiện chỉ lưu speaker notes cũ ở slide 1 và 10 (vẫn đúng). Cô
 
 **12 · Chính (0:40).** Earned Value Management compares plan, progress and cost in money. After Sprint 1, EV was 0 and SPI 0.00; after Sprint 2, SPI 0.51 and CPI 0.69. At the end of Sprint 3, SPI was 0.97 and CPI 1.50. At closure, after the uptime check on 17/11, PV and EV are both 26.4 million and AC is 19.6 million VND. SPI is 1.00: all planned value is delivered – late, but not missing. CPI is 1.34: we spent less than the value delivered, but we read this with care because some hours were logged late and AI helped, so the real cost is likely higher.
 
-**13 · Chính (0:35).** Our most important lesson is "Built is not Done". In Sprint 2 most work was merged on the last day. Only 5 of 29 points were Done, SPI fell to 0.51, and 24 points moved to Sprint 3. The root cause: the data model came late, and testing on the live site was one block at the end. Next time we test and get PO review the day after each build, merge small pieces daily, and start dependencies on day 1.
+**13 · Chính (0:35).** Our most important lesson is "Test right after building". In Sprint 2 most work was merged on the last day. Only 5 of 29 points were Done, SPI fell to 0.51, and 24 points moved to Sprint 3. The root cause: the data model came late, and testing on the live site was one block at the end. Next time we test and get PO review the day after each build, merge small pieces daily, and start dependencies on day 1.
 
 **14 · Đạt (0:10).** The website and the GitHub repository with tag v1.0 are on screen. Thank you. We are happy to take your questions; please ask either of us.
 
